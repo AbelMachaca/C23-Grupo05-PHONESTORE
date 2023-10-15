@@ -3,7 +3,7 @@
 ## Investigación
 * [Home](Colocar-Link)
 * [Carrito](Colocar-Link)
-* [Login](Colocar-Link)
+* [Login](https://shop.samsung.com/ar/login?returnUrl=%2Far%2Faccount)
 * [Registro](Colocar-Link)
 * [Producto](https://shop.samsung.com/ar/celular-galaxy-s20-fe-5g/p?cid=ar_ow_brand_samsung_none_brand-ar-gnb_ecommerce_none_generic&skuId=135189)
 
@@ -13,6 +13,6 @@ Para acceder al conjunto de wireframe se puede visualizar en los siguientes link
 
 * [Home](Colocar-Link)
 * [Carrito](Colocar-Link)
-* [Login](Colocar-Link)
+* [Login](https://www.figma.com/file/RVAedxhAeFxGYHqSNwf2es/Login-Responsive?type=design&node-id=0%3A1&mode=design&t=dFDcMa3FtXDmQ9nG-1)
 * [Registro](Colocar-Link)
 * [Producto](https://www.figma.com/file/b8PAtbheEVaKMwQJ2Pcegn/detalledeproducto?type=design&node-id=0-1&mode=design&t=4C9fUn9I86Mg8DkN-0)
