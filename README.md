@@ -18,21 +18,23 @@ Para acceder al conjunto de wireframe se puede visualizar en los siguientes link
 * [Producto](https://www.figma.com/file/b8PAtbheEVaKMwQJ2Pcegn/detalledeproducto?type=design&node-id=0-1&mode=design&t=4C9fUn9I86Mg8DkN-0)
 
 ## Definicion de tematicas - pautas a seguir: 
-Paleta de colores
-Tipografia
-Logo 
+ 
+* Paleta de colores 
+* Tipografia 
+* Logo
 
 ## Opcionales recomendados
-en un futuro pueden haber modificaciones de estilo de la pagina:
+En un futuro pueden haber modificaciones de estilo de la pagina:
+
 * Tipografia
+
 * Paleta de colores
+
 * Logo
 
 * En el header de todos los layouts incorporar el icono de login, carrito de compras, barra de busqueda.
 
-* en el body puede haber modificaciones en detalle de compra en cuotas, proteccion de dispositivos, precio envio, precios de cada dispositivo.
- 
- 
+* En el body puede haber modificaciones en detalle de compra en cuotas, proteccion de dispositivos, precio envio, precios de cada dispositivo.
 
 
 
