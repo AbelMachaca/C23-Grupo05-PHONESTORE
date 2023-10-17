@@ -12,7 +12,7 @@
 Para acceder al conjunto de wireframe se puede visualizar en los siguientes links
 
 * [Home](https://www.figma.com/file/2IRtHUWW107dHuPSA2daLO/Untitled?type=design&node-id=0-1&mode=design&t=tBVSwUC4EUR8xeX9-0)
-* [Carrito](Colocar-Link)
+* [Carrito](https://www.figma.com/file/tfgepkngTMwvHsI09vUUGz/Carrito-de-Compras?type=design&node-id=0-1&mode=design&t=PeQ3KUBdiUfjWqSi-0)
 * [Login](https://www.figma.com/file/RVAedxhAeFxGYHqSNwf2es/Login-Responsive?type=design&node-id=0%3A1&mode=design&t=dFDcMa3FtXDmQ9nG-1)
 * [Registro](https://www.figma.com/file/mthN1mJAkOWA5w4VKPc1TK/Formulario-de-Registro?type=design&mode=design)
 * [Producto](https://www.figma.com/file/b8PAtbheEVaKMwQJ2Pcegn/detalledeproducto?type=design&node-id=0-1&mode=design&t=4C9fUn9I86Mg8DkN-0)
@@ -38,3 +38,5 @@ En un futuro pueden haber modificaciones de estilo de la pagina:
 Incorporar una seccion de productos recomendados
 
 Incorporar una seccion de formas de pagos 
+
+modificar el fondo a uno con menos luz para los 3 tipos de visualizaciones 
