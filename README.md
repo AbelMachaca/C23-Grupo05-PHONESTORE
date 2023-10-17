@@ -35,4 +35,6 @@ En un futuro pueden haber modificaciones de estilo de la pagina:
 * En el body puede haber modificaciones en detalle de compra en cuotas, proteccion de dispositivos, precio envio, precios de cada dispositivo.
 
 
+Incorporar una seccion de productos recomendados
 
+Incorporar una seccion de formas de pagos 
