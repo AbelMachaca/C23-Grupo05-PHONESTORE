@@ -2,7 +2,7 @@
 
 ## Investigación
 * [Home](https://ferbi.com.ar/)
-* [Carrito](Colocar-Link)
+* [Carrito](https://www.fravega.com/checkout/#/cart)
 * [Login](https://shop.samsung.com/ar/login?returnUrl=%2Far%2Faccount)
 * [Registro](https://blog.hubspot.es/marketing/ejemplos-formularios)
 * [Producto](https://shop.samsung.com/ar/celular-galaxy-s20-fe-5g/p?cid=ar_ow_brand_samsung_none_brand-ar-gnb_ecommerce_none_generic&skuId=135189)
