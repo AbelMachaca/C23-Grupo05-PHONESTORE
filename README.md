@@ -1,7 +1,7 @@
 # C23-Grupo05-PHONESTORE
 
 ## Investigación
-* [Home](Colocar-Link)
+* [Home](https://ferbi.com.ar/)
 * [Carrito](Colocar-Link)
 * [Login](https://shop.samsung.com/ar/login?returnUrl=%2Far%2Faccount)
 * [Registro](https://blog.hubspot.es/marketing/ejemplos-formularios)
@@ -11,7 +11,7 @@
 
 Para acceder al conjunto de wireframe se puede visualizar en los siguientes links
 
-* [Home](Colocar-Link)
+* [Home](https://www.figma.com/file/2IRtHUWW107dHuPSA2daLO/Untitled?type=design&node-id=0-1&mode=design&t=tBVSwUC4EUR8xeX9-0)
 * [Carrito](Colocar-Link)
 * [Login](https://www.figma.com/file/RVAedxhAeFxGYHqSNwf2es/Login-Responsive?type=design&node-id=0%3A1&mode=design&t=dFDcMa3FtXDmQ9nG-1)
 * [Registro](https://www.figma.com/file/mthN1mJAkOWA5w4VKPc1TK/Formulario-de-Registro?type=design&mode=design)
