@@ -17,11 +17,9 @@ Para acceder al conjunto de wireframe se puede visualizar en los siguientes link
 * [Registro](https://www.figma.com/file/mthN1mJAkOWA5w4VKPc1TK/Formulario-de-Registro?type=design&mode=design)
 * [Producto](https://www.figma.com/file/b8PAtbheEVaKMwQJ2Pcegn/detalledeproducto?type=design&node-id=0-1&mode=design&t=4C9fUn9I86Mg8DkN-0)
 
-## Definicion de tematicas - pautas a seguir: 
- 
-* Paleta de colores 
-* Tipografia 
-* Logo
+## Definicion de tematica
+
+* [Paleta_de_colores,Tipografia,logo](https://www.figma.com/file/RVAedxhAeFxGYHqSNwf2es/Login-Responsive?type=design&node-id=0%3A1&mode=design&t=dFDcMa3FtXDmQ9nG-1)
 
 ## Opcionales recomendados
 En un futuro pueden haber modificaciones de estilo de la pagina:
