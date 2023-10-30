@@ -2,16 +2,16 @@
 
 ## Investigación
 * [Home](https://ferbi.com.ar/)
-* [Carrito](Colocar-Link)
+* [Carrito](https://www.fravega.com/checkout/#/cart)
 * [Login](https://shop.samsung.com/ar/login?returnUrl=%2Far%2Faccount)
 * [Registro](https://blog.hubspot.es/marketing/ejemplos-formularios)
-* [Producto](https://shop.samsung.com/ar/celular-galaxy-s20-fe-5g/p?cid=ar_ow_brand_samsung_none_brand-ar-gnb_ecommerce_none_generic&skuId=135189)
+* [Producto] SE TOMARON ASPECTOS DEL HEADER CON RESPECTO AL LOGIN O REGISTRO DEL CLIENTE, COMO TAMBIEN PONER CARRITO DE COMPRAS (https://es.aliexpress.com/w/wholesale-anbernic-rg35xx.html), EL BODY SE TOMO EN CUENTA LAS IMAGENES DEL PRODUCTO PUBLICADO (FRENTE,DORSO Y LATERAL), LAS CARACTERISTICAS DEL PRODUCTO Y BOTONES DE REDIRECCIONAMIENTO (COMPRAR Y AGREGAR AL CARRITO) (https://shop.samsung.com/ar/celular-galaxy-s20-fe-5g/p?cid=ar_ow_brand_samsung_none_brand-ar-gnb_ecommerce_none_generic&skuId=135189), Y CON RESPECTO AL FOOTER, ES DEL TIPO FIJO, CON INFORMACION DE LA EMPRESA, CONTACTO, EN FORMA ENCOLUMNADA ADECUADO PARA CADA DISPOSITIVO (SMARTPHONE, TABLET Y DESKTOP) https://es.aliexpress.com/w/wholesale-anbernic-rg35xx.html.
 
 ## WireFrame
 
 Para acceder al conjunto de wireframe se puede visualizar en los siguientes links
 
-* [Home](https://www.figma.com/file/2IRtHUWW107dHuPSA2daLO/Untitled?type=design&node-id=0-1&mode=design&t=tBVSwUC4EUR8xeX9-0)
+* [Home](https://www.figma.com/file/2IRtHUWW107dHuPSA2daLO/Untitled?type=design&node-id=0-1&mode=design&t=YWToEU6L8deYAORB-0)
 * [Carrito](Colocar-Link)
 * [Login](https://www.figma.com/file/RVAedxhAeFxGYHqSNwf2es/Login-Responsive?type=design&node-id=0%3A1&mode=design&t=dFDcMa3FtXDmQ9nG-1)
 * [Registro](https://www.figma.com/file/mthN1mJAkOWA5w4VKPc1TK/Formulario-de-Registro?type=design&mode=design)
@@ -38,3 +38,5 @@ En un futuro pueden haber modificaciones de estilo de la pagina:
 Incorporar una seccion de productos recomendados
 
 Incorporar una seccion de formas de pagos 
+
+modificar el fondo a uno con menos luz para los 3 tipos de visualizaciones 
