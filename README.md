@@ -5,7 +5,8 @@
 * [Carrito](https://www.fravega.com/checkout/#/cart)
 * [Login]SE TOMARON ASPECTOS DE LOS EJEMPLOS DE LOGIN BRINDADOS POR LA SIGUIENTE WEB(https://medium.com/uxlatam/50-login-y-formularios-de-registro-para-inspirarse-96f9282e4c3e)
 
-* [Registro](https://blog.hubspot.es/marketing/ejemplos-formularios)
+* [Registro](https://blog.hubspot.es/marketing/ejemplos-formularios): Se tomó como referencia dentro de todos los ejemplos de esta página la versión clásica de __Dropbox__ dado que en la versión actual no sé encuentra. 
+    - Se extrajo: los campos, el posicionamiento como por ejemplo el logo y los términos y condiciones
 * [Producto] SE TOMARON ASPECTOS DEL HEADER CON RESPECTO AL LOGIN O REGISTRO DEL CLIENTE, COMO TAMBIEN PONER CARRITO DE COMPRAS (https://es.aliexpress.com/w/wholesale-anbernic-rg35xx.html), EL BODY SE TOMO EN CUENTA LAS IMAGENES DEL PRODUCTO PUBLICADO (FRENTE,DORSO Y LATERAL), LAS CARACTERISTICAS DEL PRODUCTO Y BOTONES DE REDIRECCIONAMIENTO (COMPRAR Y AGREGAR AL CARRITO) (https://shop.samsung.com/ar/celular-galaxy-s20-fe-5g/p?cid=ar_ow_brand_samsung_none_brand-ar-gnb_ecommerce_none_generic&skuId=135189), Y CON RESPECTO AL FOOTER, ES DEL TIPO FIJO, CON INFORMACION DE LA EMPRESA, CONTACTO, EN FORMA ENCOLUMNADA ADECUADO PARA CADA DISPOSITIVO (SMARTPHONE, TABLET Y DESKTOP) https://es.aliexpress.com/w/wholesale-anbernic-rg35xx.html.
 
 ## WireFrame
