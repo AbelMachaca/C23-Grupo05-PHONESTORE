@@ -3,7 +3,8 @@
 ## Investigación
 * [Home](https://ferbi.com.ar/)
 * [Carrito](https://www.fravega.com/checkout/#/cart)
-* [Login](https://shop.samsung.com/ar/login?returnUrl=%2Far%2Faccount)
+* [Login]SE TOMARON ASPECTOS DE LOS EJEMPLOS DE LOGIN BRINDADOS POR LA SIGUIENTE WEB(https://medium.com/uxlatam/50-login-y-formularios-de-registro-para-inspirarse-96f9282e4c3e)
+
 * [Registro](https://blog.hubspot.es/marketing/ejemplos-formularios)
 * [Producto] SE TOMARON ASPECTOS DEL HEADER CON RESPECTO AL LOGIN O REGISTRO DEL CLIENTE, COMO TAMBIEN PONER CARRITO DE COMPRAS (https://es.aliexpress.com/w/wholesale-anbernic-rg35xx.html), EL BODY SE TOMO EN CUENTA LAS IMAGENES DEL PRODUCTO PUBLICADO (FRENTE,DORSO Y LATERAL), LAS CARACTERISTICAS DEL PRODUCTO Y BOTONES DE REDIRECCIONAMIENTO (COMPRAR Y AGREGAR AL CARRITO) (https://shop.samsung.com/ar/celular-galaxy-s20-fe-5g/p?cid=ar_ow_brand_samsung_none_brand-ar-gnb_ecommerce_none_generic&skuId=135189), Y CON RESPECTO AL FOOTER, ES DEL TIPO FIJO, CON INFORMACION DE LA EMPRESA, CONTACTO, EN FORMA ENCOLUMNADA ADECUADO PARA CADA DISPOSITIVO (SMARTPHONE, TABLET Y DESKTOP) https://es.aliexpress.com/w/wholesale-anbernic-rg35xx.html.
 
@@ -19,7 +20,7 @@ Para acceder al conjunto de wireframe se puede visualizar en los siguientes link
 
 ## Definicion de tematica
 
-* [Paleta_de_colores,Tipografia,logo](https://www.figma.com/file/RVAedxhAeFxGYHqSNwf2es/Login-Responsive?type=design&node-id=0%3A1&mode=design&t=dFDcMa3FtXDmQ9nG-1)
+* [Tematica]Tematica basada en ejemplos de tiendas online,mas info en el siguiente link(https://hellocreatividad.com/tiendas-online-bien-disenadas/)
 
 ## Opcionales recomendados
 En un futuro pueden haber modificaciones de estilo de la pagina:
