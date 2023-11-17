@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fc9c9e5a32.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="carrito_body">
+    <header>
+
+    </header>
+<main class="main">
+    <section class="mis_productos">
+        <h3>Mis Productos</h3>
+        <article>
+            <img src="/images/70010234.jpg" alt="">
+            <img src="/images/70010234.jpg" alt="">
+            <img src="/images/70010234.jpg" alt="">
+            <img src="/images/70010234.jpg" alt="">
+              <i class="fa-regular fa-square-caret-down"></i>
+        </article>
+    </section>
+    <section class="resumen_de_pedido">
+        <label for="metodo_de_envio"><h3>Metodo De Envio</h3></label>
+                <div> 
+                    <input type="radio" name="metodo_de_envio" id="metodo_de_envio" value="sucursal">
+                    <label for="sucursal"> Retiro por sucursal</label>
+                     <i class="fa-regular fa-square-caret-down"></i>
+                </div>
+                <div> 
+                    <input type="radio" name="metodo_de_envio" id="metodo_de_envio" value="PICK_UP">
+                    <label for="PICK_UP">Retiro por punto PICK UP</label>
+                     <i class="fa-regular fa-square-caret-down"></i>
+                </div>
+                <div> 
+                    <input type="radio" name="metodo_de_envio" id="metodo_de_envio" value="domicilio">
+                    <label for="domicilio">Envio a domicilio</label>
+                     <i class="fa-regular fa-square-caret-down"></i>
+                </div>
+
+
+        <label for="metodos_de_pago"><h3>Metodos de Pago</h3></label>
+                <div> 
+                    <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="efectivo">
+                    <label for="efectivo">Efectivo</label>
+                     <i class="fa-regular fa-square-caret-down"></i>
+                </div>
+                <div> 
+                    <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="mercado_pago">
+                    <label for="mercado_pago">Mercado Pago</label>
+                     <i class="fa-regular fa-square-caret-down"></i>
+                </div>
+                <div> 
+                    <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="transferencia_bancaria">
+                    <label for="transferencia_bancaria">Transferencia Bancaria</label>
+                     <i class="fa-regular fa-square-caret-down"></i>
+                </div>
+                <div> 
+                    <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="tarjeta_de_credito">
+                    <label for="tarjeta_de_credito">Tarjeta de Credito</label>
+                     <i class="fa-regular fa-square-caret-down"></i>
+                </div>
+
+        <h3>Resumen de Pedido</h3>
+                <form action="/carrito" method="post" class="codigo_descuento"> 
+                    <label for="codigo">Ingrese codigo de descuento</label>
+                    <input type="text" name="codigo" id="codigo" placeholder="_ _ _ _ _">
+                </form>
+                <div>
+                    <h4>subtotal : 1.000000</h4>
+                </div>
+                <div>
+                    <h4>Costos de envio : 5.000</h4>
+                </div>
+                <div>
+                    <h4>Descuento por codigo : 5.000</h4>
+                </div>
+                <div>
+                    <h4>Total : 1.000000</h4>
+                </div>
+
+                <button type="reset" class="boton_eliminar" >Eliminar</button>
+                <button type="submit" class="boton_compra">confirmar Compra</button>
+
+    </section>
+
+</main>
+    
+</body>
+</html>

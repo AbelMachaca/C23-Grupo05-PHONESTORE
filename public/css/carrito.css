@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0; 
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+} 
+/*home carrito*/
+.carrito_body{
+    width: 100vw;
+}
+.main section{
+    background-color: #16191c;
+    padding-top: 4%;
+    padding-bottom: 2%;
+    margin: 4% auto 0 auto;
+    border-radius: 20px;
+}
+.mis_productos h3{
+    color: white;
+    text-align: center;
+}
+.mis_productos article{
+  padding: 4% 4% 4% 4%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.mis_productos article img{
+    background-color: white;
+    width: 10%;
+    height: 10%;
+    border-radius: 15% ;
+    
+}
+.mis_productos .fa-square-caret-down{
+    color: white;
+    padding-top: 6%;
+}
+.resumen_de_pedido h3{
+    color: white;
+    text-align: center;
+
+}
+.resumen_de_pedido div{
+    background-color: #1e2126;
+    margin-top: 3%;
+    padding:1% ;
+    border-radius: 30px;
+   
+  
+   
+    
+}
+.resumen_de_pedido label{
+    color: white;
+}
