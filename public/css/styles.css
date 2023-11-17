@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@1,100&display=swap');
+@import url("./productDetail.css");
+:root{
+    --color-blanco :#fff;
+    --color-negro:#16191C;
+    --color-azul:#3969FC;
+    --color-azul-claro: #3F92F3;
+    --color-purpura: #CFD0EF;
+     }
+     
+
+* {
+  box-sizing: border-box;
+  margin : 0;
+  padding : 0;
+  text-decoration: none;
+  list-style: none;  
+  font-family:'epilogue',sans-serif;
+}

@@ -1,0 +1,41 @@
+.fondo{
+
+    background-color: var(--color-blanco);
+
+}
+
+.titulo_marca_modelo{
+    text-align: center;
+    font-weight: bolder;
+}
+
+.celular_frontal{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+
+.dimensionar_imagen_celu_principal{
+    width: 20%;
+    height: auto;
+}
+
+.imagen_celu_frente_dorso_lateral{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.texto_color{
+    margin-right: 2%;
+}
+.formulario_opcion_color{
+    display: flex;
+    justify-content: center;
+}
+
+.circulo1_tamaño_color{
+    transform: scale(1.5);
+    margin-right: 2%;
+    background-color: #CFD0EF
+}
