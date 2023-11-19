@@ -10,10 +10,10 @@
 }
 .main section{
     background-color: #16191c;
-    padding-top: 4%;
-    padding-bottom: 2%;
-    margin: 4% auto 0 auto;
+    margin: 4% auto 4% auto;
     border-radius: 20px;
+    padding-top: 3%;
+    padding-bottom: 3%;
 }
 .mis_productos h3{
     color: white;
@@ -38,21 +38,53 @@
     color: white;
     padding-top: 6%;
 }
-.resumen_de_pedido h3{
-    color: white;
-    text-align: center;
-
-}
-.resumen_de_pedido div{
+div.subtitulos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 2%;; 
     background-color: #1e2126;
     margin-top: 3%;
-    padding:1% ;
+    padding:2% ;
     border-radius: 30px;
-   
-  
-   
+    color: white;
+    padding-left:5%;    
+}
+ h3{
+    color: white;
+    text-align: center; 
+}
+.resumen_titulo{
+    margin-top:2% ;
+}
+
+.codigo_descuento{
+    display: flex;
+    flex-direction: row;
+}
+.codigo_descuento input{
+    margin-left: 5% ;
+    width: 17%;
+    padding: 0;
+    color: white;
+    background-color: #1e2126;
+    border: #1e2126;
     
 }
-.resumen_de_pedido label{
+
+.botones button{
+    background-color: #1e2126;
+    border-radius: 30px;
+    padding: 3%;
     color: white;
+    margin: 10%;
+    width:25%;
+    border: #1e2126; 
+} 
+button.boton_eliminar{
+    margin-left: 14%;
+}
+
+/* VERSION TABLET */
+@media (min-width: 768px){
 }

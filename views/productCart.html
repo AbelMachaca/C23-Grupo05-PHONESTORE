@@ -22,68 +22,77 @@
               <i class="fa-regular fa-square-caret-down"></i>
         </article>
     </section>
-    <section class="resumen_de_pedido">
+    <section class="envio">
         <label for="metodo_de_envio"><h3>Metodo De Envio</h3></label>
-                <div> 
+                <div class="subtitulos"> 
                     <input type="radio" name="metodo_de_envio" id="metodo_de_envio" value="sucursal">
                     <label for="sucursal"> Retiro por sucursal</label>
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
-                <div> 
+                <div class="subtitulos"> 
                     <input type="radio" name="metodo_de_envio" id="metodo_de_envio" value="PICK_UP">
                     <label for="PICK_UP">Retiro por punto PICK UP</label>
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
-                <div> 
+                <div class="subtitulos"> 
                     <input type="radio" name="metodo_de_envio" id="metodo_de_envio" value="domicilio">
                     <label for="domicilio">Envio a domicilio</label>
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
+    </section>
 
-
+    <section class="pago">
         <label for="metodos_de_pago"><h3>Metodos de Pago</h3></label>
-                <div> 
+                <div class="subtitulos"> 
                     <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="efectivo">
                     <label for="efectivo">Efectivo</label>
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
-                <div> 
+                <div class="subtitulos"> 
                     <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="mercado_pago">
                     <label for="mercado_pago">Mercado Pago</label>
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
-                <div> 
+                <div class="subtitulos"> 
                     <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="transferencia_bancaria">
                     <label for="transferencia_bancaria">Transferencia Bancaria</label>
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
-                <div> 
+                <div class="subtitulos"> 
                     <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="tarjeta_de_credito">
                     <label for="tarjeta_de_credito">Tarjeta de Credito</label>
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
+    
+        <div class="subtitulos">
+            <form action="/carrito" method="post" class="codigo_descuento"> 
+                <label for="codigo"><h4>Ingrese codigo de descuento :</h4></label>
+                <input type="text" name="codigo" id="codigo" placeholder=" _ _ _ _ _ _ ">
+            </form>
+        </div>
+    </section>
 
-        <h3>Resumen de Pedido</h3>
-                <form action="/carrito" method="post" class="codigo_descuento"> 
-                    <label for="codigo">Ingrese codigo de descuento</label>
-                    <input type="text" name="codigo" id="codigo" placeholder="_ _ _ _ _">
-                </form>
-                <div>
+
+    <section class="compra">
+        <h3 class="resumen_titulo">Resumen de Pedido</h3>
+                
+                <div class="subtitulos">
                     <h4>subtotal : 1.000000</h4>
                 </div>
-                <div>
+                <div class="subtitulos">
                     <h4>Costos de envio : 5.000</h4>
                 </div>
-                <div>
+                <div class="subtitulos">
                     <h4>Descuento por codigo : 5.000</h4>
                 </div>
-                <div>
+                <div class="subtitulos">
                     <h4>Total : 1.000000</h4>
                 </div>
-
-                <button type="reset" class="boton_eliminar" >Eliminar</button>
-                <button type="submit" class="boton_compra">confirmar Compra</button>
-
+                <div class="botones">
+                        <button type="reset" class="boton_eliminar" ><h4>Eliminar</h4></button>  
+                        <button type="submit" class="boton_compra"><h4>Comprar</h4></button>   
+                </div>
+                
     </section>
 
 </main>
