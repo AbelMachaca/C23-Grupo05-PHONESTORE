@@ -10,7 +10,7 @@
 
 .conteCarrousel{
   width: 100%;
-  height: 200px;
+  height: 300px;
   overflow: hidden;
 }
 
@@ -80,7 +80,7 @@
 
 .imagen-medio {
   width: 100%; 
-  height: 100%;
+  height: 140%;
 }
 .imagen-grande{
   width: 100%; 
@@ -146,4 +146,55 @@ footer a {
   margin: 0 10px;
   color: #faf8f8;
   text-decoration: none;
+}
+
+@media screen and (max-width: 500px) {
+  .conteCarrousel {
+    height: 150px; /* Ajusta según tus necesidades */
+  }
+
+  .itemCarrouselArrows {
+    padding: 10px; /* Ajusta según tus necesidades */
+  }
+
+  .imagen-medio {
+    height: 120%; /* Ajusta según tus necesidades */
+  }
+
+  .contenedor-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-item {
+    width: 80%; /* Ajusta según tus necesidades */
+    margin-bottom: 20px; /* Ajusta según tus necesidades */
+  }
+
+  .card-img img {
+    width: 100%;
+    height: auto;
+    margin-right: 0;
+  }
+}
+.itemCarrouselTarjeta video {
+  width: 100%;
+  height: 100%;
+}
+.banner {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.envio-gratis, .garantia, .contacto {
+  text-align: center;
+  margin: 0 10px;
+}
+
+.envio-gratis img, .garantia img, .contacto img{
+  width: 40px;
+  height: auto;
 }
