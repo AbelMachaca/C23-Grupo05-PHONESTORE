@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <script
+      src="https://kit.fontawesome.com/a3ad730a3f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../public/css/register.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      
+      <img class="login-img" src="../public/img/login.png" alt="imagen login" />
+      <div class="logo">
+       <img  src="../public/img/logo.png" alt="imagen logo">
+      </div>
+      <h1>Crea una cuenta</h1>
+      <form>
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="nombre"
+            id="nombre"
+            name="nombre"
+            placeholder="Ingresa tu nombre"
+            required
+          />
+        </div>
+        
+        <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input
+              type="apellido"
+              id="apellido"
+              name="apellido"
+              placeholder="Ingresa tu apellido"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ingresa tu email"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Contraseña</label>
+            <div class="password-container">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Ingresa tu contraseña"
+                required
+              />
+              <i class="fa-solid fa-eye eye-icon"></i>
+            </div>
+          </div>
+        <div class="form-group2">
+          <div class="check">
+           <input type="checkbox">
+          </div>
+          <a class="terminos-condiciones" href="#">
+            He leído y acepto los 
+            <span class="terminos">términos y condiciones</span> 
+            </a>
+        </div>
+
+       
+        <button class="crear-cuenta" type="submit">Crear cuenta</button>
+      </form>
+      <h6>O crea tu cuenta con</h6>
+      <div class="social-buttons">
+            <i class="fa-brands fa-google"></i>
+            <button>Google</button>
+            <i class="fa-brands fa-facebook"></i>
+            <button>Facebook</button>
+      </div>
+      <div class="iniciar-cuenta">
+       <h4>¿Ya tienes una cuenta?</h4>
+       <h5>Inicia Sesión</h5>
+      </div>
+    </div>
+  </body>
+</html>
