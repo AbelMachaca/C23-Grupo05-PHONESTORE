@@ -7,6 +7,7 @@
 .titulo_marca_modelo{
     text-align: center;
     font-weight: bolder;
+    margin-top: 2%;
 }
 
 .celular_frontal{
@@ -20,11 +21,12 @@
     height: auto;
 }
 
-.imagen_celu_frente_dorso_lateral{
+.caja_imagen_celu_frente_dorso_lateral{
     display: flex;
     justify-content: center;
     margin-bottom: 5%;
 }
+
 
 .texto_color{
     margin-right: 2%;
@@ -34,8 +36,86 @@
     justify-content: center;
 }
 
-.circulo1_tamaño_color{
+.circulo_tamaño{
     transform: scale(1.5);
-    margin-right: 2%;
-    background-color: #CFD0EF
+    margin-left: 4%;
+   
+
+    
+}
+
+
+.circulo_purpura[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 2px solid var(--color-azul-claro); /* Cambia el color del borde del círculo */
+        border-radius: 50%; /* Hace que el borde sea redondo para formar un círculo */
+        width: 15px; /* Tamaño del círculo */
+        height: 15px; /* Tamaño del círculo */
+        outline: none;
+        transition: 0.2s all linear;
+        background-color: var(--color-purpura);
+        cursor:pointer;
+}
+.circulo_negro[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /*border: 2px solid var(--color-azul-claro); /* Cambia el color del borde del círculo */
+    border-radius: 50%; /* Hace que el borde sea redondo para formar un círculo */
+    width: 13px; /* Tamaño del círculo */
+    height: 13px; /* Tamaño del círculo */
+    outline: none;
+    transition: 0.2s all linear;
+    background-color: var(--color-negro);
+    cursor:pointer;
+}
+
+.descripcion_del_equipo{
+    text-align: center;
+    margin-top: 4%;
+    padding:0 6% 0 6%;
+}
+
+.snap_h6{
+    margin: 3% 1% 0 1%;
+    display: flex;
+    justify-content: center;
+          
+}
+
+.caracteristicas{
+    width: 85px;
+    height: auto;
+    text-align:center;
+    margin: 0 2%;
+       
+    
+}
+
+.boton_comprar{
+    width: 160px;
+    height: 25px;
+    background-color: var(--color-negro);
+    color:var(--color-azul);
+    font-weight: bolder;
+    font-size:small;
+    border-radius: 10px;
+}
+
+.boton_agregar{
+    width: 160px;
+    height: 25px;
+    background-color: var(--color-negro);
+    color:var(--color-blanco);
+    font-weight: bolder;
+    font-size:small;
+    border-radius: 10px;
+    margin-top: 2%;
+}
+
+.separar_centrar_boton_submit{
+    margin: 4% 0;
+    text-align: center;
 }

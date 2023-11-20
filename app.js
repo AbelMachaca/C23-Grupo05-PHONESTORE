@@ -4,7 +4,7 @@ const path = require('path');
 
 
 
-app.get("/productDetail.html", (req,res)=>{
+app.get("/productDetail", (req,res)=>{
  res.sendFile(path.join(__dirname, "/views/productDetail.html"))    
  
 })
