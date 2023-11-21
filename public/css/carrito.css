@@ -70,7 +70,7 @@ section.compra{
     text-align: center;
 }
 .mis_productos article{
-  padding: 4% 4% 4% 4%;
+  padding: 4%;
   height: 100%;
   width: 100%;
   display: flex;
@@ -134,19 +134,33 @@ div.subtitulos{
 button.boton_eliminar{
     margin-left: 14%;
 }
+p{
+    display: none;
+}
+div h3{
+    display: none;
+}
+form{
+    display: none;
+}
 
 /*home tablet */
 @media (min-width: 768px){
     section.main{
         display: flex;
         flex-direction: column;
+        margin:0%;
+        padding: 0%;
         
     }
+    section.mis_productos{
+        margin: 0%;
+    }
     section.bloque_principal{
-        display: flex;
-        justify-content: space-between;
-       
-        
+       display: flex;
+       flex-direction: row;
+       margin:0%;
+       padding: 0%;
     }
     .subtitulos i{
         display: none;
@@ -156,13 +170,108 @@ button.boton_eliminar{
       flex-direction: row; 
     }
     .bloque_principal section{
-        margin: 2%;
-    
-
+        margin:0%;
+        padding: 0%;
     }
     section.bloque_izq {
+        margin: 0%;
+        padding: 0%;
+        width: 100%;
+        
     }
-    .main section{
-       margin: 4%
+    section.compra{
+        margin-top:2%;
+        margin-left: 2%;
+        
     }
+    section.bloque_principal{
+        margin: 0%;
+    }
+    .bloque_izq div.subtitulos{
+        background-color: #16191c;
+        justify-content:flex-start;
+        margin: 0%;
+    }
+    .bloque_izq div.subtitulos label{
+        padding-left: 5%;
+    }
+    .envio div{
+        display: flex;
+       justify-content: space-between;
+       padding: 1.5%;
+     
+    }
+    .bloque_izq div p{
+        display: block;
+        color: white;
+        font-size: 10px;
+        width: 60%;
+        padding-left: 8%;
+    }
+    .bloque_izq div h3{
+        display: block;
+        font-size: 10px;
+    }
+    .mis_productos article{
+        padding: 2%;
+        padding-left: 10%;
+        align-items: center;
+    }
+    .mis_productos article img{
+        width: 5%;
+        height: 5%;
+    }
+    .mis_productos .fa-square-caret-down{
+      padding: 0%;
+
+    }
+    div.botones{
+        padding-top: 30%;
+    }
+    div.contenedor_bloques_pago{
+        display: flex;
+        flex-direction: row;
+    }
+    div.bloque_izq_pago{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+       
+    }
+    div.bloque_der_pago{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    form.formulario{
+        display: block;
+        font-size: 10px;
+        padding: 3%;
+        color: white;
+    }
+    form.formulario input{
+       height: 10px;
+       width: 10px;
+       margin-left: 12%;
+    }
+    .formulario label{
+        padding-left: 4%;
+      
+    }
+    div.descripcion p{
+        display: block;
+        width: 100%;
+       margin: 4%;
+    }
+    .contenedor_bloques_pago{
+        padding: 5%;
+    }
+    .bloque_izq h3{
+        padding-top: 2%;
+    }
+    input#codigo{
+        background-color: #16191c;
+    }
+    
+
 }

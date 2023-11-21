@@ -64,7 +64,7 @@
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
                 <div>
-                    <p>El solicitante podra retirarlo por sucursal en el horario de 9 a 18hs</p>
+                    <p>El solicitante podra retirarlo por cualquier punto PICK UP elegido en el horario de 9 a 18hs</p>
                     <h3>Ver puntos de PICK UP</h3>
                     </div>
                 <div class="subtitulos"> 
@@ -80,26 +80,56 @@
 
     <section class="pago">
         <label for="metodos_de_pago"><h3>Metodos de Pago</h3></label>
+        <div class="contenedor_bloques_pago">
+     <div class="bloque_izq_pago">
                 <div class="subtitulos"> 
                     <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="efectivo">
                     <label for="efectivo">Efectivo</label>
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
+                   <div class="descripcion">
+                    <p>Podra pagar en efectivo su precio total al momento de retirar el producto</p>
+                   </div>
                 <div class="subtitulos"> 
                     <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="mercado_pago">
                     <label for="mercado_pago">Mercado Pago</label>
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
-                <div class="subtitulos"> 
-                    <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="transferencia_bancaria">
-                    <label for="transferencia_bancaria">Transferencia Bancaria</label>
-                     <i class="fa-regular fa-square-caret-down"></i>
-                </div>
+                <div class="descripcion">
+                    <p>podra pagarlo desde la app</p>
+                 </div>
+     </div>
+     <div class="bloque_der_pago">
                 <div class="subtitulos"> 
                     <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="tarjeta_de_credito">
                     <label for="tarjeta_de_credito">Tarjeta de Credito</label>
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
+                       
+                            <form  method="post" class="formulario">
+                                <div>
+                                    <input type="radio" name="cuota" id="">
+                                    <label for="">1 cuota   (Visa, Mastercard)</label> 
+                                </div>
+                           
+                                <div>
+                                    <input type="radio" name="cuota" id="">
+                                    <label for="">3 Cuotas (Visa, Mastercard)</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="cuota" id="">
+                                    <label for="">9 Cuotas (Visa, Mastercard)</label>
+                                </div>
+                            </form>
+                   
+               
+                <div class="subtitulos"> 
+                    <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="Transferencia Bancaria">
+                    <label for="Transferencia Bancaria">Transferencia Bancaria</label>
+                     <i class="fa-regular fa-square-caret-down"></i>
+                </div>
+    </div>
+    </div>
     
         <div class="subtitulos">
             <form action="/carrito" method="post" class="codigo_descuento"> 
