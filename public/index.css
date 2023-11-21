@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .carrousel{
   width: 100%;
 }
@@ -43,7 +50,7 @@
   cursor: pointer;
 }
 
-#itemCarrousel-1{
+/*#itemCarrousel-1{
   
   background-color: rgb(226, 50, 50);
 }
@@ -55,7 +62,7 @@
 #itemCarrousel-3{
   background-color: rgb(200, 226, 50);
 }
-
+*/
 .conteCarrouselController{
   width: 100%;
   display: flex;
@@ -86,48 +93,58 @@
   width: 100%; 
   height: 100%;
 }
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 .contenedor-cards {
-display: flex;  
- margin: 30px;
- padding: 20px;
- border: 2opx;
+display: flex; 
+justify-content: center; 
+text-align: center;
+ margin: 10px;
+ padding: 5px;
+
  
 }
 
 .card-item {
-  text-align: center;
+  display: flex; 
+justify-content: space-around; 
+text-align: center;
+width: auto;
  
 }
 
 .card-item p {
- flex-direction: row;
+  display: flex; 
+  justify-content: center; 
+  text-align: center;
  justify-content: space-between;
 }
 
+
 .card-item button {
-  border-radius: 100px;
+ 
+  border-radius: 30px; /* Cambiado de 10% a 10px para asegurar un valor fijo */
   background-color: #080000;
   color: white;
+  padding: 10px 30px; /* Ajustado el padding para un aspecto más equilibrado */
+  border: none; /* Eliminado el borde para un aspecto más limpio */
+  cursor: pointer;
 }
 .card-item img {
-  width: 200px;
-  height: 220px;
-  margin-right: 20px;
+  width: 180px;
+  height: 200px;
+ margin: 10px;
   
 }
 
 .card-img {
   display: flex;
+  justify-content: left;
 }
 
 .info {
   display: flex;
+  flex-direction: column;
+ justify-content: space-evenly;
 
  
 }
@@ -143,9 +160,12 @@ footer a {
   margin: 0 10px;
   color: #faf8f8;
   text-decoration: none;
+  padding: 10px;
+  justify-content:space-evenly;
 }
 
-@media screen and (max-width: 500px) {
+
+/*@media screen and (max-width: 500px) {*/
 
   .carrousel{
     width: 100%;
@@ -171,19 +191,22 @@ footer a {
     width: 80%; 
     margin-bottom: 20px;
 
-  .card-img img {
+  
+  /*  .card-img img {
     width: 100%;
     height: auto;
     margin-right: 0;
   }
-}
+*/
 
 .itemCarrouselTarjeta video {
   width: 100%;
   height: 100%;
 }
+}
 .banner {
- display: flex;
+
+  display: flex;
   flex-direction: row;
   text-align: center;
   justify-content: space-between;
@@ -200,6 +223,8 @@ footer a {
   height: auto;
 }
 
+
+/* DESKTOP*/
 @media screen and (min-width: 1024px) {
 
   .carrousel{
@@ -284,42 +309,42 @@ footer a {
     width: 100%; 
     height: 100%;
   }
-  body {
-    font-family: 'Roboto', sans-serif; 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+ 
+
+
   .contenedor-cards {
    margin: 30px;
    padding: 20px;
    border: 2opx;
     display: flex;
+  flex-direction: row;
+  max-width: 100%;
   
    
-   
+   .home {
+    max-width: 100%;
+   }
     
   }
   
   .card-item {
+    display: flex;
+    flex-direction: row;
+
     text-align: center;
    
   }
   
   .card-item p {
-   flex-direction: row;
+   
    justify-content: space-between;
   }
   
-  .card-item button {
-    border-radius: 100px;
-    background-color: #080000;
-    color: white;
-  }
+
   .card-item img {
     width: 200px;
     height: 220px;
-    margin-right: 20px;
+   
     
   }
   
@@ -329,14 +354,20 @@ footer a {
   
   .info {
     display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
    
   }
   
   
   footer {
+    display: flex;
+    justify-content: space-around;
     background-color: #080000;
     padding: 20px;
     text-align: center;
+  
   }
   
   footer a {
@@ -366,9 +397,44 @@ footer a {
   }
 
 }
-}
 
+
+/* TABLET */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
  
+  .banner {
+   
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .envio-gratis, .garantia, .contacto {
+    text-align: center;
+    margin: 0 10px;
+  }
+  
+  .envio-gratis img, .garantia img, .contacto img{
+    width: 40px;
+    height: auto;
+  }  
+  footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #080000;
+    padding: 20px;
+    text-align: center;
+  
+  }
+  
+  footer a {
+    margin: 0 10px;
+    color: #faf8f8;
+    text-decoration: none;
+  }
+  
+  
 
 }
