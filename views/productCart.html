@@ -8,9 +8,30 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="carrito_body">
-    <header>
+    
+<header class="header">
+    <div>
+        <img src="/images/icono.jpg" > 
+            <section class="buscador">
+              <form action="">
+                <input type="text" placeholder="Buscar" >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </form>
+            </section>
+    </div>
+            <section class="links">
+                <a href="">Samsung</a>
+                <a href="">Motorola</a>
+                <a href="">LG</a>
+                <a href="">Xiaomi</a>
+                <a href="">Iphone</a>
+                <a href="/Registrarse">Creá tu cuenta </a>
+                <a href="/Ingresar">Ingresá </a>
+               
+            </section>
+           
+</header>
 
-    </header>
 <main class="main">
     <section class="mis_productos">
         <h3>Mis Productos</h3>
@@ -22,6 +43,9 @@
               <i class="fa-regular fa-square-caret-down"></i>
         </article>
     </section>
+
+<section class="bloque_principal">
+<section class="bloque_izq">
     <section class="envio">
         <label for="metodo_de_envio"><h3>Metodo De Envio</h3></label>
                 <div class="subtitulos"> 
@@ -29,15 +53,28 @@
                     <label for="sucursal"> Retiro por sucursal</label>
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
+                <div>
+                <p>El solicitante podra retirarlo por sucursal en el horario de 9 a 18hs</p>
+                <h3>¡Gratis!</h3>
+                </div>
+                
                 <div class="subtitulos"> 
                     <input type="radio" name="metodo_de_envio" id="metodo_de_envio" value="PICK_UP">
                     <label for="PICK_UP">Retiro por punto PICK UP</label>
                      <i class="fa-regular fa-square-caret-down"></i>
                 </div>
+                <div>
+                    <p>El solicitante podra retirarlo por sucursal en el horario de 9 a 18hs</p>
+                    <h3>Ver puntos de PICK UP</h3>
+                    </div>
                 <div class="subtitulos"> 
                     <input type="radio" name="metodo_de_envio" id="metodo_de_envio" value="domicilio">
                     <label for="domicilio">Envio a domicilio</label>
                      <i class="fa-regular fa-square-caret-down"></i>
+                </div>
+                <div>
+                    <p>El solicitante podra retirarlo por sucursal en el horario de 9 a 18hs</p>
+                    <h3>Calcular costos de Envio</h3>
                 </div>
     </section>
 
@@ -71,6 +108,7 @@
             </form>
         </div>
     </section>
+</section>
 
 
     <section class="compra">
@@ -94,7 +132,7 @@
                 </div>
                 
     </section>
-
+</section>
 </main>
     
 </body>
