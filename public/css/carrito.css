@@ -17,10 +17,13 @@ header section.buscador{
 }
 .header img{
  width: 5%;
+ height: 5%;
+ 
 }
 .header div{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 header section{
     display: flex;
@@ -33,13 +36,21 @@ header section.links a{
     text-decoration: none;
     font-size: 60%;
 }  
+header h1{
+    font-size: 22px;
+    padding: 1.5%;
+    color: white;
+}
+header input{
+    font-size: 10px;
+}
 
 /*home mobile*/
 .carrito_body{
     width: 100%;
 }
 main{
-   padding: 2%; 
+   padding:2%; 
 }
 section.mis_productos{
     background-color: #16191c;
@@ -134,13 +145,16 @@ div.subtitulos{
 button.boton_eliminar{
     margin-left: 14%;
 }
-p{
+main p{
     display: none;
 }
-div h3{
+main div h3{
     display: none;
 }
-form{
+main form{
+    display: none;
+}
+main section.productos_similares{
     display: none;
 }
 
@@ -172,16 +186,20 @@ form{
     .bloque_principal section{
         margin:0%;
         padding: 0%;
+       
     }
     section.bloque_izq {
         margin: 0%;
         padding: 0%;
         width: 100%;
-        
+    }
+    .bloque_izq section{
+        padding-top: 5%;
     }
     section.compra{
         margin-top:2%;
         margin-left: 2%;
+        padding:0%
         
     }
     section.bloque_principal{
@@ -266,12 +284,38 @@ form{
     .contenedor_bloques_pago{
         padding: 5%;
     }
-    .bloque_izq h3{
-        padding-top: 2%;
-    }
     input#codigo{
         background-color: #16191c;
     }
-    
+    main section.productos_similares{
+        display: none;
+    }
+}
 
+/*home desktop*/
+@media(min-width:1024px){
+section.bloque_principal{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+section.main{
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.bloque_izq_desktop{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.productos_similares article img{
+    background-color: white;
+    width: 10%;
+    height: 10%;
+    border-radius: 15% ;
+    
+}
 }
