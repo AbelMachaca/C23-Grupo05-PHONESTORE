@@ -304,12 +304,11 @@ section.main{
     flex-direction: row;
 }
 
-
-
 .bloque_izq_desktop{
     display: flex;
     flex-direction: column;
     width: 50%;
+    padding-right: 1%;
 }
 .productos_similares article img{
     background-color: white;
@@ -318,4 +317,47 @@ section.main{
     border-radius: 15% ;
     
 }
+main section.productos_similares{
+    display: block;
+}
+section.bloque_principal{
+    padding: 0%;
+    margin: 0%;
+}
+
+section.compra{
+    margin-top:0%;
+    margin-left:0%;
+    padding:0%;
+    border-radius: 0px 0px 20px 20px;
+     
+}
+section.bloque_izq section{
+border-radius: 20px 20px 0px 0px;
+margin: 0%;
+
+}
+section.bloque_izq section.pago{
+    border-radius: 0px 0px 0px 0px;
+}
+section.bloque_izq{
+    
+}
+div.botones{
+    padding: 0%;
+}
+section.bloque_izq_desktop section{
+    height: 50%;
+}
+section.productos_similares{
+    background-color: #16191c;
+    border-radius: 20px;
+    
+    
+}
+
+
+
+
+
 }
