@@ -9,3 +9,4 @@ https://serincubus2.atlassian.net/jira/software/projects/SCRUM/boards/1
 
 *Tambien Sergio comunico al grupo un problema tecnico q tiene con su computadora para q estemos todos avisados y podamos ayudarlo a realizar sus tareas en este sprint 
 
+

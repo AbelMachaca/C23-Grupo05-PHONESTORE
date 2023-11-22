@@ -122,7 +122,7 @@ width: auto;
 
 .card-item button {
  
-  border-radius: 30px; /* Cambiado de 10% a 10px para asegurar un valor fijo */
+  border-radius: 30px; 
   background-color: #080000;
   color: white;
   padding: 10px 30px; /* Ajustado el padding para un aspecto más equilibrado */
@@ -175,7 +175,7 @@ footer a {
     height: 150px;
   }
   .itemCarrouselArrows {
-    padding: 10px;
+    padding: 4%;
   }
 
   .imagen-medio {
@@ -199,7 +199,7 @@ footer a {
   }
 */
 
-.itemCarrouselTarjeta video {
+.itemCarrouselTarjeta  {
   width: 100%;
   height: 100%;
 }
@@ -313,14 +313,12 @@ footer a {
 
 
   .contenedor-cards {
-   margin: 30px;
-   padding: 20px;
-   border: 2opx;
-    display: flex;
-  flex-direction: row;
-  max-width: 100%;
-  
-   
+    
+      display: grid;
+      grid-gap: 15rem;
+      grid-template-columns: 50px 90px 50px;
+      grid-template-rows: 100px 120px;
+  }
    .home {
     max-width: 100%;
    }
@@ -329,7 +327,7 @@ footer a {
   
   .card-item {
     display: flex;
-    flex-direction: row;
+  
 
     text-align: center;
    
@@ -349,7 +347,7 @@ footer a {
   }
   
   .card-img {
-    display: flex;
+    display: table-footer-group;
   }
   
   .info {
@@ -396,7 +394,7 @@ footer a {
     height: auto;
   }
 
-}
+
 
 
 /* TABLET */
@@ -424,13 +422,13 @@ footer a {
     display: flex;
     justify-content: space-around;
     background-color: #080000;
-    padding: 20px;
+    padding: 10px;
     text-align: center;
   
   }
   
   footer a {
-    margin: 0 10px;
+    margin: 0 5%;
     color: #faf8f8;
     text-decoration: none;
   }
@@ -438,3 +436,5 @@ footer a {
   
 
 }
+
+
