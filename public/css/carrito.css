@@ -50,11 +50,11 @@ header input{
     width: 100%;
 }
 main{
-   padding:2%; 
+   padding:2% 2% 2% 2%; 
 }
 section.mis_productos{
     background-color: #16191c;
-    margin: 4% auto 0% auto;
+    margin: 0% auto 0% auto;
     border-radius: 20px;
     
 }
@@ -80,24 +80,28 @@ section.compra{
     color: white;
     text-align: center;
 }
-.mis_productos article{
-  padding: 4%;
+.mis_productos article {
+  padding: 2% 4% 2% 7%;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.mis_productos article img{
+.mis_productos div{
+   width: 13%;
+   height: 20%;
+}
+.mis_productos div img{
     background-color: white;
-    width: 10%;
-    height: 10%;
+    width: 60%;
+    height: 80%;
     border-radius: 15% ;
     
 }
 .mis_productos .fa-square-caret-down{
     color: white;
-    padding-top: 6%;
+    padding-top: 5%;
 }
 div.subtitulos{
     display: flex;
@@ -157,9 +161,23 @@ main form{
 main section.productos_similares{
     display: none;
 }
+.mis_productos section{
+    display: none;
+}
 
 /*home tablet */
 @media (min-width: 768px){
+    /*header*/
+    header input{
+        font-size: 15px;
+    }
+    header section.links a{
+        font-size: 80%;
+    }
+    header h1{
+        font-size: 32px;
+    }
+    /*main*/
     section.main{
         display: flex;
         flex-direction: column;
@@ -235,9 +253,13 @@ main section.productos_similares{
         padding-left: 10%;
         align-items: center;
     }
+    .mis_productos div{
+        width: 13%;
+        height: 20%;
+    }
     .mis_productos article img{
-        width: 5%;
-        height: 5%;
+        width: 40%;
+        height: 60%;
     }
     .mis_productos .fa-square-caret-down{
       padding: 0%;
@@ -309,6 +331,7 @@ section.main{
     flex-direction: column;
     width: 50%;
     padding-right: 1%;
+   
 }
 .productos_similares article img{
     background-color: white;
@@ -328,13 +351,13 @@ section.bloque_principal{
 section.compra{
     margin-top:0%;
     margin-left:0%;
-    padding:0%;
+    padding: 0% 10% 0% 10%;
     border-radius: 0px 0px 20px 20px;
      
 }
 section.bloque_izq section{
-border-radius: 20px 20px 0px 0px;
-margin: 0%;
+   border-radius: 20px 20px 0px 0px;
+   margin: 0%;
 
 }
 section.bloque_izq section.pago{
@@ -347,15 +370,127 @@ div.botones{
 section.bloque_izq_desktop section{
     height: 50%;
 }
+.mis_productos article img{
+    padding: 0;
+    margin: 0;
+}
+.mis_productos article{
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    align-items: start;
+    height: 50%;
+   
+}
 section.productos_similares{
     background-color: #16191c;
     border-radius: 20px;
-    
-    
+    margin-top: 1%;
+}
+section.envio{
+    font-size: 15px;
+    padding: 2% 6% 0px 6%;
+  
+}
+section.pago{
+    padding: 0%
+}
+section.mis_productos{
+ margin-bottom: 1%;
+ 
+}
+div.contenedor_bloques_pago{
+    padding: 2% 5% 0% 5%;
+}
+.botones button{
+    margin: 5%;
+}
+div.botones{
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+}
+.carrito_body{
+    height: 100%;
+}
+.productos_similares div{
+   background-color: #1e2126;
+   padding: 5% 0% 5% 0%;
+   margin: 2%;
+   border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+   width: 50%;
+   align-items: center;
+}
+.productos_similares article{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 5%;
+}
+.productos_similares article img{
+    height: 80px;
+    width: 60px;
+}
+.productos_similares article h6{
+    padding: 20% 15% 20% 15%;
+    color: white;
+    font-size: 8px;
+}
+.bloque_izq_desktop i{
+    display: none;
+}
+.bloque_izq_desktop h3{
+    padding-top: 5%;
+    font-size: 20px;
+}
+.mis_productos div{
+    background-color: #1e2126;
+    padding: 1% 8% 0% 8%;
+    margin: 2% 0% 0% 0%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%; 
+}
+.mis_productos article img{
+    height: 58px;
+    width: 35px;
+}
+.mis_productos article{
+    display: flex;
+    flex-direction: column;
+    margin: 2% 0% 0% 0%;
+    padding: 0% 2% 0% 2%;
+}
+.mis_productos article h6{
+    padding-left:5%; 
+    width: 40%;
+    color: white;
+    font-size: 8px;
+}
+input.uno{
+    margin-left: 5%;
+}
+input.dos{
+    border-radius: red;
+}
+.mis_productos section input{
+    height: 10px;
+    width: 10px;
+}
+.mis_productos section div {
+    padding: 0;
+    margin: 0;
+}
+.mis_productos section{
+    display: block;
 }
 
 
 
 
-
 }
+
