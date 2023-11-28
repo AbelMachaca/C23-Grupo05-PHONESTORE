@@ -1,7 +1,7 @@
 
 
 
-body {
+.body-register{
   background-color: rgba(22, 25, 28, 1);
   font-family: Arial, sans-serif;
   margin: 0;
@@ -15,8 +15,11 @@ body {
   display: none;
 }
 
+
+
 .logo{
-    display: none;
+    width: auto;
+    margin-right: 10%;
 }
 
 img{
@@ -37,13 +40,21 @@ img{
 }
 
 .login-container {
-
+  height: 100%;
   background-color: rgba(22, 25, 28, 1);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-  width: 400px;
+  margin-top: 30px;
   text-align: center;
+
+  display: flex;
+  align-items: center;
+}
+
+.form-registro{
+  
+  margin: auto;
 }
 
 .form-group {
@@ -190,6 +201,7 @@ div.social-buttons {
 @media (max-width: 431px) {
   .login-container {
   box-shadow: none;
+  
   }
 
   .fa-facebook {
@@ -203,7 +215,8 @@ div.social-buttons {
   }
   
   .logo{
-    margin-left: 25%;
+    margin-left: 80%;
+    margin-top: -150%;
     position: absolute;
     display: inline-block;
     width: 45px;
