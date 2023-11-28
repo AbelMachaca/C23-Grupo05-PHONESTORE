@@ -159,7 +159,7 @@ main section.productos_similares{
 }
 
 /*home tablet */
-@media (min-width: 768px){
+@media (min-width: 768px) {
     section.main{
         display: flex;
         flex-direction: column;
@@ -180,7 +180,7 @@ main section.productos_similares{
         display: none;
     }
     div{
-      display: flex; 
+     
       flex-direction: row; 
     }
     .bloque_principal section{

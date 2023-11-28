@@ -412,6 +412,7 @@ button {
     background-color: #080000;
     padding: 10px;
     text-align: center;
+    flex-direction: column-reverse;
   }
 
   footer a {
