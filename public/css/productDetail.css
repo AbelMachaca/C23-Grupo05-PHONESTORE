@@ -4,6 +4,34 @@
 
 }
 
+header{
+    background-color: #16191c;
+}
+header section.buscador{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2%;
+}
+.header img{
+ width: 5%;
+}
+.header div{
+    display: flex;
+    justify-content: center;
+}
+header section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+header section.links a{
+    color: white;
+    padding: 1%;
+    text-decoration: none;
+    font-size: 60%;
+}  
+
 .titulo_marca_modelo{
     text-align: center;
     font-weight: bolder;
@@ -118,4 +146,38 @@
 .separar_centrar_boton_submit{
     margin: 4% 0;
     text-align: center;
+}
+
+/*body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+
+.footer-container{
+    /*margin-top: 4%;*/
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+.footer-a{
+    display: block;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+@media(min-width:768px){
+    .footer-container{
+        display: flex;
+        text-align: center;
+    }
+
+    .footer-hijos{
+        margin-left: auto ;
+        margin-right: auto;
+    }
+    
 }
