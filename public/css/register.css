@@ -5,24 +5,21 @@
   background-color: rgba(22, 25, 28, 1);
   font-family: Arial, sans-serif;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
 }
 
-.fa-bars {
+.box-fa-bars {
   display: none;
 }
-
 
 
 .logo{
     width: auto;
     margin-right: 10%;
+    margin-left: 10%;
 }
 
-img{
+.img-general{
     width: 100%;
 }
 
@@ -62,6 +59,7 @@ img{
   margin-bottom: 20px;
   list-style: none;
   text-decoration: none;
+  
 }
 
 .form-group a:hover {
@@ -73,18 +71,20 @@ img{
     display: inline;
     color: #777777;
     text-decoration: none;
-  
-}
-.form-group2{
-    margin-bottom: 20px;
-    margin-right: 90px;
 }
 
+.form-group2{
+    margin-bottom: 10px;
+    
+}
+.caja-terminos-condiciones{
+  margin: auto;
+}
 .password-container {
   position: relative;
 }
 
-.eye-icon {
+.main-icon {
   position: absolute;
   right: 10px;
   top: 50%;
@@ -111,11 +111,11 @@ img{
   border-radius: 5px;
 }
 
-input:hover {
+.input-general:hover {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-.eye-icon {
+.main-icon {
   position: absolute;
   right: 10px;
   top: 50%;
@@ -124,7 +124,7 @@ input:hover {
   color: #777777;
 }
 
-button {
+.button-general {
   width: 100%;
   padding: 14px;
   background-color: rgba(30, 33, 38, 1);
@@ -132,24 +132,26 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-bottom: 20px
 }
 
-button:hover {
+.button-general:hover {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-h6 {
+.title-h6 {
   color: #777777;
-  
+  margin-bottom: 15px;
 }
 
 .h4-cuenta{
     font-size: 14px;
     margin-bottom: 5px;
     color: #777777;
+    margin-top: 10px;
 }
 
-h5{
+.tittle-h5{
     font-size: 12px;
     margin-top: 5px;
     color: #ffffff;
@@ -169,6 +171,15 @@ div.social-buttons {
   align-items: center;
 }
 
+
+#fb{
+  position: absolute;
+  color: #ffffff;
+  margin-left: 62%;
+  font-size: 14px;
+}
+
+
 .fa-facebook {
   position: absolute;
   color: #ffffff;
@@ -180,7 +191,7 @@ div.social-buttons {
   position: absolute;
   color: #ffffff;
   margin-left: 14%;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .social-buttons button {
@@ -198,12 +209,35 @@ div.social-buttons {
 }
 
 
+@media (max-width: 765px) and (min-width: 432px) {
+  #go{
+    left: -10px;
+  }
+  #fb{
+    left: -10px;
+  }
+}
+
+
 @media (max-width: 431px) {
   .login-container {
   box-shadow: none;
   
   }
+ #go{
+  margin-left: 12%;
+    font-size: 14px;
+ }
 
+ #fb{
+  margin-right: auto;
+    font-size: 15px;
+ }
+
+ #btn-fb{
+  margin-right: auto;
+    font-size: 15px;
+ }
   .fa-facebook {
     margin-right: auto;
     font-size: 15px;
@@ -215,11 +249,10 @@ div.social-buttons {
   }
   
   .logo{
-    margin-left: 80%;
-    margin-top: -150%;
-    position: absolute;
-    display: inline-block;
     width: 45px;
+    position: absolute;
+    top: 40px;
+    right: -20px;
    
   }
   .form-group2{
@@ -234,9 +267,25 @@ div.social-buttons {
     box-shadow: none;
     }
   
+#go{
+        position: static;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-left: 39%;
+        font-size: 14px;
+}
+
+#fb{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 57%;
+        font-size: 15px;
+}
+
     .fa-facebook {
         margin-left: 57%;
         font-size: 15px;
+        
       }
     
       .fa-google {
@@ -246,15 +295,15 @@ div.social-buttons {
     
       .social-buttons button {
         display: none;
+        padding: 14px;
       }
-    
+
   
     .logo{
-      margin-left: 73%;
-      margin-top: -200%;
-      position: absolute;
-      display: inline-block;
-      width: 45px;
+      width: 37px;
+    position: absolute;
+    top: 40px;
+    right: -20px;
      
     }
     .form-group2{
