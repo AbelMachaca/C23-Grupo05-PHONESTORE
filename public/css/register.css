@@ -92,7 +92,7 @@ img{
   cursor: pointer;
 }
 
-label {
+.label-general {
   font-size: 12px;
   text-align: left;
   display: block;
@@ -101,7 +101,7 @@ label {
   color: #cfcece;
 }
 
-input {
+.input-general {
   color: #ffffff;
   width: 100%;
   padding: 14px;
@@ -143,7 +143,7 @@ h6 {
   
 }
 
-h4{
+.h4-cuenta{
     font-size: 14px;
     margin-bottom: 5px;
     color: #777777;
