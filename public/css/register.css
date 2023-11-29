@@ -179,21 +179,28 @@ div.social-buttons {
   font-size: 14px;
 }
 
-
+/*
 .fa-facebook {
   position: absolute;
   color: #ffffff;
   margin-left: 60%;
   font-size: 14px;
-}
+}*/
 
+#go{
+  position: absolute;
+  color: #ffffff;
+  margin-left: 14%;
+  font-size: 14px;
+}
+/*
 .fa-google {
   position: absolute;
   color: #ffffff;
   margin-left: 14%;
   font-size: 14px;
 }
-
+*/
 .social-buttons button {
   background-color: rgba(30, 33, 38, 1);
   margin: 0px 10px;
@@ -281,7 +288,7 @@ div.social-buttons {
   margin-left: 57%;
         font-size: 15px;
 }
-
+   /*
     .fa-facebook {
         margin-left: 57%;
         font-size: 15px;
@@ -292,7 +299,7 @@ div.social-buttons {
         margin-left: 39%;
         font-size: 14px;
       }
-    
+    */
       .social-buttons button {
         display: none;
         padding: 14px;
