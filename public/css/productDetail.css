@@ -1,0 +1,388 @@
+* {
+    box-sizing: border-box;
+    margin : 0;
+    padding : 0;
+    text-decoration: none;
+    list-style: none;  
+    font-family:'Roboto',sans-serif;
+  }
+
+
+.fondo{
+
+    background-color: var(--color-blanco);
+
+}
+
+header{
+    background-color: #16191c;
+}
+header section.buscador{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2%;
+}
+.header img{
+ width: 5%;
+}
+.header div{
+    display: flex;
+    justify-content: center;
+}
+header section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+header section.links a{
+    color: white;
+    padding: 1%;
+    text-decoration: none;
+    font-size: 60%;
+}  
+
+.titulo_marca_modelo{
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 2%;
+}
+
+.celular_frontal{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+
+.dimensionar_imagen_celu_principal{
+    width: 20%;
+    height: auto;
+}
+
+.caja_imagen_celu_frente_dorso_lateral{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+
+.texto_color{
+    margin-right: 2%;
+}
+.formulario_opcion_color{
+    display: flex;
+    justify-content: center;
+}
+
+.circulo_tamaño{
+    transform: scale(1.5);
+    margin-left: 4%;
+   
+
+    
+}
+
+
+.circulo_purpura[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 2px solid var(--color-azul-claro); /* Cambia el color del borde del círculo */
+        border-radius: 50%; /* Hace que el borde sea redondo para formar un círculo */
+        width: 15px; /* Tamaño del círculo */
+        height: 15px; /* Tamaño del círculo */
+        outline: none;
+        transition: 0.2s all linear;
+        background-color: var(--color-purpura);
+        cursor:pointer;
+}
+.circulo_negro[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /*border: 2px solid var(--color-azul-claro); /* Cambia el color del borde del círculo */
+    border-radius: 50%; /* Hace que el borde sea redondo para formar un círculo */
+    width: 13px; /* Tamaño del círculo */
+    height: 13px; /* Tamaño del círculo */
+    outline: none;
+    transition: 0.2s all linear;
+    background-color: var(--color-negro);
+    cursor:pointer;
+}
+
+.descripcion_del_equipo{
+    text-align: center;
+    margin-top: 4%;
+    padding:0 6% 0 6%;
+}
+
+.snap_h6{
+    margin: 3% 1% 0 1%;
+    display: flex;
+    justify-content: center;
+          
+}
+
+.caracteristicas{
+    width: 85px;
+    height: auto;
+    text-align:center;
+    margin: 0 2%;
+       
+    
+}
+
+.boton_comprar{
+    width: 160px;
+    height: 25px;
+    background-color: var(--color-negro);
+    color:var(--color-azul);
+    font-weight: bolder;
+    font-size:small;
+    border-radius: 10px;
+}
+
+.boton_agregar{
+    width: 160px;
+    height: 25px;
+    background-color: var(--color-negro);
+    color:var(--color-blanco);
+    font-weight: bolder;
+    font-size:small;
+    border-radius: 10px;
+    margin-top: 2%;
+}
+
+.separar_centrar_boton_submit{
+    margin: 4% 0;
+    text-align: center;
+}
+
+/*body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+
+.footer-container{
+    /*margin-top: 4%;*/
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+.footer-a{
+    display: block;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+@media(min-width:768px){
+    .footer-container{
+        display: flex;
+        text-align: center;
+    }
+
+    .footer-hijos{
+        margin-left: auto ;
+        margin-right: auto;
+    }
+    
+}
+
+
+@media (min-width:320px) and (max-whidth:320px){
+ 
+}
+   
+
+
+@media (min-width:768px) and (max-width:1023px){
+ .titulo_marca_modelo{
+   text-align: center;
+   font-size: 5vw;
+   margin-top:10vw;
+}
+
+.caja_imagen_celu_frente_dorso_lateral img{
+   
+   width: 164px;
+   height: 200px;
+   
+   margin: 0 10%;
+     
+
+}
+
+
+.formulario_opcion_color{
+ margin-top: 5%;
+ transform: scale(2);
+
+}
+
+.descripcion_del_equipo{
+ font-size: 3vw;
+ 
+}
+
+.caracteristicas{
+ width: 192px;
+ height: auto;
+ font-size: 3vw;
+ flex-grow: 1;
+ 
+}
+
+.boton_comprar{
+  
+ width: 320px;
+ height: 50px;
+ border-radius: 20px;
+ font-size: 3vw;
+   
+   
+}
+
+
+.boton_agregar{
+
+ width: 320px;
+ height: 50px;
+ border-radius: 20px;
+ font-size: 3vw;
+
+}
+}
+@media (min-width:1024px) and (max-width:1440px){
+
+.ordenar_body main{
+ display: flex;
+ position: relative;
+ flex-wrap: wrap;
+   
+} 
+
+.titulo_desktop{
+ 
+ width: 50%;
+ 
+ margin-top: 10%;
+ 
+ font-size: 2vw;
+ text-align: start;
+
+ 
+
+ 
+}
+.desktop_celular_frontal{
+ width: 50%;
+ height: 300px;
+ 
+ margin-top:10%;
+ margin-bottom: 5%;  
+ order:-1;
+ 
+
+}
+
+.desktop_celu_frente_dorso_lateral{
+ width: 50%;
+ 
+ margin-bottom: 0;
+}
+
+.desktop_celu_frente_dorso_lateral img{
+ width:160px;
+ height: 200;
+}
+
+
+
+.descripcion_del_equipo{
+ margin-top: 0%;
+ width: 50%;
+ margin-bottom: 10%;  
+
+}
+
+.desktop_snap_h6{
+ position: absolute;
+ margin: 0%;
+ width: 50%;
+ top:35%;
+ left:50%;
+
+ flex-wrap: wrap;  
+ 
+
+}
+
+.desktop_caracteristicas{
+ width: 50%;
+ height: 50%;
+
+ font-size: 1.5vw;
+ margin: 0;
+ text-align: left;
+ margin-top: 1%;
+ 
+}
+
+.formulario_opcion_color{
+ margin-top: 5%;
+ transform: scale(2);
+ position: absolute;
+ top:55%;
+ left: 45%;
+ width: 30%;
+
+}
+
+
+.circulo_tamaño{
+ transform: scale(1.5);
+ margin-left: 4%;
+
+
+}
+
+.desktop_posicion_inferior_descripcion_h5{
+ position:absolute;
+ width: 80%;
+ bottom: -15%;
+ left: 50%;
+ transform: scale(2);
+
+
+}
+
+.desktop_botones_submit{
+ position: absolute;
+ width: 600px;
+ margin: 0%;
+ top: 55%;
+ left: 60%;
+ transform: scale(2);
+}
+
+.boton_comprar{
+  
+ width: 400px;
+ height: 50px;
+ border-radius: 20px;
+ font-size: 2vw;
+
+}
+.boton_agregar{
+  
+ width: 400px;
+ height: 50px;
+ border-radius: 20px;
+ font-size: 2vw;
+
+}
+}
