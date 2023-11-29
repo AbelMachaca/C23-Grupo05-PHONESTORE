@@ -91,8 +91,8 @@ img{
   transform: translateY(-50%);
   cursor: pointer;
 }
-/*
-label {
+
+.label-general {
   font-size: 12px;
   text-align: left;
   display: block;
@@ -101,7 +101,7 @@ label {
   color: #cfcece;
 }
 
-input {
+.input-general {
   color: #ffffff;
   width: 100%;
   padding: 14px;
@@ -109,7 +109,7 @@ input {
   background-color: rgba(30, 33, 38, 1);
   border: none;
   border-radius: 5px;
-}*/
+}
 
 input:hover {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
@@ -143,11 +143,11 @@ h6 {
   
 }
 
-/*h4{
+.h4-cuenta{
     font-size: 14px;
     margin-bottom: 5px;
     color: #777777;
-}*/
+}
 
 h5{
     font-size: 12px;
