@@ -155,13 +155,13 @@ div.subtitulos{
 button.boton_eliminar{
     margin-left: 14%;
 }
-main p{
+.bloque_izq  p{
     display: none;
 }
-main div h3{
+.envio div h3{
     display: none;
 }
-main form{
+.bloque_der_pago form{
     display: none;
 }
 main section.productos_similares{
@@ -170,6 +170,24 @@ main section.productos_similares{
 .mis_productos section{
     display: none;
 }
+/*footer mobile*/
+.footer_General {
+    background-color: #000120;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 5% 1% 5% 1%;
+  }
+  
+ a.links_footer {
+    width: 20%;
+    padding: 0%;
+    color: #faf8f8;
+    font-size: 8px;
+    margin: 0;
+  }
 
 /*home tablet */
 @media (min-width: 768px){

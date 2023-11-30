@@ -176,8 +176,9 @@ footer a {
 }
 
 .card-item {
-  width: 80%;
-  margin-bottom: 20px;
+
+  width: 90%;
+  margin-bottom: px;
 
   /*  .card-img img {
     width: 100%;
@@ -317,7 +318,7 @@ footer a {
 }
 
 .card-item {
-  display: flex;
+  display: grid;
 
   text-align: center;
 }
@@ -327,14 +328,17 @@ footer a {
 }
 
 .card-item img {
-  width: 200px;
-  height: 220px;
+  width: 160px;
+  height: 210px;
 }
 
 .card-img {
   display: table-footer-group;
 }
-
+.samsu {
+  width: 80%; /* O un valor absoluto como 300px */
+  height: auto;
+}
 .info {
   display: flex;
   flex-direction: column;
@@ -381,6 +385,7 @@ footer a {
 
 button {
   background-color: aquamarine;
+
 }
 
 /* TABLET */

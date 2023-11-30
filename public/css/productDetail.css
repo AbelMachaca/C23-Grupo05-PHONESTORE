@@ -14,8 +14,10 @@
 
 }
 
+
+/*header mobile*/
 header{
-    background-color: #000120 ;
+    background-color:#000120;
 }
 header section.buscador{
     display: flex;
@@ -23,12 +25,19 @@ header section.buscador{
     justify-content: center;
     margin: 2%;
 }
-.header img{
- width: 5%;
+.header a img{
+ width: 100%;
+ height: 100%;
+}
+.header a.icono_header{
+    width: 5%;
+    height: 5%;
+    padding-top:0.5%;
 }
 .header div{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 header section{
     display: flex;
@@ -41,11 +50,20 @@ header section.links a{
     text-decoration: none;
     font-size: 60%;
 }  
+header h1{
+    font-size: 22px;
+    padding: 1.5%;
+    color: white;
+}
+header input{
+    font-size: 10px;
+}  
 
+/*main mobile*/
 .titulo_marca_modelo{
     text-align: center;
     font-weight: bolder;
-    margin-top: 2%;
+    /*margin-top: %;*/
 }
 
 .celular_frontal{
@@ -269,7 +287,7 @@ header section.links a{
  
  width: 50%;
  
- margin-top: 10%;
+ margin-top: 6%;
  
  font-size: 2vw;
  text-align: start;
@@ -280,10 +298,10 @@ header section.links a{
 }
 .desktop_celular_frontal{
  width: 50%;
- height: 300px;
+ height: 225px;
  
- margin-top:10%;
- margin-bottom: 5%;  
+ margin-top:6%;
+ margin-bottom: 0%;  
  order:-1;
  
 
@@ -297,7 +315,7 @@ header section.links a{
 
 .desktop_celu_frente_dorso_lateral img{
  width:160px;
- height: 200;
+ height: 300px;
 }
 
 
@@ -305,7 +323,7 @@ header section.links a{
 .descripcion_del_equipo{
  margin-top: 0%;
  width: 50%;
- margin-bottom: 10%;  
+
 
 }
 
@@ -313,7 +331,7 @@ header section.links a{
  position: absolute;
  margin: 0%;
  width: 50%;
- top:35%;
+ top:33%;
  left:50%;
 
  flex-wrap: wrap;  
@@ -333,7 +351,7 @@ header section.links a{
 }
 
 .formulario_opcion_color{
- margin-top: 5%;
+ 
  transform: scale(2);
  position: absolute;
  top:55%;
@@ -352,21 +370,25 @@ header section.links a{
 
 .desktop_posicion_inferior_descripcion_h5{
  position:absolute;
- width: 80%;
- bottom: -15%;
- left: 50%;
+ width: 33%;
+ bottom: -9%;
+ left: 34%;
  transform: scale(2);
 
 
+}
+
+.desktop_descripcion_h5{
+    width: 100%;
 }
 
 .desktop_botones_submit{
  position: absolute;
  width: 600px;
  margin: 0%;
- top: 55%;
- left: 60%;
- transform: scale(2);
+ top: 65%;
+ left: 49%;
+ transform: scale(1);
 }
 
 .boton_comprar{
@@ -384,5 +406,12 @@ header section.links a{
  border-radius: 20px;
  font-size: 2vw;
 
+}
+
+.desktop_footer{
+    margin-top: 11%;
+    color: white;
+    background-color: black;
+    text-align: center;
 }
 }
