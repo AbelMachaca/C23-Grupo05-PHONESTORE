@@ -7,7 +7,7 @@
 
 /*header mobile*/
 header{
-    background-color: #000120 ;
+    background-color:#000120;
 }
 header section.buscador{
     display: flex;
@@ -15,10 +15,14 @@ header section.buscador{
     justify-content: center;
     margin: 2%;
 }
-.header img{
- width: 5%;
- height: 5%;
- 
+.header a img{
+ width: 100%;
+ height: 100%;
+}
+.header a.icono_header{
+    width: 5%;
+    height: 5%;
+    padding-top:0.5%;
 }
 .header div{
     display: flex;
