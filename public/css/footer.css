@@ -6,11 +6,11 @@ body{
 
 .footer-container{
     color: white;
-    background-color: black;
+    background-color: #000120;
     text-align: center;
 }
 
-.footer-a{
+.footer-container a{
     display: block;
     color: white;
     margin-top: 10px;
