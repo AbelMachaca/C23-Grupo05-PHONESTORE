@@ -1,161 +1,186 @@
 .body_login {
-    background-color: rgba(22, 25, 28, 1);
-    font-family: Arial, sans-serif;
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
+  background-color: rgba(22, 25, 28, 1);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.fa-bars {
+  display: none;
+}
+
+.login-container-body img {
+  width: 20%;
+  opacity: 0.5;
+}
+
+.login-container-body h3 {
+  padding: 0%;
+  margin: 0%;
+  margin-bottom: 5%;
+  color: #c1c1c1;
+}
+
+.login-container-body {
+  background-color: rgba(22, 25, 28, 1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  width: 400px;
+  text-align: center;
+  margin: auto;
+}
+
+.form-group-login {
+  font-size: 14px;
+  margin-bottom: 20px;
+  list-style: none;
+  text-decoration: none;
+}
+
+.form-group-login a:hover {
+  color: #ffffff;
+}
+
+.form-group-login a {
+  color: #777777;
+  text-decoration: none;
+}
+
+.password-container-body {
+  position: relative;
+}
+
+.form-group-login label {
+  font-size: 12px;
+  text-align: left;
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #cfcece;
+}
+
+.form-group-login input {
+  color: #ffffff;
+  width: 100%;
+  padding: 14px;
+  box-sizing: border-box;
+  background-color: rgba(30, 33, 38, 1);
+  border: none;
+  border-radius: 5px;
+}
+
+.form-group-login input:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777777;
+}
+
+.form-group-login button {
+  width: 100%;
+  padding: 14px;
+  background-color: rgba(30, 33, 38, 1);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-group-login button:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.boton-inicia-sesion {
+  width: 100%;
+  padding: 14px;
+  background-color: rgba(30, 33, 38, 1);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.boton-inicia-sesion:hover{
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+
+}
+
+.body_login h6 {
+  color: #777777;
+  margin: 5%;
+}
+
+div.social-buttons-login {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fa-facebook {
+  position: absolute;
+  color: #ffffff;
+  margin-left: 62%;
+  font-size: 14px;
+}
+
+.fa-google {
+  position: absolute;
+  color: #ffffff;
+  margin-left: 14%;
+  font-size: 13px;
+}
+
+.social-buttons-login button {
+  background-color: rgba(30, 33, 38, 1);
+  margin: 0px 10px;
+  width: 100%;
+  padding: 14px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.social-buttons-login button:hover{
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/*-------------------------------- Medidas Mobile --------------------------------------*/
+
+@media (max-width: 426px) {
+  .login-container-body {
+  box-shadow: none;
   }
-  
-  .fa-bars {
+
+  .fa-facebook {
+    margin-left: 57%;
+    font-size: 15px;
+  }
+
+  .fa-google {
+    margin-left: 39%;
+    font-size: 14px;
+  }
+
+  .social-buttons-login button {
     display: none;
   }
-  
-  .login-container-body img {
-    width: 20%;
-    opacity: 0.5;
-  }
-  
-  .login-container-body h3 {
-    padding: 0%;
-    margin: 0%;
-    margin-bottom: 5%;
-    color: #c1c1c1;
-  }
-  
-  .login-container-body {
-    background-color: rgba(22, 25, 28, 1);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    width: 400px;
-    text-align: center;
-    margin: auto;
-  }
-  
-  .form-group-login {
-    font-size: 14px;
-    margin-bottom: 20px;
-    list-style: none;
-    text-decoration: none;
-  }
-  
-  .form-group-login a:hover {
-    color: #ffffff;
-  }
-  
-  .form-group-login a {
-    color: #777777;
-    text-decoration: none;
-  }
-  
-  .password-container-body {
-    position: relative;
-  }
-  
-  .form-group-login label {
-    font-size: 12px;
-    text-align: left;
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #cfcece;
-  }
-  
-  .form-group-login input {
-    color: #ffffff;
-    width: 100%;
-    padding: 14px;
-    box-sizing: border-box;
-    background-color: rgba(30, 33, 38, 1);
-    border: none;
-    border-radius: 5px;
-  }
-  
-  .form-group-login input:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  }
-  
-  .eye-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #777777;
-  }
-  
-  .form-group-login button {
-    width: 100%;
-    padding: 14px;
-    background-color: rgba(30, 33, 38, 1);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .form-group-login button:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  }
-  
- .body_login h6 {
-    color: #777777;
-    margin: 5%;
-  }
-  
-  div.social-buttons-login {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  
-  .fa-facebook {
+
+  .fa-bars {
+    margin-left: -38%;
     position: absolute;
     color: #ffffff;
-    margin-left: 62%;
-    font-size: 14px;
+    display: inline-block;
+    width: 10%;
+    font-size: 20px;
   }
-  
-  .fa-google {
-    position: absolute;
-    color: #ffffff;
-    margin-left: 14%;
-    font-size: 13px;
-  }
-  
-  .social-buttons-login button {
-    background-color: rgba(30, 33, 38, 1);
-    margin: 0px 10px;
-  }
-  
-  /*-------------------------------- Medidas Mobile --------------------------------------*/
-  
-  @media (max-width: 426px) {
-    .login-container-body {
-    box-shadow: none;
-    }
-  
-    .fa-facebook {
-      margin-left: 57%;
-      font-size: 15px;
-    }
-  
-    .fa-google {
-      margin-left: 39%;
-      font-size: 14px;
-    }
-  
-    .social-buttons-login button {
-      display: none;
-    }
-  
-    .fa-bars {
-      margin-left: -38%;
-      position: absolute;
-      color: #ffffff;
-      display: inline-block;
-      width: 10%;
-      font-size: 20px;
-    }
-  }
+}
