@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.header div img {
+  width: 4%;
+}
+
 #body {
   font-family: "Roboto", sans-serif;
   margin: 0;
