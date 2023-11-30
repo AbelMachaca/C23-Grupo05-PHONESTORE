@@ -5,3 +5,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 @import"./carrito.css";
 @import"./index.css";
+<<<<<<< HEAD
+=======
+@import"./productDetail.css";
+@import"./register.css";
+@import"./login.css";
+
+
+:root{
+    --color-blanco :#fff;
+    --color-negro:#16191C;
+    --color-azul:#3969FC;
+    --color-azul-claro: #3F92F3;
+    --color-purpura: #CFD0EF;
+    --color-azul-oscuro:#000120 
+     }
+     
+
+
+
+>>>>>>> 633bb0e67aaa6a7c95d028590651174440ffcd94

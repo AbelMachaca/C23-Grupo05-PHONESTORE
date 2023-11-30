@@ -1,4 +1,4 @@
-body {
+.body_login {
     background-color: rgba(22, 25, 28, 1);
     font-family: Arial, sans-serif;
     margin: 0;
@@ -11,19 +11,19 @@ body {
     display: none;
   }
   
-  .login-container img {
+  .login-container-body img {
     width: 20%;
     opacity: 0.5;
   }
   
-  .login-container h3 {
+  .login-container-body h3 {
     padding: 0%;
     margin: 0%;
     margin-bottom: 5%;
     color: #c1c1c1;
   }
   
-  .login-container {
+  .login-container-body {
     background-color: rgba(22, 25, 28, 1);
     padding: 20px;
     border-radius: 10px;
@@ -33,35 +33,27 @@ body {
     margin: auto;
   }
   
-  .form-group {
+  .form-group-login {
     font-size: 14px;
     margin-bottom: 20px;
     list-style: none;
     text-decoration: none;
   }
   
-  .form-group a:hover {
+  .form-group-login a:hover {
     color: #ffffff;
   }
   
-  .form-group a {
+  .form-group-login a {
     color: #777777;
     text-decoration: none;
   }
   
-  .password-container {
+  .password-container-body {
     position: relative;
   }
   
-  .eye-icon {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-  }
-  
-  label {
+  .form-group-login label {
     font-size: 12px;
     text-align: left;
     display: block;
@@ -70,7 +62,7 @@ body {
     color: #cfcece;
   }
   
-  input {
+  .form-group-login input {
     color: #ffffff;
     width: 100%;
     padding: 14px;
@@ -80,7 +72,7 @@ body {
     border-radius: 5px;
   }
   
-  input:hover {
+  .form-group-login input:hover {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   }
   
@@ -93,7 +85,7 @@ body {
     color: #777777;
   }
   
-  button {
+  .form-group-login button {
     width: 100%;
     padding: 14px;
     background-color: rgba(30, 33, 38, 1);
@@ -103,15 +95,16 @@ body {
     cursor: pointer;
   }
   
-  button:hover {
+  .form-group-login button:hover {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   }
   
-  h6 {
+ .body_login h6 {
     color: #777777;
+    margin: 5%;
   }
   
-  div.social-buttons {
+  div.social-buttons-login {
     position: relative;
     display: flex;
     align-items: center;
@@ -131,7 +124,7 @@ body {
     font-size: 13px;
   }
   
-  .social-buttons button {
+  .social-buttons-login button {
     background-color: rgba(30, 33, 38, 1);
     margin: 0px 10px;
   }
@@ -139,7 +132,7 @@ body {
   /*-------------------------------- Medidas Mobile --------------------------------------*/
   
   @media (max-width: 426px) {
-    .login-container {
+    .login-container-body {
     box-shadow: none;
     }
   
@@ -153,7 +146,7 @@ body {
       font-size: 14px;
     }
   
-    .social-buttons button {
+    .social-buttons-login button {
       display: none;
     }
   
