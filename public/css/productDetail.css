@@ -371,9 +371,9 @@ header input{
 .desktop_posicion_inferior_descripcion_h5{
  position:absolute;
  width: 33%;
- bottom: -9%;
+ bottom: 5%;
  left: 34%;
- transform: scale(2);
+ transform: scale(1.5);
 
 
 }
@@ -384,10 +384,10 @@ header input{
 
 .desktop_botones_submit{
  position: absolute;
- width: 600px;
+ width: 560px;
  margin: 0%;
- top: 65%;
- left: 49%;
+ top: 62%;
+ left: 44%;
  transform: scale(1);
 }
 
@@ -408,10 +408,4 @@ header input{
 
 }
 
-.desktop_footer{
-    margin-top: 11%;
-    color: white;
-    background-color: black;
-    text-align: center;
-}
 }
