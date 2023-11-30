@@ -174,23 +174,6 @@ main section.productos_similares{
     display: none;
 }
 /*footer mobile*/
-.footer_General {
-    background-color: #000120;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    width: 100%;
-    margin: 0;
-    padding: 5% 1% 5% 1%;
-  }
-  
- a.links_footer {
-    width: 20%;
-    padding: 0%;
-    color: #faf8f8;
-    font-size: 8px;
-    margin: 0;
-  }
 
 /*home tablet */
 @media (min-width: 768px){
