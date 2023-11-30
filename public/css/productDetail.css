@@ -287,7 +287,7 @@ header input{
  
  width: 50%;
  
- margin-top: 10%;
+ margin-top: 6%;
  
  font-size: 2vw;
  text-align: start;
@@ -298,10 +298,10 @@ header input{
 }
 .desktop_celular_frontal{
  width: 50%;
- height: 300px;
+ height: 225px;
  
- margin-top:10%;
- margin-bottom: 5%;  
+ margin-top:6%;
+ margin-bottom: 0%;  
  order:-1;
  
 
@@ -315,7 +315,7 @@ header input{
 
 .desktop_celu_frente_dorso_lateral img{
  width:160px;
- height: 200;
+ height: 300px;
 }
 
 
@@ -323,7 +323,7 @@ header input{
 .descripcion_del_equipo{
  margin-top: 0%;
  width: 50%;
- margin-bottom: 10%;  
+
 
 }
 
@@ -331,7 +331,7 @@ header input{
  position: absolute;
  margin: 0%;
  width: 50%;
- top:35%;
+ top:33%;
  left:50%;
 
  flex-wrap: wrap;  
@@ -351,7 +351,7 @@ header input{
 }
 
 .formulario_opcion_color{
- margin-top: 5%;
+ 
  transform: scale(2);
  position: absolute;
  top:55%;
@@ -370,21 +370,25 @@ header input{
 
 .desktop_posicion_inferior_descripcion_h5{
  position:absolute;
- width: 80%;
- bottom: -15%;
- left: 50%;
+ width: 33%;
+ bottom: -9%;
+ left: 34%;
  transform: scale(2);
 
 
+}
+
+.desktop_descripcion_h5{
+    width: 100%;
 }
 
 .desktop_botones_submit{
  position: absolute;
  width: 600px;
  margin: 0%;
- top: 55%;
- left: 60%;
- transform: scale(2);
+ top: 65%;
+ left: 49%;
+ transform: scale(1);
 }
 
 .boton_comprar{
@@ -402,5 +406,12 @@ header input{
  border-radius: 20px;
  font-size: 2vw;
 
+}
+
+.desktop_footer{
+    margin-top: 11%;
+    color: white;
+    background-color: black;
+    text-align: center;
 }
 }
