@@ -170,6 +170,9 @@ main section.productos_similares{
 .mis_productos section{
     display: none;
 }
+.mis_productos img.cantidad_compra{
+    display: none;
+}
 /*footer mobile*/
 .footer_General {
     background-color: #000120;
@@ -510,6 +513,10 @@ input.dos{
     margin: 0;
 }
 .mis_productos section{
+    display: block;
+}
+.mis_productos img.cantidad_compra{
+    width: 15%;
     display: block;
 }
 
