@@ -9,4 +9,20 @@ https://serincubus2.atlassian.net/jira/software/projects/SCRUM/boards/1
 
 *Tambien Sergio comunico al grupo un problema tecnico q tiene con su computadora para q estemos todos avisados y podamos ayudarlo a realizar sus tareas en este sprint 
 
+Retrospectiva Estrela de Mar
+1. Comenzar a hacer.
+2. Hacer más.
+3. Continuar haciendo.
+4. Hacer menos.
+5. Dejar de hacer.
 
+1-comenzar hacer comunicar por donde va cada uno en el proyecto.
+
+2-Hacer mas . compartir informacion en varios medios de comunicacion como slack,whatsapp
+
+3-Continuar haciendo . estudiar los contenidos dados en clase
+
+4-Hacer menos .dejar cambios a ultimo momento 
+
+
+5-Dejar de hacer .atrasar las daylis 
