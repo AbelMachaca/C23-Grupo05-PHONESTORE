@@ -1,0 +1,36 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+  
+<body class="contenedor_body_dashboard">
+  <h2>Lista de Productos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Imagen</th>
+        <th>Detalles</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% products.forEach(product => { %>
+        <tr>
+          <td><%= product.id %></td>
+          <td><%= product.name %></td>
+          <td><img src="<%= product.image %>" alt="<%= product.name %>"></td>
+          <td><%= product.detail %></td>
+          <td>
+            <a href="/product/<%= product.id %>">Editar</a>
+            <a href="/update/<%= product.id %>">Actualizar</a>
+            <a href="/delete/<%= product.id %>">Eliminar</a>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  <form action="/create" method="post">
+  <button type="submit">Crear Producto</button>
+</form>
+</body>
+</html>
