@@ -1,0 +1,178 @@
+<!-- Head -->
+<%- include("./partials/head.ejs") %>
+  
+<body>
+
+<!-- Header -->  
+<%- include("./partials/header.ejs")%>
+
+    <div class="carrousel">
+      <div class="conteCarrousel">
+        <div class="itemCarrousel" id="itemCarrousel-1">
+          <div class="itemCarrouselTarjeta">
+            <img
+              src="./images/imageHome/foto1.png"
+              alt="item-1-Carrousel"
+              class="imagen-pequena"
+            />
+          </div>
+          <div class="itemCarrouselArrows">
+            <a href="#itemCarrousel-3">
+              <i class="fas fa-chevron-left"></i>
+            </a>
+            <a href="#itemCarrousel-2">
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="itemCarrousel" id="itemCarrousel-2">
+          <div class="itemCarrouselTarjeta">
+            <img
+              src="./images/imageHome/banner.webp"
+              alt="item-2-Carrousel"
+              class="imagen-medio"
+            />
+          </div>
+          <div class="itemCarrouselArrows">
+            <a href="#itemCarrousel-1">
+              <i class="fas fa-chevron-left"></i>
+            </a>
+            <a href="#itemCarrousel-3">
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="itemCarrousel" id="itemCarrousel-3">
+          <div class="itemCarrouselTarjeta">
+            <img
+              src="./images/imageHome/banner2.jpg"
+              alt="item-2-Carrousel"
+              class="imagen-grande"
+            />
+          </div>
+          <div class="itemCarrouselArrows">
+            <a href="#itemCarrousel-2">
+              <i class="fas fa-chevron-left"></i>
+            </a>
+            <a href="#itemCarrousel-1">
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="conteCarrouselController">
+        <a href="#itemCarrousel-1">•</a>
+        <a href="#itemCarrousel-2">•</a>
+        <a href="#itemCarrousel-3">•</a>
+      </div>
+    </div>
+
+    <section class="banner">
+      <div class="envio-gratis">
+        <img src="./images/imageHome/camion.webp" alt="Camión de Envío" />
+        <p>Envíos Gratis</p>
+      </div>
+
+      <div class="garantia">
+        <img src="./images/imageHome/garantia.png" alt="Símbolo de Garantía" />
+        <p>Garantía 12 meses</p>
+      </div>
+
+      <div class="contacto">
+        <img src="./images/imageHome/contactanos.png" alt="Camión de Envío" />
+        <p>
+          Contactenos<br />
+          0800-123-1234
+        </p>
+      </div>
+    </section>
+
+    <section class="home">
+      <div class="contenedor-cards">
+        <div class="card-item">
+          <div class="card-img">
+            <a href="/productDetail">
+            <img src="/images/imageHome/iphone.jpg" alt="" /></a>
+          </div>
+          <div class="info">
+            <p>IPHONE</p>
+            <p>$120.000</p>
+
+           <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-img">
+            <a href="/productDetail">
+            <img src="/images/imageHome/lg.webp" alt="" /></a>
+          </div>
+
+          <div class="info">
+            <p>LG</p>
+            <p>$90.000</p>
+
+            <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-img">
+            <a href="/productDetail">
+            <img src="/images/imageHome/motorola2.png" alt="" /></a>
+          </div>
+          <div class="info">
+            <p>MOTOROLA</p>
+            <p>$100.000</p>
+
+            <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-img">
+            <a href="/productDetail">
+            <img src="/images/imageHome/xiaomi.webp" alt="" ></a>
+            
+          </div>
+          <div class="info">
+            <p>XIOMI</p>
+            <p>$50000</p>
+
+            <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-img">
+            <a href="/productDetail">
+            <img src="/images/imageHome/sam.jpg" alt="" class="samsu" ></a>
+          </div>
+          <div class="info">
+            <p>SAMSUNG</p>
+            <p>$120000</p>
+
+            <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
+          </div>
+        </div>
+
+        <div class="card-item">
+          <div class="card-img">
+            <a href="/productDetail">
+            <img src="/images/imageHome/tcl.jpg" alt="" /></a>
+          </div>
+          <div class="info">
+            <p>TCL</p>
+            <p>$80.000</p>
+
+            <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Footer -->
+<%- include("./partials/footer.ejs")%>
+   
+  </body>
+</html>
