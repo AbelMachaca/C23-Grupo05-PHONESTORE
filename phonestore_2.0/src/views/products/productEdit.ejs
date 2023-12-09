@@ -1,0 +1,74 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+
+
+<body class="body-editProduct">
+    <div class="login-container-editProduct">
+    
+        
+          
+      <div class="form-registro-editProduct">
+        
+      <h1>Editar Producto</h1>
+      <form>
+        <div class="form-group-editProduct">
+          <label class="label-general-editProduct" for="nombre">Nombre de producto</label>
+          <input
+            class="input-general-editProduct"
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder=""
+            required
+          />
+        </div>
+        
+        <div class="form-group-editProduct">
+            <label class="label-general-editProduct" for="imagen">Imagen</label>
+            <input
+              class="input-general-editProduct"
+              type="file"
+              id="imagen"
+              name="imagen"
+              placeholder=""
+              required
+            />
+          </div>
+          <div class="form-group-editProduct">
+            <label class="label-general-editProduct" for="descripcion">Descripción</label>
+            <textarea 
+            class="input-general-editProduct"
+            name="descripcion" 
+            id="descripcion" 
+            cols="30" 
+            rows="10"
+            placeholder=""
+            required
+            ></textarea>
+            
+          </div>
+          <div class="form-group-editProduct">
+            <label class="label-general-editProduct" for="precio">Precio</label>
+            <input
+              class="input-general-editProduct"
+              type="text"
+              id="precio"
+              name="precio"
+              placeholder=""
+              required
+            />
+          </div>
+
+          
+        
+        
+       
+        <button class="editProduct button-editProduct" type="submit">Actualizar Producto</button>
+      </form>
+      
+      
+      
+    </div>
+    </div>
+  </body>
+</html>
