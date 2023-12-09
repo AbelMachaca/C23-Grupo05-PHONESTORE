@@ -1,11 +1,9 @@
 const productController = {
     cart:(req,res)=>{
-        res.render("products/productCart", {title:"Carrito de compra"});
+        res.render("products/productCart");
     },
     detail:(req,res) => {
-        res.render("products/productDetail", {title: product.name, product})
-    },
-    
+        res.render("products/productDetail");
+    },  
 }
-
 module.exports= productController;
