@@ -1,0 +1,54 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+
+<!-- Header -->
+<%- include("../partials/header.ejs") %>
+
+<body class="body-createProduct">
+   
+    <div class="login-container-createProduct">
+      
+       
+        <div class="form-registro-createProduct">
+            <h1>Crear Producto</h1>
+
+            <form action="/crear-producto" method="post">
+                <div class="form-group-createProduct">
+                    <label class="label-general-createProduct" for="name">Nombre del Producto:</label>
+                    <input class="input-general-createProduct" type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group-createProduct">
+                    <label class="label-general-createProduct" for="description">Descripción:</label>
+                    <textarea class="input-general-createProduct" id="description" name="description" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group-createProduct">
+                    <label class="label-general-createProduct" for="image">Imagen:</label>
+                    <input class="input-general-createProduct" type="file" id="image" name="image" required>
+                </div>
+
+                <div class="form-group-createProduct">
+                    <label class="label-general-createProduct" for="category">Categoría:</label>
+                    <input class="input-general-createProduct" type="text" id="category" name="category" required>
+                </div>
+
+                <div class="form-group-createProduct">
+                    <label class="label-general-createProduct" for="colors">Colores:</label>
+                    <input class="input-general-createProduct" type="text" id="colors" name="colors" placeholder="Separados por comas">
+                </div>
+
+                <div class="form-group-createProduct">
+                    <label class="label-general-createProduct" for="price">Precio:</label>
+                    <input class="input-general-createProduct" type="text" id="price" name="price" required>
+                </div>
+
+                <button class="createProduct button-createProduct" type="submit">Crear Producto</button>
+            </form>
+        </div>
+    </div>
+    <!-- Footer -->
+<%- include("../partials/footer.ejs") %>
+</body>
+
+</html>
