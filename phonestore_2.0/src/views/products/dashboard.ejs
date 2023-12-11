@@ -14,19 +14,17 @@
       </tr>
     </thead>
     <tbody>
-      <% products.forEach(product => { %>
         <tr>
-          <td><%= product.id %></td>
-          <td><%= product.name %></td>
-          <td><img src="<%= product.image %>" alt="<%= product.name %>"></td>
-          <td><%= product.detail %></td>
+          <td></td>
+          <td></td>
+          <td><img src="" alt=""></td>
+          <td></td>
           <td>
-            <a href="/product/<%= product.id %>">Editar</a>
-            <a href="/update/<%= product.id %>">Actualizar</a>
-            <a href="/delete/<%= product.id %>">Eliminar</a>
+            <a href="./productEdit.ejs">Editar</a>
+            <a href="/update/">Actualizar</a>
+            <a href="/delete/">Eliminar</a>
           </td>
         </tr>
-      <% }); %>
     </tbody>
   </table>
   <form action="/create" method="post">
