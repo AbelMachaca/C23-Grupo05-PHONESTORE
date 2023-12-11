@@ -151,10 +151,11 @@
     margin-top: 10px;
 }
 
-.tittle-h5{
-    font-size: 12px;
-    margin-top: 5px;
-    color: #ffffff;
+.btn-sesion{
+  font-size: 12px;
+  margin-top: 5px;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .terminos-condiciones{
@@ -205,6 +206,7 @@ div.social-buttons {
   background-color: rgba(30, 33, 38, 1);
   margin: 0px 10px;
 }
+
 
 .check {
     display: inline-block;
