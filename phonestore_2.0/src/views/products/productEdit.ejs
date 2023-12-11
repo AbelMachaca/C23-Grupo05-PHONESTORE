@@ -3,6 +3,10 @@
 
 
 <body class="body-editProduct">
+
+
+  <!-- Header -->
+<%- include("../partials/header.ejs")%>
     <div class="login-container-editProduct">
     
         
@@ -31,21 +35,19 @@
               id="imagen"
               name="imagen"
               placeholder=""
-              required
             />
           </div>
+
           <div class="form-group-editProduct">
-            <label class="label-general-editProduct" for="descripcion">Descripción</label>
-            <textarea 
-            class="input-general-editProduct"
-            name="descripcion" 
-            id="descripcion" 
-            cols="30" 
-            rows="10"
-            placeholder=""
-            required
-            ></textarea>
-            
+            <label class="label-general-editProduct" for="Categoria">Categoria</label>
+            <input
+              class="input-general-editProduct"
+              type="text"
+              id="Categoria"
+              name="Categoria"
+              placeholder=""
+              required
+            />
           </div>
           <div class="form-group-editProduct">
             <label class="label-general-editProduct" for="precio">Precio</label>
@@ -60,6 +62,22 @@
           </div>
 
           
+          <div class="form-group-editProduct">
+            <label class="label-general-editProduct" for="descripcion">Descripción</label>
+            <textarea 
+            class="input-general-editProduct"
+            name="descripcion" 
+            id="descripcion" 
+            cols="30" 
+            rows="10"
+            placeholder=""
+            required
+            ></textarea>
+            
+          </div>
+          
+
+          
         
         
        
@@ -70,5 +88,8 @@
       
     </div>
     </div>
+
+    <!-- Footer -->
+<%- include("../partials/footer.ejs")%>
   </body>
 </html>
