@@ -4,9 +4,11 @@
 <body class="body-register">
     <div class="login-container">
     
-        <div class="logo">
-            <img class="img-general" src="/images/register-img/logo.png" alt="imagen logo">
-        </div>
+      <div class="logo">
+        <a href="/"><img class="img-general" src="/images/register-img/logo.png" alt="imagen logo">
+        </a>
+          
+      </div>
           
       <div class="form-registro">
         <img class="login-img" src="/images/register-img/login.png" alt="imagen login" />
@@ -65,7 +67,7 @@
           <div class="check">
            <input class="input-general" type="checkbox">
           </div>
-          <a class="terminos-condiciones" href="#">
+          <a class="terminos-condiciones" href="https://imgv2-2-f.scribdassets.com/img/document/241730362/original/36765cac31/1698250969?v=1" target="_blank">
             He leído y acepto los 
             <span class="terminos">términos y condiciones</span> 
             </a>
@@ -77,13 +79,13 @@
       <h6 class="title-h6">O crea tu cuenta con</h6>
       <div class="social-buttons">
             <i id="go" class="fa-brands fa-google"></i>
-            <button id="btn-go" class="button-general">Google</button>
+            <button onclick="window.open('https://www.google.com', '_blank')" target id="btn-go" class="button-general">Google</button>
             <i id="fb" class="fa-brands fa-facebook"></i>
-            <button id="btn-fb" class="button-general">Facebook</button>
+            <button onclick="window.open('https://www.facebook.com', '_blank')" id="btn-fb" class="button-general">Facebook</button>
       </div>
       <div class="iniciar-cuenta">
        <h4 class="h4-cuenta">¿Ya tienes una cuenta?</h4>
-       <h5 class="tittle-h5">Inicia Sesión</h5>
+       <a class="btn-sesion" href="/users/login">Inicia Sesión</a>
       </div>
     </div>
     </div>

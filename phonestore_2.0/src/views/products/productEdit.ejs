@@ -40,20 +40,25 @@
 
           <div class="form-group-editProduct">
             <label class="label-general-editProduct" for="Categoria">Categoria</label>
-            <input
-              class="input-general-editProduct"
-              type="text"
-              id="Categoria"
-              name="Categoria"
-              placeholder=""
-              required
-            />
+          <select class="input-general-editProduct" id="Categoria" onchange="mostrarColor()">
+              <option value="0">Seleccione una marca</option>
+              <option value="Samsung">Samsung</option>
+              <option value="Motorola">Motorola</option>
+              <option value="LG">LG</option>
+              <option value="Xiaomi">Xiaomi</option>
+              <option value="Iphone">Iphone</option>
+          </select>
+
           </div>
+
+
+
+
           <div class="form-group-editProduct">
             <label class="label-general-editProduct" for="precio">Precio</label>
             <input
               class="input-general-editProduct"
-              type="text"
+              type="number"
               id="precio"
               name="precio"
               placeholder=""
@@ -76,7 +81,7 @@
             
           </div>
           
-
+          
           
         
         
