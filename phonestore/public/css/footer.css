@@ -15,6 +15,10 @@
     
 }
 
+.footer-hijos:nth-child(3) p {
+    margin-top: 10px; 
+  }
+
 
 @media(min-width:768px){
     .footer-container{
@@ -33,5 +37,13 @@
         padding-bottom: 30px;
         
     }
+
+    .footer-hijos:last-child{
+        margin-top: 19px;
+
+    }
+    
+    
+      
     
 }

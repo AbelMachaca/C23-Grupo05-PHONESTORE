@@ -2,11 +2,14 @@
     color: white;
     background-color: #000120;
     text-align: center;
+    font-size: 11px;
+    
 }
 
 .footer-container a{
     display: block;
     color: white;
+    text-decoration: underline;
 }
 
 .footer-container div{
@@ -14,6 +17,10 @@
     padding: 10px;
     
 }
+
+.footer-hijos:nth-child(3) p {
+    margin-top: 10px; 
+  }
 
 
 @media(min-width:768px){
@@ -33,5 +40,13 @@
         padding-bottom: 30px;
         
     }
+
+    .footer-hijos:last-child{
+        margin-top: 19px;
+
+    }
+    
+    
+      
     
 }
