@@ -1,0 +1,34 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+  
+<body class="contenedor_body_dashboard">
+  <h2>Lista de Productos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Imagen</th>
+        <th>Detalles</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td><img src="" alt=""></td>
+          <td></td>
+          <td>
+            <a href="./productEdit.ejs">Editar</a>
+            <a href="/update/">Actualizar</a>
+            <a href="/delete/">Eliminar</a>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  <form action="/create" method="post">
+  <button type="submit">Crear Producto</button>
+</form>
+</body>
+</html>

@@ -13,4 +13,6 @@ router.get('/productCreate_form', productController.createForm)
 
 router.get('/productEdit', productController.edit )
 
+router.get('/dashboard', productController.dashboard )
+
 module.exports = router;
