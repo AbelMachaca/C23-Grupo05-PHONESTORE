@@ -5,12 +5,9 @@
 @import"./register.css";
 @import"./login.css";
 @import"./footer.css";
-<<<<<<< HEAD
 @import"./dashboard.css";
-=======
 @import"./productEdit.css";
->>>>>>> a65c3ef303ee7644ed0d7450cb6c232784088e99
-
+@import"./header.css";
 
 :root{
     --color-blanco :#fff;

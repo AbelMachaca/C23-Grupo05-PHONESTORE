@@ -5,50 +5,6 @@
     box-sizing: border-box;
 } 
 
-/*header mobile*/
-header{
-    background-color:#000120;
-}
-header section.buscador{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 2%;
-}
-.header a img{
- width: 100%;
- height: 100%;
-}
-.header a.icono_header{
-    width: 5%;
-    height: 5%;
-    padding-top:0.5%;
-}
-.header div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-header section{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-header section.links a{
-    color: white;
-    padding: 1%;
-    text-decoration: none;
-    font-size: 60%;
-}  
-header h1{
-    font-size: 22px;
-    padding: 1.5%;
-    color: white;
-}
-header input{
-    font-size: 10px;
-}
-
 /*home mobile*/
 .carrito_body{
     width: 100%;
@@ -177,16 +133,6 @@ main section.productos_similares{
 
 /*home tablet */
 @media (min-width: 768px){
-    /*header*/
-    header input{
-        font-size: 15px;
-    }
-    header section.links a{
-        font-size: 80%;
-    }
-    header h1{
-        font-size: 32px;
-    }
     /*main*/
     section.main{
         display: flex;
