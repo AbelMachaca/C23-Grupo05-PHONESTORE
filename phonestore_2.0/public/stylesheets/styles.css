@@ -5,11 +5,10 @@
 @import"./register.css";
 @import"./login.css";
 @import"./footer.css";
+@import"./dashboard.css";
 @import"./productEdit.css";
 @import"./header.css";
 @import"./productCreate_form.css";
-
-
 
 
 :root{

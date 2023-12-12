@@ -9,8 +9,10 @@ router.get('/productDetail', productController.detail);
 
 router.get('/productCart', productController.cart)
 
-router.get('/productCreate_form', productController.createForm)
+router.get('/productCreateForm', productController.createForm)
 
 router.get('/productEdit', productController.edit )
+
+router.get('/dashboard', productController.dashboard )
 
 module.exports = router;
