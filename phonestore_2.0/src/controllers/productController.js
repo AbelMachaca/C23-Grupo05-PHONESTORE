@@ -9,6 +9,10 @@ const productController = {
     res.render("products/productEdit");
   },
 
+  createForm: (req, res) => {
+    res.render("products/productCreate_form");
+  },
+
   dashboard: (req, res) => {
     res.render("products/dashboard");
   },
