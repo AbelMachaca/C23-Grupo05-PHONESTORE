@@ -6,7 +6,7 @@
     "category": "Samsung",
     "color": "negro",
     "price": 6489,
-    "image": "/images/imageHome/sam.jpg"
+    "image": "sam.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "category": "Motorola",
     "color": "negro",
     "price": 7043,
-    "image": "/images/imageHome/motorola2.png"
+    "image": "motorola2.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "category": "LG",
     "color": "negro",
     "price": 6349,
-    "image": "/images/imageHome/lg.webp"
+    "image": "lg.webp"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "category": "Xiaomi",
     "color": "negro",
     "price": 8746,
-    "image": "/images/imageHome/xiaomi.webp"
+    "image": "xiaomi.webp"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "category": "Iphone",
     "color": "negro",
     "price": 3650,
-    "image": "/images/imageHome/iphone.jpg"
+    "image": "iphone.jpg"
   },
   {
     "id": 6,
@@ -51,6 +51,6 @@
     "category": "Samsung",
     "color": "negro",
     "price": 5996,
-    "image": "/images/imageHome/sam.jpg"
+    "image": "sam.jpg"
   }
 ]
