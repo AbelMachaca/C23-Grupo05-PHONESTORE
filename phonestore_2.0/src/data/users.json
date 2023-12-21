@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "firstName": "Jorge",
+    "lastName": "Huanca",
+    "email": "cswainger0@webmd.com",
+    "password": "aI9>AKrvox_n'",
+    "type": "Admin",
+    "image": "/images/avatars/pletzale.jpg"
+  },
+  {
+    "id": 2,
+    "firstName": "Emmanuel",
+    "lastName": "Crocianelli",
+    "email": "vlaurenty1@macromedia.com",
+    "password": "iA2?4dR(nQD=3itv",
+    "type": "Admin",
+    "image": "/images/avatars/polloCorazon.jpg"
+  },
+  {
+    "id": 3,
+    "firstName": "Abel",
+    "lastName": "Machaca",
+    "email": "ftommei2@typepad.com",
+    "password": "mC1=\"!=b9N3ZQd",
+    "type": "Admin",
+    "image": "/images/avatars/polloCorazon.jpg"
+  },
+  {
+    "id": 4,
+    "firstName": "Sergio",
+    "lastName": "Daniel",
+    "email": "ndedmam3@google.co.jp",
+    "password": "pK6/on7t9)LfQw#",
+    "type": "Admin",
+    "image": "/images/avatars/tostada.jpg"
+  },
+  {
+    "id": 5,
+    "firstName": "Lucas",
+    "lastName": "Villalba",
+    "email": "sburnham4@unc.edu",
+    "password": "cG1>9($}OIw.xLg",
+    "type": "Admin",
+    "image": "/images/avatars/pretzel.jpg"
+  }
+]
