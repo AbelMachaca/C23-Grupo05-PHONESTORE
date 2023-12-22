@@ -27,3 +27,17 @@ DEJAR DE HACER: no poder realizar las dailys, no dejar para mañana lo que se pu
 
 
 EMPEZAR HACER: comunicacion por slack, darle prioridad al sprint, y terminarlo en tiempo y forma.
+
+
+SPRINT 4 :
+
+seguir haciendo: apoñandonos como equipo,
+
+hacer mas: mejor comunicacion al integrar nuestras ramas
+
+hacer menos: alargar el tiempo de las dailys
+
+dejar de hacer: olvidarse de comentar y mover las tareas en jira
+
+empezar hacer: llegar a las dailys con una idea clara para simplificar 
+un tema

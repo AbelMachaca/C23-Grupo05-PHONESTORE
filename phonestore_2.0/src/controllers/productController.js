@@ -16,5 +16,9 @@ const productController = {
   dashboard: (req, res) => {
     res.render("products/dashboard");
   },
+  products:(req,res) =>{
+    const products = getJson("products.json");
+    res.render("products/products", {title: "Todos los productos", products});
+},
 };
 module.exports = productController;

@@ -15,4 +15,6 @@ router.get('/productEdit', productController.edit )
 
 router.get('/dashboard', productController.dashboard )
 
+router.get('/products', productController.products )
+
 module.exports = router;
