@@ -14,7 +14,7 @@
       <div class="form-registro-editProduct">
         
       <h1>Editar Producto</h1>
-      <form>
+      <form action="/products/productEdit/<%= product.id %>?_method=PUT" method="POST"></form>
         <div class="form-group-editProduct">
           <label class="label-general-editProduct" for="nombre">Nombre de producto</label>
           <input
