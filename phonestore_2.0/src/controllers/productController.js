@@ -1,6 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/products.json");
+const { v4: uuidv4 } = require('uuid');
+
 
 const getJson = () => {
   const productsFilePath = path.join(__dirname, "../data/products.json");
@@ -8,6 +10,8 @@ const getJson = () => {
   return products;
 };
 const productController = {
+ 
+  
   cart: (req, res) => {
     res.render("products/productCart");
   },
@@ -22,7 +26,7 @@ const productController = {
     res.render("products/productCreate_form");
   },
 
-  store: (req, res) => {
+  /*store: (req, res) => {
 		const {name,price,discount,category,description} = req.body;
 		const products = getJson();
 		if(!req.files){
@@ -30,13 +34,11 @@ const productController = {
 			error.httpStatusCode = 400;
 			return next(error)
 		}
-		const images = req.files.forEach(element => {
-			element.filename
-		});
+    const images = req.files.map(element => element.filename);
 
 		console.log(req.files);
 		const newProduct = {
-			id,
+			id:uuidv4(),
 			name:name.trim(),
       description,
       category,
@@ -44,14 +46,43 @@ const productController = {
 			discount,		
 			description:description.trim(),
       color,
-      price:description.trim(),
-      image: image ? image : product.image,
-		}
+      price:price.trim(),
+      image: images.length > 0 ? images[0] : null,		}
 		products.push(newProduct);
 		const json = JSON.stringify(products);
 		fs.writeFileSync(productsFilePath,json,"utf-8");
-		res.redirect(`/products/productDetail/${newProduct.id}`)
-	},
+		res.redirect(`/`)
+	},*/
+  store: (req, res) => {
+    const { name, price, discount, category, description } = req.body;
+    const products = getJson();
+
+    if (!req.files) {
+      const error = new Error("Por favor seleccione un archivo");
+      error.httpStatusCode = 400;
+      return res.status(400).send(error.message);
+    }
+
+    const images = req.files.map(element => element.filename);
+
+    console.log(req.files);
+    
+    const newProduct = {
+      id: uuidv4(),
+      name: name.trim(),
+      description: description.trim(),
+      category,
+      price: price.trim(),
+     
+      
+      image: images.length > 0 ? images[0] : null,
+    };
+
+    products.push(newProduct);
+    const json = JSON.stringify(products);
+    fs.writeFileSync(productsFilePath, json, "utf-8");
+    res.redirect(`/`);
+  },
  
   dashboard: (req, res) => {
     res.render("products/dashboard");
