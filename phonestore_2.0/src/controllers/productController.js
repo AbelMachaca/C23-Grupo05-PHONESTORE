@@ -63,15 +63,14 @@ const productController = {
       return res.status(400).send(error.message);
     }
 
-    const images = req.files.map(element => element.filename);
+    const image = req.file.filename; 
 
-    console.log(req.files);
+    console.log(req.file);
     
     const newProduct = {
       id: uuidv4(),
       name: name.trim(),
-      image: images.length > 0 ? images[0] : null,
-     
+      image:image,
       category,
       price: price.trim(),
      
