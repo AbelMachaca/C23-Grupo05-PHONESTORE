@@ -82,7 +82,7 @@ const productController = {
     products.push(newProduct);
     const json = JSON.stringify(products);
     fs.writeFileSync(productsFilePath, json, "utf-8");
-    res.redirect("/products/dashboard");
+    res.redirect("/");
   },
  
   dashboard: (req, res) => {
