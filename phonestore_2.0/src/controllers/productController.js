@@ -54,10 +54,10 @@ const productController = {
 		res.redirect(`/`)
 	},*/
   store: (req, res) => {
-    const { name, price, discount, category, description } = req.body;
+    const { name, category,price ,description } = req.body;
     const products = getJson();
 
-    if (!req.files) {
+    if (!req.file) {
       const error = new Error("Por favor seleccione un archivo");
       error.httpStatusCode = 400;
       return res.status(400).send(error.message);
@@ -70,18 +70,20 @@ const productController = {
     const newProduct = {
       id: uuidv4(),
       name: name.trim(),
-      description: description.trim(),
+      image: images.length > 0 ? images[0] : null,
+     
       category,
       price: price.trim(),
      
       
-      image: images.length > 0 ? images[0] : null,
+   
+      description: description.trim(),
     };
 
     products.push(newProduct);
     const json = JSON.stringify(products);
     fs.writeFileSync(productsFilePath, json, "utf-8");
-    res.redirect(`/`);
+    res.redirect("/products/dashboard");
   },
  
   dashboard: (req, res) => {

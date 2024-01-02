@@ -1,56 +1,51 @@
 [
     {
-        "id": 1,
-        "name": "SAMSUNG S20FE",
-        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
-        "category": "Samsung",
-        "color": "negro",
-        "price": 6489,
-        "image": "sam.jpg"
+      "id": 1,
+      "name": "Iphone",
+      "image": "iphone.jpg",
+      "category": "Iphone",
+      "price": 3650,
+      "description": "Samsung Galaxy S20FE, es parte de la familia Galaxy, gran diseño, cámara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento"
     },
     {
-        "id": 2,
-        "name": "Motorola",
-        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
-        "category": "Motorola",
-        "color": "negro",
-        "price": 7043,
-        "image": "motorola2.png"
+      "id": 2,
+      "name": "Samsung Galaxy S21",
+      "image": "samsung_s21.jpg",
+      "category": "Samsung",
+      "price": 4500,
+      "description": "Samsung Galaxy S21, la última incorporación a la serie Galaxy, con una pantalla impresionante, cámara de alta resolución y rendimiento excepcional."
     },
     {
-        "id": 3,
-        "name": "LG K42",
-        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
-        "category": "LG",
-        "color": "negro",
-        "price": 6349,
-        "image": "lg.webp"
+      "id": 3,
+      "name": "Motorola G8",
+      "image": "motorola_g8.jpg",
+      "category": "Motorola",
+      "price": 2500,
+      "description": "Motorola G8, un smartphone asequible con un rendimiento sólido, pantalla nítida y una batería duradera para todo el día."
     },
     {
-        "id": 4,
-        "name": "Xiaomi Redmi",
-        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
-        "category": "Xiaomi",
-        "color": "negro",
-        "price": 8746,
-        "image": "xiaomi.webp"
+      "id": 4,
+      "name": "LG Velvet",
+      "image": "lg_velvet.jpg",
+      "category": "LG",
+      "price": 3800,
+      "description": "LG Velvet, un elegante teléfono con un diseño premium, pantalla OLED, y un conjunto versátil de cámaras para capturar momentos impresionantes."
     },
     {
-        "id": 5,
-        "name": "Iphone",
-        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
-        "category": "Iphone",
-        "color": "negro",
-        "price": 3650,
-        "image": "iphone.jpg"
+      "id": 5,
+      "name": "A21",
+      "image": "sam.jpg",
+      "category": "Samsung",
+      "price": 5996,
+      "description": "Samsung Galaxy S20FE, es parte de la familia Galaxy, gran diseño, cámara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento"
     },
     {
-        "id": 6,
-        "name": "A21",
-        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
-        "category": "Samsung",
-        "color": "negro",
-        "price": 5996,
-        "image": "sam.jpg"
+      "id": 6,
+      "name": "A21",
+      "image": "sam.jpg",
+      "category": "Samsung",
+      "price": 5996,
+      "description": "Samsung Galaxy S20FE, es parte de la familia Galaxy, gran diseño, cámara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento"
     }
-]
+  ]
+  
