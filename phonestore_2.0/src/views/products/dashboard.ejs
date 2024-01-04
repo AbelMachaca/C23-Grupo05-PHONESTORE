@@ -22,7 +22,8 @@
           <td>
             <a href="./productEdit.ejs">Editar</a>
             <a href="/update/">Actualizar</a>
-            <a href="/delete/">Eliminar</a>
+            <form action="products/delete/<%= product.id %>?_method=delete" method="post">
+              <button type="submit">Eliminar</button>
           </td>
         </tr>
     </tbody>

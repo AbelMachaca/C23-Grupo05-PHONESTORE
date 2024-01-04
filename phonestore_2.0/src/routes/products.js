@@ -15,4 +15,6 @@ router.get('/productEdit', productController.edit )
 
 router.get('/dashboard', productController.dashboard )
 
+router.delete("/delete/:id", productController.destroy);
+
 module.exports = router;
