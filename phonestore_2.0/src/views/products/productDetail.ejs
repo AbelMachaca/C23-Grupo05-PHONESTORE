@@ -8,14 +8,13 @@
    <main class="fondo">
       <div class="titulo_marca_modelo titulo_desktop">
           
-              <h3 >SAMSUNG GALAXY S20 FE 5G</h3>
-              <h4>SM-G781VLBLARO</h4>
+              <h3 ><%= product.name %></h3>
        
       </div>
     
       <article class="celular_frontal desktop_celular_frontal">
         
-        <img src="/images/productDetail_img/galaxy-s20-fe-5g-frente.svg" alt="vista frontal" class="dimensionar_imagen_celu_principal">
+        <img src="/images/imageHome/<%= product.image %>" alt="vista frontal" class="dimensionar_imagen_celu_principal">
       
       </article>
    
@@ -35,8 +34,7 @@
       </div>
 
         <snap class="aumentar_tamaño_descripcion_del_equipo desktop_posicion_inferior_descripcion_h5">
-             <h5 class="descripcion_del_equipo desktop_descripcion_h5">Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador SNAPDRAGON© 
-            potente, para jugar, navegar, disfrutar de todo el entretenimiento</h5>
+             <h5 class="descripcion_del_equipo desktop_descripcion_h5"><%= product.description %></h5>
         </snap>
     
         <snap class="snap_h6 desktop_snap_h6">
@@ -48,6 +46,7 @@
 
       <div class="separar_centrar_boton_submit desktop_botones_submit">
         <form action="" method="get"></form>
+        <p>Precio: $<%= product.price %></p>
         <button type="submit" class="boton_comprar">COMPRAR</BUtton>
         
         <form action="" method="get"></form>
