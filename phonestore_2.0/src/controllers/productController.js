@@ -25,13 +25,13 @@ const productController = {
 
   dashboard: (req, res) => {
     
-    const products=getJson();
-    res.render("products/dashboard", products);
+    const products = getJson();
+    res.render("products/dashboard", {title: "Dashboard", products});
   },
   destroy: (req,res) => {
     const {id}=req.params;
     console.log("metodo delete");
-    const products=getJason();
+    const products=getJson();
     console.log(products);
     const newArray=products.filter(product=>product.id != id);
 
