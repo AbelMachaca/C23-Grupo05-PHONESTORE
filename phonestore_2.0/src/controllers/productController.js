@@ -29,15 +29,16 @@ const productController = {
     res.render("products/dashboard", {title: "Dashboard", products});
   },
   destroy: (req,res) => {
-    const {id}=req.params;
-    console.log("metodo delete");
+    let {id}=req.params;
+    console.log("metodo delete", id);
     const products=getJson();
     console.log(products);
-    const newArray=products.filter(product=>product.id != id);
-
+    const newArray=products.filter(product => product.id != id);
+    console.log("newArray", newArray);
     const json=JSON.stringify(newArray);
 	        fs.writeFileSync(productsFilePath,json, 'utf-8');
-	        res.redirect(`/`)
+	        res.redirect("/");
+           
   }
-};
+}
 module.exports = productController;
