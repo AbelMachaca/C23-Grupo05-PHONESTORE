@@ -1,100 +1,88 @@
 <!-- Head -->
 <%- include("../partials/head.ejs") %>
 
-
 <body class="body-editProduct">
 
-
   <!-- Header -->
-<%- include("../partials/header.ejs")%>
-    <div class="login-container-editProduct">
-    
-        
-          
-      <div class="form-registro-editProduct">
-        
+  <%- include("../partials/header.ejs")%>
+  
+  <div class="login-container-editProduct">
+    <div class="form-registro-editProduct">
+      
       <h1>Editar Producto</h1>
-      <form action="/products/productEdit/<%= product.id %>?_method=PUT" method="POST"></form>
+      
+      <form action="/products/productEdit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
+        
         <div class="form-group-editProduct">
           <label class="label-general-editProduct" for="nombre">Nombre de producto</label>
           <input
             class="input-general-editProduct"
             type="text"
-            id="nombre"
-            name="nombre"
+            id="name"
+            name="name"
             placeholder=""
-            required
+            value="<%= product.name %>"
           />
         </div>
         
         <div class="form-group-editProduct">
-            <label class="label-general-editProduct" for="imagen">Imagen</label>
-            <input
-              class="input-general-editProduct"
-              type="file"
-              id="imagen"
-              name="imagen"
-              placeholder=""
-            />
-          </div>
-
-          <div class="form-group-editProduct">
-            <label class="label-general-editProduct" for="Categoria">Categoria</label>
-          <select class="input-general-editProduct" id="Categoria" onchange="mostrarColor()">
-              <option value="0">Seleccione una marca</option>
-              <option value="Samsung">Samsung</option>
-              <option value="Motorola">Motorola</option>
-              <option value="LG">LG</option>
-              <option value="Xiaomi">Xiaomi</option>
-              <option value="Iphone">Iphone</option>
-          </select>
-
-          </div>
-
-
-
-
-          <div class="form-group-editProduct">
-            <label class="label-general-editProduct" for="precio">Precio</label>
-            <input
-              class="input-general-editProduct"
-              type="number"
-              id="precio"
-              name="precio"
-              placeholder=""
-              required
-            />
-          </div>
-
-          
-          <div class="form-group-editProduct">
-            <label class="label-general-editProduct" for="descripcion">Descripción</label>
-            <textarea 
+          <label class="label-general-editProduct" for="imagen">Imagen</label>
+          <input
             class="input-general-editProduct"
-            name="descripcion" 
-            id="descripcion" 
+            type="file"
+            id="imagen"
+            name="imagen"
+            placeholder=""
+            value="<%= product.images %>"
+          />
+        </div>
+
+        <div class="form-group-editProduct">
+          <label class="label-general-editProduct" for="Categoria">Categoria</label>
+          <select class="input-general-editProduct" id="Categoria" onchange="mostrarColor()" name="category">
+            <option value="0">Seleccione una marca</option>
+            <option value="Samsung" <%= product.category === 'Samsung' ? 'selected' : '' %>>Samsung</option>
+            <option value="Motorola" <%= product.category === 'Motorola' ? 'selected' : '' %>>Motorola</option>
+            <option value="LG" <%= product.category === 'LG' ? 'selected' : '' %>>LG</option>
+            <option value="Xiaomi" <%= product.category === 'Xiaomi' ? 'selected' : '' %>>Xiaomi</option>
+            <option value="Iphone" <%= product.category === 'Iphone' ? 'selected' : '' %>>Iphone</option>
+          </select>
+        </div>
+
+        <div class="form-group-editProduct">
+          <label class="label-general-editProduct" for="precio">Precio</label>
+          <input
+            class="input-general-editProduct"
+            type="number"
+            id="price"
+            name="price"
+            placeholder=""
+            value="<%= product.price %>"
+            required
+          />
+        </div>
+
+        <div class="form-group-editProduct">
+          <label class="label-general-editProduct" for="descripcion">Descripción</label>
+          <textarea 
+            class="input-general-editProduct"
+            name="description" 
+            id="description" 
             cols="30" 
             rows="10"
             placeholder=""
             required
-            ></textarea>
-            
-          </div>
-          
-          
-          
+          ><%= product.description %></textarea>
+        </div>
         
-        
-       
         <button class="editProduct button-editProduct" type="submit">Actualizar Producto</button>
+        
       </form>
-      
-      
-      
     </div>
-    </div>
+  </div>
 
-    <!-- Footer -->
-<%- include("../partials/footer.ejs")%>
-  </body>
+  <!-- Footer -->
+  <%- include("../partials/footer.ejs")%>
+  
+</body>
 </html>

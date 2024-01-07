@@ -13,6 +13,7 @@ const productController = {
     res.render("products/productCart");
   },
   detail: (req, res) => {
+    //res.send("estamos llegando")
     res.render("products/productDetail");
   },
   edit: (req, res) => {
@@ -23,33 +24,61 @@ const productController = {
   },
   update: (req, res) => {
     const { id } = req.params;
+    //const files = req.file;
     const { name, description, category, color, price, image } = req.body;
     const products = getJson();
     const nuevoArray = products.map((product) => {
       if (product.id == id) {
         return {
-          id,
-          name: name.trim(),
+          id:+id,
+          name: name,
           description,
           category,
           color,
-          price: description.trim(),
+          price: +price,
           image: image ? image : product.image,
+          //image:files ? files.filename : "default.jpg",
         };
       }
       return product;
     });
     const json = JSON.stringify(nuevoArray);
     fs.writeFileSync(productsFilePath, json, "utf-8");
-    res.redirect(`/products/detail/${id}`);
+    res.redirect(`/products/productDetail/${id}`);
   },
+
+   /*store: (req, res) => {
+    res.send(req.body)
+    const files = req.file;
+    const products = getJson();
+    const { name, price, discount, category, description } = req.body;
+    const id = products[products.length - 1].id + 1;
+
+    const newProduct = {
+      id: +id,
+      name: name.trim(),
+      price: +price,
+      discount: +discount,
+      category,
+      description: description.trim(),
+      image:files ? files.filename : "default.jpg", 
+    }
+
+    products.push(newProduct);
+
+    const json = JSON.stringify(products);
+    fs.writeFileSync(productsFilePath, json, "utf-8");
+
+    res.redirect(`/products`);
+  },*/
 
   createForm: (req, res) => {
     res.render("products/productCreate_form");
   },
 
   dashboard: (req, res) => {
-    res.render("products/dashboard");
+    const products = getJson();
+    res.render("products/dashboard",{products});
   },
 };
 module.exports = productController;
