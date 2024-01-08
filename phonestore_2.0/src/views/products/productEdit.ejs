@@ -11,8 +11,7 @@
       
       <h1>Editar Producto</h1>
       
-      <form action="/products/productEdit/<%= product.id %>?_method=PUT" method="POST">
-        
+      <form  action="/products/productEdit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <div class="form-group-editProduct">
           <label class="label-general-editProduct" for="nombre">Nombre de producto</label>
           <input
@@ -31,7 +30,7 @@
             class="input-general-editProduct"
             type="file"
             id="imagen"
-            name="imagen"
+            name="image"
             placeholder=""
             value="<%= product.images %>"
           />

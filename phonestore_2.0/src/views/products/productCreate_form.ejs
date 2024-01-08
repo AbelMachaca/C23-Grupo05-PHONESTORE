@@ -12,7 +12,9 @@
         <div class="form-registro-createProduct">
             <h1>Crear Producto</h1>
 
-            <form>
+            <form method="POST" action="/products/productCreate_form" enctype="multipart/form-data">
+          
+              
                 <div class="form-group-createProduct">
                     <label class="label-general-createProduct" for="name">Nombre del Producto:</label>
                     <input class="input-general-createProduct" type="text" id="name" name="name" required>
@@ -24,7 +26,7 @@
                 </div>
 
                 <div class="form-group-createProduct">  
-                    <label class="label-general-createProduct" for="Categoria">Categoria</label>                 
+                    <label class="label-general-createProduct" for="category">Categoria</label>                 
                     <select class="input-general-createProduct" >
                         <option value="0">Seleccione una marca</option>
                         <option value="Samsung">Samsung</option>
