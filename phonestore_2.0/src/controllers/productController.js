@@ -24,7 +24,6 @@ const productController = {
   },
   update: (req, res) => {
     const { id } = req.params;
-    //const files = req.file;
     const { name, description, category, color, price, image } = req.body;
     const products = getJson();
     const nuevoArray = products.map((product) => {
@@ -36,8 +35,7 @@ const productController = {
           category,
           color,
           price: +price,
-          image: image ? image : product.image,
-          //image:files ? files.filename : "default.jpg",
+          image: image ? image.filename : product.image,
         };
       }
       return product;
@@ -47,30 +45,35 @@ const productController = {
     res.redirect(`/products/productDetail/${id}`);
   },
 
-   /*store: (req, res) => {
-    res.send(req.body)
-    const files = req.file;
+  store: (req, res) => {
+    const { name, category, price, description } = req.body;
     const products = getJson();
-    const { name, price, discount, category, description } = req.body;
-    const id = products[products.length - 1].id + 1;
 
-    const newProduct = {
-      id: +id,
-      name: name.trim(),
-      price: +price,
-      discount: +discount,
-      category,
-      description: description.trim(),
-      image:files ? files.filename : "default.jpg", 
+    if (!req.file) {
+      const error = new Error("Por favor seleccione un archivo");
+      error.httpStatusCode = 400;
+      return res.status(400).send(error.message);
     }
 
-    products.push(newProduct);
+    const image = req.file.filename;
 
+    console.log(req.file);
+
+    const newProduct = {
+      id: uuidv4(),
+      name: name.trim(),
+      image: image,
+      category,
+      price: price.trim(),
+
+      description: description.trim(),
+    };
+
+    products.push(newProduct);
     const json = JSON.stringify(products);
     fs.writeFileSync(productsFilePath, json, "utf-8");
-
-    res.redirect(`/products`);
-  },*/
+    res.redirect("/");
+  },
 
   createForm: (req, res) => {
     res.render("products/productCreate_form");

@@ -1,11 +1,10 @@
 [
     {
         "id": 1,
-        "name": "Samsung",
-        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
-        "category": "samsung",
-        "color": "negro",
-        "price": 7043,
+        "name": "Producto 1 ",
+        "description": "hhhhhhhhhh",
+        "category": "Samsung",
+        "price": 120000,
         "image": "samsung2.png"
     },
     {
@@ -34,12 +33,11 @@
     },
     {
         "id": 5,
-        "name": "Iphone",
-        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
-        "category": "Iphone",
-        "color": "negro",
-        "price": 3650,
-        "image": "iphone.jpg"
+        "name": "boca juniors",
+        "description": "kkkkk",
+        "category": "Samsung",
+        "price": 2,
+        "image": "default.jpg"
     },
     {
         "id": 6,
