@@ -24,6 +24,7 @@ const productController = {
     res.render("products/productEdit", { product });
   },
   update: (req, res) => {
+    const files = req.files;
     const { id } = req.params;
     const { name, description, category, color, price, image } = req.body;
     const products = getJson();
@@ -36,14 +37,14 @@ const productController = {
           category,
           color,
           price: +price,
-          image: image ? image.filename : product.image,
+          image: files ? files[0].filename : product.image,
         };
       }
       return product;
     });
     const json = JSON.stringify(nuevoArray);
     fs.writeFileSync(productsFilePath, json, "utf-8");
-    res.redirect(`/products/productDetail/${id}`);
+    res.redirect(`/products/dashboard`);
   },
 
   store: (req, res) => {
@@ -80,35 +81,7 @@ const productController = {
     res.render("products/productCreate_form");
   },
 
-  store: (req, res) => {
-    const { name, category, price, description } = req.body;
-    const products = getJson();
-
-    if (!req.file) {
-      const error = new Error("Por favor seleccione un archivo");
-      error.httpStatusCode = 400;
-      return res.status(400).send(error.message);
-    }
-
-    const image = req.file.filename;
-
-    console.log(req.file);
-
-    const newProduct = {
-      id: uuidv4(),
-      name: name.trim(),
-      image: image,
-      category,
-      price: price.trim(),
-
-      description: description.trim(),
-    };
-
-    products.push(newProduct);
-    const json = JSON.stringify(products);
-    fs.writeFileSync(productsFilePath, json, "utf-8");
-    res.redirect("/");
-  },
+  
 
   dashboard: (req, res) => {
     const products = getJson();

@@ -27,8 +27,8 @@ router.post('/productCreate_form',upload.single("image"), productController.stor
 
 
 router.get('/productEdit/:id', productController.edit )
-router.put('/productEdit/:id', productController.update)
-router.post('/productEdit/:id', upload.single("imagen"), productController.store); 
+router.put('/productEdit/:id',upload.array("image"), productController.update)
+
 
 router.get('/dashboard', productController.dashboard )
 
