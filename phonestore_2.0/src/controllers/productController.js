@@ -88,8 +88,19 @@ const productController = {
   
 
   dashboard: (req, res) => {
-    const products = getJson();
-    res.render("products/dashboard",{products});
+    res.render("products/dashboard", {products});
   },
-};
+  destroy: (req,res) => {
+    let {id}=req.params;
+    console.log("metodo delete", id);
+    const products=getJson();
+    console.log(products);
+    const newArray=products.filter(product => product.id != id);
+    console.log("newArray", newArray);
+    const json=JSON.stringify(newArray);
+	        fs.writeFileSync(productsFilePath,json, 'utf-8');
+	        res.redirect("/");
+           
+  }
+}
 module.exports = productController;

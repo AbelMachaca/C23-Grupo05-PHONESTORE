@@ -2,33 +2,37 @@
 <%- include("../partials/head.ejs") %>
   
 <body class="contenedor_body_dashboard">
-  <h2>Lista de Productos</h2>
+  
+    
+    <h2>Lista de Productos</h2>
   <table>
     <thead>
-      <tr>
+        <tr>
         <th>ID</th>
         <th>Nombre</th>
         <th>Imagen</th>
         <th>Detalles</th>
         <th>Acciones</th>
       </tr>
-    </thead>
+      </thead>
     <tbody>
       <% products.forEach(element => { %>
         <tr>
-          <td><%= element.id %></td>
-          <td><%= element.name %></td>
+          <td><%=element.id%></td>
+          <td><%=element.name%></td>
           <td><img src="/images/imageHome/<%= element.image %>" alt="<%= element.name %>"></td>
-          <td><%= element.description %></td>
+          <td><%=element.description%></td>
           <td>
-            <a href="/products/productEdit/<%= element.id %>">Editar</a>
-            <a href="/products/productEdit/<%= element.id %>">Actualizar</a>
-            <a href="/delete/">Eliminar</a>
+            <a href="./productEdit.ejs">Editar</a>
+            <a href="/update/">Actualizar</a>
+            <form action="/products/delete/<%= element.id%>?_method=delete" method="post">
+              <button type="submit">Eliminar</button>
+            </form>  
           </td>
         </tr>
         <% }) %>
     </tbody>
-  </table>
+   </table>
   <form action="/create" method="post">
 <a href="/products/productCreate_form">Crear Producto</a>
 </form>

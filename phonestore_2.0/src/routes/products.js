@@ -1,20 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const productController = require("../controllers/productController")
 const multer = require("multer");
-const path = require("path")
+const productController = require("../controllers/productController");
+const indexController = require('../controllers/indexController');
 
-const storage = multer.diskStorage({
-    destination:(req,file,cb)=>{
-        cb(null,(path.join(__dirname,"../","../","public/images/imageHome")))
-    },
-    filename:(req,file,cb)=>{
-
-        cb(null,`${Date.now()}_img_${path.extname(file.originalname)}`);
-    }
-});
-
-const upload  = multer({storage});
 
 /* GET home page. */
 
@@ -31,5 +20,7 @@ router.put('/productEdit/:id',upload.array("image"), productController.update)
 
 
 router.get('/dashboard', productController.dashboard )
+
+router.delete(`/delete/:id`, productController.destroy);
 
 module.exports = router;
