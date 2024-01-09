@@ -10,7 +10,7 @@
   {
     "id": 2,
     "name": "Samsung Galaxy S21",
-    "image": "samsung_s21.jpg",
+    "image": "sam.webp",
     "category": "Samsung",
     "price": 4500,
     "description": "Samsung Galaxy S21, la última incorporación a la serie Galaxy, con una pantalla impresionante, cámara de alta resolución y rendimiento excepcional."
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "name": "Motorola G8",
-    "image": "motorola_g8.jpg",
+    "image": "motorola2.png",
     "category": "Motorola",
     "price": 2500,
     "description": "Motorola G8, un smartphone asequible con un rendimiento sólido, pantalla nítida y una batería duradera para todo el día."
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "name": "LG Velvet",
-    "image": "lg_velvet.jpg",
+    "image": "lg.webp",
     "category": "LG",
     "price": 3800,
     "description": "LG Velvet, un elegante teléfono con un diseño premium, pantalla OLED, y un conjunto versátil de cámaras para capturar momentos impresionantes."
