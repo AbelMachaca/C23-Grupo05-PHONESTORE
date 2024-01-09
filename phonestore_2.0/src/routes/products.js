@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const productController = require("../controllers/productController")
+const multer = require("multer");
+const productController = require("../controllers/productController");
+const indexController = require('../controllers/indexController');
 
 
 /* GET home page. */

@@ -89,86 +89,21 @@
 
     <section class="home">
       <div class="contenedor-cards">
+ <%products.forEach(element =>{  %>
         <div class="card-item">
           <div class="card-img">
-            <a href="/productDetail">
-            <img src="/images/imageHome/iphone.jpg" alt="" /></a>
+            <a href="/products/productDetail/<%= element.id %>">
+            <img src="/images/imageHome/<%= element.image %>" alt="<%= element.name %>" /></a>
           </div>
           <div class="info">
-            <p>IPHONE</p>
-            <p>$120.000</p>
+            <p><%= element.name %></p>
+            <p>$<%= element.price %></p>
 
            <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
           </div>
         </div>
-
-        <div class="card-item">
-          <div class="card-img">
-            <a href="/productDetail">
-            <img src="/images/imageHome/lg.webp" alt="" /></a>
-          </div>
-
-          <div class="info">
-            <p>LG</p>
-            <p>$90.000</p>
-
-            <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
-          </div>
-        </div>
-
-        <div class="card-item">
-          <div class="card-img">
-            <a href="/productDetail">
-            <img src="/images/imageHome/motorola2.png" alt="" /></a>
-          </div>
-          <div class="info">
-            <p>MOTOROLA</p>
-            <p>$100.000</p>
-
-            <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
-          </div>
-        </div>
-
-        <div class="card-item">
-          <div class="card-img">
-            <a href="/productDetail">
-            <img src="/images/imageHome/xiaomi.webp" alt="" ></a>
-            
-          </div>
-          <div class="info">
-            <p>XIOMI</p>
-            <p>$50000</p>
-
-            <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
-          </div>
-        </div>
-
-        <div class="card-item">
-          <div class="card-img">
-            <a href="/productDetail">
-            <img src="/images/imageHome/sam.jpg" alt="" class="samsu" ></a>
-          </div>
-          <div class="info">
-            <p>SAMSUNG</p>
-            <p>$120000</p>
-
-            <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
-          </div>
-        </div>
-
-        <div class="card-item">
-          <div class="card-img">
-            <a href="/productDetail">
-            <img src="/images/imageHome/tcl.jpg" alt="" /></a>
-          </div>
-          <div class="info">
-            <p>TCL</p>
-            <p>$80.000</p>
-
-            <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
-          </div>
-        </div>
-      </div>
+<% }); %>
+      
     </section>
 
 <!-- Footer -->

@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
+
 const getJson= () =>{
 	const productsFilePath = path.join(__dirname, '../data/products.json');
     const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -11,7 +12,7 @@ const indexController = {
     
     index:(req,res)=>{
         const products = getJson();
-        res.render("index", products);
+        res.render("index", {title:"products", products});
     },  
 }
 module.exports = indexController;
