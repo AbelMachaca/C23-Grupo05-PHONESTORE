@@ -15,8 +15,12 @@ const productController = {
   },
   detail: (req, res) => {
     //res.send("estamos llegando")
-    res.render("products/productDetail");
-  },
+    const {id} = req.params;
+    const products = getJson()
+    const product = products.find((product) => product.id == id);
+    res.render("products/productDetail", { title: product.name, product});
+    },
+    
   edit: (req, res) => {
     const { id } = req.params;
     const products = getJson();
