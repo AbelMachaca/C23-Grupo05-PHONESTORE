@@ -88,7 +88,8 @@ const productController = {
   
 
   dashboard: (req, res) => {
-    res.render("products/dashboard", {products});
+    const products = getJson();
+    res.render("products/dashboard",{products});
   },
   destroy: (req,res) => {
     let {id}=req.params;

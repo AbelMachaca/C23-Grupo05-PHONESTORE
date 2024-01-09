@@ -2,9 +2,20 @@ const express = require('express');
 const router = express.Router();
 const multer = require("multer");
 const productController = require("../controllers/productController");
-const indexController = require('../controllers/indexController');
+const path = require('path');
 
 
+const storage = multer.diskStorage({
+    destination:(req,file,cb)=>{
+        cb(null,(path.join(__dirname,"../","../","public/images/imageHome")))
+    },
+    filename:(req,file,cb)=>{
+
+        cb(null,`${Date.now()}_img_${path.extname(file.originalname)}`);
+    }
+});
+
+const upload  = multer({storage});
 /* GET home page. */
 
 router.get('/productDetail/:id', productController.detail);
