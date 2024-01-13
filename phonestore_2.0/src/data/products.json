@@ -1,50 +1,50 @@
 [
-  {
-    "id": 1,
-    "name": "Iphone",
-    "image": "iphone.jpg",
-    "category": "Iphone",
-    "price": 3650,
-    "description": "Samsung Galaxy S20FE, es parte de la familia Galaxy, gran diseño, cámara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento"
-  },
-  {
-    "id": 2,
-    "name": "Samsung Galaxy S21",
-    "image": "samsung_s21.jpg",
-    "category": "Samsung",
-    "price": 4500,
-    "description": "Samsung Galaxy S21, la última incorporación a la serie Galaxy, con una pantalla impresionante, cámara de alta resolución y rendimiento excepcional."
-  },
-  {
-    "id": 3,
-    "name": "Motorola G8",
-    "image": "motorola_g8.jpg",
-    "category": "Motorola",
-    "price": 2500,
-    "description": "Motorola G8, un smartphone asequible con un rendimiento sólido, pantalla nítida y una batería duradera para todo el día."
-  },
-  {
-    "id": 4,
-    "name": "LG Velvet",
-    "image": "lg_velvet.jpg",
-    "category": "LG",
-    "price": 3800,
-    "description": "LG Velvet, un elegante teléfono con un diseño premium, pantalla OLED, y un conjunto versátil de cámaras para capturar momentos impresionantes."
-  },
-  {
-    "id": 5,
-    "name": "A21",
-    "image": "sam.jpg",
-    "category": "Samsung",
-    "price": 5996,
-    "description": "Samsung Galaxy S20FE, es parte de la familia Galaxy, gran diseño, cámara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento"
-  },
-  {
-    "id": 6,
-    "name": "A21",
-    "image": "sam.jpg",
-    "category": "Samsung",
-    "price": 5996,
-    "description": "Samsung Galaxy S20FE, es parte de la familia Galaxy, gran diseño, cámara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento"
-  }
+    {
+        "id": 1,
+        "name": "Iphone",
+        "image": "iphone.jpg",
+        "category": "Iphone",
+        "price": 3650,
+        "description": "Samsung Galaxy S20FE, es parte de la familia Galaxy, gran diseño, cámara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento"
+    },
+    {
+        "id": 2,
+        "name": "Samsung Galaxy S21",
+        "description": "Samsung Galaxy S21, la última incorporación a la serie Galaxy, con una pantalla impresionante, cámara de alta resolución y rendimiento excepcional.",
+        "category": "Samsung",
+        "price": 4500,
+        "image": "1704831166860_img_.png"
+    },
+    {
+        "id": 3,
+        "name": "Motorola G8",
+        "description": "Motorola G8, un smartphone asequible con un rendimiento sólido, pantalla nítida y una batería duradera para todo el día.",
+        "category": "Motorola",
+        "price": 2500,
+        "image": "1704831180511_img_.png"
+    },
+    {
+        "id": 4,
+        "name": "LG Velvet",
+        "description": "LG Velvet, un elegante teléfono con un diseño premium, pantalla OLED, y un conjunto versátil de cámaras para capturar momentos impresionantes.",
+        "category": "LG",
+        "price": 3800,
+        "image": "1704831190411_img_.png"
+    },
+    {
+        "id": 5,
+        "name": "A21",
+        "image": "sam.jpg",
+        "category": "Samsung",
+        "price": 5996,
+        "description": "Samsung Galaxy S20FE, es parte de la familia Galaxy, gran diseño, cámara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento"
+    },
+    {
+        "id": 6,
+        "name": "A21",
+        "image": "sam.jpg",
+        "category": "Samsung",
+        "price": 5996,
+        "description": "Samsung Galaxy S20FE, es parte de la familia Galaxy, gran diseño, cámara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento"
+    }
 ]
