@@ -90,6 +90,7 @@ const productController = {
   dashboard: (req, res) => {
     const products = getJson();
     res.render("products/dashboard",{products});
+    res.redirect("/", {products});
   },
   destroy: (req,res) => {
     let {id}=req.params;
