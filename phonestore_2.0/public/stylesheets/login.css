@@ -7,6 +7,10 @@
   justify-content: center;
 }
 
+.logo_phonestore_login{
+  margin: auto;
+}
+
 .fa-bars {
   display: none;
 }
@@ -159,6 +163,10 @@ div.social-buttons-login {
 @media (max-width: 426px) {
   .login-container-body {
   box-shadow: none;
+  }
+
+  .logo_phonestore_login{
+    display: none;
   }
 
   .fa-facebook {

@@ -84,15 +84,21 @@
   }
   
   .contenedor_body_dashboard button {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(60, 66, 76);
     color: #ffffff;
-    background-color: rgba(30, 33, 38, 1);
-    width: 200px;
-    margin: auto;
-    margin-top: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
   }
   
   .contenedor_body_dashboard button:hover {
-    background-color: rgb(24, 91, 91);
+    background-color: rgba(30, 33, 38, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   }
   
   /* Responsive Styles */
