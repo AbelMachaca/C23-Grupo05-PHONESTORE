@@ -1,1 +1,70 @@
-[{"id":1,"name":"SAMSUNG S20FE","description":"Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento","category":"Samsung","price":6489,"image":"1704777303147_img_.svg"},{"id":2,"name":"Motorola","description":"Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento","category":"Motorola","color":"negro","price":7043,"image":"motorola2.png"},{"id":3,"name":"LG K42","description":"Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento","category":"LG","color":"negro","price":6349,"image":"lg.webp"},{"id":4,"name":"Xiaomi Redmi","description":"Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento","category":"Xiaomi","color":"negro","price":8746,"image":"xiaomi.webp"},{"id":5,"name":"Iphone","description":"Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento","category":"Iphone","color":"negro","price":3650,"image":"iphone.jpg"},{"id":6,"name":"A21","description":"Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento","category":"Samsung","color":"negro","price":5996,"image":"sam.jpg"},{"id":"c4bd458f-d546-4afa-8fe5-cb49fb63daa6","name":"Google Pixel 8 pro","image":"1704775861851_img_.jpeg","price":"500000","description":"El nuevo chip Google Tensor G3 se ha diseñado a medida con la IA de Google para ofrecerte funciones vanguardistas de fotografía y vídeo, así como formas más inteligentes de ayudarte a lo largo del día. Camara principal de 50mp gran angular y camara frontal de 10.5mp"},{"id":"55db158f-689a-4b73-8192-5fc19bcbf9b7","name":"Google Pixel 8 pro","image":"1704775874817_img_.jpeg","price":"500000","description":"El nuevo chip Google Tensor G3 se ha diseñado a medida con la IA de Google para ofrecerte funciones vanguardistas de fotografía y vídeo, así como formas más inteligentes de ayudarte a lo largo del día. Camara principal de 50mp gran angular y camara frontal de 10.5mp"}]
+[
+    {
+        "id": 1,
+        "name": "SAMSUNG S20FE",
+        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
+        "category": "Samsung",
+        "price": 6489,
+        "image": "1704777303147_img_.svg"
+    },
+    {
+        "id": 2,
+        "name": "Motorola",
+        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
+        "category": "Motorola",
+        "color": "negro",
+        "price": 7043,
+        "image": "motorola2.png"
+    },
+    {
+        "id": 3,
+        "name": "LG K42",
+        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
+        "category": "LG",
+        "color": "negro",
+        "price": 6349,
+        "image": "lg.webp"
+    },
+    {
+        "id": 4,
+        "name": "Xiaomi Redmi",
+        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
+        "category": "Xiaomi",
+        "color": "negro",
+        "price": 8746,
+        "image": "xiaomi.webp"
+    },
+    {
+        "id": 5,
+        "name": "Iphone",
+        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
+        "category": "Iphone",
+        "color": "negro",
+        "price": 3650,
+        "image": "iphone.jpg"
+    },
+    {
+        "id": 6,
+        "name": "A21",
+        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
+        "category": "Samsung",
+        "color": "negro",
+        "price": 5996,
+        "image": "sam.jpg"
+    },
+    {
+        "id": "c4bd458f-d546-4afa-8fe5-cb49fb63daa6",
+        "name": "Google Pixel 8 pro",
+        "image": "1704775861851_img_.jpeg",
+        "price": "500000",
+        "description": "El nuevo chip Google Tensor G3 se ha diseñado a medida con la IA de Google para ofrecerte funciones vanguardistas de fotografía y vídeo, así como formas más inteligentes de ayudarte a lo largo del día. Camara principal de 50mp gran angular y camara frontal de 10.5mp"
+    },
+    {
+        "id": null,
+        "name": "samsung s23",
+        "description": "el mejor celular actual de todos los tiempos, for ever!!!!",
+        "category": "Samsung",
+        "price": 10000,
+        "image": "1704947676980_img_.jpeg"
+    }
+]

@@ -112,10 +112,10 @@
 }
 
 .card-item p {
-  display: flex;
-  justify-content: center;
+  /*display: flex;
+  justify-content: center;*/
   text-align: center;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
 }
 
 .card-item button {
