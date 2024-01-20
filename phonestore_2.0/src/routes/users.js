@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const userController = require('../controllers/userController');
-const sessionValidate = require('../middleware/sessionValidate');
 const userSessionValidate = require('../middleware/userSessionValidate');
 
 /* GET users listing. */

@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require("multer");
 const productController = require("../controllers/productController");
 const path = require('path');
-const sessionValidate=require('../middleware/userSessionValidate');
+const userSessionValidate=require('../middleware/userSessionValidate');
 
 
 const storage = multer.diskStorage({
