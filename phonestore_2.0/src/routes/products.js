@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require("multer");
 const productController = require("../controllers/productController");
 const path = require('path');
+const sessionValidate=require('../middleware/userSessionValidate');
 
 
 const storage = multer.diskStorage({
@@ -20,7 +21,7 @@ const upload  = multer({storage});
 
 router.get('/productDetail/:id', productController.detail);
 
-router.get('/productCart', productController.cart)
+router.get('/productCart', userSessionValidate, productController.cart)
 
 router.get('/productCreate_form', productController.createForm)
 router.post('/productCreate_form',upload.single("image"), productController.store); 
