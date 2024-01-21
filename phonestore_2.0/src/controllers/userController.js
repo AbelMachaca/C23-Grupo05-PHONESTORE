@@ -13,8 +13,12 @@ const userController = {
     createUser: (req,res)=>{
 
     },
-    profile:(req,res)=>{
-        res.render("users/profile")
+    edit:(req,res)=>{
+        res.render("/userUpdate")
+    },
+
+    update:(req,res)=>{
+
     }
 }
 

@@ -4,10 +4,12 @@ const userController = require('../controllers/userController');
 const userSessionValidate = require('../middleware/userSessionValidate');
 
 /* GET users listing. */
-router.get('/login', userSessionValidate, userController.login);
+router.get('/login', userController.login);
 router.post('/login', userController.processLogin);
 router.get('/register', userController.register);
 router.post('/register', userController.createUser);
-router.get('profile,',userSessionValidate, userController.profile);
+router.get('userUpadate/:id', userSessionValidate, userController.edit)
+router.post('userUpdate/:id', userSessionValidate, userController.update)
+
 
 module.exports = router;
