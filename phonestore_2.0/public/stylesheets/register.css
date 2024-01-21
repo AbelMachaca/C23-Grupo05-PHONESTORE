@@ -77,6 +77,16 @@
     margin-bottom: 10px;
     
 }
+
+.form-group p {
+  color: #e23922;
+  
+}
+
+.form-group2 p {
+ color: #e23922;
+ font-size: 14px;
+}
 .caja-terminos-condiciones{
   margin: auto;
 }
