@@ -66,6 +66,10 @@
   color: #cfcece;
 }
 
+.error-message{
+  color:  #cfcece;
+}
+
 .form-group-login input {
   color: #ffffff;
   width: 100%;

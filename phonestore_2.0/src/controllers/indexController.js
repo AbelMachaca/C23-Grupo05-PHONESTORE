@@ -11,8 +11,9 @@ return products;
 const indexController = {
     
     index:(req,res)=>{
+        console.log(req.session.user);
         const products = getJson();
-        res.render("index", {title:"products", products});
+        res.render("index", {title:"products", products,usuario:req.session.user});
     },  
 }
 module.exports = indexController;
