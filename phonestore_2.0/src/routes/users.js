@@ -33,10 +33,15 @@ const validateLogin = [
     })
     .withMessage("La contraseña no es correcta"),
 ];
+const uploadFile = require("../validations/ImageUploader");
+const registerValidation = require('../validations/validationRegister');
+
 
 /* GET users listing. */
-router.get("/login", userController.login);
-router.post("/login", validateLogin, userController.processlogin);
-router.get("/register", userController.register);
+router.get('/login', userController.login);
+router.post('/login',validateLogin, userController.processlogin);
+router.get('/register', userController.formRegister);
+router.post('/register', uploadFile.single('image'), registerValidation, userController.register);
+
 
 module.exports = router;

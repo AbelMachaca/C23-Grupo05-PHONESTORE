@@ -43,5 +43,14 @@
     "password": "cG1>9($}OIw.xLg",
     "type": "Admin",
     "image": "/images/avatars/pretzel.jpg"
+  },
+  {
+    "id": 1705825832134,
+    "firstName": "se1223",
+    "lastName": "se12312",
+    "email": "se@gmail.com",
+    "password": "$2a$10$R9ie1kOtLvD/liZeOL6kfOQzoJsxDAzHve5V5o8GgNaB1wyCu6fBC",
+    "type": "USER",
+    "image": "predeterminado.webp"
   }
 ]

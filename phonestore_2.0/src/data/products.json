@@ -60,10 +60,11 @@
         "description": "El nuevo chip Google Tensor G3 se ha diseñado a medida con la IA de Google para ofrecerte funciones vanguardistas de fotografía y vídeo, así como formas más inteligentes de ayudarte a lo largo del día. Camara principal de 50mp gran angular y camara frontal de 10.5mp"
     },
     {
-        "id": "55db158f-689a-4b73-8192-5fc19bcbf9b7",
-        "name": "Google Pixel 8 pro",
-        "image": "1704775874817_img_.jpeg",
-        "price": "500000",
-        "description": "El nuevo chip Google Tensor G3 se ha diseñado a medida con la IA de Google para ofrecerte funciones vanguardistas de fotografía y vídeo, así como formas más inteligentes de ayudarte a lo largo del día. Camara principal de 50mp gran angular y camara frontal de 10.5mp"
+        "id": null,
+        "name": "samsung s23",
+        "description": "el mejor celular actual de todos los tiempos, for ever!!!!",
+        "category": "Samsung",
+        "price": 10000,
+        "image": "1704947676980_img_.jpeg"
     }
 ]
