@@ -1,47 +1,56 @@
 const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/userController");
-const { check, body } = require("express-validator");
-const bcrypt = require("bcryptjs");
+const uploadFile = require("../validations/ImageUploader");
+const registerValidation = require("../validations/validationRegister");
+const {body, check} = require('express-validator');
+const bcrypt = require('bcrypt');
+const fs = require("fs")
+
+const getJson = (fileName) => {
+    const file = fs.readFileSync(`${__dirname}/../data/${fileName}.json`, 'utf-8');
+    const json = JSON.parse(file);
+    return json;
+  };
+  
+  const setJson = (array, fileName) => {
+    const json = JSON.stringify(array);
+    fs.writeFileSync(`${__dirname}/../data/${fileName}.json`, json, 'utf-8');
+  };
+  const users = getJson("users");
+
+
 
 const validateLogin = [
-  check("email")
-    .notEmpty()
-    .withMessage("Debes completar el email")
-    .bail()
-    .isEmail()
-    .withMessage("Debes completar un email valido")
-    .bail()
-    .custom((value) => {
-      const dir = path.join(__dirname, "../data/users.json");
-      let products = JSON.parse(fs.readFileSync(dir, "utf-8"));
-      const user = products.find((elemento) => elemento.email == value);
-      return user ? true : false;
-    }).withMessage('No existe el usuario'),
-  body("password")
-    .notEmpty()
-    .withMessage("El campo no puede estar vacio")
-    .bail()
-    .custom((value, { req }) => {
-      console.log("password:", value);
-      const dir = path.join(__dirname, "../data/users.json");
-      let users = JSON.parse(fs.readFileSync(dir, "utf-8"));
-      const user = users.find((elemento) => elemento.email == req.body.email);
-      console.log("user:", user);
-      console.log("user-password:", user.password);
-      return bcrypt.compareSync(value, user.password);
-    })
-    .withMessage("La contraseña no es correcta"),
-];
-const uploadFile = require("../validations/ImageUploader");
-const registerValidation = require('../validations/validationRegister');
+    body('password').notEmpty().withMessage("El campo no puede estar vacio").bail()
+    .custom((value, {req} )=> {
+        console.log(req.body);
+        console.log("password:", value);
+        const user = users.find(elemento => elemento.email == req.body.email)
+        console.log("user:", user);
+        console.log("user-password:", user.password);
+        return bcrypt.compareSync(value, user.password);
+    }).withMessage("La contraseña no es correcta"),
+    body('email').notEmpty().withMessage("El campo no puede estar vacio").bail()
+    .isEmail().withMessage("El valor ingresado debe tener el formato de un correo electronico").bail()
+    .custom(value => {
+        console.log("value:",value);        
+        const user = users.find(elemento => elemento.email == value);
+        return user ? true : false
+    }).withMessage("El usuario no existe"),
+]
 
 
 /* GET users listing. */
-router.get('/login', userController.login);
-router.post('/login',validateLogin, userController.processlogin);
-router.get('/register', userController.formRegister);
-router.post('/register', uploadFile.single('image'), registerValidation, userController.register);
-
+router.get("/login", userController.login);
+router.post("/login", validateLogin, userController.processlogin);
+router.get('/logout', userController.logout)
+router.get("/register", userController.formRegister);
+router.post(
+    "/register",
+    uploadFile.single("image"),
+    registerValidation,
+    userController.register
+);
 
 module.exports = router;

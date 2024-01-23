@@ -1,7 +1,7 @@
 const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const fs = require('fs');
-const path = require('path');
+const path = require("path")
 
 
 const getJson = (fileName) => {
@@ -16,9 +16,35 @@ const getJson = (fileName) => {
   };
   
   const userController = {
-    login: (req, res) => {
-      res.render('users/login');
+    
+    login: function (req, res) {
+      res.render("users/login", { title: "login" });
     },
+    processlogin: (req, res) => {
+      const errors = validationResult(req);
+      console.log("ingrese a error");
+      if(!errors.isEmpty()){
+        res.render("users/login", { errors: errors.mapped(), old: req.body });
+      }else{
+      
+        const { email } = req.body;
+        const users = getJson("users");
+        const user = users.find((usuario) => usuario.email == email);
+        req.session.user = user;
+        res.cookie('user',user,{maxAge: 1000 * 60 });;
+        console.log("session:", req.session);
+        res.redirect("/");
+      }
+      //console.log(errors);
+    },
+    logout:(req,res)=>{
+      req.session.destroy();
+      if (req.cookies.user) {
+        res.clearCookie('user');
+        res.clearCookie('remember');
+      }
+      res.redirect('/');
+       },
     formRegister: (req, res) => {
       res.render('users/register', { title: 'Registro' });
     },
@@ -52,33 +78,7 @@ const getJson = (fileName) => {
       setJson(newJson, 'users');
   
       res.redirect('/users/login');
-    },
-
-
-  login: function (req, res) {
-    res.render("users/login", { title: "login" });
-  },
-  processlogin: (req, res) => {
-    const errors = validationResult(req);
-    console.log("ingrese a error");
-    if(!errors.isEmpty()){
-      res.render("users/login", { errors: errors.mapped(), old: req.body });
-    }else{
-      const { email } = req.body;
-      const dir = path.join(__dirname, "../data/users.json");
-      let products = JSON.parse(fs.readFileSync(dir, "utf-8"));
-      const user = products.find((usuario) => usuario.email == email);
-      req.session.user = user;
-      res.cookie("email", user.email, { maxAge: 1000 * 60 });
-      //console.log("session:", req.session);
-      res.redirect("/");
     }
-    //console.log(errors);
-  },
-
-  register: (req, res) => {
-    res.render("users/register");
-  },
-};
+  };
 
 module.exports = userController;
