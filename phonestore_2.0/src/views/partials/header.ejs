@@ -21,7 +21,7 @@
     <a href="/products/productDetail">Iphone</a>
     <a href="/users/register">Creá tu cuenta </a>
     <% if(locals.usuario){%>
-      <p><%= usuario.name %> </p>
+      <p><%= usuario.firstName %> </p>
     <% }else{ %>
     <a href="/users/login">Ingresá </a>
     <% } %>

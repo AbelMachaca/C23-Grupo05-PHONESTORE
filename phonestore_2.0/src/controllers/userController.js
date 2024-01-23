@@ -9,19 +9,20 @@ const userController = {
   },
   processlogin: (req, res) => {
     const errors = validationResult(req);
-    //console.log(errors);
-    const { email } = req.body;
-    const dir = path.join(__dirname, "../data/users.json");
-    let products = JSON.parse(fs.readFileSync(dir, "utf-8"));
-    const user = products.find((usuario) => usuario.email == email);
-    if (user) {
+    console.log("ingrese a error");
+    if(!errors.isEmpty()){
+      res.render("users/login", { errors: errors.mapped(), old: req.body });
+    }else{
+      const { email } = req.body;
+      const dir = path.join(__dirname, "../data/users.json");
+      let products = JSON.parse(fs.readFileSync(dir, "utf-8"));
+      const user = products.find((usuario) => usuario.email == email);
       req.session.user = user;
       res.cookie("email", user.email, { maxAge: 1000 * 60 });
       //console.log("session:", req.session);
       res.redirect("/");
-    } else {
-      res.render("users/login", { errors: errors.mapped(), old: req.body });
     }
+    //console.log(errors);
   },
 
   register: (req, res) => {

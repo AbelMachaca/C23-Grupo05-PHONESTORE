@@ -24,6 +24,8 @@ const validateLogin = [
     .bail()
     .custom((value, { req }) => {
       console.log("password:", value);
+      const dir = path.join(__dirname, "../data/users.json");
+      let users = JSON.parse(fs.readFileSync(dir, "utf-8"));
       const user = users.find((elemento) => elemento.email == req.body.email);
       console.log("user:", user);
       console.log("user-password:", user.password);
