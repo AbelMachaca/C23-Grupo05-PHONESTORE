@@ -19,13 +19,17 @@ module.exports = [
         return user ? false : true
     }).withMessage("El DNI ya se ecuentra registrado"),
 
-    body('password').notEmpty().withMessage("El campo no puede estar vacio").bail()
-    .custom((value)=> {
-        return value == req.body.password2;
-    }).withMessage("Los password no coinciden"),
+    body('tel').notEmpty().withMessage("El campo no puede estar vacio").bail()
+    .isInt().withMessage("Debe ingresar caracteres númericos ")
+    .isLength({min:7,max:10}).withMessage("El valor ingresado debe tener al menos 7 caracteres y maximo 10").bail(),
+
+    // body('password').notEmpty().withMessage("El campo no puede estar vacio").bail()
+    // .custom((value)=> {
+    //     return value == req.body.password2;
+    // }).withMessage("Los password no coinciden"),
 
     body('birthDate').notEmpty().withMessage("El campo no puede estar vacio").bail()     
-    .isDate().withMessage("El Campo tiene que ser una fecha valida").bail(),
+    
 ];
 
 

@@ -1,10 +1,25 @@
 <!-- Head -->
 <%- include("../partials/head.ejs") %>
+  <!-- Header -->
+  <%- include("../partials/header.ejs")%>
   
 <body class="body-register">
+
     <div class="login-container">
+      <script type="text/javascript">
+        function confirmacion(){
+            let respuesta = confirm("¿Estas seguro de modificar los datos?");
+    
+            if (respuesta == true){
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+    </script>
       <div class="form-registro">
-        <img class="login-img" src="/images/register-img/login.png" alt="imagen login" />
+      <img class="login-img" src="/images/register-img/login.png" alt="imagen login" />
       <h1>Editar perfil</h1>
       <form action="/users/userUpdate/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <div class="form-group">
@@ -28,7 +43,7 @@
             placeholder="Ingresa tu nombre"
             value="<%= locals.old && old.firstName ? old.firstName : user.firstName %>"
           />
-          <p><%= locals.errores && errores.firstName ? errores.firstName.msg : null %> </p>
+          <p class="errors_form_edit_user"><%= locals.errores && errores.firstName ? errores.firstName.msg : null %> </p>
         </div>
         
         <div class="form-group">
@@ -41,7 +56,7 @@
               placeholder="Ingresa tu apellido"
               value="<%= locals.old && old.lastName ? old.lastName : user.lastName %>"
             />
-            <p><%= locals.errores && errores.lastName ? errores.lastName.msg : null %> </p>
+            <p class="errors_form_edit_user"><%= locals.errores && errores.lastName ? errores.lastName.msg : null %> </p>
           </div>
 
           <div class="form-group">
@@ -52,8 +67,9 @@
               id="dniNumber"
               name="dniNumber"
               placeholder="Número de documento"
-              value="<%= user.dniNumber %>"
+              value="<%= locals.old && old.dniNumber ? old.dniNumber : user.dniNumber %>"
             />
+            <p class="errors_form_edit_user"><%= locals.errores && errores.lastName ? errores.lastName.msg : null %> </p>
           </div>
 
           <!-- <div class="form-group">
@@ -68,7 +84,7 @@
             />
           </div> -->
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label class="label-general" for="password">Contraseña</label>
             <div class="password-container">
               <input
@@ -81,7 +97,7 @@
               />
               <i class="fa-solid fa-eye main-icon"></i>
             </div>
-          </div>
+          </div> -->
         
         <div class="form-group">
           <label class="label-general" for="address">Domicilio</label>
@@ -93,7 +109,7 @@
             placeholder="Indique su domicilio"
             value="<%= locals.old && old.address ? old.address : user.address %>"
             />
-            <p><%= locals.errores && errores.address ? errores.address.msg : null %> </p>
+            <p class="errors_form_edit_user"><%= locals.errores && errores.address ? errores.address.msg : null %> </p>
           </div>
 
         <div class="form-group">
@@ -106,7 +122,7 @@
             placeholder="Indique su código postal"
             value="<%= locals.old && old.postalCode ? old.postalCode : user.postalCode %>"
             />
-            <p><%= locals.errores && errores.postalCode ? errores.postalCode.msg : null %> </p>
+            <p class="errors_form_edit_user"><%= locals.errores && errores.postalCode ? errores.postalCode.msg : null %> </p>
           </div>
 
         <div class="form-group">
@@ -116,10 +132,10 @@
             type="tel"
             id="tel"
             name="tel"
-            placeholder="Número de celular"
+            placeholder="Número de celular: sin 0 ni 15"
             value="<%= locals.old && old.tel ? old.tel : user.tel %>"
             />
-            <p><%= locals.errores && errores.tel ? errores.tel.msg : null %> </p>
+            <p class="errors_form_edit_user"><%= locals.errores && errores.tel ? errores.tel.msg : null %> </p>
           </div>
 
         <div class="form-group">
@@ -131,12 +147,15 @@
             name="birthDate"
             value="<%= locals.old && old.birthDate ? old.birthDate : user.birthDate %>"
             />
-            <p><%= locals.errores && errores.birthDate ? errores.birthDate.msg : null %> </p>
+            <p class="errors_form_edit_user"><%= locals.errores && errores.birthDate ? errores.birthDate.msg : null %> </p>
           </div>
-        <button class="crear-cuenta button-general" type="submit">Guardar cambios</button>
-        <button class="borrar-cuenta button-general" type="reset">Cancelar</button>
+        <button class="crear-cuenta button-general" type="submit" onclick="return confirmacion()">Guardar cambios</button>
+        <button class="borrar-cuenta button-general" type="reset" >Reiniciar cambios</button>
       </form>
     </div>
     </div>
+
   </body>
+      <!-- Footer -->
+      <%- include("../partials/footer.ejs")%>
 </html>

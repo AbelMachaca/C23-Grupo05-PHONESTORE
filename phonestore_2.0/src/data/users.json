@@ -1,1 +1,13 @@
-[{"id":"1","firstName":"juan","lastName":"","dniNumber":"8888888","password":"","address":"peron 1000","tel":"1102020101","postalCode":"5558","birthDate":"2023-09-19","image":"1705810030824_img_.png"},{"id":"2","firstName":"hhh","lastName":"","dniNumber":"30222444","password":"","address":"peron 1000","tel":"1102020101","postalCode":"2020","birthDate":"2023-07-03","image":"1705917303815_img_.png"},{"id":3,"firstName":"Abel","lastName":"Machaca","email":"abel@gmail.com","password":"123456","type":"Admin","image":""},{"id":4,"firstName":"Sergio","lastName":"Daniel","email":"sergio@gmail.com","password":"123456","type":"Admin","image":""},{"id":5,"firstName":"Lucas","lastName":"Villalba","email":"lucas@gmail.com","password":"123456","type":"Admin","image":""}]
+[
+    {
+        "id": "1",
+        "firstName": "juan",
+        "lastName": "perez",
+        "dniNumber": "34789456",
+        "address": "olazabal 1000",
+        "tel": "1125627225",
+        "postalCode": "1234",
+        "birthDate": "1992-08-09",
+        "image": "1705810030824_img_.png"
+    }
+]

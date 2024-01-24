@@ -20,8 +20,11 @@ const upload = multer({ storage })
 router.get('/login', userController.login);
 router.get('/register', userController.register);
 
+//perfil de usuario
+router.get('/profile/:id', userController.show)
+
 //actualización de datos del usuario
-router.get('/userUpdate/:id',upload.single("image"), userController.edit);
+router.get('/userUpdate/:id', userController.edit);
 router.put('/userUpdate/:id',upload.single("image"), updateValidator, userController.update);
 
 module.exports = router;
