@@ -22,20 +22,15 @@ const getJson = (fileName) => {
     },
     processlogin: (req, res) => {
       const errors = validationResult(req);
-      console.log("ingrese a error");
-      if(!errors.isEmpty()){
+    
+      if (!errors.isEmpty()) {
         res.render("users/login", { errors: errors.mapped(), old: req.body });
-      }else{
-      
-        const { email } = req.body;
-        const users = getJson("users");
-        const user = users.find((usuario) => usuario.email == email);
-        req.session.user = user;
-        res.cookie('user',user,{maxAge: 1000 * 60 });;
-        console.log("session:", req.session);
+      } else {
+        
+    
+       
         res.redirect("/");
       }
-      //console.log(errors);
     },
     logout:(req,res)=>{
       req.session.destroy();

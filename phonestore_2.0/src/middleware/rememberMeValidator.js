@@ -1,18 +1,43 @@
+const fs = require('fs');
+
+
+
+const getJson = (fileName) => {
+  const file = fs.readFileSync(`${__dirname}/../data/${fileName}.json`, 'utf-8');
+  const json = JSON.parse(file);
+  return json;
+};
+
+
+
+
 const rememberMeMiddleware = (req, res, next) => {
-    const rememberMeToken = req.cookies.rememberMeToken;
+  console.log("llegue al middleware rememberMe");
+  console.log(req.cookies.rememberMe);
+  console.log(req.cookies.user);
+
   
-    if (rememberMeToken) {
-      // Verificar la validez del token y autenticar al usuario si es válido
-      if (validateRememberMeToken(rememberMeToken)) {
-        // Autenticar al usuario y establecer la sesión
-        const user = authenticateUserFromToken(rememberMeToken);
+
+  
+  
+
+    const userCookie = req.cookies.user;
+const rememberMe = req.cookies.rememberMe
+    if (userCookie && rememberMe ) {
+      console.log("Cookie user está presente");
+
+      const users = getJson("users");
+      const user = users.find((elemento) => elemento.email === userCookie);
+
+     
         req.session.user = user;
-        res.cookie('user', user, { maxAge: 1000 * 60 });  // Establecer cookie de sesión
-      }
-    }
-  
-    // Continuar con la siguiente capa de middleware o controlador
-    next();
-  };
-  
-  module.exports = rememberMeMiddleware;
+        console.log("Usuario recordado:", user);
+      
+    
+  }
+
+  console.log("Termina el middleware rememberMe");
+  next();
+};
+
+module.exports = rememberMeMiddleware;

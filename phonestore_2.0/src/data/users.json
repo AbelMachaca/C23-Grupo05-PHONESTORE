@@ -61,5 +61,14 @@
     "password": "$2a$10$9djCzQ3Quc/s2/o3WaUdkOzcrP92.MfzlelR.vtQxAIKbqz9guAv2",
     "type": "USER",
     "image": "1706041692631_img_.jpg"
+  },
+  {
+    "id": 1706071251708,
+    "firstName": "Jorge",
+    "lastName": "Segura",
+    "email": "ariels@gmail.com",
+    "password": "$2a$10$Uqg27Btt1OUzJxQapLAfWOuo0j5bbBkp6iMV/hcnUkMJqfwgWhGpS",
+    "type": "USER",
+    "image": "1706071251601_img_.jpg"
   }
 ]

@@ -162,6 +162,12 @@ div.social-buttons-login {
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
+.input-rememberMe{
+  color: #777777;
+  margin-bottom: 10px;
+
+}
+
 /*-------------------------------- Medidas Mobile --------------------------------------*/
 
 @media (max-width: 426px) {
