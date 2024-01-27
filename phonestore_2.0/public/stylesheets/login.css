@@ -15,6 +15,10 @@
   display: none;
 }
 
+.error-message{
+  color:#ffffff;
+}
+
 .login-container-body img {
   width: 20%;
   opacity: 0.5;
@@ -156,6 +160,12 @@ div.social-buttons-login {
 
 .social-buttons-login button:hover{
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.input-rememberMe{
+  color: #777777;
+  margin-bottom: 10px;
+
 }
 
 /*-------------------------------- Medidas Mobile --------------------------------------*/

@@ -43,5 +43,32 @@
     "password": "cG1>9($}OIw.xLg",
     "type": "Admin",
     "image": "/images/avatars/pretzel.jpg"
+  },
+  {
+    "id": 1705825832134,
+    "firstName": "se1223",
+    "lastName": "se12312",
+    "email": "se@gmail.com",
+    "password": "$2a$10$R9ie1kOtLvD/liZeOL6kfOQzoJsxDAzHve5V5o8GgNaB1wyCu6fBC",
+    "type": "USER",
+    "image": "predeterminado.webp"
+  },
+  {
+    "id": 1706041692636,
+    "firstName": "emma",
+    "lastName": "aasdasd",
+    "email": "emma@gmail.com",
+    "password": "$2a$10$9djCzQ3Quc/s2/o3WaUdkOzcrP92.MfzlelR.vtQxAIKbqz9guAv2",
+    "type": "USER",
+    "image": "1706041692631_img_.jpg"
+  },
+  {
+    "id": 1706071251708,
+    "firstName": "Jorge",
+    "lastName": "Segura",
+    "email": "ariels@gmail.com",
+    "password": "$2a$10$Uqg27Btt1OUzJxQapLAfWOuo0j5bbBkp6iMV/hcnUkMJqfwgWhGpS",
+    "type": "USER",
+    "image": "1706071251601_img_.jpg"
   }
 ]

@@ -15,9 +15,14 @@
                 <a href="/products/productDetail">LG</a>
                 <a href="/products/productDetail">Xiaomi</a>
                 <a href="/products/productDetail">Iphone</a>
-                <a href="/users/register">Creá tu cuenta </a>
-                <a href="/users/login">Ingresá </a>
-               
+                
+                <% if(locals.usuario){%>
+                  <p ><%= usuario.firstName %> </p>
+                  <a  href="/users/logout"> <i class="fas fa-sign-out-alt" style="font-size: 30px;"></i></a>
+                  <% }else{ %>
+                    <a href="/users/register" >Creá tu cuenta </a>
+                    <a href="/users/login">Ingresá </a>
+             <%}%>
             </section>
            
 </header>
