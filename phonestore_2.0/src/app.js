@@ -33,6 +33,12 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use(session({
+  secret:"phonestore2.0",
+  resave: false,
+  saveUninitialized: true,
+}));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
