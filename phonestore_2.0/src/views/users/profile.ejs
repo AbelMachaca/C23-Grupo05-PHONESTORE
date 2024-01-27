@@ -1,0 +1,38 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+<body>
+<!-- Header -->
+ <%- include("../partials/header.ejs")%>
+    <section class="seccion-perfil-usuario">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img src=" /images/usersProfile/<%= user.image %> " alt="img-avatar">
+                </div>
+            </div>
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo"> <%= user.firstName %> <%= user.lastName %></h3>
+            </div>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+                    <li>Número de DNI: <%= user.dniNumber %> </li>
+                    <li>Telefono: <%= user.tel %></li>
+                    <li>Domicilio: <%= user.address %></li>
+                    <li>Fecha nacimiento: <%= user.birthDate %></li>
+                </ul>
+                <ul class="lista-datos">
+                    <!-- <li>Edite su perfil:</li> -->
+                    <a href="/users/userUpdate/<%= user.id %>"><button class="button_edit_profile">Edite su perfil</button></a>
+                    <!-- <li></li> -->
+                </ul>
+            </div>
+            
+        </div>
+    </section>
+  <!-- Footer -->
+  <%- include("../partials/footer.ejs")%>
+
+</body>
+</html>

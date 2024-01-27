@@ -72,3 +72,15 @@
     "image": "1706071251601_img_.jpg"
   }
 ]
+    {
+        "id": "1",
+        "firstName": "juan",
+        "lastName": "perez",
+        "dniNumber": "34789456",
+        "address": "olazabal 1000",
+        "tel": "1125627225",
+        "postalCode": "1234",
+        "birthDate": "1992-08-09",
+        "image": "1705810030824_img_.png"
+    }
+]
