@@ -43,7 +43,7 @@ const validateLogin = [
 ]
 
 const multer  = require('multer');
-const userController = require('../controllers/userController');
+
 const path = require("path");
 
 const updateValidator = require('../validations/userUpdateValidator');
@@ -60,7 +60,7 @@ const upload = multer({ storage })
 
 /* GET users listing. */
 router.get("/login", userController.login);
-router.post("/login", validateLogin,cookiesGenerate,userController.processlogin);
+router.post("/login", validateLogin,userController.processlogin);
 router.get('/logout', userController.logout)
 router.get("/register", userController.formRegister);
 router.post(

@@ -68,19 +68,16 @@
     "lastName": "Segura",
     "email": "ariels@gmail.com",
     "password": "$2a$10$Uqg27Btt1OUzJxQapLAfWOuo0j5bbBkp6iMV/hcnUkMJqfwgWhGpS",
-    "type": "USER",
+    "rol": "USER",
     "image": "1706071251601_img_.jpg"
+  },
+  {
+    "id": 1706470953092,
+    "firstName": "jorge",
+    "lastName": "Segura",
+    "email": "jorger@gmail.com",
+    "password": "$2a$10$/z5dkO3CiUeCfCBgcJNQBeSssaWxnU3XUTKxDf/GFhOfvRMEFMdH.",
+    "type": "USER",
+    "image": "foto de auricular 1-1706470953018-3f6d7454-2272-45a8-9d7b-2c979a901aac.jpg"
   }
-]
-    {
-        "id": "1",
-        "firstName": "juan",
-        "lastName": "perez",
-        "dniNumber": "34789456",
-        "address": "olazabal 1000",
-        "tel": "1125627225",
-        "postalCode": "1234",
-        "birthDate": "1992-08-09",
-        "image": "1705810030824_img_.png"
-    }
 ]
