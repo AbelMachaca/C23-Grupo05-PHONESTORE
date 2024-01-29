@@ -5,7 +5,7 @@
     "lastName": "Huanca",
     "email": "cswainger0@webmd.com",
     "password": "aI9>AKrvox_n'",
-    "type": "Admin",
+    "type": "admin",
     "image": "/images/avatars/pletzale.jpg"
   },
   {
@@ -14,7 +14,7 @@
     "lastName": "Crocianelli",
     "email": "vlaurenty1@macromedia.com",
     "password": "iA2?4dR(nQD=3itv",
-    "type": "Admin",
+    "type": "admin",
     "image": "/images/avatars/polloCorazon.jpg"
   },
   {
@@ -23,7 +23,7 @@
     "lastName": "Machaca",
     "email": "ftommei2@typepad.com",
     "password": "mC1=\"!=b9N3ZQd",
-    "type": "Admin",
+    "type": "admin",
     "image": "/images/avatars/polloCorazon.jpg"
   },
   {
@@ -41,7 +41,7 @@
     "lastName": "Villalba",
     "email": "sburnham4@unc.edu",
     "password": "cG1>9($}OIw.xLg",
-    "type": "Admin",
+    "type": "admin",
     "image": "/images/avatars/pretzel.jpg"
   },
   {
@@ -70,5 +70,23 @@
     "password": "$2a$10$Uqg27Btt1OUzJxQapLAfWOuo0j5bbBkp6iMV/hcnUkMJqfwgWhGpS",
     "type": "USER",
     "image": "1706071251601_img_.jpg"
+  },
+  {
+    "id": 1706412759990,
+    "firstName": "jorge",
+    "lastName": "segura",
+    "email": "jorgesegura@gmail.com",
+    "password": "$2a$10$W2HvU3Kd0ICLieUuW53Nz.POHcdbeOnkXMg.lMrZqhG15Vr/wDQIG",
+    "type": "USER",
+    "image": "1706412759927_img_.jpg"
+  },
+  {
+    "id": 1706499490525,
+    "firstName": "sergio",
+    "lastName": "maya",
+    "email": "sergiomaya@gmail.com",
+    "password": "$2a$10$n0sq6Fmtt.XvpViiiLQfkufvDSDw.8pPjUCvh37/leBeWofE6G2CC",
+    "type": "admin",
+    "image": "1706499490478_img_.jpg"
   }
 ]
