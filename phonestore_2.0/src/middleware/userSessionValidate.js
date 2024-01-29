@@ -1,8 +1,8 @@
-const userSessionValidate=(req,res,next)=>{
-    if(req.session.user.rol == user){
+const userSessionValidate = (req,res,next)=>{
+    if(req.session.user){
         next();
     }
-    res.redirect("/login");
+    res.redirect("/users/login");
 };
 
-module.exports=userSessionValidate;
+module.exports = userSessionValidate;

@@ -1,4 +1,4 @@
-RETROSPECTIVA DEL SPRINT 5:
+RETROSPECTIVA DEL SPRINT 4:
 
 Logros y Reflexiones:
 Durante el quinto sprint, el equipo consolidó experiencias previas, manteniendo un enfoque continuo en la mejora del trabajo conjunto. A continuación, se presentan aspectos destacados y reflexiones:
