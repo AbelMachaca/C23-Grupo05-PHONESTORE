@@ -1,0 +1,122 @@
+.contenedor_body_dashboard {
+    font-family: Arial, sans-serif;
+    margin: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    background-color: rgba(30, 33, 38, 1);
+  }
+  
+  .contenedor_body_dashboard h2 {
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
+    background-color: rgba(30, 33, 38, 1);
+    border-radius: 5px;
+  }
+  
+  .contenedor_body_dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+  }
+  
+  .contenedor_body_dashboard th,
+  td {
+    color:#fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .contenedor_body_dashboard th {
+    background-color: rgba(30, 33, 38, 1);
+    color: #fff;
+  }
+  
+  .contenedor_body_dashboard img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .contenedor_body_dashboard form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .contenedor_body_dashboard label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .contenedor_body_dashboard input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  
+  .contenedor_body_dashboard button {
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .contenedor_body_dashboard a {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(60, 66, 76);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .contenedor_body_dashboard a:hover {
+    background-color: rgba(30, 33, 38, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  .contenedor_body_dashboard button {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(60, 66, 76);
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .contenedor_body_dashboard button:hover {
+    background-color: rgba(30, 33, 38, 1);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Responsive Styles */
+  @media screen and (max-width: 600px) {
+    .contenedor_body_dashboard th,
+    td {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  
+    .contenedor_body_dashboard th,
+    td {
+      text-align: center;
+    }
+  
+    .contenedor_body_dashboard img {
+      width: 100%;
+    }
+  }
+  

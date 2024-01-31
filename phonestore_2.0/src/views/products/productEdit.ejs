@@ -1,0 +1,87 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+
+<body class="body-editProduct">
+
+  <!-- Header -->
+  <%- include("../partials/header.ejs")%>
+  
+  <div class="login-container-editProduct">
+    <div class="form-registro-editProduct">
+      
+      <h1>Editar Producto</h1>
+      
+      <form  action="/products/productEdit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="form-group-editProduct">
+          <label class="label-general-editProduct" for="nombre">Nombre de producto</label>
+          <input
+            class="input-general-editProduct"
+            type="text"
+            id="name"
+            name="name"
+            placeholder=""
+            value="<%= product.name %>"
+          />
+        </div>
+        
+        <div class="form-group-editProduct">
+          <label class="label-general-editProduct" for="imagen">Imagen</label>
+          <input
+            class="input-general-editProduct"
+            type="file"
+            id="imagen"
+            name="image"
+            placeholder=""
+            value="<%= product.images %>"
+          />
+        </div>
+
+        <div class="form-group-editProduct">
+          <label class="label-general-editProduct" for="Categoria">Categoria</label>
+          <select class="input-general-editProduct" id="Categoria" onchange="mostrarColor()" name="category">
+            <option value="0">Seleccione una marca</option>
+            <option value="Samsung" <%= product.category === 'Samsung' ? 'selected' : '' %>>Samsung</option>
+            <option value="Motorola" <%= product.category === 'Motorola' ? 'selected' : '' %>>Motorola</option>
+            <option value="LG" <%= product.category === 'LG' ? 'selected' : '' %>>LG</option>
+            <option value="Xiaomi" <%= product.category === 'Xiaomi' ? 'selected' : '' %>>Xiaomi</option>
+            <option value="Iphone" <%= product.category === 'Iphone' ? 'selected' : '' %>>Iphone</option>
+          </select>
+        </div>
+
+        <div class="form-group-editProduct">
+          <label class="label-general-editProduct" for="precio">Precio</label>
+          <input
+            class="input-general-editProduct"
+            type="number"
+            id="price"
+            name="price"
+            placeholder=""
+            value="<%= product.price %>"
+            required
+          />
+        </div>
+
+        <div class="form-group-editProduct">
+          <label class="label-general-editProduct" for="descripcion">Descripción</label>
+          <textarea 
+            class="input-general-editProduct"
+            name="description" 
+            id="description" 
+            cols="30" 
+            rows="10"
+            placeholder=""
+            required
+          ><%= product.description %></textarea>
+        </div>
+        
+        <button class="editProduct button-editProduct" type="submit">Actualizar Producto</button>
+        
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <%- include("../partials/footer.ejs")%>
+  
+</body>
+</html>

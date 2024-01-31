@@ -1,0 +1,49 @@
+.footer-container{
+    color: white;
+    background-color: #000120;
+    text-align: center;
+}
+
+.footer-container a{
+    display: block;
+    color: white;
+}
+
+.footer-container div{
+    margin-top: 30px;
+    padding: 10px;
+    
+}
+
+.footer-hijos:nth-child(3) p {
+    margin-top: 10px; 
+  }
+
+
+@media(min-width:768px){
+    .footer-container{
+        display: flex;
+        text-align: center;
+    }
+
+    .footer-hijos{
+        margin-left: auto ;
+        margin-right: auto;
+        
+    }
+    .footer-container div{
+        margin-top: 30px;
+        padding-top: 10px;
+        padding-bottom: 30px;
+        
+    }
+
+    .footer-hijos:last-child{
+        margin-top: 19px;
+
+    }
+    
+    
+      
+    
+}

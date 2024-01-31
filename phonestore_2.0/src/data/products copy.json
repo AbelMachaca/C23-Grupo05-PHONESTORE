@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Samsung",
+        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
+        "category": "samsung",
+        "color": "negro",
+        "price": 7043,
+        "image": "sam.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Motorola",
+        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
+        "category": "Motorola",
+        "color": "negro",
+        "price": 7043,
+        "image": "motorola2.png"
+    },
+    {
+        "id": 3,
+        "name": "LG K42",
+        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
+        "category": "LG",
+        "color": "negro",
+        "price": 6349,
+        "image": "lg.webp"
+    },
+    {
+        "id": 4,
+        "name": "Xiaomi Redmi",
+        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
+        "category": "Xiaomi",
+        "color": "negro",
+        "price": 8746,
+        "image": "xiaomi.webp"
+    },
+    {
+        "id": 5,
+        "name": "Iphone",
+        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
+        "category": "Iphone",
+        "color": "negro",
+        "price": 3650,
+        "image": "iphone.jpg"
+    },
+    {
+        "id": 6,
+        "name": "A21",
+        "description": "Samsung Galaxy S20FE,  es parte de la familia Galaxy, gran diseño, camara frontal excelente con 32mpx, y su procesador potente, para jugar, navegar, disfrutar de todo el entretenimiento",
+        "category": "Samsung",
+        "color": "negro",
+        "price": 5996,
+        "image": "sam.jpg"
+    }
+]

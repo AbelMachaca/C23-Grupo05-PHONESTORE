@@ -1,0 +1,9 @@
+.errors_form_edit_user{
+    background-color: white;
+    color: red;
+}
+.imagen_perfil{
+    border-radius: 50%;
+    width: 6rem;
+    height: 6rem;
+}

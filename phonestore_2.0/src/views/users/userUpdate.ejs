@@ -1,0 +1,161 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+  <!-- Header -->
+  <%- include("../partials/header.ejs")%>
+  
+<body class="body-register">
+
+    <div class="login-container">
+      <script type="text/javascript">
+        function confirmacion(){
+            let respuesta = confirm("¿Estas seguro de modificar los datos?");
+    
+            if (respuesta == true){
+                return true;
+            } else {
+                return false;
+            }
+        }
+        
+    </script>
+      <div class="form-registro">
+      <img class="login-img" src="/images/register-img/login.png" alt="imagen login" />
+      <h1>Editar perfil</h1>
+      <form action="/users/userUpdate/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+          <div class="input-group mb-3">
+            <img src="/images/usersProfile/<%= user.image %>" alt="imagen de perfil" class = "imagen_perfil">
+            <label for="image" class="label-general">Foto de perfil</label>
+            <input 
+            class="input-general" 
+            type="file" 
+            id="image" 
+            name="image"
+            accept="image/*"
+            single>
+        </div>
+          <label class="label-general" for="firstName">Nombre</label>
+          <input
+            class="input-general"
+            type="text"
+            id="firstName"
+            name="firstName"
+            placeholder="Ingresa tu nombre"
+            value="<%= locals.old && old.firstName ? old.firstName : user.firstName %>"
+          />
+          <p class="errors_form_edit_user"><%= locals.errores && errores.firstName ? errores.firstName.msg : null %> </p>
+        </div>
+        
+        <div class="form-group">
+            <label class="label-general" for="lastName">Apellido</label>
+            <input
+              class="input-general"
+              type="text"
+              id="lastName"
+              name="lastName"
+              placeholder="Ingresa tu apellido"
+              value="<%= locals.old && old.lastName ? old.lastName : user.lastName %>"
+            />
+            <p class="errors_form_edit_user"><%= locals.errores && errores.lastName ? errores.lastName.msg : null %> </p>
+          </div>
+
+          <div class="form-group">
+            <label class="label-general" for="dniNumber">DNI</label>
+            <input
+              class="input-general"
+              type="number"
+              id="dniNumber"
+              name="dniNumber"
+              placeholder="Número de documento"
+              value="<%= locals.old && old.dniNumber ? old.dniNumber : user.dniNumber %>"
+            />
+            <p class="errors_form_edit_user"><%= locals.errores && errores.lastName ? errores.lastName.msg : null %> </p>
+          </div>
+
+          <!-- <div class="form-group">
+            <label class="label-general" for="email">Email</label>
+            <input
+              class="input-general"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Ingresa tu email"
+              
+            />
+          </div> -->
+
+          <!-- <div class="form-group">
+            <label class="label-general" for="password">Contraseña</label>
+            <div class="password-container">
+              <input
+                class="input-general"
+                type="text"
+                id="password"
+                name="password"
+                placeholder="Ingresa tu contraseña"
+                
+              />
+              <i class="fa-solid fa-eye main-icon"></i>
+            </div>
+          </div> -->
+        
+        <div class="form-group">
+          <label class="label-general" for="address">Domicilio</label>
+          <input
+            class="input-general"
+            type="text"
+            id="address"
+            name="address"
+            placeholder="Indique su domicilio"
+            value="<%= locals.old && old.address ? old.address : user.address %>"
+            />
+            <p class="errors_form_edit_user"><%= locals.errores && errores.address ? errores.address.msg : null %> </p>
+          </div>
+
+        <div class="form-group">
+          <label class="label-general" for="postalCode">Código postal</label>
+          <input
+            class="input-general"
+            type="number"
+            id="postalCode"
+            name="postalCode"
+            placeholder="Indique su código postal"
+            value="<%= locals.old && old.postalCode ? old.postalCode : user.postalCode %>"
+            />
+            <p class="errors_form_edit_user"><%= locals.errores && errores.postalCode ? errores.postalCode.msg : null %> </p>
+          </div>
+
+        <div class="form-group">
+          <label class="label-general" for="tel">Número de celular</label>
+          <input
+            class="input-general"
+            type="tel"
+            id="tel"
+            name="tel"
+            placeholder="Número de celular: sin 0 ni 15"
+            value="<%= locals.old && old.tel ? old.tel : user.tel %>"
+            />
+            <p class="errors_form_edit_user"><%= locals.errores && errores.tel ? errores.tel.msg : null %> </p>
+          </div>
+
+        <div class="form-group">
+          <label class="label-general" for="birthDate">Fecha de nacimiento: </label>
+          <input
+            class="input-general"
+            type="date"
+            id="birthDate"
+            name="birthDate"
+            value="<%= locals.old && old.birthDate ? old.birthDate : user.birthDate %>"
+            />
+            <p class="errors_form_edit_user"><%= locals.errores && errores.birthDate ? errores.birthDate.msg : null %> </p>
+          </div>
+        <button class="crear-cuenta button-general" type="submit" onclick="return confirmacion()">Guardar cambios</button>
+        <button class="borrar-cuenta button-general" type="reset" >Reiniciar cambios</button>
+      </form>
+    </div>
+    </div>
+
+  </body>
+      <!-- Footer -->
+      <%- include("../partials/footer.ejs")%>
+</html>

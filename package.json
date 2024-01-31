@@ -1,16 +1,19 @@
 {
-  "name": "c23-grupo05-phonestore",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.18.2",
+    "http-errors": "^2.0.0",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.5-lts.1"
+  },
+  "name": "c23-grupo05-ecommerce",
+  "description": "* [Home](https://ferbi.com.ar/)\r * [Carrito](https://www.fravega.com/checkout/#/cart)\r * [Login]SE TOMARON ASPECTOS DE LOS EJEMPLOS DE LOGIN BRINDADOS POR LA SIGUIENTE WEB(https://medium.com/uxlatam/50-login-y-formularios-de-registro-para-inspirarse-96f9282e4c3e)",
   "version": "1.0.0",
-  "description": "* [Home](Colocar-Link)\r * [Carrito](Colocar-Link)\r * [Login](https://shop.samsung.com/ar/login?returnUrl=%2Far%2Faccount)\r * [Registro](Colocar-Link)\r * [Producto](https://shop.samsung.com/ar/celular-galaxy-s20-fe-5g/p?cid=ar_ow_brand_samsung_none_brand-ar-gnb_ecommerce_none_generic&skuId=135189)",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2",
-    "nodemon": "^3.0.1"
-  }
+  "license": "ISC"
 }
