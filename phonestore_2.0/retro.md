@@ -35,6 +35,24 @@ Feedback Constructivo: Fomentaremos un entorno donde el feedback sea constructiv
 El equipo se compromete a seguir evolucionando en cada sprint, manteniendo una dinámica de trabajo positiva y preservando la unidad para alcanzar con éxito los objetivos futuros.
 
 
+ -------------------------------- Retrospectiva Sprint 6 -------------------------------------------
+
+Comenzar a hacer: Integraciones por medio de pull request.
+---------------------------------------------------------
+
+Hacer más: Dailies/Weeklies.
+---------------------------
+
+Continuar haciendo: Comunicativos, organizados, compañeros.
+----------------------------------------------------------
+
+Hacer menos: Hacer más cortas las reuniones de cada daily.
+---------------------------------------------------------
+
+Dejar de hacer: Ser impuntuales en la fecha pactada para la finalización de cada sprint.
+
+
+
 
 
 
