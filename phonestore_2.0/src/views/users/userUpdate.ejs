@@ -21,10 +21,10 @@
       <div class="form-registro">
       <img class="login-img" src="/images/register-img/login.png" alt="imagen login" />
       <h1>Editar perfil</h1>
-      <form action="/users/userUpdate/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+      <form action="/users/userUpdate/<%= usuario.id_usuario %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <div class="input-group mb-3">
-            <img src="/images/usersProfile/<%= user.image %>" alt="imagen de perfil" class = "imagen_perfil">
+            <img src="/images/usersProfile/<%= usuario.imagen %>" alt="imagen de perfil" class = "imagen_perfil">
             <label for="image" class="label-general">Foto de perfil</label>
             <input 
             class="input-general" 
@@ -34,45 +34,46 @@
             accept="image/*"
             single>
         </div>
-          <label class="label-general" for="firstName">Nombre</label>
+          <label class="label-general" for="nombre">Nombre</label>
           <input
             class="input-general"
             type="text"
-            id="firstName"
-            name="firstName"
+            id="nombre"
+            name="nombre"
             placeholder="Ingresa tu nombre"
-            value="<%= locals.old && old.firstName ? old.firstName : user.firstName %>"
+            value="<%= locals.old && old.nombre ? old.nombre : usuario.nombre %>"
           />
-          <p class="errors_form_edit_user"><%= locals.errores && errores.firstName ? errores.firstName.msg : null %> </p>
+          <p class="errors_form_edit_user"><%= locals.errores && errores.nombre ? errores.nombre.msg : null %> </p>
         </div>
         
         <div class="form-group">
-            <label class="label-general" for="lastName">Apellido</label>
+            <label class="label-general" for="apellido">Apellido</label>
             <input
               class="input-general"
               type="text"
-              id="lastName"
-              name="lastName"
+              id="apellido"
+              name="apellido"
               placeholder="Ingresa tu apellido"
-              value="<%= locals.old && old.lastName ? old.lastName : user.lastName %>"
+              value="<%= locals.old && old.apellido ? old.apellido : usuario.apellido %>"
+              
             />
-            <p class="errors_form_edit_user"><%= locals.errores && errores.lastName ? errores.lastName.msg : null %> </p>
+            <p class="errors_form_edit_user"></p>
           </div>
 
           <div class="form-group">
-            <label class="label-general" for="dniNumber">DNI</label>
+            <label class="label-general" for="direccion">Dirección</label>
             <input
               class="input-general"
-              type="number"
-              id="dniNumber"
-              name="dniNumber"
-              placeholder="Número de documento"
-              value="<%= locals.old && old.dniNumber ? old.dniNumber : user.dniNumber %>"
+              type="text"
+              id="direccion"
+              name="direccion"
+              placeholder="Dirección"
+              value="<%= locals.old && old.direccion ? old.direccion : usuario.direccion %>"
             />
-            <p class="errors_form_edit_user"><%= locals.errores && errores.lastName ? errores.lastName.msg : null %> </p>
+            <p class="errors_form_edit_user"></p>
           </div>
 
-          <!-- <div class="form-group">
+          <div class="form-group">
             <label class="label-general" for="email">Email</label>
             <input
               class="input-general"
@@ -80,9 +81,10 @@
               id="email"
               name="email"
               placeholder="Ingresa tu email"
+              value="<%= locals.old && old.email ? old.email : usuario.email %>"
               
             />
-          </div> -->
+          </div>
 
           <!-- <div class="form-group">
             <label class="label-general" for="password">Contraseña</label>
@@ -100,19 +102,19 @@
           </div> -->
         
         <div class="form-group">
-          <label class="label-general" for="address">Domicilio</label>
+          <label class="label-general" for="telefono">Telefono</label>
           <input
             class="input-general"
             type="text"
-            id="address"
-            name="address"
-            placeholder="Indique su domicilio"
-            value="<%= locals.old && old.address ? old.address : user.address %>"
+            id="telefono"
+            name="telefono"
+            placeholder="Indique su telefono"
+            value="<%= locals.old && old.telefono ? old.telefono : usuario.telefono %>"
             />
-            <p class="errors_form_edit_user"><%= locals.errores && errores.address ? errores.address.msg : null %> </p>
+            <p class="errors_form_edit_user"></p>
           </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label class="label-general" for="postalCode">Código postal</label>
           <input
             class="input-general"
@@ -120,12 +122,12 @@
             id="postalCode"
             name="postalCode"
             placeholder="Indique su código postal"
-            value="<%= locals.old && old.postalCode ? old.postalCode : user.postalCode %>"
+            
             />
-            <p class="errors_form_edit_user"><%= locals.errores && errores.postalCode ? errores.postalCode.msg : null %> </p>
-          </div>
+            <p class="errors_form_edit_user"></p>
+          </div> -->
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label class="label-general" for="tel">Número de celular</label>
           <input
             class="input-general"
@@ -133,21 +135,21 @@
             id="tel"
             name="tel"
             placeholder="Número de celular: sin 0 ni 15"
-            value="<%= locals.old && old.tel ? old.tel : user.tel %>"
+            
             />
-            <p class="errors_form_edit_user"><%= locals.errores && errores.tel ? errores.tel.msg : null %> </p>
-          </div>
-
+            <p class="errors_form_edit_user"></p>
+          </div> -->
+<!-- 
         <div class="form-group">
           <label class="label-general" for="birthDate">Fecha de nacimiento: </label>
           <input
             class="input-general"
             type="date"
             id="birthDate"
-            name="birthDate"
-            value="<%= locals.old && old.birthDate ? old.birthDate : user.birthDate %>"
+            name="birthDate" -->
+            
             />
-            <p class="errors_form_edit_user"><%= locals.errores && errores.birthDate ? errores.birthDate.msg : null %> </p>
+            <p class="errors_form_edit_user"></p>
           </div>
         <button class="crear-cuenta button-general" type="submit" onclick="return confirmacion()">Guardar cambios</button>
         <button class="borrar-cuenta button-general" type="reset" >Reiniciar cambios</button>

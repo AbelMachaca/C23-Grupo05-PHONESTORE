@@ -2,6 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const { v4: uuidv4 } = require("uuid");
+const db =require("../database/models")
 
 const getJson = () => {
   const productsFilePath = path.join(__dirname, "../data/products.json");
@@ -26,6 +27,7 @@ const productController = {
     const products = getJson();
     const product = products.find((product) => product.id == id);
     res.render("products/productEdit", { product });
+      
   },
   update: (req, res) => {
     const files = req.files;

@@ -3,6 +3,8 @@ const bcrypt = require('bcryptjs');
 const fs = require('fs');
 const path = require("path")
 const { v4: uuidv4 } = require("uuid");
+const db =require("../database/models");
+const usuario = require('../database/models/usuario');
 
 const getJson = (fileName) => {
     const file = fs.readFileSync(`${__dirname}/../data/${fileName}.json`, 'utf-8');
@@ -75,7 +77,7 @@ const getJson = (fileName) => {
       setJson(newJson, 'users');
   
       res.redirect('/users/login');
-    }, show:(req,res)=>{
+  }, show:(req,res)=>{
       const { id } = req.params;
       const users = getJson();
       const user = users.find((element) => element.id == id);
@@ -83,48 +85,81 @@ const getJson = (fileName) => {
   },
 
   edit:(req,res)=>{
-      const { id } = req.params;
-      const users = getJson();
-      const user = users.find((element) => element.id == id);
-      res.render("users/userUpdate", { user })
+    db.Usuario.findByPk(req.params.id)
+    .then(function(usuario){
+      console.log(usuario)
+        res.render("users/userUpdate", {usuario:usuario})
+    })
+
   },
-  update:(req, res)=>{
-      const errores = validationResult(req);
-      //console.log("errores:", errores);
+  update:(req,res)=>{
+    const errores = validationResult(req)
+    db.Usuario.findByPk(req.params.id)
+    //console.log("errores:", errores);
+    .then (usuario => {
       if(!errores.isEmpty()){
-      const { id } = req.params;
-      const users = getJson();
-      const user = users.find((element) => element.id == id);
-      return res.render('users/userUpdate',{errores:errores.mapped(),old:req.body, user})
-      }
+     return res.render('users/userUpdate',{errores:errores.mapped(),old:req.body, usuario:usuario})
+     } else {
+      const body = req.body;
+      console.log(body)
+      console.log(usuario)
 
+    db.Usuario.update({
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        direccion: req.body.direccion,
+        telefono: req.body.telefono,
+        email: req.body.email,
+        imagen: req.file ? req.file.filename : usuario.imagen
+    },{
+        where: {
+            id_Usuario: req.params.id
+        }
+        
+    });
+    return usuario
+    // res.redirect("users/profile")
+      }    
+    })}
+    
+}
 
-      const usersFilePath = path.join(__dirname, '../data/users.json');
-      const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-          const {id} = req.params
-          const {firstName, lastName, email, password, address, tel, postalCode, birthDate,dniNumber} = req.body;
-          const nuevoArray = users.map(user => {
-              if (user.id == id){
-                  return{
-                      id,
-                      firstName: firstName.trim(),
-                      lastName: lastName.trim(),
-                      dniNumber,
-                      // email: email.trim(),
-                      password,
-                      address: address.trim(),
-                      tel,
-                      postalCode,
-                      birthDate: birthDate,
-                      image: req.file ? req.file.filename : user.image,
-                  }
-              }
-          })
-          const json = JSON.stringify(nuevoArray);
-          fs.writeFileSync(usersFilePath, json, "utf-8"); 
+  // update:(req, res)=>{
+  //     const errores = validationResult(req);
+  //     //console.log("errores:", errores);
+  //     if(!errores.isEmpty()){
+  //     const { id } = req.params;
+  //     const users = getJson();
+  //     const user = users.find((element) => element.id == id);
+  //     return res.render('users/userUpdate',{errores:errores.mapped(),old:req.body, user})
+  //     }
+
+  //     const usersFilePath = path.join(__dirname, '../data/users.json');
+  //     const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+  //         const {id} = req.params
+  //         const {firstName, lastName, email, password, address, tel, postalCode, birthDate,dniNumber} = req.body;
+  //         const nuevoArray = users.map(user => {
+  //             if (user.id == id){
+  //                 return{
+  //                     id,
+  //                     firstName: firstName.trim(),
+  //                     lastName: lastName.trim(),
+  //                     dniNumber,
+  //                     // email: email.trim(),
+  //                     password,
+  //                     address: address.trim(),
+  //                     tel,
+  //                     postalCode,
+  //                     birthDate: birthDate,
+  //                     image: req.file ? req.file.filename : user.image,
+  //                 }
+  //             }
+  //         })
+  //         const json = JSON.stringify(nuevoArray);
+  //         fs.writeFileSync(usersFilePath, json, "utf-8"); 
           
       
-  }
-  };
+  // }
+  
 
 module.exports = userController;
