@@ -24,11 +24,18 @@ module.exports=(Sequelize,dataTypes)=>{
         }
     };
     const config={
-        tableName:"Tabla_colores_productos_imagen",
+        tableName:"tabla_colores_productos_imagen",
         timeStamps:false
     }
 
     const Tabla_colores_productos_imagen=sequelize.define(alias,cols,config);
+
+    Tabla_colores_productos_imagen.associate= function(models){
+        Tabla_colores_productos_imagen.belongsTo(models.Productos,{
+          as:"tablaColoresProductosImagen",
+          foreingKey:id_producto
+        })  
+        }
     return Tabla_colores_productos_imagen
     
 }

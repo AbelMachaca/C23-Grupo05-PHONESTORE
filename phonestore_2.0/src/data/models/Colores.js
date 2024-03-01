@@ -14,10 +14,18 @@ module.exports=(Sequelize,dataTypes)=>{
         }
     };
     const config={
-        tableName:"Colores",
+        tableName:"colores",
         timeStamps:false
     };
 
     const Colores=sequelize.define(alias,cols,config);
+
+    Colores.associate= function(models){
+        Colores.belongsTo(models.Productos,{
+          as:"coloresProductos",
+          foreingKey:id_producto_color
+        })  
+        }
+
     return Colores;
 }

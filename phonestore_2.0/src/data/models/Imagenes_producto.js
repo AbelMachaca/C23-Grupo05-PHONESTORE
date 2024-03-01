@@ -20,11 +20,19 @@ module.exports=(sequelize,dataTypes)=>{
         }
     };
     const config={
-        tableName:"Imagenes_producto",
+        tableName:"imagenes_producto",
         timeStamps:false
     };
 
-    const Imagenes_producto=sequelize.define(alis,cols,config);
+    const Imagenes_producto=sequelize.define(alias,cols,config);
+    
+          Imagenes_producto.associate= function(models){
+          Imagenes_producto.belongsTo(models.Productos,{
+            as:"imagenesProductos",
+            foreingKey:id_producto_imagen
+          })  
+          }
+
     return Imagenes_producto;
 
 }

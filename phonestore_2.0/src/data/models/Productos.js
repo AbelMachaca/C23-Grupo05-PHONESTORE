@@ -44,12 +44,33 @@ module.exports=(sequelize,dataTypes)=>{
     };
 
     const config = {
-        tableName:"Productos",
+        tableName:"productos",
         timeStamps:false
     };
 
     const Productos=sequelize.define(alias,cols,config);
+
+    Productos.associate= function(models){
+        Productos.hasMany(models.Imagenes_producto,{
+          as:"imagenesProductos",
+          foreingKey:id_producto_imagen
+        }),
+        Productos.hasMany(models.Colores,{
+            as:"coloresProductos",
+            foreingKey:id_producto_color
+          }),
+          Productos.hasMany(models.Tabla_colores_productos_imagen,{
+            as:"tablaColoresProductosImagen",
+            foreingKey:id_producto
+          }),
+          Productos.hasMany(models.Ventas,{
+            as:"ventasProductos",
+            foreingKey:id_producto_venta
+          }),
+          Productos.hasMany(models.Comentarios_productos,{
+            as:"comentarioProducto",
+            foreingKey:id_Producto_comentario
+          })
+        }
     return Productos
-       
-    
 }

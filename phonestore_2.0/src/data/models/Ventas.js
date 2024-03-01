@@ -46,10 +46,16 @@ module.exports=(sequelize,dataTypes)=>{
         }
     };
     const config={
-        tableName:"Ventas",
+        tableName:"ventas",
         timeStamps:false
     };
 
     const Ventas=sequelize.define(alias,cols,config);
+    Ventas.associate= function(models){
+        Ventas.belongsTo(models.Productos,{
+          as:"ventasProductos",
+          foreingKey:id_producto_venta
+        })  
+        }
     return Ventas;
 }
