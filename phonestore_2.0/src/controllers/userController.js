@@ -84,18 +84,23 @@ const userController = {
       res.render("users/userUpdate", { usuario: usuario });
     });
   },
+
+//CODIGO FUNCIONAL problemas con los errores linea 95 !errores o errores
+// para que tome los errores tengo que secar el redirect luego del update de usuarios
+
   update: (req, res) => {
     console.log("llegando");
     const errores = validationResult(req);
     const id = req.params.id
     db.Usuario.findByPk(id)
       .then((usuario) => {
-        if (!errores.isEmpty()) {
+        if (errores.isEmpty()) {
           return res.render("users/userUpdate", {
             errores: errores.mapped(),
             old: req.body,
             usuario: usuario,
           });
+          
         } else {
           const body = req.body;
           console.log(req.body);
@@ -121,14 +126,16 @@ const userController = {
           return usuario;
         }
       })
-      // .then(() => {
-      //   res.redirect(`/users/profile/${id}`);
-      // })
+      .then(() => {
+        // Redirigir una vez que la actualización haya terminado
+        res.redirect(`/users/profile/${id}`);
+        })
       .catch((error) => {
         console.error(error);
         res.status(500).send("Error al actualizar el usuario");
       });
   },
+
 }
 
 
