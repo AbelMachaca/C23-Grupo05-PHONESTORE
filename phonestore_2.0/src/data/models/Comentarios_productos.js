@@ -33,7 +33,11 @@ module.exports=(sequelize,dataTypes)=>{
         Comentarios_productos.belongsTo(models.Productos,{
           as:"comentarioProducto",
           foreingKey:id_Producto_comentario
-        })  
+        }),
+        Comentarios_productos.belongsTo(models.Usuario,{
+            as:"comentarioUsuario",
+            foreingKey:id_Usuario_comentario
+          })
         }
     return Comentarios_productos;
 }

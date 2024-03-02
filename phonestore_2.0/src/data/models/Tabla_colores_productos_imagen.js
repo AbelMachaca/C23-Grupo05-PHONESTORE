@@ -34,8 +34,16 @@ module.exports=(Sequelize,dataTypes)=>{
         Tabla_colores_productos_imagen.belongsTo(models.Productos,{
           as:"tablaColoresProductosImagen",
           foreingKey:id_producto
-        })  
-        }
+        }),
+        Tabla_colores_productos_imagen.belongsTo(models.Imagenes_producto,{
+            as:"tablaColoresImagen",
+            foreingKey:id_imagenes  
+        }),
+        Tabla_colores_productos_imagen.belongsTo(models.Colores,{
+            as:"tablaColores",
+            foreingKey:id_colores  
+        })
     return Tabla_colores_productos_imagen
     
+}
 }

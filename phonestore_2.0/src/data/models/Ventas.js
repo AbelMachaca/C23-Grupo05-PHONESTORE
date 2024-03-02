@@ -55,7 +55,11 @@ module.exports=(sequelize,dataTypes)=>{
         Ventas.belongsTo(models.Productos,{
           as:"ventasProductos",
           foreingKey:id_producto_venta
-        })  
+        }),
+        Ventas.belongsTo(models.Usuario,{
+            as:"ventasUsuario",
+            foreingKey:id_Usuario_venta
+          })  
         }
     return Ventas;
 }

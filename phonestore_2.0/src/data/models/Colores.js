@@ -24,7 +24,11 @@ module.exports=(Sequelize,dataTypes)=>{
         Colores.belongsTo(models.Productos,{
           as:"coloresProductos",
           foreingKey:id_producto_color
-        })  
+        }),
+        Colores.hasMany(models.Tabla_colores_productos_imagen,{
+            as:"tablaColores",
+            foreingKey:id_colores 
+        })
         }
 
     return Colores;

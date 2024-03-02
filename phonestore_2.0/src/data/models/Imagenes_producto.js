@@ -30,6 +30,10 @@ module.exports=(sequelize,dataTypes)=>{
           Imagenes_producto.belongsTo(models.Productos,{
             as:"imagenesProductos",
             foreingKey:id_producto_imagen
+          }),
+          Imagenes_producto.hasMany(models.Tabla_colores_productos_imagen,{
+            as:"tablaColoresImagen",
+            foreingKey:id_imagenes  
           })  
           }
 
