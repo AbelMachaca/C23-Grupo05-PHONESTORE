@@ -44,7 +44,7 @@
 .seccion-perfil-usuario .perfil-usuario-avatar {
     display: flex;
     width: 180px;
-    height: 180px;
+    /* height: 180px; */
     align-items: center;
     justify-content: center;
     border: 2px solid #FFFFFF;

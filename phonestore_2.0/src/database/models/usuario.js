@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         imagen_usuario:{
-            type:DataTypes.STRING(45)
+            type:DataTypes.STRING(200)
         },
         
     };

@@ -24,16 +24,17 @@
       <form action="/users/userUpdate/<%= usuario.id_usuario %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <div class="input-group mb-3">
-            <img src="/images/usersProfile/<%= usuario.imagen %>" alt="imagen de perfil" class = "imagen_perfil">
+            <img src="/images/usersProfile/<%= usuario.imagen_usuario %>" alt="imagen de perfil" class = "imagen_perfil">
             <label for="image" class="label-general">Foto de perfil</label>
             <input 
             class="input-general" 
             type="file" 
-            id="image" 
-            name="image"
-            accept="image/*"
+            id="imagen_usuario" 
+            name="imagen_usuario"
+            
             single>
         </div>
+        <div>
           <label class="label-general" for="nombre">Nombre</label>
           <input
             class="input-general"
@@ -43,7 +44,7 @@
             placeholder="Ingresa tu nombre"
             value="<%= locals.old && old.nombre ? old.nombre : usuario.nombre %>"
           />
-          <p class="errors_form_edit_user"><%= locals.errores && errores.nombre ? errores.nombre.msg : null %> </p>
+          <p class="errors_form_edit_user"><%= locals.errores && errores.nombre ? errores.nombre.msg : null %></p>
         </div>
         
         <div class="form-group">
@@ -55,9 +56,8 @@
               name="apellido"
               placeholder="Ingresa tu apellido"
               value="<%= locals.old && old.apellido ? old.apellido : usuario.apellido %>"
-              
             />
-            <p class="errors_form_edit_user"></p>
+            <p class="errors_form_edit_user"><%= locals.errores && errores.apellido ? errores.apellido.msg : null %></p>
           </div>
 
           <div class="form-group">
@@ -70,7 +70,7 @@
               placeholder="Dirección"
               value="<%= locals.old && old.direccion ? old.direccion : usuario.direccion %>"
             />
-            <p class="errors_form_edit_user"></p>
+            <p class="errors_form_edit_user"><%= locals.errores && errores.direccion ? errores.direccion.msg : null %></p>
           </div>
 
           <div class="form-group">
@@ -82,8 +82,8 @@
               name="email"
               placeholder="Ingresa tu email"
               value="<%= locals.old && old.email ? old.email : usuario.email %>"
-              
             />
+            <p class="errors_form_edit_user"><%= locals.errores && errores.email ? errores.email.msg : null %></p>
           </div>
 
           <!-- <div class="form-group">
@@ -111,7 +111,7 @@
             placeholder="Indique su telefono"
             value="<%= locals.old && old.telefono ? old.telefono : usuario.telefono %>"
             />
-            <p class="errors_form_edit_user"></p>
+            <p class="errors_form_edit_user"><%= locals.errores && errores.telefono ? errores.telefono.msg : null %></p>
           </div>
 
         <!-- <div class="form-group">
@@ -146,10 +146,10 @@
             class="input-general"
             type="date"
             id="birthDate"
-            name="birthDate" -->
+            name="birthDate" 
             
             />
-            <p class="errors_form_edit_user"></p>
+            <p class="errors_form_edit_user"></p> -->
           </div>
         <button class="crear-cuenta button-general" type="submit" onclick="return confirmacion()">Guardar cambios</button>
         <button class="borrar-cuenta button-general" type="reset" >Reiniciar cambios</button>

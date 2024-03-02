@@ -5,7 +5,7 @@ const uploadFile = require("../validations/ImageUploader");
 const registerValidation = require("../validations/validationRegister");
 const cookiesGenerate= require("../middleware/cookiesGenerate")
 const rememberMeValidator =require("../middleware/rememberMeValidator")
-
+const updateValidator = require('../validations/userUpdateValidator');
 
 const {body, check} = require('express-validator');
 const bcrypt = require('bcrypt');
@@ -46,7 +46,7 @@ const multer  = require('multer');
 
 const path = require("path");
 
-const updateValidator = require('../validations/userUpdateValidator');
+
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -75,6 +75,6 @@ router.get('/profile/:id', userController.show)
 
 //actualización de datos del usuario
 router.get('/userUpdate/:id', userController.edit);
-router.put('/userUpdate/:id',upload.single("image"), updateValidator, userController.update);
+router.put('/userUpdate/:id',upload.single('imagen_usuario'), updateValidator, userController.update);
 
 module.exports = router;
