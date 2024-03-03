@@ -5,7 +5,7 @@ const productsFilePath = path.join(__dirname, "../data/products.json");
 const { v4: uuidv4 } = require("uuid");
 const db = require("../database/models");
 const { log } = require("console");
-const Producto = require("../database/models/producto");
+
 
 const getJson = () => {
   const productsFilePath = path.join(__dirname, "../data/products.json");
@@ -26,6 +26,7 @@ const productController = {
   },
 
   edit: (req, res) => {
+    console.log("aaaaaaaaaaaaaaaa");
     const { id } = req.params;
     db.Producto.findByPk(id)
     .then((product) => {
