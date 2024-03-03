@@ -4,6 +4,7 @@ const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const { v4: uuidv4 } = require("uuid");
 const db = require("../database/models");
+const { log } = require("console");
 const Producto = require("../database/models/producto");
 
 const getJson = () => {
@@ -13,7 +14,7 @@ const getJson = () => {
 };
 
 const productController = {
-  cart: (req, res) => {
+  cart: (req, res) => {                       
     res.render("products/productCart");
   },
   detail: (req, res) => {
@@ -50,39 +51,44 @@ const productController = {
         .send("Error interno del servidor al actualizar el producto");
     }
   },
-  store: (req, res) => {
-    const { name, category, price, description } = req.body;
-    const products = getJson();
 
-    if (!req.file) {
-      const error = new Error("Por favor seleccione un archivo");
-      error.httpStatusCode = 400;
-      return res.status(400).send(error.message);
-    }
-
-    const image = req.file.filename;
-
-    console.log(req.file);
-
-    const newProduct = {
-      id: uuidv4(),
-      name: name.trim(),
-      image: image,
-      category,
-      price: price.trim(),
-
-      description: description.trim(),
-    };
-
-    products.push(newProduct);
-    const json = JSON.stringify(products);
-    fs.writeFileSync(productsFilePath, json, "utf-8");
-    res.redirect("/");
-  },
 
   createForm: (req, res) => {
     res.render("products/productCreate_form");
   },
+ 
+store: (req, res) => {
+  const { modelo, marca, precio, descripcion, almacenamiento, ram, so } = req.body;
+
+  db.producto.create({ modelo, marca, precio, descripcion, almacenamiento, ram, so })
+      .then(producto => {
+          
+          const productId = producto.id;
+
+          const files = req.files;
+
+       
+          const promises = files.map(file => {
+              return db.producto_imagen.create({ id_producto: productId, ulr: file.filename });
+          });
+console.log(promises)
+          
+          Promise.all(promises)
+              .then((imagen) => {
+                 
+                  res.render("products/productDetail", { title: "Detalle de producto", producto, imagen });
+              })
+              .catch(error => {
+                  console.error("Error al guardar las imágenes:", error);
+                  res.status(500).send("Error interno del servidor al guardar las imágenes");
+              });
+      })
+      .catch(error => {
+          console.error("Error al crear el producto:", error);
+          res.status(500).send("Error interno del servidor");
+      });
+},
+  
 
   dashboard: (req, res) => {
     db.Producto.findAll()

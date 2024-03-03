@@ -11,10 +11,10 @@ const getJson = (fileName) => {
 
 const creacionDeCookies = (req, res, next) => {
 
-  console.log("estoy en generacion de creacion de cookies" )
+  
   const { email } = req.body;
 
-  console.log("este es el mail"+ email)
+ 
   const users = getJson("users");
  if(email ){
   const user = users.find((usuario) => usuario.email === email);
@@ -22,7 +22,7 @@ const creacionDeCookies = (req, res, next) => {
 if(user){
   req.session.user = user;
 
-console.log(user)
+
 
 
   res.cookie('user', user.email, { maxAge: 1000 * 60 * 15 });

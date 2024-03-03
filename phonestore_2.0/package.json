@@ -25,6 +25,7 @@
     "nodemon": "^3.0.2",
     "npm": "^10.3.0",
     "sequelize": "^6.37.1",
+    "sequelize-cli": "^6.6.2",
     "uuid": "^9.0.1"
   }
 }

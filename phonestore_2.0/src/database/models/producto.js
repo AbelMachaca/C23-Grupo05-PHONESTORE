@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
-    const alias = "Producto";
+    const alias = "Productos";
     const cols = {
-        id_Producto: {
+        id: {
             primaryKey: true,
             type: DataTypes.INTEGER,
             allowNull: false,
@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
         }
     };
     const config = {
-        tableName: 'Producto',
+        tableName: 'productos',
         timestamps: false,
     };
 
