@@ -1,83 +1,92 @@
 [
   {
-    "id": 1,
-    "firstName": "Jorge",
+    
+    "name": "Jorge",
     "lastName": "Segura",
+    "adress":"perón 989",
     "email": "jsegura@webmd.com",
     "password": "1234567",
     "rol": "admin",
     "image": "/images/avatars/pletzale.jpg"
   },
   {
-    "id": 2,
-    "firstName": "Emmanuel",
+    
+    "name": "Emmanuel",
     "lastName": "Crocianelli",
+    "adress":"perón 989",
     "email": "ecrocianelli@macromedia.com",
     "password": "1234567",
     "rol": "admin",
     "image": "/images/avatars/polloCorazon.jpg"
   },
   {
-    "id": 3,
-    "firstName": "Abel",
+    
+    "name": "Abel",
     "lastName": "Machaca",
+    "adress":"perón 989",
     "email": "amachaca@typepad.com",
     "password": "1234567",
     "rol": "admin",
     "image": "/images/avatars/polloCorazon.jpg"
   },
   {
-    "id": 4,
-    "firstName": "Sergio",
+    
+    "name": "Sergio",
     "lastName": "Maya",
+    "adress":"perón 989",
     "email": "smaya@google.com",
     "password": "1234567",
     "rol": "admin",
     "image": "/images/avatars/tostada.jpg"
   },
   {
-    "id": 5,
-    "firstName": "Williams",
+    
+    "name": "Williams",
     "lastName": "Sacaca",
+    "adress":"perón 989",
     "email": "wsacaca@uba.edu",
     "password": "1234567",
     "rol": "admin",
     "image": "/images/avatars/pretzel.jpg"
   },
   {
-    "id": 1705825832134,
-    "firstName": "se1223",
+    
+    "name": "se1223",
     "lastName": "se12312",
+    "adress":"perón 989",
     "email": "se@gmail.com",
     "password": "$2a$10$R9ie1kOtLvD/liZeOL6kfOQzoJsxDAzHve5V5o8GgNaB1wyCu6fBC",
     "type": "USER",
     "image": "predeterminado.webp"
   },
   {
-    "id": 1706041692636,
-    "firstName": "emma",
-    "lastName": "aasdasd",
+   
+    "name": "emma",
+    "lastName": "aasdasd", 
     "email": "emma@gmail.com",
+    "adress":"perón 989",
     "password": "$2a$10$9djCzQ3Quc/s2/o3WaUdkOzcrP92.MfzlelR.vtQxAIKbqz9guAv2",
     "type": "USER",
     "image": "1706041692631_img_.jpg"
   },
   {
-    "id": 1706071251708,
-    "firstName": "Jorge",
+ 
+    "name": "Jorge",
     "lastName": "Segura",
+    "adress":"perón 989",
     "email": "ariels@gmail.com",
     "password": "$2a$10$Uqg27Btt1OUzJxQapLAfWOuo0j5bbBkp6iMV/hcnUkMJqfwgWhGpS",
     "rol": "USER",
     "image": "1706071251601_img_.jpg"
   },
   {
-    "id": 1706470953092,
-    "firstName": "jorge",
+   
+    "name": "jorge",
     "lastName": "Segura",
+    "adress":"perón 989",
     "email": "jorger@gmail.com",
     "password": "$2a$10$/z5dkO3CiUeCfCBgcJNQBeSssaWxnU3XUTKxDf/GFhOfvRMEFMdH.",
-    "type": "USER",
+    "type": "admin",
     "image": "foto de auricular 1-1706470953018-3f6d7454-2272-45a8-9d7b-2c979a901aac.jpg"
   }
 ]
