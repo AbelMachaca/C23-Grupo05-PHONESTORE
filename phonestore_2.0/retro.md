@@ -50,6 +50,7 @@ Hacer menos: Hacer más cortas las reuniones de cada daily.
 ---------------------------------------------------------
 
 Dejar de hacer: Ser impuntuales en la fecha pactada para la finalización de cada sprint.
+---------------------------------------------------------------------------------------
 
 
 

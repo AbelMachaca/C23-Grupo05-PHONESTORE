@@ -28,12 +28,20 @@ router.get('/productCreate_form', adminSessionValidate, productController.create
 router.post('/productCreate_form',upload.single("image"), adminSessionValidate, productController.store); 
 
 
-router.get('/productEdit/:id', adminSessionValidate, productController.edit )
-router.put('/productEdit/:id',upload.array("image"), adminSessionValidate, productController.update)
+router.get('/productEdit/:id', productController.edit )
+router.put('/productEdit/:id',upload.array("image"),productController.update)
 
 
-router.get('/dashboard', adminSessionValidate, productController.dashboard )
+// router.get('/productEdit/:id', adminSessionValidate, productController.edit )
+// router.put('/productEdit/:id',upload.array("image"), adminSessionValidate, productController.update)
 
-router.delete(`/delete/:id`, adminSessionValidate, productController.destroy);
+
+router.get('/dashboard',productController.dashboard )
+
+router.delete(`/delete/:id`,productController.destroy);
+
+//router.get('/dashboard', adminSessionValidate, productController.dashboard )
+
+//router.delete(`/delete/:id`, adminSessionValidate, productController.destroy);
 
 module.exports = router;
