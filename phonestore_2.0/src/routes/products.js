@@ -25,7 +25,7 @@ router.get('/productDetail/:id', productController.detail);
 router.get('/productCart', userSessionValidate, productController.cart)
 
 router.get('/productCreate_form', adminSessionValidate, productController.createForm)
-router.post('/productCreate_form',upload.single("image"), adminSessionValidate, productController.store); 
+router.post('/productCreate_form', adminSessionValidate,upload.array("image"), productController.store); 
 
 
 router.get('/productEdit/:id', adminSessionValidate, productController.edit )
