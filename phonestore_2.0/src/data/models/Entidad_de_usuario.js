@@ -1,3 +1,4 @@
+'use strict'
 module.exports=(sequelize,dataTypes)=>{
   const alias="Entidad_de_usuario";
   const cols={

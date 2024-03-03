@@ -1,4 +1,5 @@
-module.exports=(Sequelize,dataTypes)=>{
+'use strict'
+module.exports=(sequelize,dataTypes)=>{
     const alias="Tabla_colores_productos_imagen";
     const cols={
         id_colores_productos_imagenes:{
