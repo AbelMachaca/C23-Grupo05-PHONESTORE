@@ -9,22 +9,32 @@
     <thead>
         <tr>
         <th>ID</th>
-        <th>Nombre</th>
+        <th>Marca</th>
         <th>Imagen</th>
-        <th>Detalles</th>
+        <th>Modelo</th>
+        <th>Precio</th>
+        <th>Almacenamiento</th>
+        <th>Ram</th>
+        <th>So</th>
+        <th>Descripción</th>
         <th>Acciones</th>
       </tr>
       </thead>
     <tbody>
       <% products.forEach(element => { %>
         <tr>
-          <td><%=element.id%></td>
-          <td><%=element.name%></td>
-          <td><img src="/images/imageHome/<%= element.image %>" alt="<%= element.name %>"></td>
-          <td><%=element.description%></td>
+          <td><%=element.id_Producto%></td>
+          <td><%=element.marca%></td>
+          <td><img src="/images/imageHome/<%= element.image %>" alt="<%= element.marca %>"></td>
+          <td><%=element.modelo%></td>
+          <td><%=element.precio%></td>
+          <td><%=element.almacenamiento%></td>
+          <td><%=element.ram%></td>
+          <td><%=element.so%></td>
+          <td><%=element.descripcion%></td>
           <td>
-            <a href="/products/productEdit/<%= element.id %>">Editar</a>
-            <a href="/products/productEdit/<%= element.id %>">Actualizar</a>
+            <a href="/products/productEdit/<%= element.id_Producto %>">Editar</a>
+            <a href="/products/productEdit/<%= element.id_Producto %>">Actualizar</a>
             <form action="/products/delete/<%= element.id%>?_method=delete" method="post">
               <button type="submit">Eliminar</button>
             </form>  
