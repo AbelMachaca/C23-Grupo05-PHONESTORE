@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const { v4: uuidv4 } = require("uuid");
-const db = require("../database/models");
+const db = require("../data/models");
 const { log } = require("console");
 
 
