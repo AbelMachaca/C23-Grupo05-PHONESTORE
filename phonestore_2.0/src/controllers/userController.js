@@ -73,7 +73,6 @@ const userController = {
   },
   show: (req, res) => {
     db.Usuario.findByPk(req.params.id).then(function (usuario) {
-      console.log(usuario);
       res.render("users/profile", { usuario: usuario });
     });
   },
@@ -84,95 +83,39 @@ const userController = {
       res.render("users/userUpdate", { usuario: usuario });
     });
   },
-
-//CODIGO FUNCIONAL problemas con los errores linea 95 !errores o errores
-// para que tome los errores tengo que secar el redirect luego del update de usuarios
-
-  update: (req, res) => {
-    console.log("llegando");
+  update: (req,res) => {
     const errores = validationResult(req);
     const id = req.params.id
-    db.Usuario.findByPk(id)
+    if (errores.isEmpty()){
+      db.Usuario.findByPk(id).then(usuario => {
+        console.log("ACTUALIZA LOS DATOS")
+        console.log(req.body)
+        db.Usuario.update(
+        {
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        direccion: req.body.direccion,
+        telefono: req.body.telefono,
+        email: req.body.email,
+        imagen_usuario: req.file ? req.file.filename : usuario.imagen_usuario,
+        },
+        {where: { id_Usuario: id}}
+        ).then(() => {
+          console.log("usuario editado")
+          res.redirect(`/users/profile/${id}`);
+      })
+      })
+    } else {
+      db.Usuario.findByPk(id)
       .then((usuario) => {
-        if (errores.isEmpty()) {
-          return res.render("users/userUpdate", {
-            errores: errores.mapped(),
-            old: req.body,
-            usuario: usuario,
-          });
-          
-        } else {
-          const body = req.body;
-          console.log(req.body);
-          console.log(usuario);
-          console.log("sigue req file");
-          console.log(req.file);
-
-          db.Usuario.update(
-            {
-              nombre: req.body.nombre,
-              apellido: req.body.apellido,
-              direccion: req.body.direccion,
-              telefono: req.body.telefono,
-              email: req.body.email,
-              imagen_usuario: req.file ? req.file.filename : usuario.imagen_usuario,
-            },
-            {
-              where: {
-                id_Usuario: id,
-              },
-            }
-          );
-          return usuario;
+        if (!errores.isEmpty()) {
+          console.log("se ejecuta el retorno con errores")
+          return res.render("users/userUpdate", {errores: errores.mapped(),old: req.body,usuario});
         }
       })
-      .then(() => {
-        // Redirigir una vez que la actualización haya terminado
-        res.redirect(`/users/profile/${id}`);
-        })
-      .catch((error) => {
-        console.error(error);
-        res.status(500).send("Error al actualizar el usuario");
-      });
-  },
-
+    }
+  }
+  
 }
-
-
-// update:(req, res)=>{
-//     const errores = validationResult(req);
-//     //console.log("errores:", errores);
-//     if(!errores.isEmpty()){
-//     const { id } = req.params;
-//     const users = getJson();
-//     const user = users.find((element) => element.id == id);
-//     return res.render('users/userUpdate',{errores:errores.mapped(),old:req.body, user})
-//     }
-
-//     const usersFilePath = path.join(__dirname, '../data/users.json');
-//     const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-//         const {id} = req.params
-//         const {firstName, lastName, email, password, address, tel, postalCode, birthDate,dniNumber} = req.body;
-//         const nuevoArray = users.map(user => {
-//             if (user.id == id){
-//                 return{
-//                     id,
-//                     firstName: firstName.trim(),
-//                     lastName: lastName.trim(),
-//                     dniNumber,
-//                     // email: email.trim(),
-//                     password,
-//                     address: address.trim(),
-//                     tel,
-//                     postalCode,
-//                     birthDate: birthDate,
-//                     image: req.file ? req.file.filename : user.image,
-//                 }
-//             }
-//         })
-//         const json = JSON.stringify(nuevoArray);
-//         fs.writeFileSync(usersFilePath, json, "utf-8");
-
-// }
 
 module.exports = userController;

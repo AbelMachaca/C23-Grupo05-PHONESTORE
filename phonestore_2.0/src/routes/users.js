@@ -77,4 +77,5 @@ router.get('/profile/:id', userController.show)
 router.get('/userUpdate/:id', userController.edit);
 router.put('/userUpdate/:id',upload.single('imagen_usuario'), updateValidator, userController.update);
 
+
 module.exports = router;

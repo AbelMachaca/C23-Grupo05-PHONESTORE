@@ -11,7 +11,7 @@ module.exports = [
     body('apellido').notEmpty().withMessage("El campo no puede estar vacio").bail()
     .isLength({min:3,max:30}).withMessage("El valor ingresado debe tener al menos 3 caracteres y maximo 30").bail(),
     
-    body('domicilio').notEmpty().withMessage("El campo no puede estar vacio").bail()
+    body('direccion').notEmpty().withMessage("El campo no puede estar vacio").bail()
     .isLength({min:3,max:100}).withMessage("El valor ingresado debe tener al menos 3 caracteres y maximo 100").bail(),
     
     body('telefono').notEmpty().withMessage("El campo no puede estar vacio").bail()
