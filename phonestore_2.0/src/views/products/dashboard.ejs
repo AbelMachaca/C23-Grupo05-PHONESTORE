@@ -19,9 +19,9 @@
       <% products.forEach(element => { %>
         <tr>
           <td><%=element.id%></td>
-          <td><%=element.name%></td>
-          <td><img src="/images/imageHome/<%= element.image %>" alt="<%= element.name %>"></td>
-          <td><%=element.description%></td>
+          <td><%=element.modelo%></td>
+          <td><img src="/images/imageHome/<%= element.imagen_usuario %>" alt="<%= element.name %>"></td>
+          <td><%=element.descripcion%></td>
           <td>
             <a href="/products/productEdit/<%= element.id %>">Editar</a>
             <a href="/products/productEdit/<%= element.id %>">Actualizar</a>

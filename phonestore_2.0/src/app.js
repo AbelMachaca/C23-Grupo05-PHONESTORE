@@ -8,8 +8,8 @@ const session = require('express-session');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
-const rememberMe=require("./middleware/rememberMeValidator.js")
-const cookieGenerate=require("./middleware/cookiesGenerate.js")
+const rememberMe = require("./middleware/rememberMeValidator.js")
+/*const cookieGenerate=require("./middleware/cookiesGenerate.js")*/
 var app = express();
 
 // view engine setup
@@ -34,7 +34,7 @@ app.use((req, res, next) => {
   console.log('Cookies:', req.cookies);
   next();
 });
-app.use(cookieGenerate)
+/*app.use(cookieGenerate)*/
 app.use(rememberMe)
 
 

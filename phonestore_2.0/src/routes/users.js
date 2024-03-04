@@ -3,9 +3,9 @@ const router = express.Router();
 const userController = require("../controllers/userController");
 const uploadFile = require("../validations/ImageUploader");
 const registerValidation = require("../validations/validationRegister");
-const cookiesGenerate= require("../middleware/cookiesGenerate")
-const rememberMeValidator =require("../middleware/rememberMeValidator")
 
+const rememberMeValidator =require("../middleware/rememberMeValidator")
+const loginValidation = require('../validations/validationLogin')
 
 const {body, check} = require('express-validator');
 const bcrypt = require('bcrypt');
@@ -60,12 +60,12 @@ const upload = multer({ storage })
 
 /* GET users listing. */
 router.get("/login", userController.login);
-router.post("/login", validateLogin,userController.processlogin);
+router.post("/login", loginValidation,userController.processlogin);
 router.get('/logout', userController.logout)
 router.get("/register", userController.formRegister);
 router.post(
     "/register",
-    uploadFile.single("image"),
+    uploadFile.single("imagen_usuario"),
     registerValidation,
     userController.register
 );
@@ -75,6 +75,6 @@ router.get('/profile/:id', userController.show)
 
 //actualización de datos del usuario
 router.get('/userUpdate/:id', userController.edit);
-router.put('/userUpdate/:id',upload.single("image"), updateValidator, userController.update);
+router.put('/userUpdate/:id',upload.single("imagen_usuario"), updateValidator, userController.update);
 
 module.exports = router;

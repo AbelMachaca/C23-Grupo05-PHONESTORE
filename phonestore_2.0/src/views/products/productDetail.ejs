@@ -8,13 +8,14 @@
    <main class="fondo">
       <div class="titulo_marca_modelo titulo_desktop">
           
-              <h3 ><%= product.name %></h3>
+              <h3 ><%= product.modelo %></h3>
+              <h4 ><%= product.marca %></h4>
        
       </div>
     
       <article class="celular_frontal desktop_celular_frontal">
         
-        <img src="/images/imageHome/<%= product.image %>" alt="vista frontal" class="dimensionar_imagen_celu_principal">
+        <img src="/images/imageHome/<%= product.imagenes_productos[0].url_de_imagen %>" alt="vista frontal" class="dimensionar_imagen_celu_principal">
       
       </article>
    
@@ -34,19 +35,19 @@
       </div>
 
         <snap class="aumentar_tamaño_descripcion_del_equipo desktop_posicion_inferior_descripcion_h5">
-             <h5 class="descripcion_del_equipo desktop_descripcion_h5"><%= product.description %></h5>
+             <h5 class="descripcion_del_equipo desktop_descripcion_h5"><%= product.descripcion %></h5>
         </snap>
     
         <snap class="snap_h6 desktop_snap_h6">
-             <h6 class="caracteristicas desktop_caracteristicas">ALMACENAMIENTO 128GB</h6>
-             <h6 class="caracteristicas desktop_caracteristicas">PROCESADOR OCTACORE SNAPDRAGON 865</h6>
-             <h6 class="caracteristicas desktop_caracteristicas">PANTALLA 6.5” FHD</h6>
+             <h6 class="caracteristicas desktop_caracteristicas">ALMACENAMIENTO <%= product.almacenamiento %>GB</h6>
+             <h6 class="caracteristicas desktop_caracteristicas"><%= product.so %></h6>
+             <h6 class="caracteristicas desktop_caracteristicas">RAM <%= product.ram %>GB</h6>
              <h6 class="caracteristicas desktop_caracteristicas">CAMARA FRONTAL 32MPX</h6>
         </snap>
 
       <div class="separar_centrar_boton_submit desktop_botones_submit">
         <form action="" method="get"></form>
-        <p>Precio: $<%= product.price %></p>
+        <p>Precio: $<%= product.precio %></p>
         <button type="submit" class="boton_comprar">COMPRAR</BUtton>
         
         <form action="" method="get"></form>

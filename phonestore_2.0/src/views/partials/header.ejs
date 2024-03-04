@@ -10,14 +10,14 @@
             </section>
     </div>
             <section class="links">
-                <a href="/products/productDetail">Samsung</a>
-                <a href="/products/productDetail">Motorola</a>
-                <a href="/products/productDetail">LG</a>
-                <a href="/products/productDetail">Xiaomi</a>
-                <a href="/products/productDetail">Iphone</a>
+                <a href="/">Samsung</a>
+                <a href="/">Motorola</a>
+                <a href="/">LG</a>
+                <a href="/">Xiaomi</a>
+                <a href="/">Iphone</a>
                 
-                <% if(locals.usuario){%>
-                  <p ><%= usuario.firstName %> </p>
+                <% if(locals.usuario != undefined){%>
+                  <p ><%= locals.usuario.nombre %> </p>
                   <a  href="/users/logout"> <i class="fas fa-sign-out-alt" style="font-size: 30px;"></i></a>
                   <% }else{ %>
                     <a href="/users/register" >Creá tu cuenta </a>

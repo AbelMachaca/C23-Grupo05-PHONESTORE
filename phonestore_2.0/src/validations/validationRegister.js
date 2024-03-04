@@ -14,7 +14,7 @@ module.exports = [
   body('name')
     .notEmpty().withMessage('El campo no puede estar vacío').bail()
     .isLength({ min: 3, max: 30 }).withMessage('El valor ingresado debe tener al menos 3 caracteres y máximo 30').bail(),
-  body('lastName')
+  body('apellido')
     .notEmpty().withMessage('El campo no puede estar vacío').bail()
     .isLength({ min: 3, max: 30 }).withMessage('El valor ingresado debe tener al menos 3 caracteres y máximo 30').bail(),
   body('email')

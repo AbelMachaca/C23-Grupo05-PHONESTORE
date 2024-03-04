@@ -25,11 +25,11 @@ router.get('/productDetail/:id', productController.detail);
 router.get('/productCart', userSessionValidate, productController.cart)
 
 router.get('/productCreate_form', adminSessionValidate, productController.createForm)
-router.post('/productCreate_form',upload.single("image"), adminSessionValidate, productController.store); 
+router.post('/productCreate_form',upload.single("imagen_usuario"), adminSessionValidate, productController.store); 
 
 
 router.get('/productEdit/:id', adminSessionValidate, productController.edit )
-router.put('/productEdit/:id',upload.array("image"), adminSessionValidate, productController.update)
+router.put('/productEdit/:id',upload.array("imagen_usuario"), adminSessionValidate, productController.update)
 
 
 router.get('/dashboard', adminSessionValidate, productController.dashboard )

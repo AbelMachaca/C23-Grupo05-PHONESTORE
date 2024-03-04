@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const { v4: uuidv4 } = require("uuid");
-
+const db = require('../database/models')
 const getJson = () => {
   const productsFilePath = path.join(__dirname, "../data/products.json");
   const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -14,12 +14,26 @@ const productController = {
     res.render("products/productCart");
   },
   detail: (req, res) => {
-    //res.send("estamos llegando")
-    const {id} = req.params;
-    const products = getJson()
-    const product = products.find((product) => product.id == id);
-    res.render("products/productDetail", { title: product.name, product});
+    
+
+
+    let product = db.Producto.findByPk(req.params.id,{
+      include: [{
+          association: "imagenes_productos"},
+       ],
+    });
+    Promise.all([product])
+      .then(([product]) => {
+           return res.render("products/productDetail",{
+           product,
+           usuario: req.session.user,
+           title: product.modelo
+       })
+    })
+      .catch(error=> console.log(error));
+
     },
+    
     
   edit: (req, res) => {
     const { id } = req.params;
@@ -30,18 +44,18 @@ const productController = {
   update: (req, res) => {
     const files = req.files;
     const { id } = req.params;
-    const { name, description, category, color, price, image } = req.body;
+    const { modelo, descripcion, marca, color, precio, imagen_usuario } = req.body;
     const products = getJson();
     const nuevoArray = products.map((product) => {
       if (product.id == id) {
         return {
           id:+id,
-          name: name,
-          description,
-          category,
+          modelo: modelo,
+          descripcion,
+          marca,
           color,
-          price: +price,
-          image: files ? files[0].filename : product.image,
+          precio: +precio,
+          imagen_usuario: files ? files[0].filename : product.imagen_usuario,
         };
       }
       return product;
@@ -52,7 +66,7 @@ const productController = {
   },
 
   store: (req, res) => {
-    const { name, category, price, description } = req.body;
+    const { modelo, marca, precio, descripcion } = req.body;
     const products = getJson();
 
     if (!req.file) {
@@ -61,18 +75,18 @@ const productController = {
       return res.status(400).send(error.message);
     }
 
-    const image = req.file.filename;
+    const imagen_usuario = req.file.filename;
 
     console.log(req.file);
 
     const newProduct = {
       id: uuidv4(),
-      name: name.trim(),
-      image: image,
-      category,
-      price: price.trim(),
+      modelo: modelo.trim(),
+      imagen_usuario: imagen_usuario,
+      marca,
+      precio: precio.trim(),
 
-      description: description.trim(),
+      descripcion: descripcion.trim(),
     };
 
     products.push(newProduct);

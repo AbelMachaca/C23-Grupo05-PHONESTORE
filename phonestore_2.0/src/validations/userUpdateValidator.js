@@ -5,10 +5,10 @@ const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 
 module.exports = [
-    body('firstName').notEmpty().withMessage("El campo no puede estar vacio").bail()
+    body('nombre').notEmpty().withMessage("El campo no puede estar vacio").bail()
     .isLength({min:3,max:30}).withMessage("El valor ingresado debe tener al menos 3 caracteres y maximo 30").bail(),
     
-    body('lastName').notEmpty().withMessage("El campo no puede estar vacio").bail()
+    body('apellido').notEmpty().withMessage("El campo no puede estar vacio").bail()
     .isLength({min:3,max:30}).withMessage("El valor ingresado debe tener al menos 3 caracteres y maximo 30").bail(),
     
     body('dniNumber').notEmpty().withMessage("El campo no puede estar vacio").bail()
