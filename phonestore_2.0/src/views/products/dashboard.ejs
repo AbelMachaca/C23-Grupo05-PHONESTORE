@@ -25,7 +25,11 @@
         <tr>
           <td><%=element.id_Producto%></td>
           <td><%=element.marca%></td>
-          <td><img src="/images/imageHome/<%= element.imagenes_productos[0].url_de_imagen %>" alt="<%= element.marca %>"></td>
+          <td><% if (element.imagenes_productos && element.imagenes_productos.length > 0) { %>
+            <img src="/images/imageHome/<%= element.imagenes_productos[0].url_de_imagen %>" alt="<%= element.marca %>">
+          <% } else { %>
+            <img src="/images/placeholder.jpg" alt="Sin imagen">
+          <% } %></td>
           <td><%=element.modelo%></td>
           <td><%=element.precio%></td>
           <td><%=element.almacenamiento%></td>

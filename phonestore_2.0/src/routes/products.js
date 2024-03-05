@@ -23,6 +23,7 @@ const upload  = multer({storage});
 router.get('/productDetail/:id', productController.detail);
 
 router.get('/productCart', userSessionValidate, productController.cart)
+router.post('/addToCart', productController.addToCart);
 
 router.get('/productCreate_form', adminSessionValidate, productController.createForm)
 router.post('/productCreate_form', adminSessionValidate,upload.array("image"), productController.store); 

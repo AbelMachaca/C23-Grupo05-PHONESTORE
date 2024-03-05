@@ -14,10 +14,50 @@ const getJson = () => {
 };
 
 const productController = {
-  cart: (req, res) => {                       
-    res.render("products/productCart");
+ 
+  addToCart: async (req, res) => {
+    try {
+      const productId = req.body.productId;
+      req.session.cart = req.session.cart || [];
+      req.session.cart.push(productId);
+
+      res.redirect("/products/productCart");
+    } catch (error) {
+      console.error("Error al agregar producto al carrito:", error);
+      res.status(500).send("Error interno del servidor al agregar producto al carrito");
+    }
   },
-  detail: (req, res) => {
+
+
+  cart: async (req, res) => {                       
+    try {
+    
+      const productIdsInCart = req.session.cart || [];
+
+      console.log("IDs de productos en el carrito:", productIdsInCart);
+
+      const productsInCart = await db.Producto.findAll({
+        where: { id: productIdsInCart },
+        include: [{
+          association: "imagenes_productos"
+        }]
+      });
+
+      console.log("Productos en el carrito:", productsInCart);
+
+      res.render("products/productCart", {
+        productsInCart,
+        usuario: req.session.user,
+      });
+    } catch (error) {
+      console.error("Error al obtener productos del carrito:", error);
+      res.status(500).send("Error interno del servidor al obtener productos del carrito");
+    }
+},
+
+
+  
+   detail: (req, res) => {
     
 
 
@@ -29,7 +69,7 @@ const productController = {
     Promise.all([product])
       .then(([product]) => {
            return res.render("products/productDetail",{
-           product,
+           product: product,
            usuario: req.session.user,
            imagen: product.imagenes_productos,
            title: product.modelo
@@ -38,14 +78,17 @@ const productController = {
       .catch(error=> console.log(error));
 
     },
+
     
     
+    
+  /*  
   edit: (req, res) => {
     const { id } = req.params;
     const products = getJson();
     const product = products.find((product) => product.id == id);
     res.render("products/productDetail", { title: product.name, product });
-  },
+  },*/
 
   edit: (req, res) => {
     console.log("aaaaaaaaaaaaaaaa");
@@ -83,23 +126,24 @@ const productController = {
 store: (req, res) => {
   const { modelo, marca, precio, descripcion, almacenamiento, ram, so } = req.body;
 
-  db.producto.create({ modelo, marca, precio, descripcion, almacenamiento, ram, so })
-      .then(producto => {
+  db.Producto.create({ modelo, marca, precio, descripcion, almacenamiento, ram, so })
+      .then(product => {
           
-          const productId = producto.id;
+          const productId = product.id;
 
           const files = req.files;
 
        
           const promises = files.map(file => {
-              return db.imagenes_producto.create({ id: productId, url_de_imagen: file.filename });
+              return db.imagenes_producto.create({ id_producto_imagen: productId, url_de_imagen: file.filename });
           });
+          
 console.log("promises", promises)
           
           Promise.all(promises)
               .then((imagen) => {
                  
-                  res.render("products/productDetail", { title: "Detalle de producto", producto, imagen });
+                  res.redirect(`/products/productDetail/${product.id}`);
               })
               .catch(error => {
                   console.error("Error al guardar las imágenes:", error);

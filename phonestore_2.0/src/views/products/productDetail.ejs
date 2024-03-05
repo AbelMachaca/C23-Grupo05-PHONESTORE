@@ -15,7 +15,11 @@
     
       <article class="celular_frontal desktop_celular_frontal">
         
-        <img src="/images/imageHome/<%= product.imagenes_productos[0].url_de_imagen %>" alt="vista frontal" class="dimensionar_imagen_celu_principal">
+        <% if (product.imagenes_productos && product.imagenes_productos.length > 0) { %>
+          <img src="/images/imageHome/<%= product.imagenes_productos[0].url_de_imagen %>" alt="vista frontal" class="dimensionar_imagen_celu_principal">
+      <% } else { %>
+          <p>No hay imágenes disponibles para este producto.</p>
+      <% } %>
       
       </article>
    
@@ -51,8 +55,12 @@
         <p>Precio: $<%= product.precio %></p>
         <button type="submit" class="boton_comprar">COMPRAR</BUtton>
         
-        <form action="" method="get"></form>
-        <a href="/products/productCart"><button type="submit" class="boton_agregar">AGREGAR AL CARRITO</BUtton></a>
+       
+      <form action="/products/addToCart" method="post">
+        <input type="hidden" name="productId" value="<%= product.id %>">
+        <button type="submit" class="boton_agregar">AGREGAR AL CARRITO</button>
+      </form>
+
       </div>
    
    </main>

@@ -93,13 +93,17 @@
         <div class="card-item">
           <div class="card-img">
             <a href="/products/productDetail/<%= element.id %>">
-            <img src="/images/imageHome/<%= element.imagenes_productos[0].url_de_imagen %>" alt="<%= element.name %>" /></a>
+              <% if (element.imagenes_productos && element.imagenes_productos.length > 0) { %>
+                <img src="/images/imageHome/<%= element.imagenes_productos[0].url_de_imagen %>" loading="lazy" alt="<%= element.name %>" />
+              <% } else { %>
+                <!-- Aquí puedes agregar un marcador de posición o un mensaje de que no hay imagen disponible -->
+              <% } %></a>
           </div>
           <div class="info">
             <p><%= element.modelo %></p>
             <p>$<%= element.precio %></p>
 
-           <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
+           <button>3 Cuotas sin interes</button>
           </div>
         </div>
 <% }); %>

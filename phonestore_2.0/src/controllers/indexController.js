@@ -9,7 +9,7 @@ const indexController = {
             const products = await db.Producto.findAll({
                 include: [{ 
                     association: "imagenes_productos"}],
-                limit: 6 
+                
             });;
             res.render("index", { title: "products", products, usuario: req.session.user });
         } catch (error) {

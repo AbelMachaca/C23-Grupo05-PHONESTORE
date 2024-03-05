@@ -7,15 +7,17 @@
 <%- include("../partials/header.ejs")%>
 
     <main>
+
+        <!--
 <section class="main">
   <section class="bloque_izq_desktop">
     <section class="mis_productos">
         <h3>Mis Productos</h3>
         <article>
             <div>
-                <img src="/images/carrito_img/sam.jpg" alt="">
+                
                <section>
-                    <h6>SAMSUNG S20FE 5G SM-G781VLBLARO PANTALLA 6.5 FHD AL,MACENAMIENTO 128GB</h6>
+                
                     <input type="radio" name="cuota" id="" class="uno">
                     <input type="radio" name="cuota" id="" class="dos">
                     <input type="radio" name="cuota" id="" class="tres">      
@@ -198,7 +200,42 @@
                 
     </section>
   </section>
-</section>
+</section> -->
+<section class="mis_productos">
+    <h3>Mis Productos</h3>
+    <article>
+      <% let totalPrecio = 0; %>
+      <% productsInCart.forEach(product => { %>
+        <div class="producto">
+          <div class="imagen">
+            <% if (product.imagenes_productos && product.imagenes_productos.length > 0) { %>
+                <img src="/images/imageHome/<%= product.imagenes_productos[0].url_de_imagen %>" alt="vista frontal" class="dimensionar_imagen_celu_principal">
+            <% } else { %>
+                <p>No hay imágenes disponibles para este producto.</p>
+            <% } %>
+          </div>
+          <div class="detalles">
+            <h2 style="color: white; margin-right: 200px;"><%= product.modelo %></h2>
+            <p style="color: white; margin-left: 10px;">Precio: $<%= product.precio %></p>
+          <p><% totalPrecio +=parseFloat(product.precio); %></p>  
+          </div>
+
+        </div>
+      <% }); %>
+
+      <section class="compra">
+        <h3 class="resumen_titulo">Resumen de Pedido</h3>
+                
+            
+                    <h3 class="resumen_titulo">Total: $<%= totalPrecio %></h3>
+              
+                
+                
+    </section>
+      
+    </article>
+  </section>
+
 </main>
 
 <!-- Footer -->

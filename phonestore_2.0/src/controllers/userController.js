@@ -40,6 +40,8 @@ const getJson = (fileName) => {
               .then((user) => {
                   console.log("user info:", user);
                   req.session.user = user.dataValues;
+                  console.log("valores", user.dataValues)
+                  console.log("session2", req.session.id_entidad_usuario)
                   if (req.body.remember == "true") {
                       const cookieUser = {
                           id: user.dataValues.id,
@@ -47,7 +49,9 @@ const getJson = (fileName) => {
                           email: user.dataValues.email,
                           id_entidad_usuario: user.dataValues.id_entidad_usuario,
                           image: user.dataValues.image,
+                          rol: user.dataValues.id_entidad_usuario
                       };
+                      
                       res.cookie("user", cookieUser, { maxAge: 1000 * 60 * 15 });
                       res.cookie("remember", "true", { maxAge: 1000 * 60 * 15 });
                   }
@@ -130,7 +134,7 @@ const getJson = (fileName) => {
         email: req.body.email,
         imagen_usuario: req.file ? req.file.filename : usuario.imagen_usuario,
         },
-        {where: { id_Usuario: id}}
+        {where: { id: id}}
         ).then(() => {
           console.log("usuario editado")
           res.redirect(`/users/profile/${id}`);
