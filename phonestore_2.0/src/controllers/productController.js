@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const { v4: uuidv4 } = require("uuid");
-const db = require("../data/models");
+const db = require("../database/models");
 const { log } = require("console");
 
 
@@ -18,7 +18,29 @@ const productController = {
     res.render("products/productCart");
   },
   detail: (req, res) => {
-    //res.send("estamos llegando")
+    
+
+
+    let product = db.Producto.findByPk(req.params.id,{
+      include: [{
+          association: "imagenes_productos"},
+       ],
+    });
+    Promise.all([product])
+      .then(([product]) => {
+           return res.render("products/productDetail",{
+           product,
+           usuario: req.session.user,
+           imagen: product.imagenes_productos,
+           title: product.modelo
+       })
+    })
+      .catch(error=> console.log(error));
+
+    },
+    
+    
+  edit: (req, res) => {
     const { id } = req.params;
     const products = getJson();
     const product = products.find((product) => product.id == id);
@@ -70,9 +92,9 @@ store: (req, res) => {
 
        
           const promises = files.map(file => {
-              return db.producto_imagen.create({ id_producto: productId, ulr: file.filename });
+              return db.imagenes_producto.create({ id: productId, url_de_imagen: file.filename });
           });
-console.log(promises)
+console.log("promises", promises)
           
           Promise.all(promises)
               .then((imagen) => {
@@ -92,7 +114,11 @@ console.log(promises)
   
 
   dashboard: (req, res) => {
-    db.Producto.findAll()
+    db.Producto.findAll({
+      include: [{ 
+          association: "imagenes_productos"}],
+      limit: 6 
+  })
     .then((products)=>{
         res.render("products/dashboard", { products });
     })

@@ -1,68 +1,43 @@
-'use strict'
-module.exports=(sequelize,dataTypes)=>{
-    const alias = "Usuario";
-    const cols={
-        id_Usuario:{
-            type:dataTypes.INTEGER,
-            primaryKey:true,
-            allowNull:false,
-            unsigned:true,
-            autoIncrement:true
-        },
-        id_historial_compras:{
-            type:dataTypes.INTEGER,
-            allowNull:false,
-        },
-        nombre:{
-            type:dataTypes.STRING(45),
-            allowNull:false
-        },
-        apellido:{
-            type:dataTypes.STRING(45),
-            allowNull:false
-        },
-        direccion:{
-            type:dataTypes.TEXT,
-            allowNull:false    
-        },
-        telefono:{
-            type:dataTypes.INTEGER,
-            allowNull:false
-        },
-        email:{
-            type:dataTypes.STRING(45),
-            allowNull:false,
-        },
-        imagen_usuario:{
-            type:dataTypes.STRING(200),
-            allowNull:false
-        },
-        id_entidad_usuario:{
-            type:dataTypes.INTEGER,
-            allowNull:false,
-            unsigned:true
-        }
-};
-    const config={
-         tableName:"usuario",
-         timeStamps:false
-    };
-    
-    const Usuario=sequelize.define(alias,cols,config);
-
-    Usuario.associate=function(models){
-        Usuario.belongsTo(models.Entidad_de_usuario,{
-            as:"entidadUsuario",
-            foreingKey:id_entidad_usuario
-        }),
-        Usuario.hasMany(models.Comentarios_productos,{
-            as:"comentarioUsuario",
-            foreingKey:id_Usuario_comentario
-        }),
-        Usuario.hasMany(models.Ventas,{
-            as:"ventasUsuario",
-            foreingKey:id_Usuario_venta
-        })
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Usuario extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      this.belongsTo(models.Entidad_de_Usuario, {
+        as: "entidades_usuarios",
+        foreignKey: "id_entidad_usuario"
+      }),
+      this.hasMany(models.comentarios_productos, {
+        as: "comentarios_productoss",
+        foreignKey: "id_Usuario_comentario"
+      }),
+      this.hasMany(models.ventas, {
+        as: "ventas",
+        foreignKey: "id_Usuario_venta"
+      })
     }
-    return Usuario;
-}
+  }
+  Usuario.init({
+    id_historial_compras: DataTypes.INTEGER,
+    nombre: DataTypes.STRING,
+    apellido: DataTypes.STRING,
+    direccion: DataTypes.TEXT,
+    telefono: DataTypes.INTEGER,
+    email: DataTypes.STRING,
+    password: DataTypes.STRING,
+    imagen_usuario: DataTypes.STRING,
+    id_entidad_usuario: DataTypes.INTEGER
+  }, {
+    sequelize,
+    modelName: 'Usuario',
+    timestamps: false
+  });
+  return Usuario;
+};

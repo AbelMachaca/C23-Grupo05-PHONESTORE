@@ -93,11 +93,11 @@
         <div class="card-item">
           <div class="card-img">
             <a href="/products/productDetail/<%= element.id %>">
-            <img src="/images/imageHome/<%= element.image %>" alt="<%= element.name %>" /></a>
+            <img src="/images/imageHome/<%= element.imagenes_productos[0].url_de_imagen %>" alt="<%= element.name %>" /></a>
           </div>
           <div class="info">
-            <p><%= element.name %></p>
-            <p>$<%= element.price %></p>
+            <p><%= element.modelo %></p>
+            <p>$<%= element.precio %></p>
 
            <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
           </div>

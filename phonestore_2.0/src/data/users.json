@@ -88,5 +88,40 @@
     "password": "$2a$10$/z5dkO3CiUeCfCBgcJNQBeSssaWxnU3XUTKxDf/GFhOfvRMEFMdH.",
     "type": "admin",
     "image": "foto de auricular 1-1706470953018-3f6d7454-2272-45a8-9d7b-2c979a901aac.jpg"
+  },
+  {
+    "id": 1709519838386,
+    "nombre": "zxczxc",
+    "lastName": "vcxv",
+    "email": "cxv@gmail.asd",
+    "password": "$2a$10$zDZIQbWHIv0/QKrzKfU87uDM/PJgZwtCvw0xPy3xlPaJfn7L7wjSW",
+    "type": "USER",
+    "image": "predeterminado.webp"
+  },
+  {
+    "id": 1709520105756,
+    "nombre": "12345555",
+    "apellido": "asdsa",
+    "email": "hola@gmail.com",
+    "password": "$2a$10$ifw.fhXRC0BXCTZK0AI0PufFAHf8Lcqoa1ut2.cuyyMxDv/rTUFN6",
+    "type": "USER",
+    "image": "predeterminado.webp"
+  },
+  {
+    "id": 1709520541660,
+    "nombre": "dfg",
+    "apellido": "dfg",
+    "email": "dfg@maildsa.com",
+    "password": "$2a$10$ZCTLfW0ugTa7dV14u14w8uoikdv4rvmb9fYe3gWKuPPa8ozFJHkRC",
+    "type": "USER",
+    "imagen_usuario": "predeterminado.webp"
+  },
+  {
+    "nombre": "u6uyuty",
+    "apellido": "ukiytk",
+    "email": "12355@gasf.rew",
+    "password": "$2a$10$X3VHKwmfsBQW599/1FAm/esouSdLZyCYT8JTCCSO7dntl0lt.yWRC",
+    "id_entidad_usuario": 2,
+    "imagen_usuario": "predeterminado.webp"
   }
 ]

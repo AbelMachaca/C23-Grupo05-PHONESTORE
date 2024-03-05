@@ -28,22 +28,22 @@
           <p><%= locals.errores && errores.name ? errores.name.msg : null %> </p>
         </div>
         <div class="form-group">
-          <label class="label-general" for="image">Foto de Perfil</label>
-      <input class="input-general" type="file" name="image" id="image" accept="image/*" value="<%= locals.old && old.image ? old.image : null %>" >
-      <p><%= locals.errores && errores.image ? errores.image.msg : null %> </p>
+          <label class="label-general" for="imagen_usuario">Foto de Perfil</label>
+      <input class="input-general" type="file" name="imagen_usuario" id="imagen_usuario" accept="imagen_usuario/*" value="<%= locals.old && old.imagen_usuario ? old.imagen_usuario : null %>" >
+      <p><%= locals.errores && errores.imagen_usuario ? errores.imagen_usuario.msg : null %> </p>
         </div>
         
         <div class="form-group">
-            <label class="label-general" for="lastName">Apellido</label>
+            <label class="label-general" for="apellido">Apellido</label>
             <input
               class="input-general"
               type="text"
-              id="lastName"
-              name="lastName"
+              id="apellido"
+              name="apellido"
               placeholder="Ingresa tu apellido"
-              value="<%= locals.old && old.lastName ? old.lastName : null %>"
+              value="<%= locals.old && old.apellido ? old.apellido : null %>"
             />
-            <p><%= locals.errores && errores.lastName ? errores.lastName.msg : null %> </p>
+            <p><%= locals.errores && errores.apellido ? errores.apellido.msg : null %> </p>
             
           </div>
           <div class="form-group">

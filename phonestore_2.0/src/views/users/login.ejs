@@ -19,9 +19,9 @@
           placeholder="Ingresa tu correo electrónico"
           value="<%= locals.old && old.email %>"
         />
-        <% if (locals.errors && errors.email) { %>
-          <p class="error-message"><%= errors.email.msg %></p>
-        <% } %>
+        <p class="errores_validacion_login">
+          <%= locals.errores && errores.email ? errores.email.msg : null %>
+        </p>
       </div>
       <div class="form-group-login">
         <label for="password">Contraseña</label>
@@ -33,9 +33,9 @@
             placeholder="Ingresa tu contraseña"
             value="<%= locals.old && old.password %>"
           />
-          <% if (locals.errors && errors.password) { %>
-            <p class="error-message"><%= errors.password.msg %></p>
-          <% } %>
+          <p class="errores_validacion_login">
+            <%= locals.errores && errores.password ? errores.password.msg : null %>
+          </p>
           <i class="fa-solid fa-eye eye-icon"></i>
         </div>
       </div>
@@ -43,7 +43,7 @@
         <a href="#">¿Olvidaste tu contraseña?</a>
       </div>
       <div class="input-rememberMe">
-        <input type="checkbox" id="remember" name="remember">
+        <input type="checkbox" id="remember" name="remember" value="true">
         <label for="remember">Recuérdame</label>
       </div>
       <button class="boton-inicia-sesion" type="submit" value="login">Iniciar sesión</button>
