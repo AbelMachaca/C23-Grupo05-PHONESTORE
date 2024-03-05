@@ -1,9 +1,10 @@
-const { validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs');
-const fs = require('fs');
-const path = require("path")
-const db = require('../database/models')
-
+const { validationResult } = require("express-validator");
+const bcrypt = require("bcryptjs");
+const fs = require("fs");
+const path = require("path");
+const { v4: uuidv4 } = require("uuid");
+const db = require("../database/models");
+const usuario = require("../database/models/usuario");
 
 const getJson = (fileName) => {
     const file = fs.readFileSync(`${__dirname}/../data/${fileName}.json`, 'utf-8');
@@ -102,55 +103,50 @@ const getJson = (fileName) => {
      
     }, 
     show:(req,res)=>{
-      const { id } = req.params;
-      const users = getJson();
-      const user = users.find((element) => element.id == id);
-      res.render("users/profile", { user })
+      db.Usuario.findByPk(req.params.id).then(function (usuario) {
+        res.render("users/profile", { usuario: usuario });
+      });
   },
 
-  edit:(req,res)=>{
-      const { id } = req.params;
-      const users = getJson();
-      const user = users.find((element) => element.id == id);
-      res.render("users/userUpdate", { user })
+  edit: (req, res) => {
+    db.Usuario.findByPk(req.params.id).then(function (usuario) {
+      console.log(usuario);
+      res.render("users/userUpdate", { usuario: usuario });
+    });
   },
-  update:(req, res)=>{
-      const errores = validationResult(req);
-      //console.log("errores:", errores);
-      if(!errores.isEmpty()){
-      const { id } = req.params;
-      const users = getJson();
-      const user = users.find((element) => element.id == id);
-      return res.render('users/userUpdate',{errores:errores.mapped(),old:req.body, user})
-      }
-
-
-      const usersFilePath = path.join(__dirname, '../data/users.json');
-      const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-          const {id} = req.params
-          const {nombre, apellido, email, password, address, tel, postalCode, birthDate,dniNumber} = req.body;
-          const nuevoArray = users.map(user => {
-              if (user.id == id){
-                  return{
-                      id,
-                      nombre: nombre.trim(),
-                      apellido: apellido.trim(),
-                      dniNumber,
-                      // email: email.trim(),
-                      password,
-                      address: address.trim(),
-                      tel,
-                      postalCode,
-                      birthDate: birthDate,
-                      imagen_usuario: req.file ? req.file.filename : user.imagen_usuario,
-                  }
-              }
-          })
-          const json = JSON.stringify(nuevoArray);
-          fs.writeFileSync(usersFilePath, json, "utf-8"); 
-          
-      
+  update: (req,res) => {
+    const errores = validationResult(req);
+    const id = req.params.id
+    if (errores.isEmpty()){
+      db.Usuario.findByPk(id).then(usuario => {
+        console.log("ACTUALIZA LOS DATOS")
+        console.log(req.body)
+        db.Usuario.update(
+        {
+        nombre: req.body.nombre,
+        apellido: req.body.apellido,
+        direccion: req.body.direccion,
+        telefono: req.body.telefono,
+        email: req.body.email,
+        imagen_usuario: req.file ? req.file.filename : usuario.imagen_usuario,
+        },
+        {where: { id_Usuario: id}}
+        ).then(() => {
+          console.log("usuario editado")
+          res.redirect(`/users/profile/${id}`);
+      })
+      })
+    } else {
+      db.Usuario.findByPk(id)
+      .then((usuario) => {
+        if (!errores.isEmpty()) {
+          console.log("se ejecuta el retorno con errores")
+          return res.render("users/userUpdate", {errores: errores.mapped(),old: req.body,usuario});
+        }
+      })
+    }
   }
-  };
+  
+}
 
 module.exports = userController;

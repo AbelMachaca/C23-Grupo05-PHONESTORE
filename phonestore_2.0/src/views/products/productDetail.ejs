@@ -19,11 +19,12 @@
       
       </article>
    
-      <article class="caja_imagen_celu_frente_dorso_lateral desktop_celu_frente_dorso_lateral">
-        <img src="/images/productDetail_img/galaxy-s20-fe-5g-frente-min.svg" alt="vista frontal">
-        <img src="/images/productDetail_img/galaxy-s20-fe-5g-dorso.svg" alt="vista dorsal">  
-        <img src="/images/productDetail_img/galaxy-s20-fe-5g-lateral.svg" alt="vista lateral">
-      </article>
+     
+        <h2>Imágenes del Producto:</h2>
+        <% for(let i=0; i<imagen.length; i++) { %>
+            <img src="/images/imageHome/<%= imagen[i].url_de_imagen %>" alt="Imagen <%= imagen[i].url_de_imagen %>">
+        <% } %>
+    </article>
       
       <div class="formulario_opcion_color">
         
@@ -35,12 +36,12 @@
       </div>
 
         <snap class="aumentar_tamaño_descripcion_del_equipo desktop_posicion_inferior_descripcion_h5">
-             <h5 class="descripcion_del_equipo desktop_descripcion_h5"><%= product.descripcion %></h5>
+             <h5 class="descripcion_del_equipo desktop_descripcion_h5">Descripción: <%= product.descripcion %></h5>
         </snap>
     
         <snap class="snap_h6 desktop_snap_h6">
              <h6 class="caracteristicas desktop_caracteristicas">ALMACENAMIENTO <%= product.almacenamiento %>GB</h6>
-             <h6 class="caracteristicas desktop_caracteristicas"><%= product.so %></h6>
+             <h6 class="caracteristicas desktop_caracteristicas">Sistema Operativo <%= product.so %></h6>
              <h6 class="caracteristicas desktop_caracteristicas">RAM <%= product.ram %>GB</h6>
              <h6 class="caracteristicas desktop_caracteristicas">CAMARA FRONTAL 32MPX</h6>
         </snap>

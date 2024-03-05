@@ -12,12 +12,12 @@
         <div class="form-registro-createProduct">
             <h1>Crear Producto</h1>
 
-            <form method="POST" action="/products/productCreate_form" enctype="multipart/form-data">
+            <form action="/products/productCreate_form" method="POST" enctype="multipart/form-data">
           
               
                 <div class="form-group-createProduct">
-                    <label class="label-general-createProduct" for="modelo">Nombre del Producto:</label>
-                    <input class="input-general-createProduct" type="text" id="modelo" name="modelo" required>
+                    <label class="label-general-createProduct" for="name">Modelo:</label>
+                    <input class="input-general-createProduct" type="text" id="name" name="modelo" required>
                 </div>         
 
                 <div class="form-group-createProduct">
@@ -26,8 +26,8 @@
                 </div>
 
                 <div class="form-group-createProduct">  
-                    <label class="label-general-createProduct" for="marca">Categoria</label>                 
-                    <select class="input-general-createProduct" >
+                    <label class="label-general-createProduct" for="category">Marca</label>                 
+                    <select class="input-general-createProduct" name="marca">
                         <option value="0">Seleccione una marca</option>
                         <option value="Samsung">Samsung</option>
                         <option value="Motorola">Motorola</option>
@@ -47,6 +47,20 @@
                     <textarea class="input-general-createProduct" id="descripcion" name="descripcion"  cols="30" 
                     rows="10" required></textarea>
                 </div>
+                <div class="form-group-createProduct">
+                    <label class="label-general-createProduct" for="price">Almacenamiento:</label>
+                    <input class="input-general-createProduct" type="number" id="almacenamiento" name="almacenamiento" required>
+                </div>
+
+                <div class="form-group-createProduct">
+                    <label class="label-general-createProduct" for="price">Ram:</label>
+                    <input class="input-general-createProduct" type="number" id="ram" name="ram" required>
+                </div>
+
+                <div class="form-group-createProduct">
+                    <label class="label-general-createProduct" for="name">Sistema operativo:</label>
+                    <input class="input-general-createProduct" type="text" id="so" name="so" required>
+                </div>   
 
                 <button class="createProduct button-createProduct" type="submit">Crear Producto</button>
             </form>
