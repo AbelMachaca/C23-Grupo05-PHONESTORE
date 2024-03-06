@@ -14,9 +14,45 @@ const getJson = () => {
 };
 
 const productController = {
-  cart: (req, res) => {                       
-    res.render("products/productCart");
+  addToCart: async (req, res) => {
+    try {
+      const productId = req.body.productId;
+      req.session.cart = req.session.cart || [];
+      req.session.cart.push(productId);
+
+      res.redirect("/products/productCart");
+    } catch (error) {
+      console.error("Error al agregar producto al carrito:", error);
+      res.status(500).send("Error interno del servidor al agregar producto al carrito");
+    }
   },
+
+
+  cart: async (req, res) => {                       
+    try {
+    
+      const productIdsInCart = req.session.cart || [];
+
+      console.log("IDs de productos en el carrito:", productIdsInCart);
+
+      const productsInCart = await db.Producto.findAll({
+        where: { id: productIdsInCart },
+        include: [{
+          association: "imagenes_productos"
+        }]
+      });
+
+      console.log("Productos en el carrito:", productsInCart);
+
+      res.render("products/productCart", {
+        productsInCart,
+        usuario: req.session.user,
+      });
+    } catch (error) {
+      console.error("Error al obtener productos del carrito:", error);
+      res.status(500).send("Error interno del servidor al obtener productos del carrito");
+    }
+},
   detail: (req, res) => {
     console.log(req.params.id)
 
