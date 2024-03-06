@@ -93,7 +93,11 @@
         <div class="card-item">
           <div class="card-img">
             <a href="/products/productDetail/<%= element.id %>">
-            <img src="/images/imageHome/<%= element.imagenes_productos[0].url_de_imagen %>" alt="<%= element.name %>" /></a>
+              <% if (element.imagenes_productos && element.imagenes_productos.length > 0) { %>
+                <img src="/images/imageHome/<%= element.imagenes_productos[0].url_de_imagen %>" alt="<%= element.marca %>">
+              <% } else { %>
+                No hay imagen disponible
+              <% } %>
           </div>
           <div class="info">
             <p><%= element.modelo %></p>

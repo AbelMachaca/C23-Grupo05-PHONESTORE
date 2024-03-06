@@ -8,23 +8,23 @@
    <main class="fondo">
       <div class="titulo_marca_modelo titulo_desktop">
           
-              <h3 ><%= product.modelo %></h3>
-              <h4 ><%= product.marca %></h4>
+              <h3 ><%= producto.modelo %></h3>
+              <h4 ><%= producto.marca %></h4>
        
       </div>
     
       <article class="celular_frontal desktop_celular_frontal">
-        
-        <img src="/images/imageHome/<%= product.imagenes_productos[0].url_de_imagen %>" alt="vista frontal" class="dimensionar_imagen_celu_principal">
-      
+        <% if (producto.imagenes_productos && producto.imagenes_productos.length > 0) { %>
+          <img src="/images/imageHome/<%= producto.imagenes_productos[1].url_de_imagen %>" alt="<%= producto.marca %>" class="dimensionar_imagen_celu_principal">
+        <% } %>
       </article>
-   
-     
-        <h2>Imágenes del Producto:</h2>
+      <h2>Imágenes del Producto:</h2>
+     <div class="galeria_de_imagenes_detalle">
+        
         <% for(let i=0; i<imagen.length; i++) { %>
             <img src="/images/imageHome/<%= imagen[i].url_de_imagen %>" alt="Imagen <%= imagen[i].url_de_imagen %>">
         <% } %>
-    </article>
+      </div>
       
       <div class="formulario_opcion_color">
         
@@ -36,19 +36,19 @@
       </div>
 
         <snap class="aumentar_tamaño_descripcion_del_equipo desktop_posicion_inferior_descripcion_h5">
-             <h5 class="descripcion_del_equipo desktop_descripcion_h5">Descripción: <%= product.descripcion %></h5>
+             <h5 class="descripcion_del_equipo desktop_descripcion_h5">Descripción: <%= producto.descripcion %></h5>
         </snap>
     
         <snap class="snap_h6 desktop_snap_h6">
-             <h6 class="caracteristicas desktop_caracteristicas">ALMACENAMIENTO <%= product.almacenamiento %>GB</h6>
-             <h6 class="caracteristicas desktop_caracteristicas">Sistema Operativo <%= product.so %></h6>
-             <h6 class="caracteristicas desktop_caracteristicas">RAM <%= product.ram %>GB</h6>
+             <h6 class="caracteristicas desktop_caracteristicas">ALMACENAMIENTO <%= producto.almacenamiento %>GB</h6>
+             <h6 class="caracteristicas desktop_caracteristicas">Sistema Operativo <%= producto.so %></h6>
+             <h6 class="caracteristicas desktop_caracteristicas">RAM <%= producto.ram %>GB</h6>
              <h6 class="caracteristicas desktop_caracteristicas">CAMARA FRONTAL 32MPX</h6>
         </snap>
 
       <div class="separar_centrar_boton_submit desktop_botones_submit">
         <form action="" method="get"></form>
-        <p>Precio: $<%= product.precio %></p>
+        <p>Precio: $<%= producto.precio %></p>
         <button type="submit" class="boton_comprar">COMPRAR</BUtton>
         
         <form action="" method="get"></form>

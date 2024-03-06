@@ -26,22 +26,22 @@ const getJson = (fileName) => {
 
 
 
-const validateLogin = [
-    body('password').notEmpty().withMessage("El campo no puede estar vacio").bail()
-    .custom((value, {req} )=> {
+// const validateLogin = [
+//     body('password').notEmpty().withMessage("El campo no puede estar vacio").bail()
+//     .custom((value, {req} )=> {
        
-        const user = users.find(elemento => elemento.email == req.body.email)
+//         const user = users.find(elemento => elemento.email == req.body.email)
         
-        return bcrypt.compareSync(value, user.password);
-    }).withMessage("La contraseña no es correcta"),
-    body('email').notEmpty().withMessage("El campo no puede estar vacio").bail()
-    .isEmail().withMessage("El valor ingresado debe tener el formato de un correo electronico").bail()
-    .custom(value => {
-        console.log("value:",value);        
-        const user = users.find(elemento => elemento.email == value);
-        return user ? true : false
-    }).withMessage("El usuario no existe"),
-]
+//         return bcrypt.compareSync(value, user.password);
+//     }).withMessage("La contraseña no es correcta"),
+//     body('email').notEmpty().withMessage("El campo no puede estar vacio").bail()
+//     .isEmail().withMessage("El valor ingresado debe tener el formato de un correo electronico").bail()
+//     .custom(value => {
+//         console.log("value:",value);        
+//         const user = users.find(elemento => elemento.email == value);
+//         return user ? true : false
+//     }).withMessage("El usuario no existe"),
+// ]
 
 const multer  = require('multer');
 
@@ -61,7 +61,7 @@ const upload = multer({ storage })
 
 /* GET users listing. */
 router.get("/login", userController.login);
-router.post("/login", loginValidation,userController.processlogin);
+router.post("/login",loginValidation,userController.processlogin);
 router.get('/logout', userController.logout)
 router.get("/register", userController.formRegister);
 router.post(

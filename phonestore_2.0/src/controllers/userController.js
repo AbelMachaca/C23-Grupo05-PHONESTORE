@@ -100,7 +100,6 @@ const getJson = (fileName) => {
       console.log(err)
     })
   
-     
     }, 
     show:(req,res)=>{
       db.Usuario.findByPk(req.params.id).then(function (usuario) {
@@ -118,6 +117,7 @@ const getJson = (fileName) => {
     const errores = validationResult(req);
     const id = req.params.id
     if (errores.isEmpty()){
+      console.log("estallegando el id", id)
       db.Usuario.findByPk(id).then(usuario => {
         console.log("ACTUALIZA LOS DATOS")
         console.log(req.body)
@@ -130,7 +130,7 @@ const getJson = (fileName) => {
         email: req.body.email,
         imagen_usuario: req.file ? req.file.filename : usuario.imagen_usuario,
         },
-        {where: { id_Usuario: id}}
+        {where: { id: id}}
         ).then(() => {
           console.log("usuario editado")
           res.redirect(`/users/profile/${id}`);

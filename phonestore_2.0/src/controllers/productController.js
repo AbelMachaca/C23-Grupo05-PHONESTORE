@@ -18,35 +18,25 @@ const productController = {
     res.render("products/productCart");
   },
   detail: (req, res) => {
-    
+    console.log(req.params.id)
 
-
-    let product = db.Producto.findByPk(req.params.id,{
+    let producto = db.Producto.findByPk(req.params.id,{
       include: [{
           association: "imagenes_productos"},
        ],
     });
-    Promise.all([product])
-      .then(([product]) => {
+    Promise.all([producto])
+      .then(([producto]) => {
            return res.render("products/productDetail",{
-           product,
+           producto,
            usuario: req.session.user,
-           imagen: product.imagenes_productos,
-           title: product.modelo
+           imagen: producto.imagenes_productos,
+           title: producto.modelo
        })
     })
       .catch(error=> console.log(error));
 
     },
-    
-    
-  edit: (req, res) => {
-    const { id } = req.params;
-    const products = getJson();
-    const product = products.find((product) => product.id == id);
-    res.render("products/productDetail", { title: product.name, product });
-  },
-
   edit: (req, res) => {
     console.log("aaaaaaaaaaaaaaaa");
     const { id } = req.params;
@@ -80,60 +70,78 @@ const productController = {
     res.render("products/productCreate_form");
   },
  
-store: (req, res) => {
-  const { modelo, marca, precio, descripcion, almacenamiento, ram, so } = req.body;
-
-  db.producto.create({ modelo, marca, precio, descripcion, almacenamiento, ram, so })
-      .then(producto => {
-          
-          const productId = producto.id;
-
-          const files = req.files;
-
-       
-          const promises = files.map(file => {
-              return db.imagenes_producto.create({ id: productId, url_de_imagen: file.filename });
-          });
-console.log("promises", promises)
-          
-          Promise.all(promises)
-              .then((imagen) => {
-                 
-                  res.render("products/productDetail", { title: "Detalle de producto", producto, imagen });
-              })
-              .catch(error => {
-                  console.error("Error al guardar las imágenes:", error);
-                  res.status(500).send("Error interno del servidor al guardar las imágenes");
-              });
-      })
-      .catch(error => {
-          console.error("Error al crear el producto:", error);
-          res.status(500).send("Error interno del servidor");
-      });
-},
+  store: (req, res) => {
+    const { modelo, marca, precio, descripcion, almacenamiento, ram, so } = req.body;
   
+    db.Producto.create({ modelo, marca, precio, descripcion, almacenamiento, ram, so })
+        .then(producto => {
+            
+            const productId = producto.id;
+            // console.log(productId)
+  
+            const files = req.files;
+            
+  
+         
+            const promises = files.map(file => {
+               console.log(files)
+                return db.imagenes_producto.create({ id_producto_imagen: productId, url_de_imagen: file.filename });
+            });
+   console.log(promises)
+            
+            Promise.all(promises)
+                .then((imagen) => {
+                   
+                    res.render("products/productDetail", { title: "Detalle de producto", producto, imagen });
+                })
+                // .catch(error => {
+                //     console.error("Error al guardar las imágenes:", error);
+                //     res.status(500).send("Error interno del servidor al guardar las imágenes");
+                // });
+        })
+        .catch(error => {
+            console.error("Error al crear el producto:", error);
+            res.status(500).send("Error interno del servidor");
+        });
+  },
 
   dashboard: (req, res) => {
+    console.log("DASHBOARD")
     db.Producto.findAll({
       include: [{ 
-          association: "imagenes_productos"}],
-      limit: 6 
+          association: "imagenes_productos"}]
+          //borre el ,limit 6
   })
-    .then((products)=>{
-        res.render("products/dashboard", { products });
+    .then((productos)=>{
+        res.render("products/dashboard", { productos });
     })
-    .catch(error =>{console.log(error)})
+    .catch(error =>{console.error(error)})
   },
-  destroy: (req, res) => {
-    let { id } = req.params;
-    console.log("metodo delete", id);
-    const products = getJson();
-    console.log(products);
-    const newArray = products.filter((product) => product.id != id);
-    console.log("newArray", newArray);
-    const json = JSON.stringify(newArray);
-    fs.writeFileSync(productsFilePath, json, "utf-8");
-    res.redirect("/");
-  },
-};
+  delete: (req, res) => {
+    const productId = req.params.id;
+    console.log(productId);
+
+    db.imagenes_producto.destroy({
+      
+        where: {
+            id_producto_imagen: productId
+        }
+    })
+    .then(() => {
+        return db.Producto.destroy({
+            where: {
+                id: productId
+            }
+        });
+    })
+    .then(() => {
+        res.redirect("/products/dashboard");
+    })
+    .catch(error => {
+        console.log(error);
+        res.status(500).send("Error al eliminar el producto.");
+    });
+  }
+}
+
 module.exports = productController;

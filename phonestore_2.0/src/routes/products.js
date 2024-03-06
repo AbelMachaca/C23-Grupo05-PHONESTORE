@@ -23,22 +23,21 @@ const upload  = multer({storage});
 router.get('/productDetail/:id', productController.detail);
 
 router.get('/productCart', userSessionValidate, productController.cart)
+//sacamos esto ----  adminSessionValidate ---- de las 2 rutas,
+router.get('/productCreate_form',adminSessionValidate, productController.createForm)
+router.post('/productCreate_form',upload.array("image"), productController.store); 
 
-router.get('/productCreate_form', adminSessionValidate, productController.createForm)
-router.post('/productCreate_form', adminSessionValidate,upload.array("image"), productController.store); 
-
-
-router.get('/productEdit/:id', productController.edit )
-router.put('/productEdit/:id',upload.array("image"),productController.update)
-
-
-// router.get('/productEdit/:id', adminSessionValidate, productController.edit )
-// router.put('/productEdit/:id',upload.array("image"), adminSessionValidate, productController.update)
+// router.get('/productEdit/:id', productController.edit )
+// router.put('/productEdit/:id',upload.array("image"),productController.update)
 
 
-router.get('/dashboard',productController.dashboard )
+router.get('/productEdit/:id', adminSessionValidate, productController.edit )
+router.put('/productEdit/:id',upload.array("image"), adminSessionValidate, productController.update)
 
-router.delete(`/delete/:id`,productController.destroy);
+
+router.get('/dashboard',adminSessionValidate,productController.dashboard )
+
+router.delete('/delete/:id',adminSessionValidate,productController.delete);
 
 //router.get('/dashboard', adminSessionValidate, productController.dashboard )
 

@@ -19,10 +19,15 @@
                 <ul class="lista-datos">
                     <li>Telefono: <%= usuario.telefono %></li>
                     <li>email: <%= usuario.email %></li>
+                    <li>direccion: <%= usuario.direccion %></li>
                 </ul>
                 <ul class="lista-datos">
                     <!-- <li>Edite su perfil:</li> -->
-                    <a href="/users/userUpdate/<%= usuario.id_usuario %>"><button class="button_edit_profile">Edite su perfil</button></a>
+                
+                    <% if (usuario && usuario.id_entidad_usuario == "2") { %>
+                        <a href="/products/Dashboard"><button class="button_edit_profile">Dashboard</button></a>
+                    <% } %>
+                    <a href="/users/userUpdate/<%= usuario.id %>"><button class="button_edit_profile">Edite su perfil</button></a>
                     <!-- <li></li> -->
                 </ul>
             </div>

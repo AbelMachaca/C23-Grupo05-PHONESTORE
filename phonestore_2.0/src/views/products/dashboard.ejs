@@ -1,9 +1,22 @@
 <!-- Head -->
 <%- include("../partials/head.ejs") %>
-  
-<body class="contenedor_body_dashboard">
-  
+
+<body>
+  <%- include("../partials/header.ejs")%>
+ 
+<div class="contenedor_body_dashboard">
+  <script type="text/javascript">
+    function confirmacion(){
+        let respuesta = confirm("¿Estas seguro de eliminar este producto?");
+
+        if (respuesta == true){
+            return true;
+        } else {
+            return false;
+        }
+    }
     
+</script>
     <h2>Lista de Productos</h2>
   <table>
     <thead>
@@ -21,11 +34,17 @@
       </tr>
       </thead>
     <tbody>
-      <% products.forEach(element => { %>
+      <% productos.forEach(element => { %>
         <tr>
-          <td><%=element.id_Producto%></td>
+          <td><%=element.id%></td>
           <td><%=element.marca%></td>
-          <td><img src="/images/imageHome/<%= element.imagenes_productos[0].url_de_imagen %>" alt="<%= element.marca %>"></td>
+          <td>
+            <% if (element.imagenes_productos && element.imagenes_productos.length > 0) { %>
+              <img src="/images/imageHome/<%= element.imagenes_productos[0].url_de_imagen %>" alt="<%= element.marca %>">
+            <% } else { %>
+              No hay imagen disponible
+            <% } %>
+          </td>
           <td><%=element.modelo%></td>
           <td><%=element.precio%></td>
           <td><%=element.almacenamiento%></td>
@@ -33,10 +52,10 @@
           <td><%=element.so%></td>
           <td><%=element.descripcion%></td>
           <td>
-            <a href="/products/productEdit/<%= element.id_Producto %>">Editar</a>
-            <a href="/products/productEdit/<%= element.id_Producto %>">Actualizar</a>
+            <a href="/products/productEdit/<%= element.id %>">Editar</a>
+            <a href="/products/productEdit/<%= element.id %>">Actualizar</a>
             <form action="/products/delete/<%= element.id%>?_method=delete" method="post">
-              <button type="submit">Eliminar</button>
+              <button type="submit" onclick="return confirmacion()">Eliminar</button>
             </form>  
           </td>
         </tr>
@@ -46,5 +65,6 @@
   <form action="/create" method="post">
 <a href="/products/productCreate_form">Crear Producto</a>
 </form>
+</div>
 </body>
 </html>
