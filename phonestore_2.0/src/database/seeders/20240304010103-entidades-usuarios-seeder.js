@@ -8,18 +8,18 @@ module.exports = {
      
       await queryInterface.bulkInsert('entidad_de_usuarios', [{
         id: 1,
-        name:USER
+        rol:'USER'
       },
       {id: 2,
-        name:ADMIN
+        rol:'ADMIN'
       },
       {
         id: 3,
-        name:USER
+        rol:'USER'
       },
       {
         id: 4,
-        name:USER
+        rol:'USER'
       }], {});
     
   },
