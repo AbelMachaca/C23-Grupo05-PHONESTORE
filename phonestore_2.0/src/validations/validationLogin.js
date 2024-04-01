@@ -11,10 +11,10 @@ module.exports = [
                 where: { email: value }
             }).then(user => {
                 if (!user) {
-                    return Promise.reject('Email incorrecto')
+                    return Promise.reject('Contraseña o email incorrecto')
                 }
             }).catch(() => {
-                return Promise.reject('Email incorrecto')
+                return Promise.reject('Contraseña o email incorrecto')
             })
         }),
 
@@ -24,10 +24,10 @@ module.exports = [
                 where: { email: req.body.email }
             }).then(user => {
                 if (!bcrypt.compareSync(value, user.dataValues.password)) {
-                    return Promise.reject('Contraseña incorrecta')
+                    return Promise.reject('Contraseña o email incorrecto')
                 }
             }).catch(() => {
-                return Promise.reject('Contraseña incorrecta')
+                return Promise.reject('Contraseña o email incorrecto')
             })
         })
 ];

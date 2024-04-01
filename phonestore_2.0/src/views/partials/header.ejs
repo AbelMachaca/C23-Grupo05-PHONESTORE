@@ -18,6 +18,7 @@
                 
                 <% if(locals.usuario != undefined){%>
                   <a href="/users/profile/<%= usuario.id %>"><%= usuario.nombre %>  </a>
+                  
                   <a  href="/users/logout"> <i class="fas fa-sign-out-alt" style="font-size: 30px;"></i></a>
                   <% }else{ %>
                     <a href="/users/register" >Creá tu cuenta </a>
