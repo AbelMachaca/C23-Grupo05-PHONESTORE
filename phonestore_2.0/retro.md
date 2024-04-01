@@ -52,6 +52,12 @@ Hacer menos: Hacer más cortas las reuniones de cada daily.
 Dejar de hacer: Ser impuntuales en la fecha pactada para la finalización de cada sprint.
 ---------------------------------------------------------------------------------------
 
+retro sprint 7
+
+https://drive.google.com/file/d/14D8eWeeSxlW2sbSJbU-VJfQnokv61qex/view?usp=drive_link
+
+Conclusión:  en el reciente sprint notamos muchas mejoras en cuanto a las reuniones, tiempos y resolución de problemas, si bien hubo algunos inconvenientes al realizar las tareas se logro finalizar el sprint con exito. 
+
 
 
 
