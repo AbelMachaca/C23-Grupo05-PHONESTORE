@@ -107,6 +107,15 @@ const productController = {
   },
  
   store: (req, res) => {
+    const errores = validationResult(req);
+      if (!errores.isEmpty()) {
+        return res.render("products/productCreate_form", {
+          errores: errores.mapped(),
+          old: req.body,
+          title: 'Producto'
+        });
+      }
+
     const { modelo, marca, precio, descripcion, almacenamiento, ram, so } = req.body;
   
     db.Producto.create({ modelo, marca, precio, descripcion, almacenamiento, ram, so })
