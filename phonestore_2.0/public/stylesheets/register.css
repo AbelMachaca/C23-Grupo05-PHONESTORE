@@ -75,7 +75,6 @@
 
 .form-group2{
     margin-bottom: 10px;
-    
 }
 
 .form-group p {
@@ -86,12 +85,22 @@
 .form-group2 p {
  color: #e23922;
  font-size: 14px;
+ 
 }
 .caja-terminos-condiciones{
   margin: auto;
 }
 .password-container {
   position: relative;
+  
+}
+
+#error-registerUser {
+  color: #e23922;
+  display: none;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 14px;
 }
 
 .main-icon {

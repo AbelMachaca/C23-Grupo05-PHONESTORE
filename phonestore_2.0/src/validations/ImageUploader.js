@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req,file,cb)=>{
-   const filtro =   /\.(jpg|jpeg|png|gif)$/
+   const filtro =   /\.(jpg|jpeg|png|gif|webp|svg)$/
    if(filtro.test(file.originalname)){
     // To accept this file pass `false`, like so:
     cb(null, true)
