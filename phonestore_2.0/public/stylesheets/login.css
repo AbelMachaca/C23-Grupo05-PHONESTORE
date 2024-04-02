@@ -1,10 +1,16 @@
 .body_login {
   background-color: rgba(22, 25, 28, 1);
-  font-family: Arial, sans-serif;
-  margin: 0;
-  height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.contenedor_logo_form{
   display: flex;
-  justify-content: center;
+  background-color: rgba(22, 25, 28, 1);
 }
 
 .logo_phonestore_login{
@@ -22,6 +28,7 @@
 .login-container-body img {
   width: 20%;
   opacity: 0.5;
+  
 }
 
 .login-container-body h3 {
@@ -35,7 +42,7 @@
   background-color: rgba(22, 25, 28, 1);
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  /* box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); */
   width: 400px;
   text-align: center;
   margin: auto;

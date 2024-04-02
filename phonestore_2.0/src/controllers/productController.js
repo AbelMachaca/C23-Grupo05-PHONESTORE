@@ -114,11 +114,7 @@ const productController = {
             
             const productId = producto.id;
             // console.log(productId)
-  
             const files = req.files;
-            
-  
-         
             const promises = files.map(file => {
                console.log(files)
                 return db.imagenes_producto.create({ id_producto_imagen: productId, url_de_imagen: file.filename });
