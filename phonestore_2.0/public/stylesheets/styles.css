@@ -21,7 +21,42 @@
     --color-purpura: #CFD0EF;
     --color-azul-oscuro:#000120 
      }
-     
+
+
+     .is-invalid{
+        background-color:#a2f361;
+        color:#fd1024;
+    
+     }
+
+     .mensaje-de-error{
+
+        color:#fff
+
+     }
+     .input-container {
+        position: relative;
+      }
+      
+      .input-container .error-icon {
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: red;
+        pointer-events: none;
+        font-weight: bold;
+      }
+
+      .posicion{
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: red;
+        pointer-events: none;
+        font-weight: bold;
+      }
 
 
 
