@@ -2,7 +2,7 @@
 <%- include("../partials/head.ejs") %>
 
 <body class="body-editProduct">
-
+  
   <!-- Header -->
   <%- include("../partials/header.ejs")%>
   
@@ -13,20 +13,25 @@
       
       <form  action="/products/productEdit/<%= product.id %>?_method=PUT" method="POST" >
         <div class="form-group-editProduct">
+          <div class="input-container">
           <label class="label-general-editProduct" for="marca">Marca</label>
           <input
-            class="input-general-editProduct"
+            class="input-general-editProduct alerta icono"
             type="text"
             id="marca"
             name="marca"
             placeholder=""
             value="<%= product.marca %>"
             required
+            
           />
+          
+        </div>
         </div>
         
         <div class="form-group-editProduct">
           <label class="label-general-editProduct" for="modelo">Modelo</label>
+          <div class="input-container">
           <input
             class="input-general-editProduct"
             type="text"
@@ -36,10 +41,13 @@
             value="<%= product.modelo %>"
             required
           />
+         
+        </div>
         </div>
 
         <div class="form-group-editProduct">
           <label class="label-general-editProduct" for="precio">Precio</label>
+          <div class="input-container">
           <input
             class="input-general-editProduct"
             type="number"
@@ -49,10 +57,13 @@
             value="<%= product.precio %>"
             required
           />
+          
+        </div>
         </div>
 
         <div class="form-group-editProduct">
           <label class="label-general-editProduct" for="almacenamiento">Almacenamiento</label>
+          <div class="input-container">
           <input
             class="input-general-editProduct"
             type="number"
@@ -63,9 +74,11 @@
             required
           />
         </div>
+        </div>
 
         <div class="form-group-editProduct">
           <label class="label-general-editProduct" for="ram">RAM</label>
+          <div class="input-container">
           <input
             class="input-general-editProduct"
             type="number"
@@ -76,9 +89,11 @@
             required
           />
         </div>
+        </div>
 
         <div class="form-group-editProduct">
           <label class="label-general-editProduct" for="so">Sistema Operativo</label>
+          <div class="input-container">
           <input
             class="input-general-editProduct"
             type="text"
@@ -89,9 +104,11 @@
             required
           />
         </div>
+        </div>
 
         <div class="form-group-editProduct">
           <label class="label-general-editProduct" for="descripcion">Descripción</label>
+          <div class="input-container">
           <textarea 
             class="input-general-editProduct"
             name="descripcion" 
@@ -101,6 +118,7 @@
             placeholder=""
             required
           ><%= product.descripcion %></textarea>
+        </div>
         </div>
         
         <button class="editProduct button-editProduct" type="submit">Actualizar Producto</button>
