@@ -1,10 +1,13 @@
+.imagen_prod_dashboard{
+  width: 30%;
+}
 .contenedor_body_dashboard {
     font-family: Arial, sans-serif;
     margin: auto;
     padding: 0;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     background-color: rgba(30, 33, 38, 1);
   }
   
@@ -31,7 +34,7 @@
   }
   
   .contenedor_body_dashboard th {
-    background-color: rgba(30, 33, 38, 1);
+    background-color: rgb(96, 96, 96);
     color: #fff;
   }
   

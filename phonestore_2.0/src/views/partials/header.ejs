@@ -1,29 +1,51 @@
 <header class="header">
     <div>
       <a class="icono_header" href="/"><img src="/images/imageHome/icono.jpg"></a>
+      <div class="logo_letras"><a href="/"><img src="/images/imageHome/logo_phonestore1.png"></a></div>
             <section class="buscador">
-              <form action="">
-                <input type="text" placeholder="Buscar" >
+              <form action="" class="formulario_buscador">
+                <input type="text" placeholder="Buscar" class="campo_buscar">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
               </form>
             </section>
     </div>
-            <section class="links">
-                <a href="/">Samsung</a>
-                <a href="/">Motorola</a>
-                <a href="/">LG</a>
-                <a href="/">Xiaomi</a>
-                <a href="/">Iphone</a>
+    
+            <nav class="links">
+              <div class="icono_burger">
+                <i class="fa-solid fa-bars" style="color: #919191;" onclick="toggleMenu()"></i>
+              </div>
+              <ul class="lista">
+                <li><a href="/" class="boton_header">Samsung</a></li>
+                <li><a href="/" class="boton_header">Motorola</a></li>
+                <!-- <li><a href="/" class="boton_header">LG</a></li> -->
+                <li><a href="/" class="boton_header">Xiaomi</a></li>
+                <li><a href="/" class="boton_header">Apple</a></li>
                 
                 <% if(locals.usuario != undefined){%>
-                  <a href="/users/profile/<%= usuario.id %>"><%= usuario.nombre %>  </a>
+                  <li><a href="/users/profile/<%= usuario.id %>" class="boton_header"><%= usuario.nombre %> - <i class="fa-solid fa-user" style="color: #ffffff;"></i></a></li>
                   
-                  <a  href="/users/logout"> <i class="fas fa-sign-out-alt" style="font-size: 30px;"></i></a>
+                  <li><a  href="/users/logout" class="boton_header"> Cerrar sesión <i class="fas fa-sign-out-alt" ></i></a></li>
                   <% }else{ %>
-                    <a href="/users/register" >Creá tu cuenta </a>
-                    <a href="/users/login">Ingresá </a>
+                    <li><a href="/users/register" class="boton_header">Creá tu cuenta </a></li>
+                    <li><a href="/users/login" class="boton_header">Ingresá </a></li>
              <%}%>
-            </section>
-           
+            </ul>
+          </nav>
+            
+                  <script>
+                    let lista = document.querySelector(".lista")
+                    lista.style.maxHeight = "0px";
+            
+                    function toggleMenu(){
+                        if(lista.style.maxHeight == "0px")
+                        {
+                            lista.style.maxHeight = "300px";
+                        }
+                        else{
+                            lista.style.maxHeight = "0px";
+                        }
+                    }
+                    
+                </script>
 </header>
