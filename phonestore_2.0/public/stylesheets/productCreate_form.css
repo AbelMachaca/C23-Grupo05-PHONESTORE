@@ -1,3 +1,7 @@
+form p {
+  color: red;
+}
+
 .body-createProduct {
     background-color: rgba(22, 25, 28, 1);
     font-family: Arial, sans-serif;

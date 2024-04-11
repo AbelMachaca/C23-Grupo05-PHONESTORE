@@ -1,5 +1,5 @@
 .imagen_prod_dashboard{
-  width: 30%;
+  height: 200px;
 }
 .contenedor_body_dashboard {
     font-family: Arial, sans-serif;
@@ -38,13 +38,13 @@
     color: #fff;
   }
   
-  .contenedor_body_dashboard img {
+  /* .contenedor_body_dashboard img {
     max-width: 100%;
     height: auto;
-  }
+  } */
   
   .contenedor_body_dashboard form {
-    max-width: 400px;
+    width: auto;
     margin: 0 auto;
   }
   
