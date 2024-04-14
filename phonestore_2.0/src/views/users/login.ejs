@@ -8,8 +8,9 @@
   <div class="logo_phonestore_login">
     <a href="/"><img class="img-general" src="/images/register-img/logo.png" alt="imagen logo"></a>
   </div>
+  
   <div class="login-container-body">
-    <i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-bars" class="iconos_login"></i>
     <img src="/images/login-img/login.png" alt="imagen login" />
     <h3>Bienvenid@</h3>
     <form action="/users/login" method="post" class="form_login">
@@ -29,7 +30,7 @@
       <div id="mensaje_email" class="errors_form_edit_user"></div>
       <div class="form-group-login">
         <label for="password">Contraseña</label>
-        <div class="password-container">
+        <div class="password-container-login">
           <input
             type="password"
             id="password"
@@ -40,7 +41,6 @@
           <p class="errors_form_edit_user">
             <%= locals.errores && errores.password ? errores.password.msg : null %>
           </p>
-          <i class="fa-solid fa-eye eye-icon"></i>
         </div>
       </div>
       <div id="mensaje_password" class="errors_form_edit_user"></div>
