@@ -42,6 +42,8 @@ router.get('/dashboard',adminSessionValidate,productController.dashboard )
 
 router.delete('/delete/:id',adminSessionValidate,productController.delete);
 
+
+router.get('/photo/:id', productController.showPhotoProduct)
 //router.get('/dashboard', adminSessionValidate, productController.dashboard )
 
 //router.delete(`/delete/:id`, adminSessionValidate, productController.destroy);

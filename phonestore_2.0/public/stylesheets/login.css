@@ -17,7 +17,7 @@
   margin: auto;
 }
 
-.fa-bars {
+.iconos_login {
   display: none;
 }
 
@@ -27,7 +27,7 @@
 
 .login-container-body img {
   width: 20%;
-  opacity: 0.5;
+  /* opacity: 0.5; */
   
 }
 
@@ -200,9 +200,9 @@ div.social-buttons-login {
     display: none;
   }
 
-  .fa-bars {
+  .iconos_login {
     margin-left: -38%;
-    position: absolute;
+    position: relative;
     color: #ffffff;
     display: inline-block;
     width: 10%;

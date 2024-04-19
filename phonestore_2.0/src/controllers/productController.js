@@ -64,7 +64,7 @@ const productController = {
     Promise.all([producto])
       .then(([producto]) => {
            return res.render("products/productDetail",{
-           producto,
+           producto, 
            usuario: req.session.user,
            imagen: producto.imagenes_productos,
            title: producto.modelo
@@ -79,7 +79,7 @@ const productController = {
     db.Producto.findByPk(id)
     .then((product) => {
       console.log(product);
-      res.render("products/productEdit", { product});
+      res.render("products/productEdit", { product, usuario: req.session.user});
     });
   },
 
@@ -103,7 +103,7 @@ const productController = {
 
 
   createForm: (req, res) => {
-    res.render("products/productCreate_form");
+    res.render("products/productCreate_form",{usuario: req.session.user});
   },
  
   store: (req, res) => {
@@ -154,7 +154,7 @@ const productController = {
           //borre el ,limit 6
   })
     .then((productos)=>{
-        res.render("products/dashboard", { productos });
+        res.render("products/dashboard", { productos,usuario: req.session.user });
     })
     .catch(error =>{console.error(error)})
   },
@@ -182,7 +182,27 @@ const productController = {
         console.log(error);
         res.status(500).send("Error al eliminar el producto.");
     });
-  }
+  },
+  showPhotoProduct:(req,res)=>{
+    let producto = db.Producto.findByPk(req.params.id,{
+      include: [{
+          association: "imagenes_productos"},
+       ],
+    });
+    Promise.all([producto])
+      .then(([producto]) => {
+
+        console.log(producto)
+           return res.render("products/photoProduct",{
+           producto, 
+           usuario: req.session.user,
+           imagen: producto.imagenes_productos,
+           title: producto.modelo
+       })
+    })
+      .catch(error=> console.log(error));
+
+    },
 }
 
 module.exports = productController;

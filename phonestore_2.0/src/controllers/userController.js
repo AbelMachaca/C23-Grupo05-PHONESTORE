@@ -145,7 +145,12 @@ const getJson = (fileName) => {
         }
       })
     }
-  }
+  },
+  showPhoto:(req,res)=>{
+    db.Usuario.findByPk(req.params.id).then(function (usuario) {
+      res.render("users/photo", { usuario: usuario });
+    }); 
+},
   
 }
 

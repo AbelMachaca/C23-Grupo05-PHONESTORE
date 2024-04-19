@@ -1,0 +1,13 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+<body>
+    <div>
+        <% if (usuario.imagen_usuario) { %>
+            <img src="/images/users/<%= usuario.imagen_usuario %>" alt="img-avatar" height="300px">
+        <% } else { %>
+            <a href="/"><img src="/images/register-img/logo.png" alt="imagen logo"></a>
+        <% } %>
+    </div>
+    
+</body>
+</html>

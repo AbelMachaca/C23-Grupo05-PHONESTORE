@@ -8,6 +8,12 @@ const session = require('express-session');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
+
+// APIS
+const apiUser = require('./routes/api/apiUserRoutes');
+
+const apiProducts=require('./routes/api/apiProductosRouters.js')
+
 const rememberMe = require("./middleware/rememberMeValidator.js")
 /*const cookieGenerate=require("./middleware/cookiesGenerate.js")*/
 var app = express();
@@ -41,6 +47,10 @@ app.use(rememberMe)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+
+//APIS
+app.use('/api', apiUser);
+app.use('/api', apiProducts)
 
 
 // catch 404 and forward to error handler

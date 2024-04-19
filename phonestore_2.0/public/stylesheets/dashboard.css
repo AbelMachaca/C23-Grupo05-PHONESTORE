@@ -1,10 +1,13 @@
+.imagen_prod_dashboard{
+  height: 200px;
+}
 .contenedor_body_dashboard {
     font-family: Arial, sans-serif;
     margin: auto;
     padding: 0;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
     background-color: rgba(30, 33, 38, 1);
   }
   
@@ -31,17 +34,17 @@
   }
   
   .contenedor_body_dashboard th {
-    background-color: rgba(30, 33, 38, 1);
+    background-color: rgb(96, 96, 96);
     color: #fff;
   }
   
-  .contenedor_body_dashboard img {
+  /* .contenedor_body_dashboard img {
     max-width: 100%;
     height: auto;
-  }
+  } */
   
   .contenedor_body_dashboard form {
-    max-width: 400px;
+    width: auto;
     margin: 0 auto;
   }
   
