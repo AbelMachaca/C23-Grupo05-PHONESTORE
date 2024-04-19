@@ -20,7 +20,6 @@ const storage = multer.diskStorage({
 
 const upload  = multer({storage});
 /* GET home page. */
-
 router.get('/productDetail/:id', productController.detail);
 router.get('/productCart', userSessionValidate, productController.cart)
 router.post('/addToCart', productController.addToCart);
