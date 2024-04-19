@@ -109,6 +109,7 @@ const productController = {
   store: (req, res) => {
     const errores = validationResult(req);
       if (!errores.isEmpty()) {
+        console.log(errores)
         return res.render("products/productCreate_form", {
           errores: errores.mapped(),
           old: req.body,
@@ -133,7 +134,7 @@ const productController = {
             Promise.all(promises)
                 .then((imagen) => {
                    
-                    res.render("products/productDetail", { title: "Detalle de producto", producto, imagen });
+                    res.redirect(`/products/productDetail/${producto.id}`);
                 })
                 // .catch(error => {
                 //     console.error("Error al guardar las imágenes:", error);
@@ -182,7 +183,28 @@ const productController = {
         console.log(error);
         res.status(500).send("Error al eliminar el producto.");
     });
-  }
+  },
+
+  photoProduct: (req, res) => {
+    console.log(req.params.id)
+
+    let producto = db.Producto.findByPk(req.params.id,{
+      include: [{
+          association: "imagenes_productos"},
+       ],
+    });
+    Promise.all([producto])
+      .then(([producto]) => {
+           return res.render("products/productDetail",{
+           producto, 
+           usuario: req.session.user,
+           imagen: producto.imagenes_productos,
+           title: producto.modelo
+       })
+    })
+      .catch(error=> console.log(error));
+
+    },
 }
 
 module.exports = productController;
