@@ -184,10 +184,7 @@ const productController = {
         res.status(500).send("Error al eliminar el producto.");
     });
   },
-
-  photoProduct: (req, res) => {
-    console.log(req.params.id)
-
+  showPhotoProduct:(req,res)=>{
     let producto = db.Producto.findByPk(req.params.id,{
       include: [{
           association: "imagenes_productos"},
@@ -195,7 +192,9 @@ const productController = {
     });
     Promise.all([producto])
       .then(([producto]) => {
-           return res.render("products/productDetail",{
+
+        console.log(producto)
+           return res.render("products/photoProduct",{
            producto, 
            usuario: req.session.user,
            imagen: producto.imagenes_productos,
