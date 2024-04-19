@@ -182,7 +182,27 @@ const productController = {
         console.log(error);
         res.status(500).send("Error al eliminar el producto.");
     });
-  }
+  },
+  showPhotoProduct:(req,res)=>{
+    let producto = db.Producto.findByPk(req.params.id,{
+      include: [{
+          association: "imagenes_productos"},
+       ],
+    });
+    Promise.all([producto])
+      .then(([producto]) => {
+
+        console.log(producto)
+           return res.render("products/photoProduct",{
+           producto, 
+           usuario: req.session.user,
+           imagen: producto.imagenes_productos,
+           title: producto.modelo
+       })
+    })
+      .catch(error=> console.log(error));
+
+    },
 }
 
 module.exports = productController;
