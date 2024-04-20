@@ -97,6 +97,8 @@
     border-radius: 5px;
     margin-top: 15px;
     margin-left: 20px;
+    text-align: center;
+ 
   }
 
   .comprar-mas:hover{
@@ -155,6 +157,14 @@
 
     .mis_productos .formProduct{
         display: block;
+    }
+    .comprar-mas{
+      margin-left: 0;
+    }
+    .form2{
+      display: flex;
+      flex-direction: column;
+      
     }
     
   }
