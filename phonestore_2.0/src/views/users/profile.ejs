@@ -26,7 +26,11 @@
                 
                     <% if (usuario && usuario.id_entidad_usuario == "2") { %>
                         <a href="/products/Dashboard"><button class="button_edit_profile">Dashboard</button></a>
+                       
                     <% } %>
+
+                    <a href="http://localhost:5173/"><button class="button_edit_profile">Dashboard React</button></a><br>
+
                     <a href="/users/userUpdate/<%= usuario.id %>"><button class="button_edit_profile">Edite su perfil</button></a>
                     <!-- <li></li> -->
                 </ul>

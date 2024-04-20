@@ -88,7 +88,7 @@ const getJson = (fileName) => {
         apellido: apellido.trim(),
         email: email.trim(),
         password: bcrypt.hashSync(password, 10),
-        id_entidad_usuario: 2,
+        id_entidad_usuario: 1,
         imagen_usuario: file ? file.filename : 'predeterminado.webp'
       };
   

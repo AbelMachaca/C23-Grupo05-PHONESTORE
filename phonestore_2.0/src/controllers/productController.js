@@ -14,12 +14,14 @@ const getJson = () => {
 };
 
 const productController = {
+
   addToCart: async (req, res) => {
     try {
       const productId = req.body.productId;
       req.session.cart = req.session.cart || [];
       req.session.cart.push(productId);
-
+      
+      log("addddtocaarrrrr", productId)
       res.redirect("/products/productCart");
     } catch (error) {
       console.error("Error al agregar producto al carrito:", error);
@@ -32,8 +34,10 @@ const productController = {
     try {
     
       const productIdsInCart = req.session.cart || [];
-
+      /*
+      console.log("REQ.SE.CART",JSON.stringify(req.session.cart));
       console.log("IDs de productos en el carrito:", productIdsInCart);
+      */
 
       const productsInCart = await db.Producto.findAll({
         where: { id: productIdsInCart },
@@ -41,17 +45,45 @@ const productController = {
           association: "imagenes_productos"
         }]
       });
-
+      let totalPrecio = 0;
+      productsInCart.forEach(product => {
+        totalPrecio += parseFloat(product.precio) ;
+      });
+      
+      /*
+      console.log(JSON.stringify(productsInCart));
       console.log("Productos en el carrito:", productsInCart);
+*/
+      
 
       res.render("products/productCart", {
         productsInCart,
         usuario: req.session.user,
+        totalPrecio
       });
     } catch (error) {
       console.error("Error al obtener productos del carrito:", error);
       res.status(500).send("Error interno del servidor al obtener productos del carrito");
     }
+},
+removeFromCart: (req, res) => {
+  const productId = req.body.productId;
+
+  console.log("productoiDDDD"+productId);
+
+  console.log("REQ.SESSION.CART"+req.session.cart);
+
+  if (productId) {
+     
+      if (req.session.cart && req.session.cart.includes(productId)) {
+        req.session.cart = req.session.cart.filter(id => id !== productId);
+      }
+    } else {
+      
+      req.session.cart = [];
+    }
+  
+  res.redirect('/products/productCart');
 },
   detail: (req, res) => {
     console.log(req.params.id)
@@ -109,6 +141,7 @@ const productController = {
   store: (req, res) => {
     const errores = validationResult(req);
       if (!errores.isEmpty()) {
+        console.log(errores)
         return res.render("products/productCreate_form", {
           errores: errores.mapped(),
           old: req.body,
@@ -133,7 +166,7 @@ const productController = {
             Promise.all(promises)
                 .then((imagen) => {
                    
-                    res.render("products/productDetail", { title: "Detalle de producto", producto, imagen });
+                    res.redirect(`/products/productDetail/${producto.id}`);
                 })
                 // .catch(error => {
                 //     console.error("Error al guardar las imágenes:", error);
