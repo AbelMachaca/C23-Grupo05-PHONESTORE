@@ -9,6 +9,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const aboutRouter = require('./routes/about')
+const faqsRouter=require('./routes/consultas')
 
 // APIS
 const apiUser = require('./routes/api/apiUserRoutes');
@@ -49,6 +50,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/',aboutRouter)
+app.use('/',faqsRouter)
 
 //APIS
 app.use('/api', apiUser);

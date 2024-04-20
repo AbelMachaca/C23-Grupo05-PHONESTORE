@@ -2,7 +2,13 @@
     text-align: center;
 }
 
+.titulo_about{
+    margin-top: 5%;
+}
+
 .descripcion{
+    margin-top: 5%;
+    margin-bottom: 10%;
     text-align: justify;
     margin-left: 5%;
     margin-right: 5%;
