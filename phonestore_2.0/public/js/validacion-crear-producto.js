@@ -1,147 +1,110 @@
-const form = document.getElementById("form");
-console.log("aaaaaaaaaaaaaaaaaaaaaaaaa");
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("form");
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+  // Agregar listeners de blur a cada campo para validarlos cuando el usuario sale del campo
+  const campos = form.querySelectorAll(".input-general-createProduct");
+  campos.forEach(function(campo) {
+      campo.addEventListener("blur", function() {
+          validarCampo(campo);
+      });
+  });
 
-  // Validar los campos del formulario uno por uno
-  const modelo = document.querySelector("#modelo").value;
-  const image = document.querySelector("#image").value;
-  const marca = document.querySelector("#marca").value;
-  const price = document.querySelector("#price").value;
-  const description = document.querySelector("#description").value;
-  const almacenamiento = document.querySelector("#almacenamiento").value;
-  const ram = document.querySelector("#ram").value;
-  const so = document.querySelector("#so").value;
+  form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
+      let isValid = true;
+
+      // Validar cada campo
+      campos.forEach(function(campo) {
+          if (!validarCampo(campo)) {
+              isValid = false;
+          }
+      });
+
+      // Si todos los campos son válidos, enviar el formulario
+      if (isValid) {
+          form.submit(); // Enviar el formulario si todos los campos son válidos
+      }
+  });
+});
+
+function validarCampo(campo) {
+  const input = campo.value.trim();
+  const mensajeError = campo.parentElement.querySelector(".mensaje-error");
 
   let isValid = true;
 
-  // Validar nombre del modelo
-  if (modelo.length < 5) {
-    isValid = false;
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "El nombre del modelo debe tener al menos 5 caracteres.",
-    });
-    return; // Detener la ejecución aquí si el campo no es válido
+  switch (campo.id) {
+      case "modelo":
+          if (input.length < 5) {
+              mensajeError.innerText = "El nombre del modelo debe tener al menos 5 caracteres.";
+              isValid = false;
+          } else {
+              mensajeError.innerText = ""; // Limpiar el mensaje de error si el campo es válido
+          }
+          break;
+      case "image":
+          if (input === "") {
+              mensajeError.innerText = "Debe seleccionar una imagen.";
+              isValid = false;
+          } else {
+              mensajeError.innerText = ""; // Limpiar el mensaje de error si el campo es válido
+          }
+          break;
+      case "marca":
+          if (input === "") {
+              mensajeError.innerText = "Debe seleccionar una marca.";
+              isValid = false;
+          } else {
+              mensajeError.innerText = ""; // Limpiar el mensaje de error si el campo es válido
+          }
+          break;
+      case "price":
+          if (input === "") {
+              mensajeError.innerText = "El campo precio no puede estar vacío.";
+              isValid = false;
+          } else if (isNaN(input) || parseFloat(input) <= 0) {
+              mensajeError.innerText = "El precio debe ser un número mayor que cero.";
+              isValid = false;
+          } else {
+              mensajeError.innerText = ""; // Limpiar el mensaje de error si el campo es válido
+          }
+          break;
+      case "description":
+          if (input.length < 20) {
+              mensajeError.innerText = "La descripción debe tener al menos 20 caracteres.";
+              isValid = false;
+          } else {
+              mensajeError.innerText = ""; // Limpiar el mensaje de error si el campo es válido
+          }
+          break;
+      case "almacenamiento":
+          if (isNaN(input) || parseInt(input) <= 0) {
+              mensajeError.innerText = "El almacenamiento debe ser un número mayor que cero.";
+              isValid = false;
+          } else {
+              mensajeError.innerText = ""; // Limpiar el mensaje de error si el campo es válido
+          }
+          break;
+      case "ram":
+          if (isNaN(input) || parseInt(input) <= 0) {
+              mensajeError.innerText = "La RAM debe ser un número mayor que cero.";
+              isValid = false;
+          } else {
+              mensajeError.innerText = ""; // Limpiar el mensaje de error si el campo es válido
+          }
+          break;
+      case "so":
+          if (input === "") {
+              mensajeError.innerText = "Debe ingresar un sistema operativo.";
+              isValid = false;
+          } else {
+              mensajeError.innerText = ""; // Limpiar el mensaje de error si el campo es válido
+          }
+          break;
+      default:
+          break;
   }
 
-  // Validar las imágenes
-  if (image === "") {
-    isValid = false;
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "Debe seleccionar una imagen.",
-    });
-    return;
-  } else {
-    // Expresión regular para verificar la extensión del archivo
-    const allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
-    if (!allowedExtensions.exec(image)) {
-      isValid = false;
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "El archivo de imagen debe ser JPG, JPEG, PNG o GIF.",
-      });
-      return;
-    }
-  }
-
-  // Validar la marca
-  if (marca === "") {
-    isValid = false;
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "Debe seleccionar una marca.",
-    });
-    return;
-  }
-
-  // Validar el precio
-if (price === "") {
-  isValid = false;
-  Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "El campo precio no puede estar vacío.",
-  });
-  return;
-} else if (isNaN(price) || parseFloat(price) <= 0) {
-  isValid = false;
-  Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "El precio debe ser un número mayor que cero.",
-  });
-  return;
+  return isValid;
 }
-
-
-  // Validar la descripción
-  if (description.length < 20) {
-    isValid = false;
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "La descripción debe tener al menos 20 caracteres.",
-    });
-    return;
-  }
-
-  // Validar el almacenamiento
-  if (almacenamiento <= 0 || isNaN(almacenamiento)) {
-    isValid = false;
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "El almacenamiento debe ser un número mayor que cero.",
-    });
-    return;
-  }
-
-  // Validar la RAM
-  if (ram <= 0 || isNaN(ram)) {
-    isValid = false;
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "La RAM debe ser un número mayor que cero.",
-    });
-    return;
-  }
-
-  // Validar el sistema operativo
-  if (so === "") {
-    isValid = false;
-    Swal.fire({
-      icon: "error",
-      title: "Error",
-      text: "Debe ingresar un sistema operativo.",
-    });
-    return;
-  }
-
-  // Si todos los campos son válidos, enviar el formulario
-  if (isValid) {
-    Swal.fire({
-      title: "¿Deseas guardar los cambios?",
-      showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText: "Guardar",
-      denyButtonText: "No guardar"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        form.submit(); // Enviar el formulario si se confirma
-        Swal.fire("¡Guardado!", "", "success");
-      } else if (result.isDenied) {
-        // No hacer nada si se niega
-        Swal.fire("Los cambios no se guardaron", "", "info");
-      }
-    });
-  }
-  
-});
