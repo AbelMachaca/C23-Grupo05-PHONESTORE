@@ -1,0 +1,10 @@
+h1 .titulo_about{
+    text-align: center;
+    color:black;
+    font-weight: bolder;
+    
+}
+
+h3 .descripcion{
+    text-align: justify;
+}

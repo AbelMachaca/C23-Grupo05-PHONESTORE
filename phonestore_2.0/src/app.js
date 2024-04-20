@@ -8,7 +8,7 @@ const session = require('express-session');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
-const aboutRouter=require('./routes/about')
+const aboutRouter = require('./routes/about')
 
 // APIS
 const apiUser = require('./routes/api/apiUserRoutes');
@@ -48,7 +48,7 @@ app.use(rememberMe)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
-app.use('/about',aboutRouter)
+app.use('/',aboutRouter)
 
 //APIS
 app.use('/api', apiUser);
