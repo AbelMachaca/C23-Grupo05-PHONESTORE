@@ -1,0 +1,35 @@
+
+<%- include("../partials/head.ejs") %>
+</head>
+<body>
+    <!-- Incluir partials -->
+    <%- include("../partials/header.ejs") %>
+
+    <div class="container">
+        <h1 class="titulo mb-5">Productos por Marca</h1> <!-- Añadimos una clase "mb-5" para agregar margen inferior -->
+    
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"> <!-- Utilizamos grid de Bootstrap -->
+    
+            <% Object.keys(productsByBrand).forEach(brand => { %>
+                <div class="col">
+                    <div class="card h-100 shadow"> <!-- Utilizamos la clase "card" para crear una tarjeta -->
+                        <div class="card-body">
+                            <h2 class="brand-title card-title text-center"><%= brand %></h2> <!-- Alineamos el título al centro -->
+                            <ul class="list-unstyled mb-0"> <!-- Utilizamos la clase "list-unstyled" para quitar estilos de lista -->
+                                <% productsByBrand[brand].forEach(product => { %>
+                                    <li class="model-item"><%= product.modelo %> - <%= product.precio %></li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+    
+        </div>
+    </div>
+
+    <!-- Incluir partials -->
+    <%- include("../partials/footer.ejs") %>
+</body>
+</html>
+
