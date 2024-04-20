@@ -10,7 +10,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
 const aboutRouter = require('./routes/about')
-const faqsRouter=require('./routes/consultas')
+const faqsRouter = require('./routes/consultas')
 
 // APIS
 const apiUser = require('./routes/api/apiUserRoutes');
