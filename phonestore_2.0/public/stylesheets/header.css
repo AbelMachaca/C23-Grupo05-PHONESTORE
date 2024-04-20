@@ -33,7 +33,7 @@ header section.buscador{
     justify-content: center;
     margin: 2%;
 }
-.header a img{
+.header a .icon{
  width: 100%;
  height: 100%;
 }
@@ -176,4 +176,8 @@ nav ul li a{
         margin: 0 auto;
         font-size: 20px;
     }
+}
+.imagen_usuario_header{
+    width: 30px;
+    border-radius: 50%;
 }
