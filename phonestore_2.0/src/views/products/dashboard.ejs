@@ -1,40 +1,70 @@
 <!-- Head -->
 <%- include("../partials/head.ejs") %>
-  
-<body class="contenedor_body_dashboard">
-  
+
+<body>
+  <%- include("../partials/header.ejs")%>
+ 
+<div class="contenedor_body_dashboard">
+  <script type="text/javascript">
+    function confirmacion(){
+        let respuesta = confirm("¿Estas seguro de eliminar este producto?");
+
+        if (respuesta == true){
+            return true;
+        } else {
+            return false;
+        }
+    }
     
+</script>
     <h2>Lista de Productos</h2>
+    <form action="/create" method="post">
+      <a href="/products/productCreate_form">Crear Producto</a>
+      </form>
   <table>
-    <thead>
+    <thead class="cabecera_dashboard">
         <tr>
         <th>ID</th>
-        <th>Nombre</th>
+        <th>Marca</th>
         <th>Imagen</th>
-        <th>Detalles</th>
+        <th>Modelo</th>
+        <th>Precio</th>
+        <th>Almacenamiento</th>
+        <th>Ram</th>
+        <th>So</th>
+        <th>Descripción</th>
         <th>Acciones</th>
       </tr>
       </thead>
     <tbody>
-      <% products.forEach(element => { %>
+      <% productos.forEach(element => { %>
         <tr>
           <td><%=element.id%></td>
-          <td><%=element.name%></td>
-          <td><img src="/images/imageHome/<%= element.image %>" alt="<%= element.name %>"></td>
-          <td><%=element.description%></td>
+          <td><%=element.marca%></td>
           <td>
+            <% if (element.imagenes_productos && element.imagenes_productos.length > 0) { %>
+              <img src="/images/imageHome/<%= element.imagenes_productos[0].url_de_imagen %>" alt="<%= element.marca %>" class="imagen_prod_dashboard">
+            <% } else { %>
+              No hay imagen disponible
+            <% } %>
+          </td>
+          <td><%=element.modelo%></td>
+          <td><%=element.precio%></td>
+          <td><%=element.almacenamiento%></td>
+          <td><%=element.ram%></td>
+          <td><%=element.so%></td>
+          <td><%=element.descripcion%></td>
+          <td>
+            <a href="/products/productDetail/<%= element.id %>">Ver producto</a> 
             <a href="/products/productEdit/<%= element.id %>">Editar</a>
-            <a href="/products/productEdit/<%= element.id %>">Actualizar</a>
             <form action="/products/delete/<%= element.id%>?_method=delete" method="post">
-              <button type="submit">Eliminar</button>
-            </form>  
+              <button type="submit" onclick="return confirmacion()" class="boton_eliminar_dashboard">Eliminar</button>
+            </form> 
           </td>
         </tr>
         <% }) %>
     </tbody>
    </table>
-  <form action="/create" method="post">
-<a href="/products/productCreate_form">Crear Producto</a>
-</form>
+</div>
 </body>
 </html>

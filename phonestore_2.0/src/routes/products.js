@@ -5,6 +5,7 @@ const productController = require("../controllers/productController");
 const path = require('path');
 const userSessionValidate = require('../middleware/userSessionValidate');
 const adminSessionValidate = require('../middleware/adminSessionValidate');
+const validationProductCreate = require("../validations/validationProductCreate")
 
 
 const storage = multer.diskStorage({
@@ -23,17 +24,28 @@ const upload  = multer({storage});
 router.get('/productDetail/:id', productController.detail);
 
 router.get('/productCart', userSessionValidate, productController.cart)
+router.post('/addToCart', productController.addToCart);
+//sacamos esto ----  adminSessionValidate ---- de las 2 rutas,
+//router.get('/productCreate_form', productController.createForm)
+router.get('/productCreate_form',adminSessionValidate, productController.createForm)
+router.post('/productCreate_form',upload.array("image"), validationProductCreate,productController.store); 
 
-router.get('/productCreate_form', adminSessionValidate, productController.createForm)
-router.post('/productCreate_form',upload.single("image"), adminSessionValidate, productController.store); 
+// router.get('/productEdit/:id', productController.edit )
+// router.put('/productEdit/:id',upload.array("image"),productController.update)
 
 
 router.get('/productEdit/:id', adminSessionValidate, productController.edit )
 router.put('/productEdit/:id',upload.array("image"), adminSessionValidate, productController.update)
 
 
-router.get('/dashboard', adminSessionValidate, productController.dashboard )
+router.get('/dashboard',adminSessionValidate,productController.dashboard )
 
-router.delete(`/delete/:id`, adminSessionValidate, productController.destroy);
+router.delete('/delete/:id',adminSessionValidate,productController.delete);
+
+
+router.get('/photo/:id', productController.showPhotoProduct)
+//router.get('/dashboard', adminSessionValidate, productController.dashboard )
+
+//router.delete(`/delete/:id`, adminSessionValidate, productController.destroy);
 
 module.exports = router;

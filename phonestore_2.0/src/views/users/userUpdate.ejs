@@ -21,58 +21,68 @@
       <div class="form-registro">
       <img class="login-img" src="/images/register-img/login.png" alt="imagen login" />
       <h1>Editar perfil</h1>
-      <form action="/users/userUpdate/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-        <div class="form-group">
-          <div class="input-group mb-3">
-            <img src="/images/usersProfile/<%= user.image %>" alt="imagen de perfil" class = "imagen_perfil">
+      <form action="/users/userUpdate/<%= usuario.id %>?_method=PUT" method="POST" enctype="multipart/form-data" id="formulario">
+        <div class="form-group" id="grupo__imagen">
+          <div class="input-group mb-3" >
+            <img src="/images/users/<%= usuario.imagen_usuario %>" alt="imagen de perfil" class = "imagen_perfil">
             <label for="image" class="label-general">Foto de perfil</label>
             <input 
             class="input-general" 
             type="file" 
-            id="image" 
-            name="image"
-            accept="image/*"
+            id="imagen_usuario" 
+            name="imagen_usuario"
             single>
-        </div>
-          <label class="label-general" for="firstName">Nombre</label>
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          
+            <p class="formulario__input-error">solo se admite imagen con extensión jpg-jpeg-png-gif </p>
+          </div>
+          
+      <div id="grupo__nombre">
+          <label class="label-general" for="nombre">Nombre</label>
           <input
             class="input-general"
             type="text"
-            id="firstName"
-            name="firstName"
+            id="nombre"
+            name="nombre"
             placeholder="Ingresa tu nombre"
-            value="<%= locals.old && old.firstName ? old.firstName : user.firstName %>"
+            value="<%= locals.old && old.nombre ? old.nombre : usuario.nombre %>"
           />
-          <p class="errors_form_edit_user"><%= locals.errores && errores.firstName ? errores.firstName.msg : null %> </p>
+          <i class="formulario__validacion-estado fas fa-times-circle"></i>
+          <p class="formulario__input-error">El nombre tiene que ser entre 3 a 40 dígitos, puede contener letras y espacios</p>    
+          <p class="errors_form_edit_user"><%= locals.errores && errores.nombre ? errores.nombre.msg : null %></p>
         </div>
-        
-        <div class="form-group">
-            <label class="label-general" for="lastName">Apellido</label>
+           
+        <div class="form-group" id="grupo__apellido">
+            <label class="label-general" for="apellido">Apellido</label>
             <input
               class="input-general"
               type="text"
-              id="lastName"
-              name="lastName"
+              id="apellido"
+              name="apellido"
               placeholder="Ingresa tu apellido"
-              value="<%= locals.old && old.lastName ? old.lastName : user.lastName %>"
+              value="<%= locals.old && old.apellido ? old.apellido : usuario.apellido %>"
             />
-            <p class="errors_form_edit_user"><%= locals.errores && errores.lastName ? errores.lastName.msg : null %> </p>
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            <p class="formulario__input-error">El apellido tiene que ser entre 3 a 40 dígitos, puede contener letras y espacios</p>
+            <p class="errors_form_edit_user"><%= locals.errores && errores.apellido ? errores.apellido.msg : null %></p>
           </div>
-
-          <div class="form-group">
-            <label class="label-general" for="dniNumber">DNI</label>
+            
+          <div class="form-group" id="grupo__direccion">
+            <label class="label-general" for="direccion">Dirección</label>
             <input
               class="input-general"
-              type="number"
-              id="dniNumber"
-              name="dniNumber"
-              placeholder="Número de documento"
-              value="<%= locals.old && old.dniNumber ? old.dniNumber : user.dniNumber %>"
+              type="text"
+              id="direccion"
+              name="direccion"
+              placeholder="Dirección"
+              value="<%= locals.old && old.direccion ? old.direccion : usuario.direccion %>"
             />
-            <p class="errors_form_edit_user"><%= locals.errores && errores.lastName ? errores.lastName.msg : null %> </p>
-          </div>
-
-          <!-- <div class="form-group">
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+            <p class="formulario__input-error">se admite solo letras, numeros y espacios</p>
+            <p class="errors_form_edit_user"><%= locals.errores && errores.direccion ? errores.direccion.msg : null %></p>
+        </div>
+            
+        <div class="form-group" id="grupo__correo">
             <label class="label-general" for="email">Email</label>
             <input
               class="input-general"
@@ -80,9 +90,13 @@
               id="email"
               name="email"
               placeholder="Ingresa tu email"
-              
+              value="<%= locals.old && old.email ? old.email : usuario.email %>"
             />
-          </div> -->
+            <p class="errors_form_edit_user"><%= locals.errores && errores.email ? errores.email.msg : null %></p>
+            <p class="formulario__input-error">ingrese un correo electronico valido </p>
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+         
 
           <!-- <div class="form-group">
             <label class="label-general" for="password">Contraseña</label>
@@ -99,20 +113,23 @@
             </div>
           </div> -->
         
-        <div class="form-group">
-          <label class="label-general" for="address">Domicilio</label>
+        <div class="form-group" id="grupo__telefono">
+          <label class="label-general" for="telefono">Telefono</label>
           <input
             class="input-general"
             type="text"
-            id="address"
-            name="address"
-            placeholder="Indique su domicilio"
-            value="<%= locals.old && old.address ? old.address : user.address %>"
+            id="telefono"
+            name="telefono"
+            placeholder="Indique su telefono"
+            value="<%= locals.old && old.telefono ? old.telefono : usuario.telefono %>"
             />
-            <p class="errors_form_edit_user"><%= locals.errores && errores.address ? errores.address.msg : null %> </p>
-          </div>
+            <p class="errors_form_edit_user"><%= locals.errores && errores.telefono ? errores.telefono.msg : null %></p>
+            <p class="formulario__input-error">ingrese un numero de telefono valido</p>
+            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+        </div>
+            
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label class="label-general" for="postalCode">Código postal</label>
           <input
             class="input-general"
@@ -120,12 +137,12 @@
             id="postalCode"
             name="postalCode"
             placeholder="Indique su código postal"
-            value="<%= locals.old && old.postalCode ? old.postalCode : user.postalCode %>"
+            
             />
-            <p class="errors_form_edit_user"><%= locals.errores && errores.postalCode ? errores.postalCode.msg : null %> </p>
-          </div>
+            <p class="errors_form_edit_user"></p>
+          </div> -->
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label class="label-general" for="tel">Número de celular</label>
           <input
             class="input-general"
@@ -133,29 +150,32 @@
             id="tel"
             name="tel"
             placeholder="Número de celular: sin 0 ni 15"
-            value="<%= locals.old && old.tel ? old.tel : user.tel %>"
+            
             />
-            <p class="errors_form_edit_user"><%= locals.errores && errores.tel ? errores.tel.msg : null %> </p>
-          </div>
-
+            <p class="errors_form_edit_user"></p>
+          </div> -->
+<!-- 
         <div class="form-group">
           <label class="label-general" for="birthDate">Fecha de nacimiento: </label>
           <input
             class="input-general"
             type="date"
             id="birthDate"
-            name="birthDate"
-            value="<%= locals.old && old.birthDate ? old.birthDate : user.birthDate %>"
+            name="birthDate" 
+            
             />
-            <p class="errors_form_edit_user"><%= locals.errores && errores.birthDate ? errores.birthDate.msg : null %> </p>
+            <p class="errors_form_edit_user"></p> -->
           </div>
         <button class="crear-cuenta button-general" type="submit" onclick="return confirmacion()">Guardar cambios</button>
         <button class="borrar-cuenta button-general" type="reset" >Reiniciar cambios</button>
+        
+        </form>
       </form>
     </div>
     </div>
-
-  </body>
       <!-- Footer -->
       <%- include("../partials/footer.ejs")%>
+    <script src="../../../js/validationFormProfile.js"></script>
+  </body>
+    
 </html>

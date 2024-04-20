@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
 module.exports = multer({
   storage,
   fileFilter: function (_req, file, cb) {
-    let type = file.mimetype.startsWith('image');
+    let type = file.mimetype.startsWith('imagen_usuario');
     type ? cb(null, true) : cb(null, false);
   }
 });

@@ -1,0 +1,71 @@
+.grid-container {
+    display: flex;
+    flex-direction: column; /* Establecer la dirección de la columna */
+    align-items: center; /* Centrar los elementos horizontalmente */
+}
+
+.brand-container {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar sombreado */
+    margin-bottom: 20px; /* Espacio entre cada contenedor */
+    width: 80%; /* Ancho del contenedor */
+    display: flex; /* Utilizar el modelo de caja flexible */
+    flex-direction: column; /* Alinear los elementos en una columna */
+    align-items: center; /* Centrar los elementos horizontalmente */
+}
+
+.brand-title {
+    font-family: 'Roboto', sans-serif; /* Cambiar la fuente a Roboto o a otra fuente elegante */
+    font-size: 24px; /* Tamaño de la fuente */
+    font-weight: bold; /* Peso de la fuente */
+    color: #f0a519; /* Color del texto */
+    margin-bottom: 20px; /* Espacio entre el título y los elementos */
+    text-align: center;
+    background-color: #333;
+    display: inline-block; /* Hacer que ocupe su espacio como un bloque en línea */
+    padding: 10px; /* Añadir un relleno interno para el espacio alrededor del texto */
+    border-radius: 5px; /* Agregar bordes redondeados */
+    
+}
+
+.model-list {
+    list-style: none;
+    padding: 0;
+    text-align: center; /* Centrar el contenido */
+}
+
+.model-item {
+    margin-bottom: 5px;
+}
+
+.model-item {
+    font-family: 'Roboto', sans-serif; /* Cambiar la fuente a Roboto o a otra fuente elegante */
+    font-size: 20px; /* Tamaño de la fuente */
+    font-weight: 400; /* Peso de la fuente */
+    color: #fefcfc; /* Color del texto */
+    background-color: #252424; /* Cambiar el color de fondo */
+    border-radius: 5px;
+    transition: opacity 0.3s; /* Agregar una transición suave */
+    padding: 10px; /* Agregar relleno interno para espacio alrededor del texto */
+    margin: 10px; /* Agregar margen para separación entre elementos */
+    display: inline-flex; /* Hacer que el elemento se muestre en línea y ocupe solo su lugar */
+    align-items: center; /* Centrar verticalmente el contenido */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+    text-align: center; /* Centrar el texto horizontalmente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agregar sombreado */
+}
+.model-item:hover {
+    opacity: 0.8; /* Reducir la opacidad al pasar el cursor sobre el elemento */
+}
+
+.titulo{
+    font-family: 'Roboto', sans-serif; /* Fuente */
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: 600; /* Peso de la fuente */
+    color:#f0a519; /* Color del texto */
+    margin-bottom: 20px; /* Margen inferior */
+    text-align: center;
+    margin: 10px;
+}

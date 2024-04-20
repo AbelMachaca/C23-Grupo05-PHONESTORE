@@ -25,25 +25,35 @@
             value="<%= locals.old && old.name ? old.name : null %>"
             
           />
-          <p><%= locals.errores && errores.name ? errores.name.msg : null %> </p>
+          <p class="nameError">
+            <%= locals.errores && errores.name ? errores.name.msg : null %>
+          </p>
+          
         </div>
         <div class="form-group">
-          <label class="label-general" for="image">Foto de Perfil</label>
-      <input class="input-general" type="file" name="image" id="image" accept="image/*" value="<%= locals.old && old.image ? old.image : null %>" >
-      <p><%= locals.errores && errores.image ? errores.image.msg : null %> </p>
+          <label class="label-general" for="imagen_usuario">Foto de Perfil</label>
+      <input class="input-general" type="file" name="imagen_usuario" id="imagen_usuario" accept="image/*" value="<%= locals.old && old.imagen_usuario ? old.imagen_usuario : null %>" >
+
+      <p class="imageError">
+        <%= locals.errores && errores.imagen_usuario ? errores.imagen_usuario.msg : null %>
+      </p>
+      
         </div>
         
         <div class="form-group">
-            <label class="label-general" for="lastName">Apellido</label>
+            <label class="label-general" for="apellido">Apellido</label>
             <input
               class="input-general"
               type="text"
-              id="lastName"
-              name="lastName"
+              id="apellido"
+              name="apellido"
               placeholder="Ingresa tu apellido"
-              value="<%= locals.old && old.lastName ? old.lastName : null %>"
+              value="<%= locals.old && old.apellido ? old.apellido : null %>"
             />
-            <p><%= locals.errores && errores.lastName ? errores.lastName.msg : null %> </p>
+            <p class="apellidoError">
+              <%= locals.errores && errores.apellido ? errores.apellido.msg : null %>
+            </p>
+    
             
           </div>
           <div class="form-group">
@@ -56,7 +66,11 @@
               placeholder="Ingresa tu email"
               value="<%= locals.old && old.email ? old.email : null %>"
             />
-            <p><%= locals.errores && errores.email ? errores.email.msg : null %> </p>
+            <p class="emailError">
+              <%= locals.errores && errores.email ? errores.email.msg : null %>
+            </p>
+            
+            
           </div>
 
           <div class="form-group">
@@ -70,7 +84,10 @@
                 placeholder="Ingresa tu contraseña"
                 value="<%= locals.old && old.password ? old.name : null %>"
               />
-              <p><%= locals.errores && errores.password ? errores.password.msg : null %> </p>
+              <p class="passError">
+                <%= locals.errores && errores.password ? errores.password.msg : null %>
+              </p>
+              
             </div>
           </div>
         <div class="form-group2">
@@ -82,9 +99,11 @@
             <span class="terminos">términos y condiciones</span> 
             </a>
             <p><%= locals.errores && errores.checkbox ? errores.checkbox.msg : null %> </p>
+            
         </div>
+         
+          <div id="error-registerUser">Errores en los datos para la creacion de Usuario</div> 
         
-       
         <button class="crear-cuenta button-general" type="submit">Crear cuenta</button>
       </form>
       <h6 class="title-h6">O crea tu cuenta con</h6>
@@ -100,5 +119,6 @@
       </div>
     </div>
     </div>
+    <script src="/js/validationRegister.js"></script>
   </body>
 </html>

@@ -7,32 +7,40 @@
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
                 <div class="perfil-usuario-avatar">
-                    <img src=" /images/usersProfile/<%= user.image %> " alt="img-avatar">
+                    <img src=" /images/users/<%= usuario.imagen_usuario %> " alt="img-avatar">
                 </div>
             </div>
         </div>
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
-                <h3 class="titulo"> <%= user.firstName %> <%= user.lastName %></h3>
+                <h3 class="titulo"> <%= usuario.nombre %> <%= usuario.apellido %></h3>
             </div>
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">
-                    <li>Número de DNI: <%= user.dniNumber %> </li>
-                    <li>Telefono: <%= user.tel %></li>
-                    <li>Domicilio: <%= user.address %></li>
-                    <li>Fecha nacimiento: <%= user.birthDate %></li>
+                    <li>Telefono: <%= usuario.telefono %></li>
+                    <li>email: <%= usuario.email %></li>
+                    <li>direccion: <%= usuario.direccion %></li>
                 </ul>
                 <ul class="lista-datos">
                     <!-- <li>Edite su perfil:</li> -->
-                    <a href="/users/userUpdate/<%= user.id %>"><button class="button_edit_profile">Edite su perfil</button></a>
+                
+                    <% if (usuario && usuario.id_entidad_usuario == "2") { %>
+                        <a href="/products/Dashboard"><button class="button_edit_profile">Dashboard</button></a>
+                       
+                    <% } %>
+
+                    <a href="http://localhost:5173/"><button class="button_edit_profile">Dashboard React</button></a><br>
+
+                    <a href="/users/userUpdate/<%= usuario.id %>"><button class="button_edit_profile">Edite su perfil</button></a>
                     <!-- <li></li> -->
                 </ul>
             </div>
             
         </div>
+        
     </section>
   <!-- Footer -->
   <%- include("../partials/footer.ejs")%>
-
+  
 </body>
 </html>

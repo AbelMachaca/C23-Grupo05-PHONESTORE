@@ -12,48 +12,83 @@
         <div class="form-registro-createProduct">
             <h1>Crear Producto</h1>
 
-            <form method="POST" action="/products/productCreate_form" enctype="multipart/form-data">
+            <form action="/products/productCreate_form" id="form" method="POST" enctype="multipart/form-data">
           
-              
                 <div class="form-group-createProduct">
-                    <label class="label-general-createProduct" for="name">Nombre del Producto:</label>
-                    <input class="input-general-createProduct" type="text" id="name" name="name" required>
+                    <label class="label-general-createProduct" for="modelo">Modelo:</label>
+                    <input class="input-general-createProduct" type="text" id="modelo" name="modelo" value="<%= locals.old && locals.old.modelo ? locals.old.modelo : '' %>">
+                    <p><%= locals.errores && errores.modelo ? errores.modelo.msg : null %></p>
                 </div>         
-
+            
                 <div class="form-group-createProduct">
-                    <label class="label-general-createProduct" for="image">Imagen:</label>
-                    <input class="input-general-createProduct" type="file" id="image" name="image" required>
+                    <label class="label-general-createProduct" for="image">Imágenes:</label>
+                    <input class="input-general-createProduct" type="file" id="image" name="image" accept="image/*"multiple>
+                    <p>
+                        <% if (locals.old && locals.old.image) { %>
+                            Archivo seleccionado: <%= locals.old.image.originalname %>
+                        <% } else { %>
+                            <%= locals.errores && errores.image ? errores.image.msg : null %>
+                        <% } %>
+                    </p>
                 </div>
-
+            
                 <div class="form-group-createProduct">  
-                    <label class="label-general-createProduct" for="category">Categoria</label>                 
-                    <select class="input-general-createProduct" >
-                        <option value="0">Seleccione una marca</option>
+                    <label class="label-general-createProduct" for="marca">Marca</label>                 
+                    <select class="input-general-createProduct" id="marca" name="marca">
+                        <option value="" <%= !locals.old || locals.old.marca === '' ? 'selected' : '' %>>Seleccione una marca</option>
                         <option value="Samsung">Samsung</option>
                         <option value="Motorola">Motorola</option>
                         <option value="LG">LG</option>
                         <option value="Xiaomi">Xiaomi</option>
-                        <option value="Iphone">Iphone</option>
+                        <option value="Iphone">Apple</option>
+                        <option value="nokia">Nokia</option>
                     </select>
+                    <p><%= locals.errores && errores.marca ? errores.marca.msg : null %></p>
                 </div>
-
+            
                 <div class="form-group-createProduct">
                     <label class="label-general-createProduct" for="price">Precio:</label>
-                    <input class="input-general-createProduct" type="number" id="price" name="price" required>
+                    <input class="input-general-createProduct" type="number" id="price" name="precio" value="<%= locals.old && locals.old.precio ? locals.old.precio : '' %>">
+                    <p><%= locals.errores && errores.precio ? errores.precio.msg : null %></p>
                 </div>
-
+            
                 <div class="form-group-createProduct">
                     <label class="label-general-createProduct" for="description">Descripción:</label>
-                    <textarea class="input-general-createProduct" id="description" name="description"  cols="30" 
-                    rows="10" required></textarea>
+                    <textarea class="input-general-createProduct" id="description" name="descripcion"  cols="30" rows="10"><%= locals.old && locals.old.descripcion ? locals.old.descripcion : '' %></textarea>
+                    <p><%= locals.errores && errores.descripcion ? errores.descripcion.msg : null %></p>
                 </div>
-
+            
+                <div class="form-group-createProduct">
+                    <label class="label-general-createProduct" for="almacenamiento">Almacenamiento:</label>
+                    <input class="input-general-createProduct" type="number" id="almacenamiento" name="almacenamiento" value="<%= locals.old && locals.old.almacenamiento ? locals.old.almacenamiento : '' %>">
+                    <p><%= locals.errores && errores.almacenamiento ? errores.almacenamiento.msg : null %></p>
+                </div>
+            
+                <div class="form-group-createProduct">
+                    <label class="label-general-createProduct" for="ram">Ram:</label>
+                    <input class="input-general-createProduct" type="number" id="ram" name="ram" value="<%= locals.old && locals.old.ram ? locals.old.ram : '' %>">
+                    <p><%= locals.errores && errores.ram ? errores.ram.msg : null %></p>
+                </div>
+            
+                <div class="form-group-createProduct">
+                    <label class="label-general-createProduct" for="so">Sistema operativo:</label>
+                    <input class="input-general-createProduct" type="text" id="so" name="so" value="<%= locals.old && locals.old.so ? locals.old.so : '' %>">
+                    <p><%= locals.errores && errores.so ? errores.so.msg : null %></p>
+                </div>   
+            
                 <button class="createProduct button-createProduct" type="submit">Crear Producto</button>
             </form>
+            
+            
+            
         </div>
     </div>
     <!-- Footer -->
 <%- include("../partials/footer.ejs") %>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/validacion-crear-producto.js"></script>
+
+
 </body>
 
 </html>

@@ -13,6 +13,23 @@
     background-color: var(--color-blanco);
 
 }
+.galeria_de_imagenes_detalle {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.galeria_de_imagenes_detalle img {
+    width: 100px; /* Ancho de las imágenes */
+    height: 100px; /* Altura de las imágenes */
+    margin-right: 10px; /* Espacio entre imágenes */
+}
 
 
 

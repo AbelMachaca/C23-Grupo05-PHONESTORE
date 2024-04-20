@@ -8,21 +8,23 @@
    <main class="fondo">
       <div class="titulo_marca_modelo titulo_desktop">
           
-              <h3 ><%= product.name %></h3>
+              <h3 ><%= producto.modelo %></h3>
+              <h4 ><%= producto.marca %></h4>
        
       </div>
     
       <article class="celular_frontal desktop_celular_frontal">
+        <% if (producto.imagenes_productos && producto.imagenes_productos.length > 0) { %>
+          <img src="/images/imageHome/<%= producto.imagenes_productos[0].url_de_imagen %>" alt="<%= producto.marca %>" class="dimensionar_imagen_celu_principal">
+        <% } %>
+      </article>
+      <h2>Imágenes del Producto:</h2>
+     <div class="galeria_de_imagenes_detalle">
         
-        <img src="/images/imageHome/<%= product.image %>" alt="vista frontal" class="dimensionar_imagen_celu_principal">
-      
-      </article>
-   
-      <article class="caja_imagen_celu_frente_dorso_lateral desktop_celu_frente_dorso_lateral">
-        <img src="/images/productDetail_img/galaxy-s20-fe-5g-frente-min.svg" alt="vista frontal">
-        <img src="/images/productDetail_img/galaxy-s20-fe-5g-dorso.svg" alt="vista dorsal">  
-        <img src="/images/productDetail_img/galaxy-s20-fe-5g-lateral.svg" alt="vista lateral">
-      </article>
+        <% for(let i=0; i<imagen.length; i++) { %>
+            <img src="/images/imageHome/<%= imagen[i].url_de_imagen %>" alt="Imagen <%= imagen[i].url_de_imagen %>">
+        <% } %>
+      </div>
       
       <div class="formulario_opcion_color">
         
@@ -34,23 +36,25 @@
       </div>
 
         <snap class="aumentar_tamaño_descripcion_del_equipo desktop_posicion_inferior_descripcion_h5">
-             <h5 class="descripcion_del_equipo desktop_descripcion_h5"><%= product.description %></h5>
+             <h5 class="descripcion_del_equipo desktop_descripcion_h5">Descripción: <%= producto.descripcion %></h5>
         </snap>
     
         <snap class="snap_h6 desktop_snap_h6">
-             <h6 class="caracteristicas desktop_caracteristicas">ALMACENAMIENTO 128GB</h6>
-             <h6 class="caracteristicas desktop_caracteristicas">PROCESADOR OCTACORE SNAPDRAGON 865</h6>
-             <h6 class="caracteristicas desktop_caracteristicas">PANTALLA 6.5” FHD</h6>
+             <h6 class="caracteristicas desktop_caracteristicas">ALMACENAMIENTO <%= producto.almacenamiento %>GB</h6>
+             <h6 class="caracteristicas desktop_caracteristicas">Sistema Operativo <%= producto.so %></h6>
+             <h6 class="caracteristicas desktop_caracteristicas">RAM <%= producto.ram %>GB</h6>
              <h6 class="caracteristicas desktop_caracteristicas">CAMARA FRONTAL 32MPX</h6>
         </snap>
 
       <div class="separar_centrar_boton_submit desktop_botones_submit">
         <form action="" method="get"></form>
-        <p>Precio: $<%= product.price %></p>
+        <p>Precio: $<%= producto.precio %></p>
         <button type="submit" class="boton_comprar">COMPRAR</BUtton>
         
-        <form action="" method="get"></form>
-        <a href="/products/productCart"><button type="submit" class="boton_agregar">AGREGAR AL CARRITO</BUtton></a>
+          <form action="/products/addToCart" method="post">
+            <input type="hidden" name="productId" value="<%= producto.id %>">
+            <button type="submit" class="boton_agregar">AGREGAR AL CARRITO</button>
+          </form>
       </div>
    
    </main>
