@@ -1,239 +1,82 @@
 <!-- Head -->
 <%- include("../partials/head") %>
-<body class="carrito_body">
+<body class="body-cart">
 
 
 <!-- Header -->
 <%- include("../partials/header.ejs")%>
 
-    <main>
-<!-- <section class="main">
-  <section class="bloque_izq_desktop">
-    <section class="mis_productos">
-        <h3>Mis Productos</h3>
-        <article>
-            <div>
-                <img src="/images/carrito_img/sam.jpg" alt="">
-               <section>
-                    <h6>SAMSUNG S20FE 5G SM-G781VLBLARO PANTALLA 6.5 FHD AL,MACENAMIENTO 128GB</h6>
-                    <input type="radio" name="cuota" id="" class="uno">
-                    <input type="radio" name="cuota" id="" class="dos">
-                    <input type="radio" name="cuota" id="" class="tres">      
-               </section>
-               <img class="cantidad_compra" src="/images/carrito_img/compra.jpg" alt="">
-            </div>
-            <div>
-                <img src="/images/carrito_img/sam.jpg" alt="">
-                <section>
-                    <h6>SAMSUNG S20FE 5G SM-G781VLBLARO PANTALLA 6.5 FHD AL,MACENAMIENTO 128GB</h6>
-                    <input type="radio" name="cuota" id="" class="uno">
-                    <input type="radio" name="cuota" id="" class="dos">
-                    <input type="radio" name="cuota" id="" class="tres">      
-               </section>
-               <img class="cantidad_compra" src="/images/carrito_img/compra.jpg" alt="">
-            </div>
-            <div>
-                <img src="/images/carrito_img/sam.jpg" alt="">
-                <section>
-                    <h6>SAMSUNG S20FE 5G SM-G781VLBLARO PANTALLA 6.5 FHD AL,MACENAMIENTO 128GB</h6>
-                    <input type="radio" name="cuota" id="" class="uno">
-                    <input type="radio" name="cuota" id="" class="dos">
-                    <input type="radio" name="cuota" id="" class="tres">      
-               </section>
-               <img class="cantidad_compra" src="/images/carrito_img/compra.jpg" alt="">
-            </div>
-            <div>
-                <img src="/images/carrito_img/sam.jpg" alt="">
-                <section>
-                    <h6>SAMSUNG S20FE 5G SM-G781VLBLARO PANTALLA 6.5 FHD AL,MACENAMIENTO 128GB</h6>
-                    <input type="radio" name="cuota" id="" class="uno">
-                    <input type="radio" name="cuota" id="" class="dos">
-                    <input type="radio" name="cuota" id="" class="tres">      
-               </section>
-               <img class="cantidad_compra" src="/images/carrito_img/compra.jpg" alt="">
-            </div>
-              <i class="fa-regular fa-square-caret-down"></i>
-        </article>
-    </section>
-    <section class="productos_similares">
-        <h3>Productos similares</h3>
-        <article>
-           <div>
-            <img src="/images/carrito_img/sam.jpg" alt="">
-            <h6>SAMSUNG S20FE 5G SM-G781VLBLARO PANTALLA 6.5 FHD AL,MACENAMIENTO 128GB</h6>
-           </div>
-           <div>
-            <img src="/images/carrito_img/sam.jpg" alt="">
-            <h6>SAMSUNG S20FE 5G SM-G781VLBLARO PANTALLA 6.5 FHD AL,MACENAMIENTO 128GB</h6>
-           </div>
-           <div>
-            <img src="/images/carrito_img/sam.jpg" alt="">
-            <h6>SAMSUNG S20FE 5G SM-G781VLBLARO PANTALLA 6.5 FHD AL,MACENAMIENTO 128GB</h6>
-           </div>
-           <div>
-            <img src="/images/carrito_img/sam.jpg" alt="">
-            <h6>SAMSUNG S20FE 5G SM-G781VLBLARO PANTALLA 6.5 FHD AL,MACENAMIENTO 128GB</h6>
-           </div>
-              <i class="fa-regular fa-square-caret-down"></i>
-        </article>
-    </section>
-  </section>
+    <main class="main-cart">
 
-<section class="bloque_principal">
-<section class="bloque_izq">
-    <section class="envio">
-        <label for="metodo_de_envio"><h3>Metodo De Envio</h3></label>
-                <div class="subtitulos"> 
-                    <input type="radio" name="metodo_de_envio" id="metodo_de_envio" value="sucursal">
-                    <label for="sucursal"> Retiro por sucursal</label>
-                     <i class="fa-regular fa-square-caret-down"></i>
-                </div>
-                <div>
-                <p>El solicitante podra retirarlo por sucursal en el horario de 9 a 18hs</p>
-                <h3>¡Gratis!</h3>
-                </div>
-                
-                <div class="subtitulos"> 
-                    <input type="radio" name="metodo_de_envio" id="metodo_de_envio" value="PICK_UP">
-                    <label for="PICK_UP">Retiro por punto PICK UP</label>
-                     <i class="fa-regular fa-square-caret-down"></i>
-                </div>
-                <div>
-                    <p>El solicitante podra retirarlo por cualquier punto PICK UP elegido en el horario de 9 a 18hs</p>
-                    <h3>Ver puntos de PICK UP</h3>
-                    </div>
-                <div class="subtitulos"> 
-                    <input type="radio" name="metodo_de_envio" id="metodo_de_envio" value="domicilio">
-                    <label for="domicilio">Envio a domicilio</label>
-                     <i class="fa-regular fa-square-caret-down"></i>
-                </div>
-                <div>
-                    <p>El solicitante podra retirarlo por sucursal en el horario de 9 a 18hs</p>
-                    <h3>Calcular costos de Envio</h3>
-                </div>
-    </section>
-
-    <section class="pago">
-        <label for="metodos_de_pago"><h3>Metodos de Pago</h3></label>
-        <div class="contenedor_bloques_pago">
-     <div class="bloque_izq_pago">
-                <div class="subtitulos"> 
-                    <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="efectivo">
-                    <label for="efectivo">Efectivo</label>
-                     <i class="fa-regular fa-square-caret-down"></i>
-                </div>
-                   <div class="descripcion">
-                    <p>Podra pagar en efectivo su precio total al momento de retirar el producto</p>
-                   </div>
-                <div class="subtitulos"> 
-                    <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="mercado_pago">
-                    <label for="mercado_pago">Mercado Pago</label>
-                     <i class="fa-regular fa-square-caret-down"></i>
-                </div>
-                <div class="descripcion">
-                    <p>podra pagarlo desde la app</p>
-                 </div>
-     </div>
-     <div class="bloque_der_pago">
-                <div class="subtitulos"> 
-                    <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="tarjeta_de_credito">
-                    <label for="tarjeta_de_credito">Tarjeta de Credito</label>
-                     <i class="fa-regular fa-square-caret-down"></i>
-                </div>
-                       
-                            <form  method="post" class="formulario">
-                                <div>
-                                    <input type="radio" name="cuota" id="">
-                                    <label for="">1 cuota   (Visa, Mastercard)</label> 
-                                </div>
-                           
-                                <div>
-                                    <input type="radio" name="cuota" id="">
-                                    <label for="">3 Cuotas (Visa, Mastercard)</label>
-                                </div>
-                                <div>
-                                    <input type="radio" name="cuota" id="">
-                                    <label for="">9 Cuotas (Visa, Mastercard)</label>
-                                </div>
-                            </form>
-                   
-               
-                <div class="subtitulos"> 
-                    <input type="radio" name="metodos_de_pago" id="metodos_de_pago" value="Transferencia Bancaria">
-                    <label for="Transferencia Bancaria">Transferencia Bancaria</label>
-                     <i class="fa-regular fa-square-caret-down"></i>
-                </div>
-    </div>
-    </div>
-    
-        <div class="subtitulos">
-            <form action="/carrito" method="post" class="codigo_descuento"> 
-                <label for="codigo"><h4>Ingrese codigo de descuento :</h4></label>
-                <input type="text" name="codigo" id="codigo" placeholder=" _ _ _ _ _ _ ">
-            </form>
-        </div>
-    </section>
-</section>
-
-
-    <section class="compra">
-        <h3 class="resumen_titulo">Resumen de Pedido</h3>
-                
-                <div class="subtitulos">
-                    <h4>subtotal : 1.000000</h4>
-                </div>
-                <div class="subtitulos">
-                    <h4>Costos de envio : 5.000</h4>
-                </div>
-                <div class="subtitulos">
-                    <h4>Descuento por codigo : 5.000</h4>
-                </div>
-                <div class="subtitulos">
-                    <h4>Total : 1.000000</h4>
-                </div>
-                <div class="botones">
-                        <button type="reset" class="boton_eliminar" ><h4>Eliminar</h4></button>  
-                        <button type="submit" class="boton_compra"><h4>Comprar</h4></button>   
-                </div>
-                
-    </section>
-  </section>
-</section>
-
--->
 
 <section class="mis_productos">
     <h3>Mis Productos</h3>
+     <% if (productsInCart.length == 0) { %>
+            <p class="textp" >No hay productos en el carrito.</p>
+            <div class="btn-volver-inicio">
+            <a  href="/">Regresar para comprar</a>
+          <% } else { %>
+          </div>
     <article>
-      <% let totalPrecio = 0; %>
-      <% productsInCart.forEach(product => { %>
-        <div class="producto">
-          <div class="imagen">
-            <% if (product.imagenes_productos && product.imagenes_productos.length > 0) { %>
-                <img src="/images/imageHome/<%= product.imagenes_productos[0].url_de_imagen %>" alt="vista frontal" class="dimensionar_imagen_celu_principal">
-            <% } else { %>
-                <p>No hay imágenes disponibles para este producto.</p>
-            <% } %>
-          </div>
-          <div class="detalles">
-            <h2 style="color: white; margin-right: 200px;"><%= product.modelo %></h2>
-            <p style="color: white; margin-left: 10px;">Precio: $<%= product.precio %></p>
-          <p><% totalPrecio +=parseFloat(product.precio); %></p>  
-          </div>
-
-        </div>
-      <% }); %>
-
-      <section class="compra">
-        <h3 class="resumen_titulo">Resumen de Pedido</h3>
+       
+      
+      
+      <table class="table cart-table">
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% productsInCart.forEach(product => { %>
+            <tr>
+                <td data-label="Imagen"><img src="/images/imageHome/<%= product.imagenes_productos[0].url_de_imagen %>" alt="vista frontal" class="dimensionar_imagen_celu_principal"></td>
+              <td data-label="Producto"><%= product.modelo %></td>
+              <td data-label="Precio">$<%= product.precio %></td>
+              <td data-label="Cantidad" >
+      
+        <input type="number" name="quantity" value="1" min="1" max="99" data-product-id="<%= product.id %>" onchange="updateTotal()">
+      </td>
+             
+              <td>
                 
+                <form action="/products/removeFromCart" method="post" class="formProduct">
+                  <input type="hidden" name="productId" value="<%= product.id %>">
+                  <button class="remove-single-btn" type="submit">Eliminar</button>
+                </form>
+              </td>
+            </tr>
+
+          <% }); %>
+        </tbody>
+      </table>
+      
+      <section class="compra">
+        <h3 class="resumen-producto">Resumen de Pedido</h3>
+        <div class="total">
+            <p style="color: white">Total: $<%= totalPrecio.toFixed(2) %></p>
+          </div>
             
-                    <h3 class="resumen_titulo">Total: $<%= totalPrecio %></h3>
+                    
               
                 
-                
+                    
     </section>
+    <form id="removeAllForm" action="/products/removeFromCart" method="post">
+        <button class="remove-all-btn" type="submit">Eliminar todos los productos</button>
+        <a class="comprar-mas" href="/">Agregar más productos</a>
+      </form>
+      <% } %>
+</section>
+   
 </main>
+
+  <script src="/js/cart/carrito.js"></script>
 
 <!-- Footer -->
 <%- include("../partials/footer.ejs")%>
