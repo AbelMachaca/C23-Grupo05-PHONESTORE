@@ -1,4 +1,6 @@
 
+import { Link } from "react-router-dom";
+
 export default function SideBar() {
   return (
     <div>
@@ -23,6 +25,12 @@ export default function SideBar() {
 <div className="sidebar-heading">Acciones</div>
 
 <li className="nav-item">
+    <a className="nav-link" href="http://localhost:3030/">
+        <i className="fas fa-fw fa-chart-area"></i>
+        <span>Home</span></a>
+</li>
+
+<li className="nav-item">
     <a className="nav-link collapsed" href="/">
         <i className="fas fa-fw fa-folder"></i>
         <span>Usuarios</span>
@@ -30,15 +38,15 @@ export default function SideBar() {
 </li>
 
 <li className="nav-item">
-    <a className="nav-link" href="/">
+    <a className="nav-link" href='http://localhost:3030/products/dashboard'>
         <i className="fas fa-fw fa-chart-area"></i>
         <span>Productos</span></a>
 </li>
 
 <li className="nav-item">
-    <a className="nav-link" href="/">
+    <a className="nav-link" href="http://localhost:3030/api/productsListar">
         <i className="fas fa-fw fa-table"></i>
-        <span>Categorias</span></a>
+        <span>Listado por Marca </span></a>
 </li>
 
 <hr className="sidebar-divider d-none d-md-block"/>
