@@ -19,7 +19,8 @@ const productController = {
       const productId = req.body.productId;
       req.session.cart = req.session.cart || [];
       req.session.cart.push(productId);
-
+      
+      log("addddtocaarrrrr", productId)
       res.redirect("/products/productCart");
     } catch (error) {
       console.error("Error al agregar producto al carrito:", error);
@@ -32,8 +33,10 @@ const productController = {
     try {
     
       const productIdsInCart = req.session.cart || [];
-
+      /*
+      console.log("REQ.SE.CART",JSON.stringify(req.session.cart));
       console.log("IDs de productos en el carrito:", productIdsInCart);
+      */
 
       const productsInCart = await db.Producto.findAll({
         where: { id: productIdsInCart },
@@ -41,17 +44,45 @@ const productController = {
           association: "imagenes_productos"
         }]
       });
-
+      let totalPrecio = 0;
+      productsInCart.forEach(product => {
+        totalPrecio += parseFloat(product.precio) ;
+      });
+      
+      /*
+      console.log(JSON.stringify(productsInCart));
       console.log("Productos en el carrito:", productsInCart);
+*/
+      
 
       res.render("products/productCart", {
         productsInCart,
         usuario: req.session.user,
+        totalPrecio
       });
     } catch (error) {
       console.error("Error al obtener productos del carrito:", error);
       res.status(500).send("Error interno del servidor al obtener productos del carrito");
     }
+},
+removeFromCart: (req, res) => {
+  const productId = req.body.productId;
+
+  console.log("productoiDDDD"+productId);
+
+  console.log("REQ.SESSION.CART"+req.session.cart);
+
+  if (productId) {
+     
+      if (req.session.cart && req.session.cart.includes(productId)) {
+        req.session.cart = req.session.cart.filter(id => id !== productId);
+      }
+    } else {
+      
+      req.session.cart = [];
+    }
+  
+  res.redirect('/products/productCart');
 },
   detail: (req, res) => {
     console.log(req.params.id)
@@ -184,10 +215,7 @@ const productController = {
         res.status(500).send("Error al eliminar el producto.");
     });
   },
-
-  photoProduct: (req, res) => {
-    console.log(req.params.id)
-
+  showPhotoProduct:(req,res)=>{
     let producto = db.Producto.findByPk(req.params.id,{
       include: [{
           association: "imagenes_productos"},
@@ -195,7 +223,9 @@ const productController = {
     });
     Promise.all([producto])
       .then(([producto]) => {
-           return res.render("products/productDetail",{
+
+        console.log(producto)
+           return res.render("products/photoProduct",{
            producto, 
            usuario: req.session.user,
            imagen: producto.imagenes_productos,

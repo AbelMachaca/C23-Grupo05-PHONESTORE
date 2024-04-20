@@ -23,7 +23,10 @@ const upload  = multer({storage});
 
 router.get('/productDetail/:id', productController.detail);
 router.get('/productCart', userSessionValidate, productController.cart)
-router.post('/addToCart', productController.addToCart);
+router.post('/addToCart', userSessionValidate, productController.addToCart);
+
+
+router.post('/removeFromCart', productController.removeFromCart);
 //sacamos esto ----  adminSessionValidate ---- de las 2 rutas,
 //router.get('/productCreate_form', productController.createForm)
 router.get('/productCreate_form',adminSessionValidate, productController.createForm)
@@ -41,6 +44,8 @@ router.get('/dashboard',adminSessionValidate,productController.dashboard )
 
 router.delete('/delete/:id',adminSessionValidate,productController.delete);
 
+
+router.get('/photo/:id', productController.showPhotoProduct)
 //router.get('/dashboard', adminSessionValidate, productController.dashboard )
 
 //router.delete(`/delete/:id`, adminSessionValidate, productController.destroy);
