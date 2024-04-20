@@ -22,7 +22,10 @@ const upload  = multer({storage});
 /* GET home page. */
 router.get('/productDetail/:id', productController.detail);
 router.get('/productCart', userSessionValidate, productController.cart)
-router.post('/addToCart', productController.addToCart);
+router.post('/addToCart', userSessionValidate, productController.addToCart);
+
+
+router.post('/removeFromCart', productController.removeFromCart);
 //sacamos esto ----  adminSessionValidate ---- de las 2 rutas,
 //router.get('/productCreate_form', productController.createForm)
 router.get('/productCreate_form',adminSessionValidate, productController.createForm)
