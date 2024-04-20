@@ -5,6 +5,7 @@
     box-sizing: border-box;
 } 
 
+
 /*header mobile*/
 .campo_buscar{
     border-radius: 5px;
@@ -37,9 +38,9 @@ header section.buscador{
  width: 100%;
  height: 100%;
 }
-.header a.icono_header {
-    width: 8%;
-    height: 5%;
+.header a .icono-header {
+    width: 100%;
+    /* height: 5%; */
     padding-top:0.5%;
 }
 .header div{

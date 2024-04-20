@@ -5,4 +5,4 @@ questions:(req,res)=>{
     res.render('consultas', {title:'consultas'})
 }
 }
-module.exports= faqsController
+module.exports = faqsController
