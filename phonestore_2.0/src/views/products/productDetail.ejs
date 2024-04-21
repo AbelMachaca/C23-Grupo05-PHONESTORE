@@ -1,66 +1,97 @@
-<!-- Head -->
-<%- include("../partials/head") %>
-<body class="ordenar_body">
-  
-<!-- Header -->
-<%- include("../partials/header.ejs")%>
-   
-   <main class="fondo">
-      <div class="titulo_marca_modelo titulo_desktop">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Producto</title>
+    <!-- Incluir Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Incluir estilos personalizados si es necesario -->
+    <%- include("../partials/head") %>
+    <style>
+        /* Agregar estilos personalizados aquí si es necesario */
+        .thumbnail {
+            cursor: pointer;
+            transition: transform 0.2s;
+            width: 100px;
           
-              <h3 ><%= producto.modelo %></h3>
-              <h4 ><%= producto.marca %></h4>
-       
-      </div>
-    
-      <article class="celular_frontal desktop_celular_frontal">
-        <% if (producto.imagenes_productos && producto.imagenes_productos.length > 0) { %>
-          <img src="/images/imageHome/<%= producto.imagenes_productos[0].url_de_imagen %>" alt="<%= producto.marca %>" class="dimensionar_imagen_celu_principal">
-        <% } %>
-      </article>
-      <h2>Imágenes del Producto:</h2>
-     <div class="galeria_de_imagenes_detalle">
-        
-        <% for(let i=0; i<imagen.length; i++) { %>
-            <img src="/images/imageHome/<%= imagen[i].url_de_imagen %>" alt="Imagen <%= imagen[i].url_de_imagen %>">
-        <% } %>
-      </div>
-      
-      <div class="formulario_opcion_color">
-        
-        <h5 class="texto_color">COLOR</h5>
-        
-        <form action="" method="get"></form>
-        <input type="radio" name="opcion color" class="circulo_tamaño circulo_purpura"><input type="radio" name="opcion color" class="circulo_tamaño circulo_negro">
-      
-      </div>
+        }
 
-        <snap class="aumentar_tamaño_descripcion_del_equipo desktop_posicion_inferior_descripcion_h5">
-             <h5 class="descripcion_del_equipo desktop_descripcion_h5">Descripción: <%= producto.descripcion %></h5>
-        </snap>
-    
-        <snap class="snap_h6 desktop_snap_h6">
-             <h6 class="caracteristicas desktop_caracteristicas">ALMACENAMIENTO <%= producto.almacenamiento %>GB</h6>
-             <h6 class="caracteristicas desktop_caracteristicas">Sistema Operativo <%= producto.so %></h6>
-             <h6 class="caracteristicas desktop_caracteristicas">RAM <%= producto.ram %>GB</h6>
-             <h6 class="caracteristicas desktop_caracteristicas">CAMARA FRONTAL 32MPX</h6>
-        </snap>
-
-      <div class="separar_centrar_boton_submit desktop_botones_submit">
-        <form action="" method="get"></form>
-        <p>Precio: $<%= producto.precio %></p>
-        <button type="submit" class="boton_comprar">COMPRAR</BUtton>
-        
-          <form action="/products/addToCart" method="post">
-            <input type="hidden" name="productId" value="<%= producto.id %>">
-            <button type="submit" class="boton_agregar">AGREGAR AL CARRITO</button>
-          </form>
-      </div>
+        .thumbnail:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="ordenar_body">
+    <!-- Encabezado -->
+    <%- include("../partials/header.ejs") %>
    
-   </main>
+    <main class="fondo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="titulo_marca_modelo">
+                      <h4><%= producto.marca %></h4>
+                        <h3><%= producto.modelo %></h3>
+                        
+                    </div>
+                    <div class="imagen_en_grande mb-3">
+                        <!-- Mostrar la imagen principal en grande -->
+                        <% if (producto.imagenes_productos && producto.imagenes_productos.length > 0) { %>
+                            <img src="/images/imageHome/<%= producto.imagenes_productos[0].url_de_imagen %>" alt="<%= producto.marca %>" class="img-fluid">
+                        <% } %>
+                    </div>
+                    <h2>Imágenes del Producto:</h2>
+                    <div class="miniatura-pequena">
+                      <% for (let i = 0; i < imagen.length; i++) { %>
+                          <!-- Agregar miniaturas de imágenes con la clase thumbnail y el evento onclick -->
+                          <img   src="/images/imageHome/<%= imagen[i].url_de_imagen %>" alt="Imagen <%= imagen[i].url_de_imagen %>" class="img-fluid thumbnail" onclick="displayImage('/images/imageHome/<%= imagen[i].url_de_imagen %>')">
+                      <% } %>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="formulario_opcion_color mb-3">
+                        <!--<h5 class="texto_color">COLOR</h5> -->
+                        <!-- Agregar opciones de color si es necesario -->
+                    </div>
+                    <div class="descripcion_del_equipo mb-3">
+                        <h5</h5>
+                        <p></p>
+                    </div>
+                    <div class="caracteristicas mb-3">
+                        <h5>Características:</h5>
+                        <ul>
+                            <li>Almacenamiento: <%= producto.almacenamiento %>GB</li>
+                            <li>Sistema Operativo: <%= producto.so %></li>
+                            <li>RAM: <%= producto.ram %>GB</li>
+                            <li>Cámara Frontal: 32MPX</li>
+                            <li>Descripción:<%= producto.descripcion %> </li>
+                        </ul>
+                    </div>
+                    <div class="separar_centrar_boton_submit">
+                        <p class="precio">Precio: $<%= producto.precio %></p>
+                        <form action="/products/addToCart" method="post">
+                            <input type="hidden" name="productId" value="<%= producto.id %>">
+                            <button type="submit" class="btn btn-primary btn-lg mb-2">Agregar al Carrito</button>
+                        </form>
+                        <button type="button" class="btn btn-success btn-lg">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-<!-- Footer -->   
-   <%- include("../partials/footer.ejs")%>
+    <!-- Pie de página -->
+    <%- include("../partials/footer.ejs") %>
 
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Función para mostrar la imagen en grande
+        function displayImage(url) {
+            var largeImage = document.querySelector('.imagen_en_grande img');
+            largeImage.src = url;
+        }
+    </script>
 </body>
 </html>

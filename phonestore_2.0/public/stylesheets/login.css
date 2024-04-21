@@ -38,6 +38,11 @@
   color: #c1c1c1;
 }
 
+.login-container-body h6 {
+  margin: 15px;
+  color: #777777;
+}
+
 .login-container-body {
   background-color: rgba(22, 25, 28, 1);
   padding: 20px;

@@ -55,10 +55,16 @@
           <td><%=element.so%></td>
           <td><%=element.descripcion%></td>
           <td>
-            <a href="/products/productDetail/<%= element.id %>">Ver producto</a> 
-            <a href="/products/productEdit/<%= element.id %>">Editar</a>
+            <a href="/products/productDetail/<%= element.id %>">
+              <i class="fas fa-eye"></i> <!-- Icono para ver producto -->
+            </a>
+            <a href="/products/productEdit/<%= element.id %>">
+              <i class="fas fa-edit"></i> <!-- Icono para editar -->
+            </a>
             <form action="/products/delete/<%= element.id%>?_method=delete" method="post">
-              <button type="submit" onclick="return confirmacion()" class="boton_eliminar_dashboard">Eliminar</button>
+              <button type="submit" onclick="return confirmacion()" class="boton_eliminar_dashboard">
+                <i class="fas fa-trash-alt"></i> <!-- Icono para eliminar -->
+              </button>
             </form> 
           </td>
         </tr>
