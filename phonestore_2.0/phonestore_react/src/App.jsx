@@ -1,16 +1,16 @@
 import SideBar from './components/SideBar';
 import './assets/css/app.css'
-import ContentWrapper from './components/ContentWrapper';
-// import ContadorF from './components/ContadorF';
 
+// import ContadorF from './components/ContadorF';
+import {BrowserRouter} from 'react-router-dom';
   function App() {
     return (
-      <div id="wrapper">
+      <BrowserRouter>
+      <div className='appcss' id="wrapper">
         <SideBar />
-        <ContentWrapper>
-          {/* <ContadorF /> */}
-        </ContentWrapper>
+        
       </div>
+      </BrowserRouter>
     );
   }
 

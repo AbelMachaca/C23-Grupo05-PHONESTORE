@@ -8,6 +8,8 @@ const session = require('express-session');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
+const cors = require('cors'); 
+
 
 // APIS
 const apiUser = require('./routes/api/apiUserRoutes');
@@ -35,6 +37,8 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
 }));
+
+app.use(cors());
 
 app.use((req, res, next) => {
   console.log('Cookies:', req.cookies);
