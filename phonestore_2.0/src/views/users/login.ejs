@@ -10,7 +10,6 @@
   </div>
   
   <div class="login-container-body">
-    <i class="fa-solid fa-bars" class="iconos_login"></i>
     <img src="/images/login-img/login.png" alt="imagen login" />
     <h3>Bienvenid@</h3>
     <form action="/users/login" method="post" class="form_login">
@@ -62,12 +61,13 @@
     
     <h6>O inicia sesión con</h6>
     <div class="social-buttons-login">
-      <button>Google</button><i class="fa-brands fa-google"></i>
-      <button>Facebook</button><i class="fa-brands fa-facebook"></i>
-    </div>
+      <button onclick="window.open('https://www.google.com/', '_blank')">Google</button><i class="fa-brands fa-google"></i>
+      <button onclick="window.open('https://www.facebook.com/', '_blank')">Facebook</button><i class="fa-brands fa-facebook"></i>
+    </div>    
   </div>
 </div>
   <!-- Footer -->
   <%- include("../partials/footer.ejs")%>
+  <script src="/js/js_front_login.js"></script>
 </body>
 </html>

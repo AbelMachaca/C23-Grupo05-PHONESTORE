@@ -5,6 +5,7 @@
     box-sizing: border-box;
 } 
 
+
 /*header mobile*/
 .campo_buscar{
     border-radius: 5px;
@@ -33,13 +34,15 @@ header section.buscador{
     justify-content: center;
     margin: 2%;
 }
-.header a img{
- width: 100%;
- height: 100%;
+.header a .icon{
+    width: 30px;
+    /* height: 100%; */
+    margin-top: 5px;
+    margin-left: 3px;
 }
-.header a.icono_header {
-    width: 8%;
-    height: 5%;
+.header a .icono-header {
+    width: 100%;
+    /* height: 5%; */
     padding-top:0.5%;
 }
 .header div{
@@ -112,6 +115,9 @@ nav ul li a{
     i.fa-solid.fa-cart-shopping{
         padding-left: 10px;
     }
+    .header a .icon{
+        width: 10%;
+    } 
     /* header section.links a{
         font-size: 90%;
     } */
@@ -176,4 +182,8 @@ nav ul li a{
         margin: 0 auto;
         font-size: 20px;
     }
+}
+.imagen_usuario_header{
+    width: 30px;
+    border-radius: 50%;
 }

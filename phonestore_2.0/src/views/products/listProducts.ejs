@@ -1,0 +1,34 @@
+<!-- Head -->
+<%- include("../partials/head.ejs") %>
+  
+<body>
+
+<!-- Header -->  
+<%- include("../partials/header.ejs")%>
+
+<section class="home">
+      <div class="contenedor-cards">
+ <%products.forEach(element =>{  %>
+        <div class="card-item">
+          <div class="card-img">
+            <a href="/products/productDetail/<%= element.id %>">
+              <% if (element.imagenes_productos && element.imagenes_productos.length > 0) { %>
+                <img src="/images/imageHome/<%= element.imagenes_productos[0].url_de_imagen %>" alt="<%= element.marca %>">
+              <% } else { %>
+                No hay imagen disponible
+              <% } %>
+          </div>
+          <div class="info">
+            <p> <%= element.marca %> - <%= element.modelo %></p>
+            <p>$<%= element.precio %></p>
+
+           <a href="/productCart"><button>3 Cuotas sin interes</button></a> 
+          </div>
+        </div>
+<% }); %>
+    </section>
+
+    <!-- Footer -->
+<%- include("../partials/footer.ejs")%>
+</body>
+</html>

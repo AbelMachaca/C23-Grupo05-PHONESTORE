@@ -2,6 +2,7 @@
 const formulario = document.getElementById('formulario')
     const inputs = document.querySelectorAll('#formulario input')
 
+let errores = false;
 
 const expresiones = {
     imagen: /\.(jpg|jpeg|png|gif)$/,// jpg, jpeg, png o gif.
@@ -42,13 +43,14 @@ const validarCampo = (expresion,input,campo) =>{
         document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle')
         document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle')
         document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
-        
+        errores = false;
     }else{
         document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto')
         document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto')
         document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle')
         document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle')
         document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+        errores = true;
     };
 }
 
@@ -58,19 +60,10 @@ inputs.forEach((input)=>{
 })
 
     
-
-formulario.addEventListener('submit', function(e){
-    e.preventDefault();
+// Prevenir envío si hay errores
+formulario.addEventListener('submit', function (e) {
+    if (errores) {
+        e.preventDefault(); 
+    }
 
 })
-    
-    
-    //if(campoNombre.value=''){
-        //alert('el campo nombre debe estar completo')
-        
-  //}})
-
-
-
-
- 

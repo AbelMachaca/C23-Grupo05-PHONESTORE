@@ -14,6 +14,7 @@ const getJson = () => {
 };
 
 const productController = {
+
   addToCart: async (req, res) => {
     try {
       const productId = req.body.productId;
@@ -140,6 +141,7 @@ removeFromCart: (req, res) => {
   store: (req, res) => {
     const errores = validationResult(req);
       if (!errores.isEmpty()) {
+        console.log(errores)
         return res.render("products/productCreate_form", {
           errores: errores.mapped(),
           old: req.body,
@@ -164,7 +166,7 @@ removeFromCart: (req, res) => {
             Promise.all(promises)
                 .then((imagen) => {
                    
-                    res.render("products/productDetail", { title: "Detalle de producto", producto, imagen });
+                    res.redirect(`/products/productDetail/${producto.id}`);
                 })
                 // .catch(error => {
                 //     console.error("Error al guardar las imágenes:", error);

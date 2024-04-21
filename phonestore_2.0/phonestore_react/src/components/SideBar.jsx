@@ -2,6 +2,8 @@ import Usuarios from "./Usuarios";
 import { Link, Route, Routes } from "react-router-dom";
 import ContentWrapper from "./ContentWrapper";
 import "./Css/SideBar.css";
+
+
 export default function SideBar() {
   return (
     <>
@@ -30,7 +32,13 @@ export default function SideBar() {
 
           <hr className="sidebar-divider" />
 
-          <div className="sidebar-heading">Acciones</div>
+<div className="sidebar-heading">Acciones</div>
+
+<li className="nav-item">
+    <a className="nav-link" href="http://localhost:3030/">
+        <i className="fas fa-fw fa-chart-area"></i>
+        <span>Home</span></a>
+</li>
 
           <li className="nav-item nav-link">
             <Link className="nav-link" to="/usuarios">
@@ -39,19 +47,17 @@ export default function SideBar() {
             </Link>
           </li>
 
-          <li className="nav-item">
-            <a className="nav-link" href="/">
-              <i className="fas fa-fw fa-chart-area"></i>
-              <span>Productos</span>
-            </a>
-          </li>
+<li className="nav-item">
+    <a className="nav-link" href='http://localhost:3030/products/dashboard'>
+        <i className="fas fa-fw fa-chart-area"></i>
+        <span>Productos</span></a>
+</li>
 
-          <li className="nav-item">
-            <a className="nav-link" href="/">
-              <i className="fas fa-fw fa-table"></i>
-              <span>Categorias</span>
-            </a>
-          </li>
+<li className="nav-item">
+    <a className="nav-link" href="http://localhost:3030/api/productsListar">
+        <i className="fas fa-fw fa-table"></i>
+        <span>Listado por Marca </span></a>
+</li>
 
           <hr className="sidebar-divider d-none d-md-block" />
         </ul>
