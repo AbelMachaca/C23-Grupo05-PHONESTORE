@@ -61,7 +61,7 @@ const upload = multer({ storage })
 
 /* GET users listing. */
 router.get("/login", userController.login);
-router.post("/login",userController.processlogin);
+router.post("/login",loginValidation,userController.processlogin);
 router.get('/logout', userController.logout)
 router.get("/register", userController.formRegister);
 router.post(

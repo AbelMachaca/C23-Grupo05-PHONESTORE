@@ -158,7 +158,7 @@ removeFromCart: (req, res) => {
             // console.log(productId)
             const files = req.files;
             const promises = files.map(file => {
-               console.log(files)
+              //  console.log(files)
                 return db.imagenes_producto.create({ id_producto_imagen: productId, url_de_imagen: file.filename });
             });
    console.log(promises)
@@ -193,7 +193,7 @@ removeFromCart: (req, res) => {
   },
   delete: (req, res) => {
     const productId = req.params.id;
-    console.log(productId);
+    // console.log(productId);
 
     db.imagenes_producto.destroy({
       

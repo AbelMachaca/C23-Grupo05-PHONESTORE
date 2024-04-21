@@ -20,9 +20,6 @@ const getJson = (fileName) => {
         });
     },
     processlogin: (req, res) => {
-      
-
-
       const errores = validationResult(req);
       if (!errores.isEmpty()) {
           console.log("errores:", errores.mapped());

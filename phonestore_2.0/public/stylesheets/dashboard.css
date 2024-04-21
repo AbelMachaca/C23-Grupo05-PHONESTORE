@@ -110,6 +110,10 @@
     background-color: rgba(30, 33, 38, 1);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
   }
+  .contenedor_body_dashboard table {
+    margin: 0 10%;
+    width: 80%;
+  }
   
   /* Responsive Styles */
   @media screen and (max-width: 600px) {
