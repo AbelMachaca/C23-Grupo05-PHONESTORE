@@ -187,3 +187,45 @@ nav ul li a{
     width: 30px;
     border-radius: 50%;
 }
+
+/*lupa del buscador*/
+.input-group {
+    position: relative;
+  }
+  
+  .campo_buscar {
+    padding-right: 5px; /* Ajusta el padding para que haya espacio para el icono */
+  }
+  
+  .submit-button {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    bottom: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  /* Media queries para ajustar los estilos en diferentes tamaños de pantalla */
+@media (max-width: 767px) {
+    /* Estilos para mobile */
+    .campo_buscar {
+        font-size: 14px; /* Reducir el tamaño de fuente para dispositivos móviles */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Estilos para tablet */
+    .campo_buscar {
+        font-size: 16px; /* Tamaño de fuente un poco más grande para tablet */
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Estilos para desktop */
+    .campo_buscar {
+        font-size: 18px; /* Tamaño de fuente más grande para desktop */
+    }
+}
+  
