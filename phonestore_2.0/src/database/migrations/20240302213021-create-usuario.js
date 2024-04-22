@@ -53,6 +53,10 @@ module.exports = {
           },
         
       },
+      googleId: {
+        type: Sequelize.STRING,
+        allowNull: true,
+      },
     });
   },
   async down(queryInterface, Sequelize) {

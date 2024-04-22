@@ -20,6 +20,17 @@ const getJson = (fileName) => {
         });
     },
     processlogin: (req, res) => {
+
+      // Si el usuario se ha autenticado mediante Google
+    if (req.user && req.user.googleId) {
+      // Obtener el usuario de req.user (ya establecido por Passport)
+      const user = req.user;
+      // Almacenar el usuario en la sesión
+      req.session.user = user;
+      // Redireccionar a la página principal
+      res.redirect("/");
+  } else {
+
       const errores = validationResult(req);
       if (!errores.isEmpty()) {
           console.log("errores:", errores.mapped());
@@ -53,7 +64,7 @@ const getJson = (fileName) => {
               .catch((err) => {
                   console.log(err);
               });
-      }
+      }}
     },
     logout:(req,res)=>{
       req.session.destroy();
@@ -86,7 +97,8 @@ const getJson = (fileName) => {
         email: email.trim(),
         password: bcrypt.hashSync(password, 10),
         id_entidad_usuario: 1,
-        imagen_usuario: file ? file.filename : 'predeterminado.webp'
+        imagen_usuario: file ? file.filename : 'predeterminado.webp',
+        googleId: req.body.googleId
       };
   
       db.Usuario.create(newUser)
