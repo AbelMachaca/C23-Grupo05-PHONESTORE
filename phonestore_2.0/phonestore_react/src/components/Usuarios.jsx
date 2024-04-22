@@ -187,23 +187,23 @@ const Usuarios = () => {
         <form className="form-edit" onSubmit={handleFormSubmit}>
           <div className="form-group">
             <label>Nombre:</label>
-            <input type="text" name="nombre" value={formData.nombre} onChange={handleInputChange} />
+            <input type="text" name="nombre" style={{ color: 'white' }} value={formData.nombre} onChange={handleInputChange} />
           </div>
           <div className="form-group">
             <label>Apellido:</label>
-            <input type="text" name="apellido" value={formData.apellido} onChange={handleInputChange} />
+            <input type="text" name="apellido" style={{ color: 'white' }} value={formData.apellido} onChange={handleInputChange} />
           </div>
           <div className="form-group">
             <label>Email:</label>
-            <input type="email" name="email" value={formData.email} onChange={handleInputChange} />
+            <input type="email" name="email" style={{ color: 'white' }} value={formData.email} onChange={handleInputChange} />
           </div>
           <div className="form-group">
             <label>Teléfono:</label>
-            <input type="text" name="telefono" value={formData.telefono} onChange={handleInputChange} />
+            <input type="text" name="telefono"  style={{ color: 'white' }} value={formData.telefono} onChange={handleInputChange} />
           </div>
           <div className="form-group">
             <label>Dirección:</label>
-            <input type="text" name="direccion" value={formData.direccion} onChange={handleInputChange} />
+            <input type="text" name="direccion"  style={{ color: 'white' }} value={formData.direccion} onChange={handleInputChange} />
           </div>
           
           

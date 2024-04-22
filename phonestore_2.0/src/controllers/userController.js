@@ -114,10 +114,10 @@ const getJson = (fileName) => {
     const errores = validationResult(req);
     const id = req.params.id
     if (errores.isEmpty()){
-      console.log("estallegando el id", id)
+      // console.log("estallegando el id", id)
       db.Usuario.findByPk(id).then(usuario => {
-        console.log("ACTUALIZA LOS DATOS")
-        console.log(req.body)
+        // console.log("ACTUALIZA LOS DATOS")
+        // console.log(req.body)
         db.Usuario.update(
         {
         nombre: req.body.nombre,

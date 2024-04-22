@@ -5,6 +5,7 @@ const productsFilePath = path.join(__dirname, "../data/products.json");
 const { v4: uuidv4 } = require("uuid");
 const db = require("../database/models");
 const { log } = require("console");
+const usuario = require("../database/models/usuario");
 
 
 const getJson = () => {
@@ -95,6 +96,7 @@ removeFromCart: (req, res) => {
     });
     Promise.all([producto])
       .then(([producto]) => {
+        console.log(usuario)
            return res.render("products/productDetail",{
            producto, 
            usuario: req.session.user,
@@ -105,25 +107,26 @@ removeFromCart: (req, res) => {
       .catch(error=> console.log(error));
 
     },
-  edit: (req, res) => {
-    console.log("aaaaaaaaaaaaaaaa");
-    const { id } = req.params;
-    db.Producto.findByPk(id)
-    .then((product) => {
-      console.log(product);
-      res.render("products/productEdit", { product, usuario: req.session.user});
-    });
-  },
+    edit: (req, res) => {
+      console.log("aaaaaaaaaaaaaaaa");
+      const { id } = req.params;
+      db.Producto.findByPk(id,{include: [{ association: "imagenes_productos" }]})
+      .then((product) => {
+        res.render("products/productEdit", { product, usuario: req.session.user,imagen: product.imagenes_productos});
+      });
+    },
 
   update: async (req, res) => {
     try {
+      
       const { id } = req.params;
       const { marca, modelo, precio, almacenamiento, ram, so, descripcion } = req.body;
       const product = await db.Producto.findByPk(id);
       if (!product) {
         return res.status(404).send("Producto no encontrado");
       }
-      await product.update(req.body);
+      await product.update(req.body)
+      
       res.redirect(`/products/dashboard`);
     } catch (error) {
       console.error("Error al actualizar el producto:", error);
@@ -161,7 +164,7 @@ removeFromCart: (req, res) => {
               //  console.log(files)
                 return db.imagenes_producto.create({ id_producto_imagen: productId, url_de_imagen: file.filename });
             });
-   console.log(promises)
+  //  console.log(promises)
             
             Promise.all(promises)
                 .then((imagen) => {

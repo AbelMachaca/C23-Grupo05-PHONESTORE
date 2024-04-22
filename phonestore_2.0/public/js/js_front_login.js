@@ -1,10 +1,38 @@
-// Función para limpiar el mensaje de error cuando se comienza a llenar el campo
+window.addEventListener('load', function(){
+    // Función para validar el formato de email
+    function validarEmail() {
+        let email = document.querySelector('#email').value;
+        let expresionReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //expresion regular para validar email
+        let mensaje = document.querySelector("#mensaje_email")
+        if (expresionReg.test(email)) { 
+            mensaje.innerHTML = "";
+        } else {
+            mensaje.innerHTML = "El email ingresado debe tener el siguiente formato ejemplo@ejemplo.com";
+        }
+    }
+
+    //validar el contenido del campo de contraseña
+    function validarCampoPassword() {
+        let passwordContenido = document.querySelector('#password'); // Seleccionar el campo de contraseña
+        let password = passwordContenido.value
+        let mensaje = document.querySelector("#mensaje_password");
+    
+        if (password == "") { 
+            mensaje.innerHTML = "Ingrese su contraseña";
+        } else {
+            mensaje.innerHTML = "";
+        }
+    }
+
+    document.querySelector('#email').addEventListener('blur', validarEmail);
+    document.querySelector('#password').addEventListener('blur', validarCampoPassword);
+});
+
 function limpiarMensajeError(input) {
     const errorMessage = input.nextElementSibling; // Elemento que muestra el mensaje de error
     errorMessage.textContent = ""; // Limpiar el mensaje de error
 }
 
-// Event listeners para limpiar el mensaje de error al comenzar a llenar un campo
 document.querySelectorAll('input[type="email"], input[type="password"]').forEach(input => {
     input.addEventListener("input", function() {
         limpiarMensajeError(input);

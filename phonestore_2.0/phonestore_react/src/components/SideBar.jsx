@@ -17,7 +17,7 @@ export default function SideBar() {
             href="/"
           >
             <div className="sidebar-brand-icon">
-              {/* <img className="w-100" src="/C23-Grupo05-PHONESTORE/phonestore_2.0/phonestore_react/src/assets/images/icono.jpg" alt="PHONESTORE"/> */}
+              <img className="w-100" src="/images/icon" alt="" />
             </div>
           </a>
 

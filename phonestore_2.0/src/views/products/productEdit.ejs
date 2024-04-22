@@ -11,8 +11,25 @@
       
       <h1>Editar Producto</h1>
       
+      <div class="imagenes_edicion">
+        <% for (let i = 0; i < imagen.length; i++) { %>
+            <!-- Agregar miniaturas de imágenes con la clase thumbnail y el evento onclick -->
+            <img   src="/images/imageHome/<%= imagen[i].url_de_imagen %>" alt="Imagen">
+        <% } %>
+    </div>
       <form  action="/products/productEdit/<%= product.id %>?_method=PUT" method="POST" >
         <div class="form-group-editProduct">
+          <div class="form-group-createProduct">
+            <label class="label-general-createProduct" for="image">Imágenes:</label>
+            <input class="input-general-createProduct" type="file" id="image" name="image" accept="image/*" multiple>
+            <p>
+                <% if (locals.old && locals.old.image) { %>
+                    Archivo seleccionado: <%= locals.old.image.originalname %>
+                <% } else { %>
+                    <%= locals.errores && errores.image ? errores.image.msg : null %>
+                <% } %>
+            </p>
+        </div>
           <div class="input-container">
           <label class="label-general-editProduct" for="marca">Marca</label>
           <input
@@ -25,7 +42,6 @@
             required
             
           />
-          
         </div>
         </div>
         

@@ -17,7 +17,7 @@
                             <h2 class="brand-title card-title text-center"><%= brand %></h2> <!-- Alineamos el título al centro -->
                             <ul class="list-unstyled mb-0"> <!-- Utilizamos la clase "list-unstyled" para quitar estilos de lista -->
                                 <% productsByBrand[brand].forEach(product => { %>
-                                    <li class="model-item"><%= product.modelo %> - <%= product.precio %></li>
+                                    <a href="/products/productDetail/<%= product.id %>"><li class="model-item"><%= product.modelo %> - <%= product.precio %> </li></a>
                                 <% }) %>
                             </ul>
                         </div>

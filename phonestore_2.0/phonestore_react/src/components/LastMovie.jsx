@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const LastMovie = () => {
   const [lastProduct, setLastProduct] = useState(null);
@@ -35,7 +35,7 @@ const LastMovie = () => {
               <div className="text-center">
                
 
-              <img src={lastProduct && lastProduct.imagenes.length > 0 ? `http://localhost:3030/images/imageHome/${lastProduct.imagenes[0].url}` : ""} alt={lastProduct && lastProduct.modelo} />
+              <img style={{ maxWidth: '250px' }} src={lastProduct && lastProduct.imagenes.length > 0 ? `http://localhost:3030/images/imageHome/${lastProduct.imagenes[0].url}` : ""} alt={lastProduct && lastProduct.modelo} />
 
               </div> 
               <p>{lastProduct.descripcion}</p>

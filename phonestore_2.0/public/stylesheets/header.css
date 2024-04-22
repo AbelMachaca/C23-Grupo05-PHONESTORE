@@ -94,6 +94,7 @@ nav ul{
     display: flex;
     gap: 30px;
     align-items: center;
+    list-style: none;
 }
 nav ul li a{
     text-decoration: none;
@@ -226,6 +227,7 @@ nav ul li a{
     /* Estilos para desktop */
     .campo_buscar {
         font-size: 18px; /* Tamaño de fuente más grande para desktop */
-    }
+    };
+
 }
   

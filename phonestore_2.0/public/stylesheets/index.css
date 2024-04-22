@@ -41,7 +41,7 @@ a:link, a:visited, a:active {
 .contenedor-cards{
     display: grid;
     grid-template-columns: auto;
-    width: 80% ;
+    /* width: 80% ; */
     margin: 0 auto;
     padding: 20px;
 }
