@@ -33,7 +33,8 @@ module.exports = (sequelize, DataTypes) => {
     email: DataTypes.STRING,
     password: DataTypes.STRING,
     imagen_usuario: DataTypes.STRING,
-    id_entidad_usuario: DataTypes.INTEGER
+    id_entidad_usuario: DataTypes.INTEGER,
+    googleId: DataTypes.STRING // Agregar el campo googleId aquí
   }, {
     sequelize,
     modelName: 'Usuario',

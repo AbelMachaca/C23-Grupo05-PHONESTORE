@@ -213,6 +213,11 @@ div.social-buttons {
   margin-left: 14%;
   font-size: 14px;
 }
+
+
+#btn-go{
+  margin-top: 20px;
+}
 /*
 .fa-google {
   position: absolute;
