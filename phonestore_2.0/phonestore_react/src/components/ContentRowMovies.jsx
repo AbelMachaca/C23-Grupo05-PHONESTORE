@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+
 
 const ContentRowMovies = () => {
   const [productos, setProductos] = useState(0);
-  const [usuarios, setUsuarios] = useState(79); // Valor fijo asignado
+  const [totalUsers, setTotalUsers] = useState(null);
   const [marcas, setMarcas] = useState(0);
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const ContentRowMovies = () => {
         // Obtener el valor de count de los datos de productos
         const countProductos = data.count;
         // Calcular la suma de los valores de las propiedades de countMarca
-        ;
+        
         const sumCountMarca =  Object.keys(data.countMarca).length;
         
         // Actualizar los estados
@@ -28,6 +29,20 @@ const ContentRowMovies = () => {
       .catch(error => {
         console.error('Error al obtener los datos de la API:', error);
       });
+  }, []);
+
+  useEffect(() => {
+    const fetchTotalUsers = async () => {
+      try {
+        const response = await fetch("http://localhost:3030/api/users");
+        const data = await response.json();
+        setTotalUsers(data.count);
+      } catch (error) {
+        console.error("Error fetching total users:", error);
+      }
+    };
+    
+    fetchTotalUsers();
   }, []);
 
   return (
@@ -55,10 +70,11 @@ const ContentRowMovies = () => {
           <div className="card-body">
             <div className="row no-gutters align-items-center">
               <div className="col mr-2">
-                <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
+              <div className="text-xs font-weight-bold text-success text-uppercase mb-1">
+                  {" "}
                   Usuarios en base de datos
                 </div>
-                <div className="h5 mb-0 font-weight-bold text-gray-800">{usuarios}</div>
+                <div className="h5 mb-0 font-weight-bold text-gray-800">{totalUsers !== null ? totalUsers : "Cargando..."}</div>
               </div>
               <div className="col-auto">
                 <i className="fas fa-award fa-2x text-gray-300"></i>

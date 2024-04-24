@@ -5,6 +5,7 @@
     box-sizing: border-box;
 } 
 
+
 /*header mobile*/
 .campo_buscar{
     border-radius: 5px;
@@ -33,13 +34,15 @@ header section.buscador{
     justify-content: center;
     margin: 2%;
 }
-.header a img{
- width: 100%;
- height: 100%;
+.header a .icon{
+    width: 30px;
+    /* height: 100%; */
+    margin-top: 5px;
+    margin-left: 3px;
 }
-.header a.icono_header {
-    width: 8%;
-    height: 5%;
+.header a .icono-header {
+    width: 100%;
+    /* height: 5%; */
     padding-top:0.5%;
 }
 .header div{
@@ -91,6 +94,7 @@ nav ul{
     display: flex;
     gap: 30px;
     align-items: center;
+    list-style: none;
 }
 nav ul li a{
     text-decoration: none;
@@ -112,6 +116,9 @@ nav ul li a{
     i.fa-solid.fa-cart-shopping{
         padding-left: 10px;
     }
+    .header a .icon{
+        width: 10%;
+    } 
     /* header section.links a{
         font-size: 90%;
     } */
@@ -177,3 +184,50 @@ nav ul li a{
         font-size: 20px;
     }
 }
+.imagen_usuario_header{
+    width: 30px;
+    border-radius: 50%;
+}
+
+/*lupa del buscador*/
+.input-group {
+    position: relative;
+  }
+  
+  .campo_buscar {
+    padding-right: 5px; /* Ajusta el padding para que haya espacio para el icono */
+  }
+  
+  .submit-button {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    bottom: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  /* Media queries para ajustar los estilos en diferentes tamaños de pantalla */
+@media (max-width: 767px) {
+    /* Estilos para mobile */
+    .campo_buscar {
+        font-size: 14px; /* Reducir el tamaño de fuente para dispositivos móviles */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Estilos para tablet */
+    .campo_buscar {
+        font-size: 16px; /* Tamaño de fuente un poco más grande para tablet */
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Estilos para desktop */
+    .campo_buscar {
+        font-size: 18px; /* Tamaño de fuente más grande para desktop */
+    };
+
+}
+  

@@ -84,3 +84,13 @@
   .editProduct{
       background-color: rgba(57, 105, 252, 1);
   }
+  
+  .imagenes_edicion{
+    display:grid;
+    grid-template-columns: auto auto auto ;
+    gap: 10px;
+  }
+
+  .imagenes_edicion img{
+    height: 150px;
+  }

@@ -5,11 +5,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const passport = require('passport'); // Passport
 const cors = require('cors'); // Importa el paquete 'cors'
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productsRouter = require('./routes/products');
-
+const aboutRouter = require('./routes/about')
+const faqsRouter = require('./routes/consultas')
+const router = express.Router(); //Router
 // APIS
 const apiUser = require('./routes/api/apiUserRoutes');
 const apiProducts = require('./routes/api/apiProductosRouters.js');
@@ -32,6 +35,11 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
 }));
+
+  // Inicializa Passport y sesión de Passport
+  router.use(passport.initialize());
+  router.use(passport.session());
+  
 app.use((req, res, next) => {
   console.log('Cookies:', req.cookies);
   next();
@@ -41,9 +49,11 @@ app.use(rememberMe);
 // Configuración de CORS
 app.use(cors());
 
-app.use('/', indexRouter);
+app.use('/', indexRouter, usersRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
+app.use('/',aboutRouter)
+app.use('/',faqsRouter)
 
 //APIS
 app.use('/api', apiUser);

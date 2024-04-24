@@ -15,7 +15,8 @@ const validatorInput = (element, target) => {
 const expresionesRegulares = {
     exRegAlfa: /^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/,
     exRegEmail: /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/,
-    exRegPass: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&.,;'" ])[A-Za-z\d$@$!%*?&.,;'" ]{3,30}$/,
+    exRegPass: /^(?=.*[a-zA-Z])(?=.*\d).+$/,
+
 };
 
 
@@ -111,7 +112,7 @@ const inputPassword = document.querySelector("#password")
             messageError(".passError","Contraseña minimo 8 a maximo 20 caracteres", target);
             break;
         case !expresionesRegulares.exRegPass.test(this.value):
-            messageError(".passError","Debes incluir números, mayúscula, minúscula y un caracter especial($!%*?&.,;')",target);
+            messageError(".passError","La contraseña debe contener al menos una letra y al menos un número",target);
             break;
         default:
             validatorInput(".passError", target);

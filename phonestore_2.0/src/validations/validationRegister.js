@@ -47,7 +47,7 @@ module.exports = [
   body('password')
   .notEmpty().withMessage('El campo no puede estar vacío').bail()
     .isLength({ min: 8, max: 20 }).withMessage("El valor ingresado debe tener al menos 8 caracteres y máximo 20").bail()
-    .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&.,;'" ])[A-Za-z\d$@$!%*?&.,;'" ]{6,20}$/).withMessage("Debes incluir números, mayúscula, minúscula y  un caracter especial($!%*?&.,;')").bail(),
+    .matches(/^(?=.*[a-zA-Z])(?=.*\d).+$/).withMessage("La contraseña debe contener al menos una letra y al menos un número").bail(),
   body('checkbox')
     .custom(value => {
       return value === 'on';

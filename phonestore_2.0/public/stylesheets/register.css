@@ -213,6 +213,11 @@ div.social-buttons {
   margin-left: 14%;
   font-size: 14px;
 }
+
+
+#btn-go{
+  margin-top: 20px;
+}
 /*
 .fa-google {
   position: absolute;
@@ -237,7 +242,7 @@ div.social-buttons {
 }
 
 
-@media (max-width: 765px) and (min-width: 432px) {
+@media (max-width: 1080px) and (min-width: 766px) {
   #go{
     left: -10px;
   }
@@ -247,7 +252,7 @@ div.social-buttons {
 }
 
 
-@media (max-width: 431px) {
+@media (max-width: 765px) {
   .login-container {
   box-shadow: none;
   

@@ -20,8 +20,16 @@ const getJson = (fileName) => {
         });
     },
     processlogin: (req, res) => {
-      
 
+      // Si el usuario se ha autenticado mediante Google
+    if (req.user && req.user.googleId) {
+      // Obtener el usuario de req.user (ya establecido por Passport)
+      const user = req.user;
+      // Almacenar el usuario en la sesión
+      req.session.user = user;
+      // Redireccionar a la página principal
+      res.redirect("/");
+  } else {
 
       const errores = validationResult(req);
       if (!errores.isEmpty()) {
@@ -56,7 +64,7 @@ const getJson = (fileName) => {
               .catch((err) => {
                   console.log(err);
               });
-      }
+      }}
     },
     logout:(req,res)=>{
       req.session.destroy();
@@ -88,8 +96,9 @@ const getJson = (fileName) => {
         apellido: apellido.trim(),
         email: email.trim(),
         password: bcrypt.hashSync(password, 10),
-        id_entidad_usuario: 2,
-        imagen_usuario: file ? file.filename : 'predeterminado.webp'
+        id_entidad_usuario: 1,
+        imagen_usuario: file ? file.filename : 'predeterminado.webp',
+        googleId: req.body.googleId
       };
   
       db.Usuario.create(newUser)
@@ -117,10 +126,10 @@ const getJson = (fileName) => {
     const errores = validationResult(req);
     const id = req.params.id
     if (errores.isEmpty()){
-      console.log("estallegando el id", id)
+      // console.log("estallegando el id", id)
       db.Usuario.findByPk(id).then(usuario => {
-        console.log("ACTUALIZA LOS DATOS")
-        console.log(req.body)
+        // console.log("ACTUALIZA LOS DATOS")
+        // console.log(req.body)
         db.Usuario.update(
         {
         nombre: req.body.nombre,

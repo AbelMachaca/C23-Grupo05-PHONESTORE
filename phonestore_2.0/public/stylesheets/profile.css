@@ -161,7 +161,7 @@
 }
 
 
-/* adactacion a dispositivos */
+/* adaptacion a dispositivos */
 @media (min-width:321px) and (max-width: 768px) {
     .seccion-perfil-usuario .lista-datos {
         width: 100%;
@@ -220,6 +220,39 @@
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
+    /*validacion front */
+
+.formulario__input-error {
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+ }
+    
+.formulario__input-error-activo {
+     display: block;
+ }    
+.formulario__validacion-estado {
+	position: relative;
+	right: -230px;
+	bottom: 30px;
+	z-index: 100;
+	font-size: 20px;
+	opacity: 0;
+}
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+    
+}    
+
+
+@media (min-width: 1025px) and (max-width: 1980px) {
     /*validacion front */
 
 .formulario__input-error {

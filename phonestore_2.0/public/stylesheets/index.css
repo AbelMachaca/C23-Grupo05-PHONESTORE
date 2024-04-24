@@ -41,7 +41,7 @@ a:link, a:visited, a:active {
 .contenedor-cards{
     display: grid;
     grid-template-columns: auto;
-    width: 80% ;
+    /* width: 80% ; */
     margin: 0 auto;
     padding: 20px;
 }
@@ -86,3 +86,49 @@ a:link, a:visited, a:active {
     height: 300px;
 }
 }
+
+
+/* mensaje */
+
+.noHayProductos{
+    font-size: 12px;
+    background-color: #000120;
+    color: #ffffff;
+    text-align: center;
+    height: max-content;
+    padding: 10%;
+}
+
+.contenedor_noRsults{
+    width: 320px;
+    height: 200px;
+    background-color: #000120;
+}
+
+@media (min-width: 768px){
+    .noHayProductos{
+        font-size: 24px;
+    }
+    
+    .contenedor_noRsults{
+        width: 768px;
+        height: 400px;
+        
+    }
+}
+
+@media (min-width: 1024px){
+    .noHayProductos{
+        font-size: 40px;
+    }
+    
+    .contenedor_noRsults{
+        width: auto;
+        height: 450px;
+        
+    }
+}
+
+
+
+

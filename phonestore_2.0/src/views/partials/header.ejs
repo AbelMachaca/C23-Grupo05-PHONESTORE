@@ -1,51 +1,82 @@
 <header class="header">
-    <div>
-      <a class="icono_header" href="/"><img src="/images/imageHome/icono.jpg"></a>
-      <div class="logo_letras"><a href="/"><img src="/images/imageHome/logo_phonestore1.png"></a></div>
-            <section class="buscador">
-              <form action="" class="formulario_buscador">
-                <input type="text" placeholder="Buscar" class="campo_buscar">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <a href="/products/productCart"><i class="fa-solid fa-cart-shopping"></i></a>
-              </form>
-            </section>
+  <div>
+    <a class="icono_header" href="/"
+      ><img class="icon" src="/images/imageHome/icono.jpg"
+    /></a>
+    <div class="logo_letras">
+      <a href="/"
+        ><img class="icono-header" src="/images/imageHome/logo_phonestore1.png"
+      /></a>
     </div>
-    
-            <nav class="links">
-              <div class="icono_burger">
-                <i class="fa-solid fa-bars" style="color: #919191;" onclick="toggleMenu()"></i>
-              </div>
-              <ul class="lista">
-                <li><a href="/" class="boton_header">Samsung</a></li>
-                <li><a href="/" class="boton_header">Motorola</a></li>
-                <!-- <li><a href="/" class="boton_header">LG</a></li> -->
-                <li><a href="/" class="boton_header">Xiaomi</a></li>
-                <li><a href="/" class="boton_header">Apple</a></li>
-                
-                <% if(locals.usuario != undefined){%>
-                  <li><a href="/users/profile/<%= usuario.id %>" class="boton_header"><%= usuario.nombre %> - <i class="fa-solid fa-user" style="color: #ffffff;"></i></a></li>
-                  
-                  <li><a  href="/users/logout" class="boton_header"> Cerrar sesión <i class="fas fa-sign-out-alt" ></i></a></li>
-                  <% }else{ %>
-                    <li><a href="/users/register" class="boton_header">Creá tu cuenta </a></li>
-                    <li><a href="/users/login" class="boton_header">Ingresá </a></li>
-             <%}%>
-            </ul>
-          </nav>
-            
-                  <script>
-                    let lista = document.querySelector(".lista")
-                    lista.style.maxHeight = "0px";
-            
-                    function toggleMenu(){
-                        if(lista.style.maxHeight == "0px")
-                        {
-                            lista.style.maxHeight = "300px";
-                        }
-                        else{
-                            lista.style.maxHeight = "0px";
-                        }
-                    }
-                    
-                </script>
+    <section class="buscador">
+      <form action="/search" method="GET" class="formulario_buscador">
+        <div class="input-group">
+          <input
+            type="text"
+            name="q"
+            placeholder="Buscar..."
+            class="campo_buscar"
+          />
+          <button type="submit" class="submit-button">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </form>
+      <a href="/products/productCart"
+        ><i class="fa-solid fa-cart-shopping"></i
+      ></a>
+    </section>
+  </div>
+
+  <nav class="links">
+    <div class="icono_burger">
+      <i
+        class="fa-solid fa-bars"
+        style="color: #919191"
+        onclick="toggleMenu()"
+      ></i>
+    </div>
+    <ul class="lista" >
+      <li><a href="/search?q=Samsung" class="boton_header">Samsung</a></li>
+      <li><a href="/search?q=Motorola" class="boton_header">Motorola</a></li>
+      <li><a href="/search?q=Xiaomi" class="boton_header">Xiaomi</a></li>
+      <li><a href="/search?q=Iphone" class="boton_header">Iphone</a></li>
+
+      <% if(locals.usuario != undefined){%>
+      <li>
+        <a href="/users/profile/<%= usuario.id %>" class="boton_header"
+          ><%= usuario.nombre %> -
+          <img
+            class="imagen_usuario_header"
+            src="/images/users/<%= usuario.imagen_usuario %> "
+            alt=""
+        /></a>
+      </li>
+      <!-- <i class="fa-solid fa-user" style="color: #ffffff;"></i> -->
+      <li>
+        <a href="/users/logout" class="boton_header">
+          Cerrar sesión <i class="fas fa-sign-out-alt"></i
+        ></a>
+      </li>
+      <% }else{ %>
+      <li>
+        <a href="/users/register" class="boton_header">Creá tu cuenta </a>
+      </li>
+      <li><a href="/users/login" class="boton_header">Ingresá </a></li>
+      <%}%>
+    </ul>
+  </nav>
+
+  <script>
+    let lista = document.querySelector(".lista");
+    lista.style.maxHeight = "0px";
+
+    function toggleMenu() {
+      if (lista.style.maxHeight == "0px") {
+        lista.style.maxHeight = "300px";
+      } else {
+        lista.style.maxHeight = "0px";
+      }
+    }
+  </script>
 </header>

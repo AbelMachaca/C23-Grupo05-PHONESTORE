@@ -1,6 +1,13 @@
 .imagen_prod_dashboard{
   height: 200px;
 }
+
+.boton_eliminar_dashboard {
+  margin-left: auto;
+  margin-right: auto; /* Agrega esta línea para centrar horizontalmente */
+}
+
+
 .contenedor_body_dashboard {
     font-family: Arial, sans-serif;
     margin: auto;
@@ -71,7 +78,7 @@
   .contenedor_body_dashboard a {
     display: block;
     padding: 10px;
-    margin-top: 10px;
+    margin-bottom: 20px;
     text-align: center;
     text-decoration: none;
     background-color: rgb(60, 66, 76);
@@ -102,6 +109,10 @@
   .contenedor_body_dashboard button:hover {
     background-color: rgba(30, 33, 38, 1);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  .contenedor_body_dashboard table {
+    margin: 0 10%;
+    width: 80%;
   }
   
   /* Responsive Styles */
