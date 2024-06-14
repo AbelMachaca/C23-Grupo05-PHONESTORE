@@ -12,17 +12,28 @@
     border: 0px;
     text-align: center;
 }
-header{
-    background-color:#000120;
+header {
+    background: linear-gradient(135deg, rgb(20, 23, 25) 0%, rgb(33, 38, 43) 200%);
+    text-align: center;
+    padding: 20px;
 }
-.boton_header{
-    border-radius: 10px;
-    transition: background-color 0.5s;
+
+.boton_header {
+    border-radius: 5px;
+    transition: transform 0.5s, box-shadow 0.5s; /* Añadimos box-shadow a la transición */
     padding: 5px;
+    background: linear-gradient(135deg, rgb(20, 23, 25) 0%, rgb(33, 38, 43) 100%);
+    color: rgb(236, 236, 236); /* Color del texto */
+    display: inline-block; /* Para asegurar que el botón se comporte correctamente */ /* Color de fondo del botón */
+    border: none; /* Quitar cualquier borde por defecto */
 }
-.boton_header:hover{
-    background-color: #b9b9b9;
+
+.boton_header:hover {
+    transform: scale(1.1); /* Agrandar el botón al pasar el mouse */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);/* Efecto de borde iluminado */
 }
+
+
 
 .logo_letras a{
     display: none;
@@ -41,7 +52,7 @@ header section.buscador{
     margin-left: 3px;
 }
 .header a .icono-header {
-    width: 100%;
+    width: 70%;
     /* height: 5%; */
     padding-top:0.5%;
 }

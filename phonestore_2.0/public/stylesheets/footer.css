@@ -1,16 +1,23 @@
-.footer-container{
-    color: white;
-    background-color: #000120;
+.footer-container {
+    color: rgb(216, 216, 216);
+    background: linear-gradient(135deg, rgb(20, 23, 25) 0%, rgb(33, 38, 43) 200%);
     text-align: center;
     font-size: 11px;
-    
 }
 
-.footer-container a{
+
+.footer-container a {
     display: block;
-    color: white;
-    text-decoration: underline;
+    color: rgb(216, 216, 216);
+    text-decoration: none;
+    transition: color 0.3s; /* Transición suave para el cambio de color */
 }
+
+.footer-container a:hover {
+    color: white; /* Cambiar el color a blanco al pasar el mouse */
+}
+
+
 
 .footer-container div{
     /* margin-top: 30px; */
