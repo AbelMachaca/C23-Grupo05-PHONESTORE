@@ -5,55 +5,49 @@
     box-sizing: border-box;
 } 
 
-
 /*header mobile*/
 .campo_buscar{
     border-radius: 5px;
     border: 0px;
     text-align: center;
+    padding-right: 30px; /* Espacio para el icono */
+    position: relative; /* Añadir posición relativa */
 }
 header {
-    background: linear-gradient(135deg, rgb(20, 23, 25) 0%, rgb(33, 38, 43) 200%);
+    background:  rgb(20, 23, 25);
     text-align: center;
     padding: 20px;
 }
 
 .boton_header {
+    font-weight: bold;
     border-radius: 5px;
-    transition: transform 0.5s, box-shadow 0.5s; /* Añadimos box-shadow a la transición */
     padding: 5px;
-    background: linear-gradient(135deg, rgb(20, 23, 25) 0%, rgb(33, 38, 43) 100%);
-    color: rgb(236, 236, 236); /* Color del texto */
-    display: inline-block; /* Para asegurar que el botón se comporte correctamente */ /* Color de fondo del botón */
+    color: rgb(204, 204, 204); /* Color del texto */
     border: none; /* Quitar cualquier borde por defecto */
 }
 
 .boton_header:hover {
-    transform: scale(1.1); /* Agrandar el botón al pasar el mouse */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);/* Efecto de borde iluminado */
+    color: rgb(255, 255, 255); /* Blanco brillante */
 }
-
-
 
 .logo_letras a{
     display: none;
-    
 }
 header section.buscador{
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin: 2%;
+    position: relative; /* Para posicionar el icono */
 }
 .header a .icon{
     width: 30px;
-    /* height: 100%; */
     margin-top: 5px;
     margin-left: 3px;
 }
 .header a .icono-header {
     width: 70%;
-    /* height: 5%; */
     padding-top:0.5%;
 }
 .header div{
@@ -61,29 +55,6 @@ header section.buscador{
     justify-content: space-between;
     align-items: center;
 }
-/* .links{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-} */
-/* header section .links  a{
-    color: white;
-    padding: 1%;
-    text-decoration: none;
-    font-size: 50%;
-}   */
-
-/* header section.links p {
-    font-size: 80%;
-    color: white;
-    padding: 1%;
-} */
-
-/* header h1{
-    font-size: 22px;
-    padding: 1.5%;
-    color: white;
-} */
 header input{
     font-size: 10px;
 }
@@ -97,7 +68,6 @@ i.fa-solid.fa-cart-shopping{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background: #004274; */
     position: relative;
     height: 25px;
 }
@@ -116,9 +86,6 @@ nav ul li a{
     display: none;
 }
 
-
-
-
 @media (min-width: 768px){
     /*header*/
     header input{
@@ -130,19 +97,11 @@ nav ul li a{
     .header a .icon{
         width: 10%;
     } 
-    /* header section.links a{
-        font-size: 90%;
-    } */
-    /* header h1{
-        font-size: 32px;
-    } */
-    
 }
 
 @media (min-width: 1024px){
     .logo_letras a{
         display: block;
-        
     }
     .logo_letras{
         width: 30%;
@@ -153,15 +112,20 @@ nav ul li a{
 }
 
 @media (min-width: 400px){
-    /* .header section.links a{
-        font-size: 90%;
-
-    } */
 }
 
 @media (max-width: 1023px ){
+    .logo_letras a {
+        display: block; /* Mostrar el logo en resoluciones menores */
+    }
+    .logo_letras {
+        width: 40%; /* Ajustar el ancho del contenedor del logo */
+    }
     .icono_header{
         display: block;
+    }
+    .header a .icon {
+        display: none; /* Ocultar el icono */
     }
     nav ul{
         position: absolute;
@@ -170,7 +134,7 @@ nav ul li a{
         right: 0;
         flex-direction: column;
         text-align: center;
-        background: #000120;
+        background: rgba(20, 23, 25, 0.9); /* Cambiar el color de fondo y agregar transparencia */
         opacity: 0.9;
         gap: 0;
         overflow: hidden;
@@ -203,27 +167,36 @@ nav ul li a{
 /*lupa del buscador*/
 .input-group {
     position: relative;
-  }
+}
   
-  .campo_buscar {
-    padding-right: 5px; /* Ajusta el padding para que haya espacio para el icono */
-  }
+.campo_buscar {
+    padding-right: 30px; /* Ajusta el padding para que haya espacio para el icono */
+    position: relative; /* Añadir posición relativa */
+}
   
-  .submit-button {
+.submit-button {
     position: absolute;
-    top: 0;
-    right: 5px;
-    bottom: 0;
+    top: 50%; /* Centrar verticalmente */
+    right: 10px; /* Ajustar la posición a la derecha */
+    transform: translateY(-50%); /* Centrar verticalmente */
     border: none;
     background: none;
     cursor: pointer;
-  }
+}
 
-  /* Media queries para ajustar los estilos en diferentes tamaños de pantalla */
+/* Media queries para ajustar los estilos en diferentes tamaños de pantalla */
 @media (max-width: 767px) {
     /* Estilos para mobile */
     .campo_buscar {
-        font-size: 14px; /* Reducir el tamaño de fuente para dispositivos móviles */
+        font-size: 12px; /* Reducir aún más el tamaño de fuente para dispositivos móviles */
+        width: 80%; /* Hacer el campo de búsqueda más pequeño */
+        padding-right: 40px; /* Ajustar el padding para el icono */
+    }
+    .submit-button {
+        right: 10px; /* Ajustar la posición a la derecha */
+    }
+    .logo_letras {
+        width: 50%; /* Hacer el logo un poco más grande */
     }
 }
 
@@ -238,7 +211,5 @@ nav ul li a{
     /* Estilos para desktop */
     .campo_buscar {
         font-size: 18px; /* Tamaño de fuente más grande para desktop */
-    };
-
+    }
 }
-  

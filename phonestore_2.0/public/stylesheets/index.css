@@ -7,22 +7,29 @@ a:link, a:visited, a:active {
     text-decoration:none;
 }
 .card-item button {
-    border-radius: 10px;
-    background-color: #000120;
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgb(20, 23, 25) 0%, rgb(33, 38, 43) 100%);
     color: white;
+    font-weight: bold; 
+    font-size: 12px;
     cursor: pointer;
-    padding: 5px;
+    padding: 5px 30px; /* Reducido para mejor ajuste en móviles */
     margin-bottom: 20px;
-    border: 0;
-    transition: background-color 0.5s;
+    width: auto; /* Se adapta al contenido */
+    max-width: 100%; 
+    border: 1px solid black; /* Borde negro */
+    transition: background 0.5s, transform 0.2s, color 0.3s;
 }
-.card-item button:hover{
-    background-color: #b9b9b9;
+
+.card-item button:hover {
+    background: white;
+    color: black; /* Letras negras */
 }
 
 .home{
     background-color: #ffffff;
     width: 100%;
+    padding: 20px; /* Añadido para mejor espaciado */
 }
 
 #body {
@@ -36,17 +43,29 @@ a:link, a:visited, a:active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    padding: 5px; /* Reducido para mejor espaciado */
+    border-radius: 15px; /* Bordes redondeados */
+    border: none; /* Sin borde */
+    background-image: none; /* Sin imagen de fondo */
+    transition: transform 0.3s ease-in-out; /* Añadido para la transición del efecto hover */
 }
+
+.card-item:hover {
+    transform: scale(1.02); /* Efecto de agrandamiento */
+}
+
 .contenedor-cards{
     display: grid;
-    grid-template-columns: auto;
-    /* width: 80% ; */
-    margin: 0 auto;
-    padding: 20px;
+    grid-template-columns: 1fr;
+    margin: 20px; /* Reducido para mejor espaciado en pantallas pequeñas */
+    padding: 0px;
+    gap: 20px; /* Añadido para mejor separación entre tarjetas */
 }
 .card-img img{
-    height: 150px;
+    height: 200px; /* Aumentado para que la imagen sea más grande */
+    width: 100%; /* Añadido para que la imagen se ajuste al contenedor */
+    object-fit: cover; /* Añadido para mantener la proporción de la imagen */
+    transition: transform 0.3s ease-in-out; /* Restaurado para la transición del efecto hover */
 }
 
 .card-img{
@@ -59,6 +78,7 @@ a:link, a:visited, a:active {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 5px; /* Reducido para mejor espaciado */
 }
 .info a p{
     color: black;
@@ -67,26 +87,25 @@ a:link, a:visited, a:active {
 /* version tablet*/
 @media (min-width: 768px) {
     .contenedor-cards{
-        display: grid;
-        grid-template-columns: auto auto ;
-}
+        grid-template-columns: 1fr 1fr;
+        margin: 50px; /* Ajustado para mejor espaciado en tabletas */
+    }
     .card-img img{
-    height: 250px;
-}
+        height: 250px;
+    }
 }
 
 /* version desktop*/
 @media (min-width: 1024px) {
     .contenedor-cards{
-        display: grid;
-        grid-template-columns: auto auto auto ;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 50px;
-}
+        margin: 100px; /* Ajustado para mejor espaciado en escritorios */
+    }
     .card-img img{
-    height: 300px;
+        height: 300px;
+    }
 }
-}
-
 
 /* mensaje */
 
@@ -113,7 +132,6 @@ a:link, a:visited, a:active {
     .contenedor_noRsults{
         width: 768px;
         height: 400px;
-        
     }
 }
 
@@ -125,7 +143,6 @@ a:link, a:visited, a:active {
     .contenedor_noRsults{
         width: auto;
         height: 450px;
-        
     }
 }
 

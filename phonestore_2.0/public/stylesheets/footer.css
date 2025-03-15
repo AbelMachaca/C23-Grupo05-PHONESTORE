@@ -1,59 +1,124 @@
-.footer-container {
-    color: rgb(216, 216, 216);
-    background: linear-gradient(135deg, rgb(20, 23, 25) 0%, rgb(33, 38, 43) 200%);
+.footer {
+    background:  rgb(20, 23, 25);
+    color: #ffffff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.icon{
+    width: 250px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
-    font-size: 11px;
 }
 
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-.footer-container a {
-    display: block;
-    color: rgb(216, 216, 216);
+.logo-img {
+    height: 40px;
+}
+
+.logo-text {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.footer-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f1f1f1;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 5px;
+}
+
+.footer-links a {
     text-decoration: none;
-    transition: color 0.3s; /* Transición suave para el cambio de color */
+    color: #b0b0b0;
+    transition: color 0.3s;
 }
 
-.footer-container a:hover {
-    color: white; /* Cambiar el color a blanco al pasar el mouse */
+.footer-links a:hover {
+    color: #ffffff;
 }
 
-
-
-.footer-container div{
-    /* margin-top: 30px; */
-    padding: 10px;
-    
+.footer-divider {
+    border: 0;
+    height: 1px;
+    background: #555;
+    margin: 20px 0;
 }
 
-.footer-hijos:nth-child(3) p {
-    margin-top: 10px; 
-  }
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
 
+.footer-copy {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
 
-@media(min-width:768px){
-    .footer-container{
-        display: flex;
-        text-align: center;
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    color: #b0b0b0;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
     }
-
-    .footer-hijos{
-        margin-left: auto ;
-        margin-right: auto;
-        
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
-    .footer-container div{
-        margin-top: 30px;
-        padding-top: 10px;
-        padding-bottom: 30px;
-        
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
     }
-
-    .footer-hijos:last-child{
-        margin-top: 19px;
-
-    }
-    
-    
-      
-    
 }
